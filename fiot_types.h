@@ -1,4 +1,5 @@
 /* Base data types */
+
 /* Octet - minimal amount of data that could be transferred */
 typedef unsigned char Octet;
 /* OctetString - a finite sequence of Octets */
@@ -10,7 +11,9 @@ typedef Octet LengthShortInt[2];
 /* RandomOctetString defines fixed-length sequence containing random generated data */
 typedef Octet RandomOctetString[32];
 
+/*-------------------------------------------------------------------*/
 /* Enumerated and service data types */
+
 /* FrameType defines if the transferred data frame is encrypted or not */
 typedef enum {
     plainFrame = 0xA0,
@@ -99,7 +102,7 @@ typedef enum {
     magmaCTRplusOMAC = 0x1151,
     kuznechikCTRplusOMAC = 0x1152,
     magmaAEAD = 0x1201,
-    kuznechikAEAD = 0x1202,
+    kuznechikAEAD = 0x1202
 } CryptoMechanism; 
 
 /* EllipticCurveID specifies used elliptic curve parameters */
@@ -141,6 +144,152 @@ typedef struct {
 
 /* FrameNumber defines the five-Octet sequence specified for frame cryptographic number indication */
 typedef Octet FrameNumber[5];
+
+/* KeyMechanismType specifies values for key transformation and derive key generating algorithms used by transport protocol */
+typedef enum {
+    standard122 = 0x00,
+    standard221 = 0x01
+} KeyMechanismType;
+
+/* AlertType specifies error codes */
+typedef enum { 
+    unknownError = 0x1000,
+    unsupportedCryptoMechanism = 0x1001,
+    wrongExternalPreSharedKey = 0x1002,
+    wrongInternalPreSharedKey = 0x1003,
+    wrongIntegrityCode = 0x1004,
+    lostIntegrityCode = 0x1005,
+    wrongCertificateProcessed = 0x100a,
+    wrongCertificateNumber = 0x100b,
+    expiredCertificate = 0x100c,
+    unsupportedCertificateNumber = 0x100d,
+    notValidCertificateNumber = 0x100e,
+    wrongCertificateApplication = 0x100f,
+    wrongCertificateIssuer = 0x1010,
+    unsupportedCertificateIssuer = 0x1011,
+    unsupportedCertificateFormat = 0x1012,
+    wrongCertificateIntegrityCode = 0x1013,
+    usupportedKeyMechanism = 0x1020,
+    unsupportedEllipticCurveID = 0x1031,
+    wrongEllipticCurvePoint = 0x1032,
+    wrongInternalPSKIdentifier = 0x1040
+} AlertType;
+
+/*-------------------------------------------------------------------*/
+/* Transport protocol message format */
+
+/* Frame structure defines the container used for data transmission */
+typedef struct {
+/* tag defines type of the frame */
+    FrameType tag;
+/* length defines the whole Frame length in Octets */
+    LengthShortInt length;
+/* number defines the Frame cryptographic number */
+    FrameNumber number;
+/* type defines the message type of frame enclosed data */
+    MessageType type;
+/* meslen defines the length of the enclosed messasge */
+    LengthShortInt meslen;
+/* message is the data itself */
+    OctetString message;
+/* padding defines the finite-length octet sequence */
+    OctetString padding;
+/* icode defines the MAC */
+    IntegrityCode icode;
+} Frame;
+
+/*-------------------------------------------------------------------*/
+/*  Session layer message format */
+
+/* ClientHelloMessage structure defines the initial message from client */
+typedef struct {
+/* algorithm defines one of CryptoMechanism used to validate unencrypted data integrity */
+    CryptoMechanism algorithm;
+/* random defines the fixed-length octets sequence */
+    RandomOctetString random;
+/* point specifies the elliptic curve point used in Diffie–Hellman key generation protocol */
+    EllipticCurvePoint point;
+/* iPSK specifies the ID of auntication key generated during the previous session. */
+    PreSharedKeyID iPSK;
+/* ePSK specifies the ID of pre-shared auntication key  */
+    PreSharedKeyID ePSK;
+/* countOfExtensions defines the number of extensions that will be sent after ClientHelloMessage */
+    LengthOctet countOfExtensions;
+} ClientHelloMessage;
+
+/* ServerHelloMessage structure defines the server-side answer to ClientHelloMessage */
+typedef struct {
+/* algorithm defines one of cipher mechanisms with MAC generation option */
+    CryptoMechanism algorithm;
+/* random defines the fixed-length octets sequence */
+    RandomOctetString random;
+/* point specifies the elliptic curve point used in Diffie–Hellman key generation protocol */
+    EllipticCurvePoint point;
+/* countOfExtensions defines the number of extensions that will be sent to the client after ServerHelloMessage */
+    LengthOctet countOfExtensions;
+} ServerHelloMessage;
+
+/* VerifyMessage structure defines a message used by both client and server to verify each other during key generation protocol */
+typedef struct {
+/* mac defines the message authentication code value */
+    IntegrityCode mac;
+/* sign defines the digital signature value */
+    IntegrityCode sign;
+} VerifyMessage;
+
+/* ApplicationDataMessage contains the application layer data */
+typedef OctetString ApplicationDataMessage; 
+
+/* AlertMessage structure defines the message format used by both client and server in case of errors or incorrect data */
+typedef struct {
+/* code defines the error code */
+    AlertType code;
+/* algorithm defines the cryptographic mechanism ID used to control the message integrity */
+    CryptoMechanism algorithm;
+/* present specifies if there is an optional text message */
+    PresentType present;
+/* message defines the optional text message */
+    OctetString message;
+} AlertMessage;
+
+/* GeneratePSKMessage structure defines message format used by both client and server during authentication key generation protocol */
+typedef struct {
+/* random defines the fixed-length octets sequence */
+    RandomOctetString random;
+/* id specifies the generated iPSK ID */
+    PreSharedKeyID id;
+} GeneratePSKMessage;
+
+/*-------------------------------------------------------------------*/
+/* Extensions format */
+
+/* RequestCertificateExtension structure defines the extension used both by server and client to request digital signature validation certificates */
+typedef struct {
+/* certproctype is used to specify certificate parameters */
+    CertificateProcessedType certproctype;
+/* identifier is the Octet sequence which specifies the requested certificate */
+    OctetString identifier;
+} RequestCertificateExtension;
+
+/* CertificateExtension structure defines the extension used both by server and client to send digital signature validation certificates */
+typedef struct {
+/* format specifies the digital signature validation certificate format */
+    CertificateFormat format;
+/* certificate defines the Octet sequence containing the certificate */
+    Certificate certificate;
+} CertificateExtension;
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
