@@ -201,7 +201,7 @@ typedef struct {
 /*-------------------------------------------------------------------*/
 /*  Session layer message format */
 
-/* ClientHelloMessage structure defines the initial message from client */
+/* ClientHelloMessage defines the initial message from client */
 typedef struct {
 /* algorithm defines one of CryptoMechanism used to validate unencrypted data integrity */
     CryptoMechanism algorithm;
@@ -217,7 +217,7 @@ typedef struct {
     LengthOctet countOfExtensions;
 } ClientHelloMessage;
 
-/* ServerHelloMessage structure defines the server-side answer to ClientHelloMessage */
+/* ServerHelloMessage defines the server-side answer to ClientHelloMessage */
 typedef struct {
 /* algorithm defines one of cipher mechanisms with MAC generation option */
     CryptoMechanism algorithm;
@@ -229,7 +229,7 @@ typedef struct {
     LengthOctet countOfExtensions;
 } ServerHelloMessage;
 
-/* VerifyMessage structure defines a message used by both client and server to verify each other during key generation protocol */
+/* VerifyMessage defines a message used by both client and server to verify each other during key generation protocol */
 typedef struct {
 /* mac defines the message authentication code value */
     IntegrityCode mac;
@@ -240,7 +240,7 @@ typedef struct {
 /* ApplicationDataMessage contains the application layer data */
 typedef OctetString ApplicationDataMessage; 
 
-/* AlertMessage structure defines the message format used by both client and server in case of errors or incorrect data */
+/* AlertMessage defines the message format used by both client and server in case of errors or incorrect data */
 typedef struct {
 /* code defines the error code */
     AlertType code;
@@ -252,7 +252,7 @@ typedef struct {
     OctetString message;
 } AlertMessage;
 
-/* GeneratePSKMessage structure defines message format used by both client and server during authentication key generation protocol */
+/* GeneratePSKMessage defines message format used by both client and server during authentication key generation protocol */
 typedef struct {
 /* random defines the fixed-length octets sequence */
     RandomOctetString random;
@@ -263,7 +263,7 @@ typedef struct {
 /*-------------------------------------------------------------------*/
 /* Extensions format */
 
-/* RequestCertificateExtension structure defines the extension used both by server and client to request digital signature validation certificates */
+/* RequestCertificateExtension defines the extension used both by server and client to request digital signature validation certificates */
 typedef struct {
 /* certproctype is used to specify certificate parameters */
     CertificateProcessedType certproctype;
@@ -271,7 +271,7 @@ typedef struct {
     OctetString identifier;
 } RequestCertificateExtension;
 
-/* CertificateExtension structure defines the extension used both by server and client to send digital signature validation certificates */
+/* CertificateExtension defines the extension used both by server and client to send digital signature validation certificates */
 typedef struct {
 /* format specifies the digital signature validation certificate format */
     CertificateFormat format;
@@ -279,14 +279,29 @@ typedef struct {
     Certificate certificate;
 } CertificateExtension;
 
+/*  SetCertificateExtension defines extension format used both by server and client to inform each other about chosen certificate */
+typedef struct{
+/* certproctype is used to specify certificate parameters */
+    CertificateProcessedType certproctype;
+/* identifier is the Octet sequence which specifies the requested certificate */
+    OctetString identifier;
+} SetCertificateExtension;
 
+/* InformCertificateExtension defines the extension format used both by server and client to specify certificate number */
+typedef OctetString InformCertificatleExtension;
 
+/* RequestIdentifierExtension defines the extension format used both by server and client to request or send client/server ID */
+typedef struct{
+/* request specifies if the ID is requested or sent */
+    RequestType request;
+/* identifier defines the Octet sequence containing ID */
+    OctetString identifier;
+} RequestIdentifierExtension; 
 
-
-
-
-
-
+/* KeyMechanismExtension is used to specify derive key generation cryptographic mechanisms */
+typedef struct{
+    KeyMechanismType mechanism; 
+} KeyMechanismExtension;
 
 
 
