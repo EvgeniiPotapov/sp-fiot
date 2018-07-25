@@ -3,7 +3,7 @@
 /* Octet - minimal amount of data that could be transferred */
 typedef unsigned char Octet;
 /* OctetString - a finite sequence of Octets */
-typedef octet *OctetString;
+typedef Octet *OctetString;
 /* LengthOctet is desired to define non-negative integers in range [0, 255], sequence length as usual */
 typedef Octet LengthOctet;
 /* LengthShortInt is desired to define non-negative integers in range [0, 65535], sequence length as usual */
@@ -107,13 +107,13 @@ typedef enum {
 
 /* EllipticCurveID specifies used elliptic curve parameters */
 typedef enum {
-    id-tc26-gost3410-2012-256-paramsetA = 0x01,
-    id-tc26-gost3410-2012-512-paramsetA = 0x02,
-    id-tc26-gost3410-2012-512-paramsetB = 0x03,
-    id-tc26-gost3410-2012-512-paramsetC = 0x04,
-    id-rfc4357-gost3410-2001-paramsetA = 0x05,
-    id-rfc4357-gost3410-2001-paramsetB = 0x06,
-    id-rfc4357-gost3410-2001-paramsetC = 0x07
+    id_tc26_gost3410_2012_256_paramsetA = 0x01,
+    id_tc26_gost3410_2012_512_paramsetA = 0x02,
+    id_tc26_gost3410_2012_512_paramsetB = 0x03,
+    id_tc26_gost3410_2012_512_paramsetC = 0x04,
+    id_rfc4357_gost3410_2001_paramsetA = 0x05,
+    id_rfc4357_gost3410_2001_paramsetB = 0x06,
+    id_rfc4357_gost3410_2001_paramsetC = 0x07
 } EllipticCurveID; 
 
 /*  EllipticCurvePoint defines data structure used to contain elliptic curve point specified by two coordinates */
