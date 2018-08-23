@@ -6,10 +6,15 @@
 #include "serialize_fiot.h"
 
 int main(){
-    unsigned short a = 256;
-    LengthShortInt len;
-    serLengthShortInt(len, a);
-    printf("%d %d\n", len[0], len[1]);
+    IntegrityCode a;
+    OctetString c = "abcdef";
+    a.present = isPresent;
+    a.length = 6;
+    a.code = c;
+    OctetString b = malloc(sizeof(Octet));
+    serIntegrityCode(&b,&a);
+    int i;
+    for(i=0;i<10;i++) printf("%x\n",b[i]);
 
 }
 
