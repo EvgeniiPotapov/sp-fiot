@@ -1,5 +1,5 @@
 /* Base data types */
-
+#pragma pack(push, 1)
 /* Octet - minimal amount of data that could be transferred */
 typedef unsigned char Octet;
 /* OctetString - a finite sequence of Octets */
@@ -117,7 +117,7 @@ typedef enum {
 } EllipticCurveID; 
 
 /*  EllipticCurvePoint defines data structure used to contain elliptic curve point specified by two coordinates */
-typedef struct {
+typedef struct _EllipticCurvePoint{
 /* ID of elliptic curve which the point lies on */
     EllipticCurveID id;
 /* x(u) point coordinate given in canonical Weierstrass (twisted Edwards) curve form, length = 32(64) Octets for 256(512) bit curve */
@@ -127,7 +127,7 @@ typedef struct {
 } EllipticCurvePoint;
 
 /* PreSharedKeyID structure is specified to store and transfer the pre-shared symmetric key ID */
-typedef struct {
+typedef struct _PreSharedKeyID{
 /* Indicates if ID is specified */
     PresentType present;
     LengthOctet length;
@@ -135,7 +135,7 @@ typedef struct {
 } PreSharedKeyID; 
 
 /* IntegrityCode specifies a structure used to transfer message authentication code (MAC) */
-typedef struct {
+typedef struct _IntegrityCode{
 /* Indicates if integrity code is specified */
     PresentType present;
     LengthOctet length;
@@ -179,7 +179,7 @@ typedef enum {
 /* Transport protocol message format */
 
 /* Frame structure defines the container used for data transmission */
-typedef struct {
+typedef struct _Frame{
 /* tag defines type of the frame */
     FrameType tag;
 /* length defines the whole Frame length in Octets */
@@ -202,7 +202,7 @@ typedef struct {
 /*  Session layer message format */
 
 /* ClientHelloMessage defines the initial message from client */
-typedef struct {
+typedef struct _ClientHelloMessage{
 /* algorithm defines one of CryptoMechanism used to validate unencrypted data integrity */
     CryptoMechanism algorithm;
 /* random defines the fixed-length octets sequence */
@@ -218,7 +218,7 @@ typedef struct {
 } ClientHelloMessage;
 
 /* ServerHelloMessage defines the server-side answer to ClientHelloMessage */
-typedef struct {
+typedef struct _ServerHelloMessage{
 /* algorithm defines one of cipher mechanisms with MAC generation option */
     CryptoMechanism algorithm;
 /* random defines the fixed-length octets sequence */
@@ -230,7 +230,7 @@ typedef struct {
 } ServerHelloMessage;
 
 /* VerifyMessage defines a message used by both client and server to verify each other during key generation protocol */
-typedef struct {
+typedef struct _VerifyMessage{
 /* mac defines the message authentication code value */
     IntegrityCode mac;
 /* sign defines the digital signature value */
@@ -241,7 +241,7 @@ typedef struct {
 typedef OctetString ApplicationDataMessage; 
 
 /* AlertMessage defines the message format used by both client and server in case of errors or incorrect data */
-typedef struct {
+typedef struct _AlertMessage{
 /* code defines the error code */
     AlertType code;
 /* algorithm defines the cryptographic mechanism ID used to control the message integrity */
@@ -253,7 +253,7 @@ typedef struct {
 } AlertMessage;
 
 /* GeneratePSKMessage defines message format used by both client and server during authentication key generation protocol */
-typedef struct {
+typedef struct _GeneratePSKMessage{
 /* random defines the fixed-length octets sequence */
     RandomOctetString random;
 /* id specifies the generated iPSK ID */
@@ -264,7 +264,7 @@ typedef struct {
 /* Extensions format */
 
 /* RequestCertificateExtension defines the extension used both by server and client to request digital signature validation certificates */
-typedef struct {
+typedef struct _RequestCertificateExtension{
 /* certproctype is used to specify certificate parameters */
     CertificateProcessedType certproctype;
 /* identifier is the Octet sequence which specifies the requested certificate */
@@ -272,7 +272,7 @@ typedef struct {
 } RequestCertificateExtension;
 
 /* CertificateExtension defines the extension used both by server and client to send digital signature validation certificates */
-typedef struct {
+typedef struct _CertificateExtension{
 /* format specifies the digital signature validation certificate format */
     CertificateFormat format;
 /* certificate defines the Octet sequence containing the certificate */
@@ -280,7 +280,7 @@ typedef struct {
 } CertificateExtension;
 
 /*  SetCertificateExtension defines extension format used both by server and client to inform each other about chosen certificate */
-typedef struct{
+typedef struct _SetCertificateExtension{
 /* certproctype is used to specify certificate parameters */
     CertificateProcessedType certproctype;
 /* identifier is the Octet sequence which specifies the requested certificate */
@@ -291,7 +291,7 @@ typedef struct{
 typedef OctetString InformCertificatleExtension;
 
 /* RequestIdentifierExtension defines the extension format used both by server and client to request or send client/server ID */
-typedef struct{
+typedef struct _RequestIdentifierExtension{
 /* request specifies if the ID is requested or sent */
     RequestType request;
 /* identifier defines the Octet sequence containing ID */
@@ -299,10 +299,10 @@ typedef struct{
 } RequestIdentifierExtension; 
 
 /* KeyMechanismExtension is used to specify derive key generation cryptographic mechanisms */
-typedef struct{
+typedef struct _KeyMechanismExtension{
     KeyMechanismType mechanism; 
 } KeyMechanismExtension;
-
+#pragma pack(pop)
 
 
 
