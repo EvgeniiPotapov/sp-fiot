@@ -64,7 +64,7 @@ void serFrame(OctetString *serframe, Frame *frame){
     free(icode_serialized);
 }
 /* Session layer structures */
-/* Serializing ClientHelloMessage */
+/* Serializing ClientHelloMessage structure */
 void serClientHelloMessage(OctetString *clienthello, ClientHelloMessage *clientmessage){
     LengthShortInt algorithm;
     serLengthShortInt(algorithm, clientmessage->algorithm);
@@ -82,7 +82,6 @@ void serClientHelloMessage(OctetString *clienthello, ClientHelloMessage *clientm
     if (clientmessage->ePSK.present == isPresent)
         ePSKlen = ePSKlen * 2 + clientmessage->ePSK.length;
     *clienthello = realloc(*clienthello, sizeof(Octet) * (35 + pointlen + iPSKlen + ePSKlen));
-    printf("point %d\n", pointlen);
     memcpy(*clienthello, algorithm, 2 * sizeof(Octet));
     memcpy(*clienthello +2, &(clientmessage->random), 32 * sizeof(Octet));
     memcpy(*clienthello +34, serpoint, pointlen * sizeof(Octet));
@@ -92,7 +91,42 @@ void serClientHelloMessage(OctetString *clienthello, ClientHelloMessage *clientm
     memcpy(*clienthello + 34 + pointlen + iPSKlen, ekeyid, ePSKlen * sizeof(Octet));
     free(ekeyid);
     memcpy(*clienthello + 34 + pointlen + iPSKlen + ePSKlen, &(clientmessage->countOfExtensions), sizeof(Octet));
-    
-    
-
+}
+/* Serializing ServerHelloMessage structure */
+void serServerHelloMessage(OctetString *serverhello, ServerHelloMessage *servermessage){
+    LengthShortInt algorithm;
+    serLengthShortInt(algorithm, servermessage->algorithm);
+    OctetString serpoint = malloc(sizeof(Octet));
+    serEllipticCurvePoint(&serpoint, &(servermessage->point));
+    LengthOctet pointlen = strlen(servermessage->point.x) * 2 + sizeof(Octet);
+    *serverhello = realloc(*serverhello, sizeof(Octet) * (35 + pointlen));
+    memcpy(*serverhello, algorithm, 2 * sizeof(Octet));
+    memcpy(*serverhello +2, &(servermessage->random), 32 * sizeof(Octet));
+    memcpy(*serverhello +34, serpoint, pointlen * sizeof(Octet));
+    free(serpoint);
+    memcpy(*serverhello + 34 + pointlen, &(servermessage->countOfExtensions), sizeof(Octet));
+}
+/* Serializing  VerifyMessage structure */
+void serVerifyMessage(OctetString *message, VerifyMessage *verify){
+    OctetString mac = malloc(sizeof(Octet));
+    serIntegrityCode(&mac, &(verify->mac));
+    OctetString sign = malloc(sizeof(Octet));
+    serIntegrityCode(&sign, &(verify->sign));
+    unsigned short maclen = 0;
+    if (verify->mac.present == notPresent){
+        maclen++;
+    }
+    else{
+        maclen = 2 + verify->mac.length;
+    }
+    unsigned short signlen = 0;
+    if (verify->sign.present == notPresent){
+        signlen++;
+    }
+    else{
+        signlen = 2 + verify->sign.length;
+    }
+    *message = realloc(*message, sizeof(Octet) * (maclen + signlen));
+    memcpy(*message, mac, maclen * sizeof(Octet));
+    memcpy(*message + maclen, sign, signlen * sizeof(Octet));
 }
