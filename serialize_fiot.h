@@ -6,3 +6,4 @@ void serFrame(OctetString *serframe, Frame *frame);
 void serClientHelloMessage(OctetString *clienthello, ClientHelloMessage *clientmessage);
 void serServerHelloMessage(OctetString *serverhello, ServerHelloMessage *servermessage);
 void serVerifyMessage(OctetString *message, VerifyMessage *verify);
+void serAlertMessage(OctetString *alert, AlertMessage *alertmessage);
