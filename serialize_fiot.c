@@ -130,3 +130,20 @@ void serVerifyMessage(OctetString *message, VerifyMessage *verify){
     memcpy(*message, mac, maclen * sizeof(Octet));
     memcpy(*message + maclen, sign, signlen * sizeof(Octet));
 }
+/* Serializing  AlertMessage structure */
+void serAlertMessage(OctetString *alert, AlertMessage *alertmessage){
+    LengthShortInt code;
+    serLengthShortInt(code, alertmessage->code);
+    LengthShortInt algorithm;
+    serLengthShortInt(algorithm, alertmessage->algorithm);
+    *alert = realloc(*alert, sizeof(Octet) * 5);
+    memcpy(*alert, code, 2 * sizeof(Octet));
+    memcpy(*alert + 2, algorithm, 2 * sizeof(Octet));
+    memcpy(*alert + 4, &(alertmessage->present), sizeof(Octet));
+    int meslen = 0;
+    if (alertmessage->present == isPresent){
+        meslen = strlen(alertmessage->message) + 1;
+        *alert = realloc(*alert, sizeof(Octet) * (5 + meslen));
+        memcpy(*alert + 5, alertmessage->message, sizeof(Octet) * meslen);
+    }
+}
