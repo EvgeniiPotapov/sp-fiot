@@ -6,20 +6,14 @@
 #include "serialize_fiot.h"
 
 int main(){
-    AlertMessage alertmessage;
-    alertmessage.code = wrongIntegrityCode;
-    alertmessage.algorithm = kuznechikAEAD;
-    alertmessage.present = notPresent;
-    alertmessage.message = "7765";
+    RequestCertificateExtension cert;
+    cert.certproctype = any;
+    cert.identifier = "12234";
+
     
-    OctetString seralert = malloc(sizeof(Octet));
-    serAlertMessage(&seralert, &alertmessage);
+    OctetString ser = malloc(sizeof(Octet));
+    serSetCertificateExtension(&ser, &cert);
     int i;
-    for(i=0;i<9;i++) printf("%x\n",seralert[i]);
-    free(seralert);
-
-
-
+    for(i=0;i<6;i++) printf("%x\n",ser[i]);
+    free(ser);
 }
-
-
