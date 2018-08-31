@@ -147,3 +147,36 @@ void serAlertMessage(OctetString *alert, AlertMessage *alertmessage){
         memcpy(*alert + 5, alertmessage->message, sizeof(Octet) * meslen);
     }
 }
+/* Serializing  GeneratePSKMessage structure */
+void serGeneratePSKMessage(OctetString *pskmessage, GeneratePSKMessage *genpskmessage){
+    unsigned short idlen = sizeof(Octet);
+    if (genpskmessage->id.present == isPresent){
+        idlen = (2 + genpskmessage->id.length) * sizeof(Octet);
+    }
+    *pskmessage = realloc(*pskmessage, sizeof(Octet) * (34 + idlen));
+    memcpy(*pskmessage, genpskmessage->random, 32 * sizeof(Octet));
+    OctetString id = malloc(sizeof(Octet));
+    serPreSharedKeyID(&id, &(genpskmessage->id));
+    memcpy(*pskmessage + 32, id, idlen);
+    free(id);
+}
+/* Extension structures */
+/* Serializing  RequestCertificateExtension structure */
+void serRequestCertificateExtension(OctetString *reqcertext, RequestCertificateExtension *extension){
+    unsigned short identifierlen = strlen(extension->identifier) + 1;
+    *reqcertext = realloc(*reqcertext, sizeof(Octet) * (1 + identifierlen));
+    memcpy(*reqcertext, &(extension->certproctype), 1);
+    memcpy(*reqcertext + 1, extension->identifier, sizeof(Octet) * identifierlen);
+}
+/* Serializing CertificateExtension structure */
+void serCertificateExtension(OctetString *certext, CertificateExtension *extension){
+    unsigned short certlen = strlen(extension->certificate);
+    *certext = realloc(*certext, sizeof(Octet) * (1 + certlen));
+    memcpy(*certext, &(extension->format), 1);
+    memcpy(*certext + 1, extension->certificate, sizeof(Octet) * certlen);
+}
+/* Serializing  RequestIdentifierExtension structure */
+void serRequestIdentifierExtension(OctetString *certext, RequestIdentifierExtension *extension){
+    
+}
+
