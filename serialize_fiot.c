@@ -1,6 +1,6 @@
+#include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#include <stdio.h>
 
 #include "fiot_types.h"
 
@@ -176,7 +176,13 @@ void serCertificateExtension(OctetString *certext, CertificateExtension *extensi
     memcpy(*certext + 1, extension->certificate, sizeof(Octet) * certlen);
 }
 /* Serializing  RequestIdentifierExtension structure */
-void serRequestIdentifierExtension(OctetString *certext, RequestIdentifierExtension *extension){
-    
+void serRequestIdentifierExtension(OctetString *reqidext, RequestIdentifierExtension *extension){
+    unsigned short idlen = strlen(extension->identifier) + 1;
+    *reqidext = realloc(*reqidext, sizeof(Octet) * (1 + idlen));
+    memcpy(*reqidext, &(extension->request), 1);
+    memcpy(*reqidext + 1, extension->identifier, idlen);
 }
-
+/* serializing KeyMechanismExtension */
+void serKeyMechanismExtension(OctetString *serext, KeyMechanismExtension *extension){
+    memcpy(*serext, &(extension->mechanism), sizeof(Octet));
+}
