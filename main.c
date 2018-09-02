@@ -6,14 +6,13 @@
 #include "serialize_fiot.h"
 
 int main(){
-    RequestCertificateExtension cert;
-    cert.certproctype = any;
-    cert.identifier = "12234";
+    KeyMechanismExtension cert;
+    cert.mechanism = standard221;
 
     
     OctetString ser = malloc(sizeof(Octet));
-    serSetCertificateExtension(&ser, &cert);
+    serKeyMechanismExtension(&ser, &cert);
     int i;
-    for(i=0;i<6;i++) printf("%x\n",ser[i]);
+    for(i=0;i<1;i++) printf("%x\n",ser[i]);
     free(ser);
 }

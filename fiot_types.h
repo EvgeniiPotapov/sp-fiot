@@ -303,34 +303,3 @@ typedef struct _KeyMechanismExtension{
     KeyMechanismType mechanism; 
 } KeyMechanismExtension;
 #pragma pack(pop)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

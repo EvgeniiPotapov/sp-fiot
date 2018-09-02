@@ -11,5 +11,6 @@ void serAlertMessage(OctetString *alert, AlertMessage *alertmessage);
 void serGeneratePSKMessage(OctetString *pskmessage, GeneratePSKMessage *genpskmessage);
 void serRequestCertificateExtension(OctetString *reqcertext, RequestCertificateExtension *extension);
 void serCertificateExtension(OctetString *certext, CertificateExtension *extension);
-void serRequestIdentifierExtension(OctetString *certext, RequestIdentifierExtension *extension);
+void serRequestIdentifierExtension(OctetString *reqidext, RequestIdentifierExtension *extension);
+void serKeyMechanismExtension(OctetString *serext, KeyMechanismExtension *extension);
 
