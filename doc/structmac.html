@@ -1,0 +1,359 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.11"/>
+<title>libakrypt: Структура mac</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+  $(document).ready(initResizable);
+  $(window).load(resizeHeight);
+</script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { init_search(); });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">libakrypt
+   &#160;<span id="projectnumber">Версия 0.6.7</span>
+   </div>
+   <div id="projectbrief">Модуль, реализующий криптографические преобразования для проекта OpenSKZI</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.8.11 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Поиск');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Титульная&#160;страница</span></a></li>
+      <li><a href="pages.html"><span>Описания</span></a></li>
+      <li class="current"><a href="annotated.html"><span>Структуры&#160;данных</span></a></li>
+      <li><a href="files.html"><span>Файлы</span></a></li>
+      <li><a href="examples.html"><span>Примеры</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Поиск" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="annotated.html"><span>Структуры&#160;данных</span></a></li>
+      <li><a href="classes.html"><span>Алфавитный&#160;указатель&#160;структур&#160;данных</span></a></li>
+      <li><a href="functions.html"><span>Поля&#160;структур</span></a></li>
+    </ul>
+  </div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(document).ready(function(){initNavTree('structmac.html','');});
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#pub-attribs">Поля данных</a>  </div>
+  <div class="headertitle">
+<div class="title">Структура mac</div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p>Ключ алгоритма выработки имитовставки.  
+ <a href="structmac.html#details">Подробнее...</a></p>
+
+<p><code>#include &lt;<a class="el" href="ak__mac_8h_source.html">ak_mac.h</a>&gt;</code></p>
+<div class="dynheader">
+Граф связей класса mac:</div>
+<div class="dyncontent">
+<div class="center"><img src="structmac__coll__graph.png" border="0" usemap="#mac_coll__map" alt="Collaboration graph"/></div>
+<!-- MAP 0 -->
+<center><span class="legend">[<a target="top" href="graph_legend.html">см. легенду</a>]</span></center></div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
+Поля данных</h2></td></tr>
+<tr class="memitem:a2cbae7e4bd552155acfe6bd81683e50f"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmac.html#a2cbae7e4bd552155acfe6bd81683e50f">bsize</a></td></tr>
+<tr class="memdesc:a2cbae7e4bd552155acfe6bd81683e50f"><td class="mdescLeft">&#160;</td><td class="mdescRight">длина блока обрабатываемых данных  <a href="#a2cbae7e4bd552155acfe6bd81683e50f">Подробнее...</a><br /></td></tr>
+<tr class="separator:a2cbae7e4bd552155acfe6bd81683e50f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afd45fa8f97df46b6542b7cc2ee1baee7"><td class="memItemLeft" >union {</td></tr>
+<tr class="memitem:a8a97edb8e4149175166f31753bb41921"><td class="memItemLeft" >&#160;&#160;&#160;struct <a class="el" href="structhmac.html">hmac</a>&#160;&#160;&#160;<a class="el" href="structmac.html#a8a97edb8e4149175166f31753bb41921">_hmac</a></td></tr>
+<tr class="memdesc:a8a97edb8e4149175166f31753bb41921"><td class="mdescLeft">&#160;</td><td class="mdescRight">алгоритм hmac.  <a href="#a8a97edb8e4149175166f31753bb41921">Подробнее...</a><br /></td></tr>
+<tr class="separator:a8a97edb8e4149175166f31753bb41921"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1b5151a19bc3b1452ce29f45351da208"><td class="memItemLeft" >&#160;&#160;&#160;struct <a class="el" href="structimgost.html">imgost</a>&#160;&#160;&#160;<a class="el" href="structmac.html#a1b5151a19bc3b1452ce29f45351da208">_imgost</a></td></tr>
+<tr class="memdesc:a1b5151a19bc3b1452ce29f45351da208"><td class="mdescLeft">&#160;</td><td class="mdescRight">алгоритм на основе блочного шифра, регламентируемый ГОСТ 34.13-2015.  <a href="#a1b5151a19bc3b1452ce29f45351da208">Подробнее...</a><br /></td></tr>
+<tr class="separator:a1b5151a19bc3b1452ce29f45351da208"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac661d2e741d3f2ca9b560f525857915d"><td class="memItemLeft" >&#160;&#160;&#160;struct <a class="el" href="structmgm.html">mgm</a>&#160;&#160;&#160;<a class="el" href="structmac.html#ac661d2e741d3f2ca9b560f525857915d">_mgm</a></td></tr>
+<tr class="memdesc:ac661d2e741d3f2ca9b560f525857915d"><td class="mdescLeft">&#160;</td><td class="mdescRight">алгоритм на основе mgm-алгоритма.  <a href="#ac661d2e741d3f2ca9b560f525857915d">Подробнее...</a><br /></td></tr>
+<tr class="separator:ac661d2e741d3f2ca9b560f525857915d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab4e8254fec31ead957cef91e4a9c0d1e"><td class="memItemLeft" >&#160;&#160;&#160;struct <a class="el" href="structsignkey.html">signkey</a>&#160;&#160;&#160;<a class="el" href="structmac.html#ab4e8254fec31ead957cef91e4a9c0d1e">_signkey</a></td></tr>
+<tr class="memdesc:ab4e8254fec31ead957cef91e4a9c0d1e"><td class="mdescLeft">&#160;</td><td class="mdescRight">электронная подпись  <a href="#ab4e8254fec31ead957cef91e4a9c0d1e">Подробнее...</a><br /></td></tr>
+<tr class="separator:ab4e8254fec31ead957cef91e4a9c0d1e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afd45fa8f97df46b6542b7cc2ee1baee7"><td class="memItemLeft" valign="top">}&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmac.html#afd45fa8f97df46b6542b7cc2ee1baee7">choice</a></td></tr>
+<tr class="memdesc:afd45fa8f97df46b6542b7cc2ee1baee7"><td class="mdescLeft">&#160;</td><td class="mdescRight">контекст алгоритма  <a href="#afd45fa8f97df46b6542b7cc2ee1baee7">Подробнее...</a><br /></td></tr>
+<tr class="separator:afd45fa8f97df46b6542b7cc2ee1baee7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a25a4b740eb7a5bf0d591ab6bd709aaed"><td class="memItemLeft" align="right" valign="top"><a class="el" href="ak__hash_8h.html#a77a2623949cf90dd5c9b4952776d92c7">ak_function_mac_clean</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmac.html#a25a4b740eb7a5bf0d591ab6bd709aaed">clean</a></td></tr>
+<tr class="memdesc:a25a4b740eb7a5bf0d591ab6bd709aaed"><td class="mdescLeft">&#160;</td><td class="mdescRight">функция очистки контекста  <a href="#a25a4b740eb7a5bf0d591ab6bd709aaed">Подробнее...</a><br /></td></tr>
+<tr class="separator:a25a4b740eb7a5bf0d591ab6bd709aaed"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1dfe3612fc851f46bdd793b551ce7155"><td class="memItemLeft" align="right" valign="top"><a class="el" href="ak__hash_8h.html#a03d881dc0415fda3ef5f29156dda459d">ak_function_mac_finalize</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmac.html#a1dfe3612fc851f46bdd793b551ce7155">finalize</a></td></tr>
+<tr class="memdesc:a1dfe3612fc851f46bdd793b551ce7155"><td class="mdescLeft">&#160;</td><td class="mdescRight">функция завершения вычислений и получения конечного результата  <a href="#a1dfe3612fc851f46bdd793b551ce7155">Подробнее...</a><br /></td></tr>
+<tr class="separator:a1dfe3612fc851f46bdd793b551ce7155"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a60efd2ffbea463b6be440d330d6c0b7f"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmac.html#a60efd2ffbea463b6be440d330d6c0b7f">hsize</a></td></tr>
+<tr class="memdesc:a60efd2ffbea463b6be440d330d6c0b7f"><td class="mdescLeft">&#160;</td><td class="mdescRight">длина имитовставки (в байтах)  <a href="#a60efd2ffbea463b6be440d330d6c0b7f">Подробнее...</a><br /></td></tr>
+<tr class="separator:a60efd2ffbea463b6be440d330d6c0b7f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a29a43f736ef0849392ce4f1a4467076c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="ak__mac_8h.html#a592f873b2a2cd40e54795a1b27e6bf9d">mac_type</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmac.html#a29a43f736ef0849392ce4f1a4467076c">type</a></td></tr>
+<tr class="memdesc:a29a43f736ef0849392ce4f1a4467076c"><td class="mdescLeft">&#160;</td><td class="mdescRight">тип алгоритма выработки имитовставки  <a href="#a29a43f736ef0849392ce4f1a4467076c">Подробнее...</a><br /></td></tr>
+<tr class="separator:a29a43f736ef0849392ce4f1a4467076c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abef332a620e87fc9a1f0c11afe144112"><td class="memItemLeft" align="right" valign="top"><a class="el" href="ak__hash_8h.html#a390f5248a64bca9090c3dbe7cea77d93">ak_function_mac_update</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmac.html#abef332a620e87fc9a1f0c11afe144112">update</a></td></tr>
+<tr class="memdesc:abef332a620e87fc9a1f0c11afe144112"><td class="mdescLeft">&#160;</td><td class="mdescRight">функция обновления состояния контекста  <a href="#abef332a620e87fc9a1f0c11afe144112">Подробнее...</a><br /></td></tr>
+<tr class="separator:abef332a620e87fc9a1f0c11afe144112"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Подробное описание</h2>
+<div class="textblock"><p>Ключ алгоритма выработки имитовставки. </p>
+
+<p>См. определение в файле <a class="el" href="ak__mac_8h_source.html">ak_mac.h</a> строка <a class="el" href="ak__mac_8h_source.html#l00105">105</a></p>
+</div><h2 class="groupheader">Поля</h2>
+<a class="anchor" id="a8a97edb8e4149175166f31753bb41921"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">struct <a class="el" href="structhmac.html">hmac</a> _hmac</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>алгоритм hmac. </p>
+
+<p>См. определение в файле <a class="el" href="ak__mac_8h_source.html">ak_mac.h</a> строка <a class="el" href="ak__mac_8h_source.html#l00111">111</a></p>
+
+</div>
+</div>
+<a class="anchor" id="a1b5151a19bc3b1452ce29f45351da208"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">struct <a class="el" href="structimgost.html">imgost</a> _imgost</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>алгоритм на основе блочного шифра, регламентируемый ГОСТ 34.13-2015. </p>
+
+<p>См. определение в файле <a class="el" href="ak__mac_8h_source.html">ak_mac.h</a> строка <a class="el" href="ak__mac_8h_source.html#l00113">113</a></p>
+
+</div>
+</div>
+<a class="anchor" id="ac661d2e741d3f2ca9b560f525857915d"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">struct <a class="el" href="structmgm.html">mgm</a> _mgm</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>алгоритм на основе mgm-алгоритма. </p>
+
+<p>См. определение в файле <a class="el" href="ak__mac_8h_source.html">ak_mac.h</a> строка <a class="el" href="ak__mac_8h_source.html#l00115">115</a></p>
+
+</div>
+</div>
+<a class="anchor" id="ab4e8254fec31ead957cef91e4a9c0d1e"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">struct <a class="el" href="structsignkey.html">signkey</a> _signkey</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>электронная подпись </p>
+
+<p>См. определение в файле <a class="el" href="ak__mac_8h_source.html">ak_mac.h</a> строка <a class="el" href="ak__mac_8h_source.html#l00117">117</a></p>
+
+</div>
+</div>
+<a class="anchor" id="a2cbae7e4bd552155acfe6bd81683e50f"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">size_t bsize</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>длина блока обрабатываемых данных </p>
+
+<p>См. определение в файле <a class="el" href="ak__mac_8h_source.html">ak_mac.h</a> строка <a class="el" href="ak__mac_8h_source.html#l00120">120</a></p>
+
+</div>
+</div>
+<a class="anchor" id="afd45fa8f97df46b6542b7cc2ee1baee7"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">union { ... }   choice</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>контекст алгоритма </p>
+
+</div>
+</div>
+<a class="anchor" id="a25a4b740eb7a5bf0d591ab6bd709aaed"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="ak__hash_8h.html#a77a2623949cf90dd5c9b4952776d92c7">ak_function_mac_clean</a>* clean</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>функция очистки контекста </p>
+
+<p>См. определение в файле <a class="el" href="ak__mac_8h_source.html">ak_mac.h</a> строка <a class="el" href="ak__mac_8h_source.html#l00124">124</a></p>
+
+</div>
+</div>
+<a class="anchor" id="a1dfe3612fc851f46bdd793b551ce7155"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="ak__hash_8h.html#a03d881dc0415fda3ef5f29156dda459d">ak_function_mac_finalize</a>* finalize</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>функция завершения вычислений и получения конечного результата </p>
+
+<p>См. определение в файле <a class="el" href="ak__mac_8h_source.html">ak_mac.h</a> строка <a class="el" href="ak__mac_8h_source.html#l00128">128</a></p>
+
+</div>
+</div>
+<a class="anchor" id="a60efd2ffbea463b6be440d330d6c0b7f"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">size_t hsize</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>длина имитовставки (в байтах) </p>
+
+<p>См. определение в файле <a class="el" href="ak__mac_8h_source.html">ak_mac.h</a> строка <a class="el" href="ak__mac_8h_source.html#l00122">122</a></p>
+
+</div>
+</div>
+<a class="anchor" id="a29a43f736ef0849392ce4f1a4467076c"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="ak__mac_8h.html#a592f873b2a2cd40e54795a1b27e6bf9d">mac_type</a> type</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>тип алгоритма выработки имитовставки </p>
+
+<p>См. определение в файле <a class="el" href="ak__mac_8h_source.html">ak_mac.h</a> строка <a class="el" href="ak__mac_8h_source.html#l00107">107</a></p>
+
+</div>
+</div>
+<a class="anchor" id="abef332a620e87fc9a1f0c11afe144112"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="ak__hash_8h.html#a390f5248a64bca9090c3dbe7cea77d93">ak_function_mac_update</a>* update</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>функция обновления состояния контекста </p>
+
+<p>См. определение в файле <a class="el" href="ak__mac_8h_source.html">ak_mac.h</a> строка <a class="el" href="ak__mac_8h_source.html#l00126">126</a></p>
+
+</div>
+</div>
+<hr/>Объявления и описания членов структуры находятся в файле:<ul>
+<li><a class="el" href="ak__mac_8h_source.html">ak_mac.h</a></li>
+</ul>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="structmac.html">mac</a></li>
+    <li class="footer">Документация по libakrypt. Последние изменения: Вс 23 Сен 2018 21:13:42. Создано системой
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.11 </li>
+  </ul>
+</div>
+</body>
+</html>

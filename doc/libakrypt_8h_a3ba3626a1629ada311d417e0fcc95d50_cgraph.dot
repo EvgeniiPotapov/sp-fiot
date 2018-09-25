@@ -1,0 +1,23 @@
+digraph "ak_buffer_delete"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node1 [label="ak_buffer_delete",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+  Node1 -> Node2 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="ak_buffer_destroy",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$ak__buffer_8c.html#a25ac100ac189695aeafbf8f81db91bf7",tooltip="Уничтожение данных, хранящиеся в полях структуры struct buffer. "];
+  Node2 -> Node3 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="ak_error_message",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$ak__log_8c.html#a80a4822cbd184b3cbcc43096126eb52b",tooltip="Вывод сообщений о возникшей в процессе выполнения ошибке. "];
+  Node3 -> Node4 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node4 [label="ak_snprintf",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$ak__log_8c.html#a129225cc1640b6773cf0a7d629f0dca6",tooltip="Обобщенная реализация функции snprintf для различных компиляторов. "];
+  Node3 -> Node5 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node5 [label="ak_log_set_message",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$ak__log_8c.html#a25eff854c3f398d72791d04662d0978a",tooltip="Прямой вывод сообщения аудита. "];
+  Node5 -> Node6 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node6 [label="ak_error_set_value",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$ak__log_8c.html#a700e68d9e88d81489869ba269af25c7b",tooltip="Функция устанавливает значение переменной, хранящей ошибку выполнения программы. "];
+  Node5 -> Node3 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 -> Node6 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 -> Node7 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node7 [label="ak_buffer_free",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$ak__buffer_8c.html#a243d38ade78feebf7816cbd5d775310a",tooltip="Функция освобождает память, выделенную под данные (поле data структуры struct buffer )..."];
+  Node7 -> Node3 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node1 -> Node3 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+}

@@ -1,0 +1,701 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.11"/>
+<title>libakrypt: Файл ak_compress.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+  $(document).ready(initResizable);
+  $(window).load(resizeHeight);
+</script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { init_search(); });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">libakrypt
+   &#160;<span id="projectnumber">Версия 0.6.7</span>
+   </div>
+   <div id="projectbrief">Модуль, реализующий криптографические преобразования для проекта OpenSKZI</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.8.11 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Поиск');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Титульная&#160;страница</span></a></li>
+      <li><a href="pages.html"><span>Описания</span></a></li>
+      <li><a href="annotated.html"><span>Структуры&#160;данных</span></a></li>
+      <li class="current"><a href="files.html"><span>Файлы</span></a></li>
+      <li><a href="examples.html"><span>Примеры</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Поиск" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>Файлы</span></a></li>
+      <li><a href="globals.html"><span>Список&#160;членов&#160;всех&#160;файлов</span></a></li>
+    </ul>
+  </div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(document).ready(function(){initNavTree('ak__compress_8h.html','');});
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#nested-classes">Структуры данных</a> &#124;
+<a href="#typedef-members">Определения типов</a> &#124;
+<a href="#func-members">Функции</a>  </div>
+  <div class="headertitle">
+<div class="title">Файл ak_compress.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><code>#include &lt;<a class="el" href="ak__mac_8h_source.html">ak_mac.h</a>&gt;</code><br />
+</div><div class="textblock"><div class="dynheader">
+Граф включаемых заголовочных файлов для ak_compress.h:</div>
+<div class="dyncontent">
+<div class="center"><img src="ak__compress_8h__incl.png" border="0" usemap="#ak__compress_8h" alt=""/></div>
+<!-- MAP 0 -->
+</div>
+</div><div class="textblock"><div class="dynheader">
+Граф файлов, в которые включается этот файл:</div>
+<div class="dyncontent">
+<div class="center"><img src="ak__compress_8h__dep__incl.png" border="0" usemap="#ak__compress_8hdep" alt=""/></div>
+<!-- MAP 1 -->
+</div>
+</div>
+<p><a href="ak__compress_8h_source.html">См. исходные тексты.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
+Структуры данных</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structcompress.html">compress</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Структура предназначенная для итеративного вычисления значений сжимающих отображений  <a href="structcompress.html#details">Подробнее...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
+Определения типов</h2></td></tr>
+<tr class="memitem:a32cb59334e3643f6ed48c82df737a764"><td class="memItemLeft" align="right" valign="top">typedef struct <a class="el" href="structcompress.html">compress</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ak__compress_8h.html#a32cb59334e3643f6ed48c82df737a764">ak_compress</a></td></tr>
+<tr class="memdesc:a32cb59334e3643f6ed48c82df737a764"><td class="mdescLeft">&#160;</td><td class="mdescRight">Определение контекста сжимающего отображения  <a href="#a32cb59334e3643f6ed48c82df737a764">Подробнее...</a><br /></td></tr>
+<tr class="separator:a32cb59334e3643f6ed48c82df737a764"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+Функции</h2></td></tr>
+<tr class="memitem:a379d7c3af7e0432cdb666e32815c7fa5"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ak__compress_8h.html#a379d7c3af7e0432cdb666e32815c7fa5">ak_compress_clean</a> (<a class="el" href="ak__compress_8h.html#a32cb59334e3643f6ed48c82df737a764">ak_compress</a>)</td></tr>
+<tr class="memdesc:a379d7c3af7e0432cdb666e32815c7fa5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Очистка контекста сжимающего отображения.  <a href="#a379d7c3af7e0432cdb666e32815c7fa5">Подробнее...</a><br /></td></tr>
+<tr class="separator:a379d7c3af7e0432cdb666e32815c7fa5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad7b9ff92de1624933c6be5b44c5cc777"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ak__compress_8h.html#ad7b9ff92de1624933c6be5b44c5cc777">ak_compress_create_hash</a> (<a class="el" href="ak__compress_8h.html#a32cb59334e3643f6ed48c82df737a764">ak_compress</a>, <a class="el" href="ak__hash_8h.html#ae17dd80ea2e9ae45957a003dd56689e5">ak_hash</a>)</td></tr>
+<tr class="memdesc:ad7b9ff92de1624933c6be5b44c5cc777"><td class="mdescLeft">&#160;</td><td class="mdescRight">Инициализация контекста сжимающего отображения, реализуемого при помощи бесключевой функции хеширования.  <a href="#ad7b9ff92de1624933c6be5b44c5cc777">Подробнее...</a><br /></td></tr>
+<tr class="separator:ad7b9ff92de1624933c6be5b44c5cc777"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6206835700149db6f6371fb5b65fe9dc"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ak__compress_8h.html#a6206835700149db6f6371fb5b65fe9dc">ak_compress_create_mac</a> (<a class="el" href="ak__compress_8h.html#a32cb59334e3643f6ed48c82df737a764">ak_compress</a>, <a class="el" href="ak__mac_8h.html#a4e44fe34d25cb4ca9d86a1eaf4387f87">ak_mac</a>)</td></tr>
+<tr class="memdesc:a6206835700149db6f6371fb5b65fe9dc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Инициализация контекста сжимающего отображения, реализуемого при помощи ключевой функции хеширования.  <a href="#a6206835700149db6f6371fb5b65fe9dc">Подробнее...</a><br /></td></tr>
+<tr class="separator:a6206835700149db6f6371fb5b65fe9dc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aac5e65b7920f9cd414cd136c541c4301"><td class="memItemLeft" align="right" valign="top"><a class="el" href="libakrypt_8h.html#a59817f4698b8d80ec2f6ef2af4111190">ak_pointer</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ak__compress_8h.html#aac5e65b7920f9cd414cd136c541c4301">ak_compress_delete</a> (<a class="el" href="libakrypt_8h.html#a59817f4698b8d80ec2f6ef2af4111190">ak_pointer</a>)</td></tr>
+<tr class="memdesc:aac5e65b7920f9cd414cd136c541c4301"><td class="mdescLeft">&#160;</td><td class="mdescRight">Освобождение памяти из под контекста сжимающего отображения.  <a href="#aac5e65b7920f9cd414cd136c541c4301">Подробнее...</a><br /></td></tr>
+<tr class="separator:aac5e65b7920f9cd414cd136c541c4301"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3981229ddb169c8b8493d72d36bbe12e"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ak__compress_8h.html#a3981229ddb169c8b8493d72d36bbe12e">ak_compress_destroy</a> (<a class="el" href="ak__compress_8h.html#a32cb59334e3643f6ed48c82df737a764">ak_compress</a>)</td></tr>
+<tr class="memdesc:a3981229ddb169c8b8493d72d36bbe12e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Уничтожение контекста сжимающего отображения.  <a href="#a3981229ddb169c8b8493d72d36bbe12e">Подробнее...</a><br /></td></tr>
+<tr class="separator:a3981229ddb169c8b8493d72d36bbe12e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1dc99716a32375349b2aef8996d55278"><td class="memItemLeft" align="right" valign="top"><a class="el" href="libakrypt_8h.html#a8618b346405887c26c4cda4b7e19a158">ak_buffer</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ak__compress_8h.html#a1dc99716a32375349b2aef8996d55278">ak_compress_file</a> (<a class="el" href="ak__compress_8h.html#a32cb59334e3643f6ed48c82df737a764">ak_compress</a>, const char *, <a class="el" href="libakrypt_8h.html#a59817f4698b8d80ec2f6ef2af4111190">ak_pointer</a>)</td></tr>
+<tr class="memdesc:a1dc99716a32375349b2aef8996d55278"><td class="mdescLeft">&#160;</td><td class="mdescRight">Применение сжимающего отображения к заданному файлу.  <a href="#a1dc99716a32375349b2aef8996d55278">Подробнее...</a><br /></td></tr>
+<tr class="separator:a1dc99716a32375349b2aef8996d55278"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ace57e3c30adc51c14dbec198aea5dee6"><td class="memItemLeft" align="right" valign="top"><a class="el" href="libakrypt_8h.html#a8618b346405887c26c4cda4b7e19a158">ak_buffer</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ak__compress_8h.html#ace57e3c30adc51c14dbec198aea5dee6">ak_compress_finalize</a> (<a class="el" href="ak__compress_8h.html#a32cb59334e3643f6ed48c82df737a764">ak_compress</a>, const <a class="el" href="libakrypt_8h.html#a59817f4698b8d80ec2f6ef2af4111190">ak_pointer</a>, const size_t, <a class="el" href="libakrypt_8h.html#a59817f4698b8d80ec2f6ef2af4111190">ak_pointer</a>)</td></tr>
+<tr class="memdesc:ace57e3c30adc51c14dbec198aea5dee6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Обновление состояние и вычисление результата применения сжимающего отображения.  <a href="#ace57e3c30adc51c14dbec198aea5dee6">Подробнее...</a><br /></td></tr>
+<tr class="separator:ace57e3c30adc51c14dbec198aea5dee6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad016d1890bc07ce2d1b724abf13dcabc"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ak__compress_8h.html#ad016d1890bc07ce2d1b724abf13dcabc">ak_compress_update</a> (<a class="el" href="ak__compress_8h.html#a32cb59334e3643f6ed48c82df737a764">ak_compress</a>, const <a class="el" href="libakrypt_8h.html#a59817f4698b8d80ec2f6ef2af4111190">ak_pointer</a>, const size_t)</td></tr>
+<tr class="memdesc:ad016d1890bc07ce2d1b724abf13dcabc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Обновление состояния контекста сжимающего отображения.  <a href="#ad016d1890bc07ce2d1b724abf13dcabc">Подробнее...</a><br /></td></tr>
+<tr class="separator:ad016d1890bc07ce2d1b724abf13dcabc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">Типы</h2>
+<a class="anchor" id="a32cb59334e3643f6ed48c82df737a764"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef struct <a class="el" href="structcompress.html">compress</a>* <a class="el" href="ak__compress_8h.html#a32cb59334e3643f6ed48c82df737a764">ak_compress</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Определение контекста сжимающего отображения </p>
+
+<p>См. определение в файле <a class="el" href="ak__compress_8h_source.html">ak_compress.h</a> строка <a class="el" href="ak__compress_8h_source.html#l00059">59</a></p>
+
+</div>
+</div>
+<h2 class="groupheader">Функции</h2>
+<a class="anchor" id="a379d7c3af7e0432cdb666e32815c7fa5"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int ak_compress_clean </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="ak__compress_8h.html#a32cb59334e3643f6ed48c82df737a764">ak_compress</a>&#160;</td>
+          <td class="paramname"><em>comp</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Очистка контекста сжимающего отображения. </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">comp</td><td>указатель на структуру struct compress. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd>В случае успеха возвращается ak_error_ok (ноль). В случае возникновения ошибки возвращается ее код. </dd></dl>
+
+<p>См. определение в файле <a class="el" href="ak__compress_8c_source.html">ak_compress.c</a> строка <a class="el" href="ak__compress_8c_source.html#l00147">147</a></p>
+<div class="fragment"><div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;{</div><div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;  <span class="keywordflow">if</span>( comp == NULL ) <span class="keywordflow">return</span> <a class="code" href="ak__log_8c.html#a80a4822cbd184b3cbcc43096126eb52b">ak_error_message</a>( <a class="code" href="libakrypt_8h.html#ab44706b2e13bc40499b30fb371ad7f9e">ak_error_null_pointer</a>, __func__,</div><div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;                                                 <span class="stringliteral">&quot;using a null pointer to null compress context&quot;</span> );</div><div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;  <span class="keywordflow">if</span>( comp-&gt;<a class="code" href="structcompress.html#a25a4b740eb7a5bf0d591ab6bd709aaed">clean</a> == NULL ) <span class="keywordflow">return</span> <a class="code" href="ak__log_8c.html#a80a4822cbd184b3cbcc43096126eb52b">ak_error_message</a>( <a class="code" href="libakrypt_8h.html#a327220ab8ab5f10fcc2f1b52d4cf8c52">ak_error_undefined_function</a>, __func__ ,</div><div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;                                                             <span class="stringliteral">&quot;using an undefined clean function&quot;</span> );</div><div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;  <span class="keywordflow">if</span>( comp-&gt;<a class="code" href="structcompress.html#ad0778c378c25c283f941383eea497d6f">data</a> != NULL ) memset( comp-&gt;<a class="code" href="structcompress.html#ad0778c378c25c283f941383eea497d6f">data</a>, 0, comp-&gt;<a class="code" href="structcompress.html#a2cbae7e4bd552155acfe6bd81683e50f">bsize</a> );</div><div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;  comp-&gt;<a class="code" href="structcompress.html#ae809d5359ac030c60a30a8f0b2294b82">length</a> = 0;</div><div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;  comp-&gt;<a class="code" href="structcompress.html#a25a4b740eb7a5bf0d591ab6bd709aaed">clean</a>( comp-&gt;<a class="code" href="structcompress.html#a38b0408fc77ca676c794ef9ef33622fa">ctx</a> );</div><div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160; <span class="keywordflow">return</span> <a class="code" href="libakrypt_8h.html#aa6db0eccf8222376f61f2f033a1bbe4c">ak_error_ok</a>;</div><div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;}</div><div class="ttc" id="structcompress_html_ad0778c378c25c283f941383eea497d6f"><div class="ttname"><a href="structcompress.html#ad0778c378c25c283f941383eea497d6f">compress::data</a></div><div class="ttdeci">ak_uint8 * data</div><div class="ttdoc">массив, предназначенный для временного хранения обрабатываемых данных </div><div class="ttdef"><b>Definition:</b> <a href="ak__compress_8h_source.html#l00040">ak_compress.h:40</a></div></div>
+<div class="ttc" id="structcompress_html_a38b0408fc77ca676c794ef9ef33622fa"><div class="ttname"><a href="structcompress.html#a38b0408fc77ca676c794ef9ef33622fa">compress::ctx</a></div><div class="ttdeci">ak_pointer ctx</div><div class="ttdoc">указатель на контекст сжимающего преобразования </div><div class="ttdef"><b>Definition:</b> <a href="ak__compress_8h_source.html#l00048">ak_compress.h:48</a></div></div>
+<div class="ttc" id="structcompress_html_ae809d5359ac030c60a30a8f0b2294b82"><div class="ttname"><a href="structcompress.html#ae809d5359ac030c60a30a8f0b2294b82">compress::length</a></div><div class="ttdeci">size_t length</div><div class="ttdoc">количество элементов, хранящихся в массиве data. </div><div class="ttdef"><b>Definition:</b> <a href="ak__compress_8h_source.html#l00046">ak_compress.h:46</a></div></div>
+<div class="ttc" id="libakrypt_8h_html_ab44706b2e13bc40499b30fb371ad7f9e"><div class="ttname"><a href="libakrypt_8h.html#ab44706b2e13bc40499b30fb371ad7f9e">ak_error_null_pointer</a></div><div class="ttdeci">#define ak_error_null_pointer</div><div class="ttdoc">Ошибка, возникающая при доступе или передаче в качестве аргумента функции null указателя. </div><div class="ttdef"><b>Definition:</b> <a href="libakrypt_8h_source.html#l00149">libakrypt.h:149</a></div></div>
+<div class="ttc" id="structcompress_html_a2cbae7e4bd552155acfe6bd81683e50f"><div class="ttname"><a href="structcompress.html#a2cbae7e4bd552155acfe6bd81683e50f">compress::bsize</a></div><div class="ttdeci">size_t bsize</div><div class="ttdoc">длина блока обрабатываемых данных </div><div class="ttdef"><b>Definition:</b> <a href="ak__compress_8h_source.html#l00042">ak_compress.h:42</a></div></div>
+<div class="ttc" id="libakrypt_8h_html_aa6db0eccf8222376f61f2f033a1bbe4c"><div class="ttname"><a href="libakrypt_8h.html#aa6db0eccf8222376f61f2f033a1bbe4c">ak_error_ok</a></div><div class="ttdeci">#define ak_error_ok</div><div class="ttdoc">Результат, говорящий об отсутствии ошибки. </div><div class="ttdef"><b>Definition:</b> <a href="libakrypt_8h_source.html#l00145">libakrypt.h:145</a></div></div>
+<div class="ttc" id="ak__log_8c_html_a80a4822cbd184b3cbcc43096126eb52b"><div class="ttname"><a href="ak__log_8c.html#a80a4822cbd184b3cbcc43096126eb52b">ak_error_message</a></div><div class="ttdeci">int ak_error_message(const int code, const char *function, const char *message)</div><div class="ttdoc">Вывод сообщений о возникшей в процессе выполнения ошибке. </div><div class="ttdef"><b>Definition:</b> <a href="ak__log_8c_source.html#l00186">ak_log.c:186</a></div></div>
+<div class="ttc" id="structcompress_html_a25a4b740eb7a5bf0d591ab6bd709aaed"><div class="ttname"><a href="structcompress.html#a25a4b740eb7a5bf0d591ab6bd709aaed">compress::clean</a></div><div class="ttdeci">ak_function_mac_clean * clean</div><div class="ttdoc">функция очистки контекста сжимающего преобразования </div><div class="ttdef"><b>Definition:</b> <a href="ak__compress_8h_source.html#l00050">ak_compress.h:50</a></div></div>
+<div class="ttc" id="libakrypt_8h_html_a327220ab8ab5f10fcc2f1b52d4cf8c52"><div class="ttname"><a href="libakrypt_8h.html#a327220ab8ab5f10fcc2f1b52d4cf8c52">ak_error_undefined_function</a></div><div class="ttdeci">#define ak_error_undefined_function</div><div class="ttdoc">Использование неопределенного указателя на функцию (вызов null указателя). </div><div class="ttdef"><b>Definition:</b> <a href="libakrypt_8h_source.html#l00157">libakrypt.h:157</a></div></div>
+</div><!-- fragment -->
+<p><div class="dynheader">
+Граф вызовов:</div>
+<div class="dyncontent">
+<div class="center"><img src="ak__compress_8h_a379d7c3af7e0432cdb666e32815c7fa5_cgraph.png" border="0" usemap="#ak__compress_8h_a379d7c3af7e0432cdb666e32815c7fa5_cgraph" alt=""/></div>
+<!-- MAP 2 -->
+</div>
+</p>
+
+<p><div class="dynheader">
+Граф вызова функции:</div>
+<div class="dyncontent">
+<div class="center"><img src="ak__compress_8h_a379d7c3af7e0432cdb666e32815c7fa5_icgraph.png" border="0" usemap="#ak__compress_8h_a379d7c3af7e0432cdb666e32815c7fa5_icgraph" alt=""/></div>
+<!-- MAP 3 -->
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="ad7b9ff92de1624933c6be5b44c5cc777"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int ak_compress_create_hash </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="ak__compress_8h.html#a32cb59334e3643f6ed48c82df737a764">ak_compress</a>&#160;</td>
+          <td class="paramname"><em>comp</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="ak__hash_8h.html#ae17dd80ea2e9ae45957a003dd56689e5">ak_hash</a>&#160;</td>
+          <td class="paramname"><em>hctx</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Инициализация контекста сжимающего отображения, реализуемого при помощи бесключевой функции хеширования. </p>
+<p>Функция устанавливает значение полей структуры struct compress в значения, определяемые заданным контекстом функции хеширования.</p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">comp</td><td>указатель на структуру struct compress </td></tr>
+    <tr><td class="paramname">hctx</td><td>контекст бесключевой функции хеширования </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd>В случае успеха возвращается ak_error_ok (ноль). В случае возникновения ошибки возвращается ее код. </dd></dl>
+
+<p>См. определение в файле <a class="el" href="ak__compress_8c_source.html">ak_compress.c</a> строка <a class="el" href="ak__compress_8c_source.html#l00055">55</a></p>
+<div class="fragment"><div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;{</div><div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160; <span class="comment">/* вначале, необходимые проверки */</span></div><div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;  <span class="keywordflow">if</span>( comp == NULL ) <span class="keywordflow">return</span> <a class="code" href="ak__log_8c.html#a80a4822cbd184b3cbcc43096126eb52b">ak_error_message</a>( <a class="code" href="libakrypt_8h.html#ab44706b2e13bc40499b30fb371ad7f9e">ak_error_null_pointer</a>, __func__ ,</div><div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;                                                       <span class="stringliteral">&quot;using null pointer to compress context&quot;</span> );</div><div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;  <span class="keywordflow">if</span>( hctx == NULL ) <span class="keywordflow">return</span> <a class="code" href="ak__log_8c.html#a80a4822cbd184b3cbcc43096126eb52b">ak_error_message</a>( <a class="code" href="libakrypt_8h.html#ab44706b2e13bc40499b30fb371ad7f9e">ak_error_null_pointer</a>, __func__ ,</div><div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;                                                           <span class="stringliteral">&quot;using null pointer to hash context&quot;</span> );</div><div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;  <span class="keywordflow">if</span>(( hctx-&gt;<a class="code" href="structhash.html#abef332a620e87fc9a1f0c11afe144112">update</a> == NULL ) || ( hctx-&gt;<a class="code" href="structhash.html#a1dfe3612fc851f46bdd793b551ce7155">finalize</a> == NULL ) || ( hctx-&gt;<a class="code" href="structhash.html#a25a4b740eb7a5bf0d591ab6bd709aaed">clean</a> == NULL ))</div><div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="ak__log_8c.html#a80a4822cbd184b3cbcc43096126eb52b">ak_error_message</a>( <a class="code" href="libakrypt_8h.html#a327220ab8ab5f10fcc2f1b52d4cf8c52">ak_error_undefined_function</a>, __func__ ,</div><div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;                                                           <span class="stringliteral">&quot;using non initialized hash context&quot;</span> );</div><div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160; <span class="comment">/* теперь собственно инициализация */</span></div><div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;  <span class="keywordflow">if</span>(( comp-&gt;<a class="code" href="structcompress.html#ad0778c378c25c283f941383eea497d6f">data</a> = (<a class="code" href="libakrypt_8h.html#abb8a94ec74dcd719f5e85ecbae89cb68">ak_uint8</a> *) malloc( comp-&gt;<a class="code" href="structcompress.html#a2cbae7e4bd552155acfe6bd81683e50f">bsize</a> = hctx-&gt;<a class="code" href="structhash.html#a2cbae7e4bd552155acfe6bd81683e50f">bsize</a> )) == NULL ) {</div><div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    <a class="code" href="ak__log_8c.html#a80a4822cbd184b3cbcc43096126eb52b">ak_error_message</a>( <a class="code" href="libakrypt_8h.html#a3e8d10d4f38d2d8032c60cdca1f59db2">ak_error_out_of_memory</a>, __func__ ,</div><div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;                                     <span class="stringliteral">&quot;wrong memory alllocation for a new temporary data buffer&quot;</span> );</div><div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;  } <span class="keywordflow">else</span> memset( comp-&gt;<a class="code" href="structcompress.html#ad0778c378c25c283f941383eea497d6f">data</a>, 0, hctx-&gt;<a class="code" href="structhash.html#a2cbae7e4bd552155acfe6bd81683e50f">bsize</a> );</div><div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;  comp-&gt;<a class="code" href="structcompress.html#ae809d5359ac030c60a30a8f0b2294b82">length</a> = 0;</div><div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;</div><div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160; <span class="comment">/* устанавливаем значения и полей и методы из контекста функции хеширования */</span></div><div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;  comp-&gt;<a class="code" href="structcompress.html#a38b0408fc77ca676c794ef9ef33622fa">ctx</a> = hctx;</div><div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;  comp-&gt;<a class="code" href="structcompress.html#a60efd2ffbea463b6be440d330d6c0b7f">hsize</a> = hctx-&gt;<a class="code" href="structhash.html#a60efd2ffbea463b6be440d330d6c0b7f">hsize</a>;</div><div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;  comp-&gt;<a class="code" href="structcompress.html#a25a4b740eb7a5bf0d591ab6bd709aaed">clean</a> = hctx-&gt;<a class="code" href="structhash.html#a25a4b740eb7a5bf0d591ab6bd709aaed">clean</a>;</div><div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;  comp-&gt;<a class="code" href="structcompress.html#abef332a620e87fc9a1f0c11afe144112">update</a> = hctx-&gt;<a class="code" href="structhash.html#abef332a620e87fc9a1f0c11afe144112">update</a>;</div><div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;  comp-&gt;<a class="code" href="structcompress.html#a1dfe3612fc851f46bdd793b551ce7155">finalize</a> = hctx-&gt;<a class="code" href="structhash.html#a1dfe3612fc851f46bdd793b551ce7155">finalize</a>;</div><div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;</div><div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160; <span class="keywordflow">return</span> <a class="code" href="libakrypt_8h.html#aa6db0eccf8222376f61f2f033a1bbe4c">ak_error_ok</a>;</div><div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;}</div><div class="ttc" id="structcompress_html_abef332a620e87fc9a1f0c11afe144112"><div class="ttname"><a href="structcompress.html#abef332a620e87fc9a1f0c11afe144112">compress::update</a></div><div class="ttdeci">ak_function_mac_update * update</div><div class="ttdoc">функция обработки данных, длина которых кратна длине обрабатываемого блока </div><div class="ttdef"><b>Definition:</b> <a href="ak__compress_8h_source.html#l00052">ak_compress.h:52</a></div></div>
+<div class="ttc" id="structhash_html_a60efd2ffbea463b6be440d330d6c0b7f"><div class="ttname"><a href="structhash.html#a60efd2ffbea463b6be440d330d6c0b7f">hash::hsize</a></div><div class="ttdeci">size_t hsize</div><div class="ttdoc">размер выходного блока (хеш-кода) </div><div class="ttdef"><b>Definition:</b> <a href="ak__hash_8h_source.html#l00086">ak_hash.h:86</a></div></div>
+<div class="ttc" id="structcompress_html_ad0778c378c25c283f941383eea497d6f"><div class="ttname"><a href="structcompress.html#ad0778c378c25c283f941383eea497d6f">compress::data</a></div><div class="ttdeci">ak_uint8 * data</div><div class="ttdoc">массив, предназначенный для временного хранения обрабатываемых данных </div><div class="ttdef"><b>Definition:</b> <a href="ak__compress_8h_source.html#l00040">ak_compress.h:40</a></div></div>
+<div class="ttc" id="structhash_html_a25a4b740eb7a5bf0d591ab6bd709aaed"><div class="ttname"><a href="structhash.html#a25a4b740eb7a5bf0d591ab6bd709aaed">hash::clean</a></div><div class="ttdeci">ak_function_mac_clean * clean</div><div class="ttdoc">функция очистки контекста </div><div class="ttdef"><b>Definition:</b> <a href="ak__hash_8h_source.html#l00092">ak_hash.h:92</a></div></div>
+<div class="ttc" id="structcompress_html_a38b0408fc77ca676c794ef9ef33622fa"><div class="ttname"><a href="structcompress.html#a38b0408fc77ca676c794ef9ef33622fa">compress::ctx</a></div><div class="ttdeci">ak_pointer ctx</div><div class="ttdoc">указатель на контекст сжимающего преобразования </div><div class="ttdef"><b>Definition:</b> <a href="ak__compress_8h_source.html#l00048">ak_compress.h:48</a></div></div>
+<div class="ttc" id="libakrypt_8h_html_abb8a94ec74dcd719f5e85ecbae89cb68"><div class="ttname"><a href="libakrypt_8h.html#abb8a94ec74dcd719f5e85ecbae89cb68">ak_uint8</a></div><div class="ttdeci">unsigned char ak_uint8</div><div class="ttdef"><b>Definition:</b> <a href="libakrypt_8h_source.html#l00113">libakrypt.h:113</a></div></div>
+<div class="ttc" id="structcompress_html_ae809d5359ac030c60a30a8f0b2294b82"><div class="ttname"><a href="structcompress.html#ae809d5359ac030c60a30a8f0b2294b82">compress::length</a></div><div class="ttdeci">size_t length</div><div class="ttdoc">количество элементов, хранящихся в массиве data. </div><div class="ttdef"><b>Definition:</b> <a href="ak__compress_8h_source.html#l00046">ak_compress.h:46</a></div></div>
+<div class="ttc" id="structhash_html_a1dfe3612fc851f46bdd793b551ce7155"><div class="ttname"><a href="structhash.html#a1dfe3612fc851f46bdd793b551ce7155">hash::finalize</a></div><div class="ttdeci">ak_function_mac_finalize * finalize</div><div class="ttdoc">функция завершения вычислений и получения конечного результата </div><div class="ttdef"><b>Definition:</b> <a href="ak__hash_8h_source.html#l00096">ak_hash.h:96</a></div></div>
+<div class="ttc" id="libakrypt_8h_html_ab44706b2e13bc40499b30fb371ad7f9e"><div class="ttname"><a href="libakrypt_8h.html#ab44706b2e13bc40499b30fb371ad7f9e">ak_error_null_pointer</a></div><div class="ttdeci">#define ak_error_null_pointer</div><div class="ttdoc">Ошибка, возникающая при доступе или передаче в качестве аргумента функции null указателя. </div><div class="ttdef"><b>Definition:</b> <a href="libakrypt_8h_source.html#l00149">libakrypt.h:149</a></div></div>
+<div class="ttc" id="structcompress_html_a2cbae7e4bd552155acfe6bd81683e50f"><div class="ttname"><a href="structcompress.html#a2cbae7e4bd552155acfe6bd81683e50f">compress::bsize</a></div><div class="ttdeci">size_t bsize</div><div class="ttdoc">длина блока обрабатываемых данных </div><div class="ttdef"><b>Definition:</b> <a href="ak__compress_8h_source.html#l00042">ak_compress.h:42</a></div></div>
+<div class="ttc" id="libakrypt_8h_html_aa6db0eccf8222376f61f2f033a1bbe4c"><div class="ttname"><a href="libakrypt_8h.html#aa6db0eccf8222376f61f2f033a1bbe4c">ak_error_ok</a></div><div class="ttdeci">#define ak_error_ok</div><div class="ttdoc">Результат, говорящий об отсутствии ошибки. </div><div class="ttdef"><b>Definition:</b> <a href="libakrypt_8h_source.html#l00145">libakrypt.h:145</a></div></div>
+<div class="ttc" id="structhash_html_a2cbae7e4bd552155acfe6bd81683e50f"><div class="ttname"><a href="structhash.html#a2cbae7e4bd552155acfe6bd81683e50f">hash::bsize</a></div><div class="ttdeci">size_t bsize</div><div class="ttdoc">размер обрабатываемого блока входных данных </div><div class="ttdef"><b>Definition:</b> <a href="ak__hash_8h_source.html#l00084">ak_hash.h:84</a></div></div>
+<div class="ttc" id="ak__log_8c_html_a80a4822cbd184b3cbcc43096126eb52b"><div class="ttname"><a href="ak__log_8c.html#a80a4822cbd184b3cbcc43096126eb52b">ak_error_message</a></div><div class="ttdeci">int ak_error_message(const int code, const char *function, const char *message)</div><div class="ttdoc">Вывод сообщений о возникшей в процессе выполнения ошибке. </div><div class="ttdef"><b>Definition:</b> <a href="ak__log_8c_source.html#l00186">ak_log.c:186</a></div></div>
+<div class="ttc" id="structhash_html_abef332a620e87fc9a1f0c11afe144112"><div class="ttname"><a href="structhash.html#abef332a620e87fc9a1f0c11afe144112">hash::update</a></div><div class="ttdeci">ak_function_mac_update * update</div><div class="ttdoc">функция обновления состояния контекста </div><div class="ttdef"><b>Definition:</b> <a href="ak__hash_8h_source.html#l00094">ak_hash.h:94</a></div></div>
+<div class="ttc" id="libakrypt_8h_html_a3e8d10d4f38d2d8032c60cdca1f59db2"><div class="ttname"><a href="libakrypt_8h.html#a3e8d10d4f38d2d8032c60cdca1f59db2">ak_error_out_of_memory</a></div><div class="ttdeci">#define ak_error_out_of_memory</div><div class="ttdoc">Ошибка выделения оперативной памяти. </div><div class="ttdef"><b>Definition:</b> <a href="libakrypt_8h_source.html#l00147">libakrypt.h:147</a></div></div>
+<div class="ttc" id="structcompress_html_a1dfe3612fc851f46bdd793b551ce7155"><div class="ttname"><a href="structcompress.html#a1dfe3612fc851f46bdd793b551ce7155">compress::finalize</a></div><div class="ttdeci">ak_function_mac_finalize * finalize</div><div class="ttdoc">функция завершения сжимающего преобразования </div><div class="ttdef"><b>Definition:</b> <a href="ak__compress_8h_source.html#l00054">ak_compress.h:54</a></div></div>
+<div class="ttc" id="structcompress_html_a25a4b740eb7a5bf0d591ab6bd709aaed"><div class="ttname"><a href="structcompress.html#a25a4b740eb7a5bf0d591ab6bd709aaed">compress::clean</a></div><div class="ttdeci">ak_function_mac_clean * clean</div><div class="ttdoc">функция очистки контекста сжимающего преобразования </div><div class="ttdef"><b>Definition:</b> <a href="ak__compress_8h_source.html#l00050">ak_compress.h:50</a></div></div>
+<div class="ttc" id="libakrypt_8h_html_a327220ab8ab5f10fcc2f1b52d4cf8c52"><div class="ttname"><a href="libakrypt_8h.html#a327220ab8ab5f10fcc2f1b52d4cf8c52">ak_error_undefined_function</a></div><div class="ttdeci">#define ak_error_undefined_function</div><div class="ttdoc">Использование неопределенного указателя на функцию (вызов null указателя). </div><div class="ttdef"><b>Definition:</b> <a href="libakrypt_8h_source.html#l00157">libakrypt.h:157</a></div></div>
+<div class="ttc" id="structcompress_html_a60efd2ffbea463b6be440d330d6c0b7f"><div class="ttname"><a href="structcompress.html#a60efd2ffbea463b6be440d330d6c0b7f">compress::hsize</a></div><div class="ttdeci">size_t hsize</div><div class="ttdoc">длина хеш-кода (результата применения сжимающего отображения) </div><div class="ttdef"><b>Definition:</b> <a href="ak__compress_8h_source.html#l00044">ak_compress.h:44</a></div></div>
+</div><!-- fragment -->
+<p><div class="dynheader">
+Граф вызовов:</div>
+<div class="dyncontent">
+<div class="center"><img src="ak__compress_8h_ad7b9ff92de1624933c6be5b44c5cc777_cgraph.png" border="0" usemap="#ak__compress_8h_ad7b9ff92de1624933c6be5b44c5cc777_cgraph" alt=""/></div>
+<!-- MAP 4 -->
+</div>
+</p>
+
+<p><div class="dynheader">
+Граф вызова функции:</div>
+<div class="dyncontent">
+<div class="center"><img src="ak__compress_8h_ad7b9ff92de1624933c6be5b44c5cc777_icgraph.png" border="0" usemap="#ak__compress_8h_ad7b9ff92de1624933c6be5b44c5cc777_icgraph" alt=""/></div>
+<!-- MAP 5 -->
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a6206835700149db6f6371fb5b65fe9dc"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int ak_compress_create_mac </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="ak__compress_8h.html#a32cb59334e3643f6ed48c82df737a764">ak_compress</a>&#160;</td>
+          <td class="paramname"><em>comp</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="ak__mac_8h.html#a4e44fe34d25cb4ca9d86a1eaf4387f87">ak_mac</a>&#160;</td>
+          <td class="paramname"><em>mac</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Инициализация контекста сжимающего отображения, реализуемого при помощи ключевой функции хеширования. </p>
+<p>Функция устанавливает значение полей структуры struct compress в значения, определяемые заданным контекстом ключевой функции хеширования.</p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">comp</td><td>указатель на структуру struct compress </td></tr>
+    <tr><td class="paramname">mac</td><td>контекст ключевой функции хеширования </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd>В случае успеха возвращается ak_error_ok (ноль). В случае возникновения ошибки возвращается ее код. </dd></dl>
+
+<p>См. определение в файле <a class="el" href="ak__compress_8c_source.html">ak_compress.c</a> строка <a class="el" href="ak__compress_8c_source.html#l00091">91</a></p>
+<div class="fragment"><div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;{</div><div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160; <span class="comment">/* вначале, необходимые проверки */</span></div><div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;  <span class="keywordflow">if</span>( comp == NULL ) <span class="keywordflow">return</span> <a class="code" href="ak__log_8c.html#a80a4822cbd184b3cbcc43096126eb52b">ak_error_message</a>( <a class="code" href="libakrypt_8h.html#ab44706b2e13bc40499b30fb371ad7f9e">ak_error_null_pointer</a>, __func__ ,</div><div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;                                                       <span class="stringliteral">&quot;using null pointer to compress context&quot;</span> );</div><div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;  <span class="keywordflow">if</span>( mac == NULL ) <span class="keywordflow">return</span> <a class="code" href="ak__log_8c.html#a80a4822cbd184b3cbcc43096126eb52b">ak_error_message</a>( <a class="code" href="libakrypt_8h.html#ab44706b2e13bc40499b30fb371ad7f9e">ak_error_null_pointer</a>, __func__ ,</div><div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;                                                            <span class="stringliteral">&quot;using null pointer to mac context&quot;</span> );</div><div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;  <span class="keywordflow">if</span>(( mac-&gt;<a class="code" href="structmac.html#abef332a620e87fc9a1f0c11afe144112">update</a> == NULL ) || ( mac-&gt;<a class="code" href="structmac.html#a1dfe3612fc851f46bdd793b551ce7155">finalize</a> == NULL ) || ( mac-&gt;<a class="code" href="structmac.html#a25a4b740eb7a5bf0d591ab6bd709aaed">clean</a> == NULL ))</div><div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="ak__log_8c.html#a80a4822cbd184b3cbcc43096126eb52b">ak_error_message</a>( <a class="code" href="libakrypt_8h.html#a327220ab8ab5f10fcc2f1b52d4cf8c52">ak_error_undefined_function</a>, __func__ ,</div><div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;                                                            <span class="stringliteral">&quot;using non initialized mac context&quot;</span> );</div><div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160; <span class="comment">/* теперь собственно инициализация */</span></div><div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;  <span class="keywordflow">if</span>(( comp-&gt;<a class="code" href="structcompress.html#ad0778c378c25c283f941383eea497d6f">data</a> = (<a class="code" href="libakrypt_8h.html#abb8a94ec74dcd719f5e85ecbae89cb68">ak_uint8</a> *) malloc( comp-&gt;<a class="code" href="structcompress.html#a2cbae7e4bd552155acfe6bd81683e50f">bsize</a> = mac-&gt;<a class="code" href="structmac.html#a2cbae7e4bd552155acfe6bd81683e50f">bsize</a> )) == NULL ) {</div><div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;    <a class="code" href="ak__log_8c.html#a80a4822cbd184b3cbcc43096126eb52b">ak_error_message</a>( <a class="code" href="libakrypt_8h.html#a3e8d10d4f38d2d8032c60cdca1f59db2">ak_error_out_of_memory</a>, __func__ ,</div><div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;                                     <span class="stringliteral">&quot;wrong memory alllocation for a new temporary data buffer&quot;</span> );</div><div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;  } <span class="keywordflow">else</span> memset( comp-&gt;<a class="code" href="structcompress.html#ad0778c378c25c283f941383eea497d6f">data</a>, 0, mac-&gt;<a class="code" href="structmac.html#a2cbae7e4bd552155acfe6bd81683e50f">bsize</a> );</div><div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;  comp-&gt;<a class="code" href="structcompress.html#ae809d5359ac030c60a30a8f0b2294b82">length</a> = 0;</div><div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;</div><div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160; <span class="comment">/* устанавливаем значения и полей и методы из контекста функции хеширования */</span></div><div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;  comp-&gt;<a class="code" href="structcompress.html#a38b0408fc77ca676c794ef9ef33622fa">ctx</a> = ( <a class="code" href="libakrypt_8h.html#a59817f4698b8d80ec2f6ef2af4111190">ak_pointer</a> )&amp;mac-&gt;<a class="code" href="structmac.html#afd45fa8f97df46b6542b7cc2ee1baee7">choice</a>;</div><div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;  comp-&gt;<a class="code" href="structcompress.html#a60efd2ffbea463b6be440d330d6c0b7f">hsize</a> = mac-&gt;<a class="code" href="structmac.html#a60efd2ffbea463b6be440d330d6c0b7f">hsize</a>;</div><div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;  comp-&gt;<a class="code" href="structcompress.html#a25a4b740eb7a5bf0d591ab6bd709aaed">clean</a> = mac-&gt;<a class="code" href="structmac.html#a25a4b740eb7a5bf0d591ab6bd709aaed">clean</a>;</div><div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;  comp-&gt;<a class="code" href="structcompress.html#abef332a620e87fc9a1f0c11afe144112">update</a> = mac-&gt;<a class="code" href="structmac.html#abef332a620e87fc9a1f0c11afe144112">update</a>;</div><div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;  comp-&gt;<a class="code" href="structcompress.html#a1dfe3612fc851f46bdd793b551ce7155">finalize</a> = mac-&gt;<a class="code" href="structmac.html#a1dfe3612fc851f46bdd793b551ce7155">finalize</a>;</div><div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;</div><div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160; <span class="keywordflow">return</span> <a class="code" href="libakrypt_8h.html#aa6db0eccf8222376f61f2f033a1bbe4c">ak_error_ok</a>;</div><div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;}</div><div class="ttc" id="structcompress_html_abef332a620e87fc9a1f0c11afe144112"><div class="ttname"><a href="structcompress.html#abef332a620e87fc9a1f0c11afe144112">compress::update</a></div><div class="ttdeci">ak_function_mac_update * update</div><div class="ttdoc">функция обработки данных, длина которых кратна длине обрабатываемого блока </div><div class="ttdef"><b>Definition:</b> <a href="ak__compress_8h_source.html#l00052">ak_compress.h:52</a></div></div>
+<div class="ttc" id="structcompress_html_ad0778c378c25c283f941383eea497d6f"><div class="ttname"><a href="structcompress.html#ad0778c378c25c283f941383eea497d6f">compress::data</a></div><div class="ttdeci">ak_uint8 * data</div><div class="ttdoc">массив, предназначенный для временного хранения обрабатываемых данных </div><div class="ttdef"><b>Definition:</b> <a href="ak__compress_8h_source.html#l00040">ak_compress.h:40</a></div></div>
+<div class="ttc" id="structmac_html_a60efd2ffbea463b6be440d330d6c0b7f"><div class="ttname"><a href="structmac.html#a60efd2ffbea463b6be440d330d6c0b7f">mac::hsize</a></div><div class="ttdeci">size_t hsize</div><div class="ttdoc">длина имитовставки (в байтах) </div><div class="ttdef"><b>Definition:</b> <a href="ak__mac_8h_source.html#l00122">ak_mac.h:122</a></div></div>
+<div class="ttc" id="structmac_html_a2cbae7e4bd552155acfe6bd81683e50f"><div class="ttname"><a href="structmac.html#a2cbae7e4bd552155acfe6bd81683e50f">mac::bsize</a></div><div class="ttdeci">size_t bsize</div><div class="ttdoc">длина блока обрабатываемых данных </div><div class="ttdef"><b>Definition:</b> <a href="ak__mac_8h_source.html#l00120">ak_mac.h:120</a></div></div>
+<div class="ttc" id="structcompress_html_a38b0408fc77ca676c794ef9ef33622fa"><div class="ttname"><a href="structcompress.html#a38b0408fc77ca676c794ef9ef33622fa">compress::ctx</a></div><div class="ttdeci">ak_pointer ctx</div><div class="ttdoc">указатель на контекст сжимающего преобразования </div><div class="ttdef"><b>Definition:</b> <a href="ak__compress_8h_source.html#l00048">ak_compress.h:48</a></div></div>
+<div class="ttc" id="libakrypt_8h_html_abb8a94ec74dcd719f5e85ecbae89cb68"><div class="ttname"><a href="libakrypt_8h.html#abb8a94ec74dcd719f5e85ecbae89cb68">ak_uint8</a></div><div class="ttdeci">unsigned char ak_uint8</div><div class="ttdef"><b>Definition:</b> <a href="libakrypt_8h_source.html#l00113">libakrypt.h:113</a></div></div>
+<div class="ttc" id="structcompress_html_ae809d5359ac030c60a30a8f0b2294b82"><div class="ttname"><a href="structcompress.html#ae809d5359ac030c60a30a8f0b2294b82">compress::length</a></div><div class="ttdeci">size_t length</div><div class="ttdoc">количество элементов, хранящихся в массиве data. </div><div class="ttdef"><b>Definition:</b> <a href="ak__compress_8h_source.html#l00046">ak_compress.h:46</a></div></div>
+<div class="ttc" id="libakrypt_8h_html_ab44706b2e13bc40499b30fb371ad7f9e"><div class="ttname"><a href="libakrypt_8h.html#ab44706b2e13bc40499b30fb371ad7f9e">ak_error_null_pointer</a></div><div class="ttdeci">#define ak_error_null_pointer</div><div class="ttdoc">Ошибка, возникающая при доступе или передаче в качестве аргумента функции null указателя. </div><div class="ttdef"><b>Definition:</b> <a href="libakrypt_8h_source.html#l00149">libakrypt.h:149</a></div></div>
+<div class="ttc" id="structcompress_html_a2cbae7e4bd552155acfe6bd81683e50f"><div class="ttname"><a href="structcompress.html#a2cbae7e4bd552155acfe6bd81683e50f">compress::bsize</a></div><div class="ttdeci">size_t bsize</div><div class="ttdoc">длина блока обрабатываемых данных </div><div class="ttdef"><b>Definition:</b> <a href="ak__compress_8h_source.html#l00042">ak_compress.h:42</a></div></div>
+<div class="ttc" id="libakrypt_8h_html_aa6db0eccf8222376f61f2f033a1bbe4c"><div class="ttname"><a href="libakrypt_8h.html#aa6db0eccf8222376f61f2f033a1bbe4c">ak_error_ok</a></div><div class="ttdeci">#define ak_error_ok</div><div class="ttdoc">Результат, говорящий об отсутствии ошибки. </div><div class="ttdef"><b>Definition:</b> <a href="libakrypt_8h_source.html#l00145">libakrypt.h:145</a></div></div>
+<div class="ttc" id="structmac_html_a1dfe3612fc851f46bdd793b551ce7155"><div class="ttname"><a href="structmac.html#a1dfe3612fc851f46bdd793b551ce7155">mac::finalize</a></div><div class="ttdeci">ak_function_mac_finalize * finalize</div><div class="ttdoc">функция завершения вычислений и получения конечного результата </div><div class="ttdef"><b>Definition:</b> <a href="ak__mac_8h_source.html#l00128">ak_mac.h:128</a></div></div>
+<div class="ttc" id="structmac_html_afd45fa8f97df46b6542b7cc2ee1baee7"><div class="ttname"><a href="structmac.html#afd45fa8f97df46b6542b7cc2ee1baee7">mac::choice</a></div><div class="ttdeci">union mac::@0 choice</div><div class="ttdoc">контекст алгоритма </div></div>
+<div class="ttc" id="ak__log_8c_html_a80a4822cbd184b3cbcc43096126eb52b"><div class="ttname"><a href="ak__log_8c.html#a80a4822cbd184b3cbcc43096126eb52b">ak_error_message</a></div><div class="ttdeci">int ak_error_message(const int code, const char *function, const char *message)</div><div class="ttdoc">Вывод сообщений о возникшей в процессе выполнения ошибке. </div><div class="ttdef"><b>Definition:</b> <a href="ak__log_8c_source.html#l00186">ak_log.c:186</a></div></div>
+<div class="ttc" id="structmac_html_a25a4b740eb7a5bf0d591ab6bd709aaed"><div class="ttname"><a href="structmac.html#a25a4b740eb7a5bf0d591ab6bd709aaed">mac::clean</a></div><div class="ttdeci">ak_function_mac_clean * clean</div><div class="ttdoc">функция очистки контекста </div><div class="ttdef"><b>Definition:</b> <a href="ak__mac_8h_source.html#l00124">ak_mac.h:124</a></div></div>
+<div class="ttc" id="libakrypt_8h_html_a3e8d10d4f38d2d8032c60cdca1f59db2"><div class="ttname"><a href="libakrypt_8h.html#a3e8d10d4f38d2d8032c60cdca1f59db2">ak_error_out_of_memory</a></div><div class="ttdeci">#define ak_error_out_of_memory</div><div class="ttdoc">Ошибка выделения оперативной памяти. </div><div class="ttdef"><b>Definition:</b> <a href="libakrypt_8h_source.html#l00147">libakrypt.h:147</a></div></div>
+<div class="ttc" id="structcompress_html_a1dfe3612fc851f46bdd793b551ce7155"><div class="ttname"><a href="structcompress.html#a1dfe3612fc851f46bdd793b551ce7155">compress::finalize</a></div><div class="ttdeci">ak_function_mac_finalize * finalize</div><div class="ttdoc">функция завершения сжимающего преобразования </div><div class="ttdef"><b>Definition:</b> <a href="ak__compress_8h_source.html#l00054">ak_compress.h:54</a></div></div>
+<div class="ttc" id="structcompress_html_a25a4b740eb7a5bf0d591ab6bd709aaed"><div class="ttname"><a href="structcompress.html#a25a4b740eb7a5bf0d591ab6bd709aaed">compress::clean</a></div><div class="ttdeci">ak_function_mac_clean * clean</div><div class="ttdoc">функция очистки контекста сжимающего преобразования </div><div class="ttdef"><b>Definition:</b> <a href="ak__compress_8h_source.html#l00050">ak_compress.h:50</a></div></div>
+<div class="ttc" id="libakrypt_8h_html_a327220ab8ab5f10fcc2f1b52d4cf8c52"><div class="ttname"><a href="libakrypt_8h.html#a327220ab8ab5f10fcc2f1b52d4cf8c52">ak_error_undefined_function</a></div><div class="ttdeci">#define ak_error_undefined_function</div><div class="ttdoc">Использование неопределенного указателя на функцию (вызов null указателя). </div><div class="ttdef"><b>Definition:</b> <a href="libakrypt_8h_source.html#l00157">libakrypt.h:157</a></div></div>
+<div class="ttc" id="libakrypt_8h_html_a59817f4698b8d80ec2f6ef2af4111190"><div class="ttname"><a href="libakrypt_8h.html#a59817f4698b8d80ec2f6ef2af4111190">ak_pointer</a></div><div class="ttdeci">void * ak_pointer</div><div class="ttdoc">Указатель на произвольный объект библиотеки. </div><div class="ttdef"><b>Definition:</b> <a href="libakrypt_8h_source.html#l00129">libakrypt.h:129</a></div></div>
+<div class="ttc" id="structmac_html_abef332a620e87fc9a1f0c11afe144112"><div class="ttname"><a href="structmac.html#abef332a620e87fc9a1f0c11afe144112">mac::update</a></div><div class="ttdeci">ak_function_mac_update * update</div><div class="ttdoc">функция обновления состояния контекста </div><div class="ttdef"><b>Definition:</b> <a href="ak__mac_8h_source.html#l00126">ak_mac.h:126</a></div></div>
+<div class="ttc" id="structcompress_html_a60efd2ffbea463b6be440d330d6c0b7f"><div class="ttname"><a href="structcompress.html#a60efd2ffbea463b6be440d330d6c0b7f">compress::hsize</a></div><div class="ttdeci">size_t hsize</div><div class="ttdoc">длина хеш-кода (результата применения сжимающего отображения) </div><div class="ttdef"><b>Definition:</b> <a href="ak__compress_8h_source.html#l00044">ak_compress.h:44</a></div></div>
+</div><!-- fragment -->
+<p><div class="dynheader">
+Граф вызовов:</div>
+<div class="dyncontent">
+<div class="center"><img src="ak__compress_8h_a6206835700149db6f6371fb5b65fe9dc_cgraph.png" border="0" usemap="#ak__compress_8h_a6206835700149db6f6371fb5b65fe9dc_cgraph" alt=""/></div>
+<!-- MAP 6 -->
+</div>
+</p>
+
+<p><div class="dynheader">
+Граф вызова функции:</div>
+<div class="dyncontent">
+<div class="center"><img src="ak__compress_8h_a6206835700149db6f6371fb5b65fe9dc_icgraph.png" border="0" usemap="#ak__compress_8h_a6206835700149db6f6371fb5b65fe9dc_icgraph" alt=""/></div>
+<!-- MAP 7 -->
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="aac5e65b7920f9cd414cd136c541c4301"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="libakrypt_8h.html#a59817f4698b8d80ec2f6ef2af4111190">ak_pointer</a> ak_compress_delete </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="libakrypt_8h.html#a59817f4698b8d80ec2f6ef2af4111190">ak_pointer</a>&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Освобождение памяти из под контекста сжимающего отображения. </p>
+
+</div>
+</div>
+<a class="anchor" id="a3981229ddb169c8b8493d72d36bbe12e"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int ak_compress_destroy </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="ak__compress_8h.html#a32cb59334e3643f6ed48c82df737a764">ak_compress</a>&#160;</td>
+          <td class="paramname"><em>comp</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Уничтожение контекста сжимающего отображения. </p>
+<p>Функция очищает значения полей структуры struct compress. <b>Внимание!</b> Удаление и очистка контекста, реализующего вычисления - не производится.</p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">comp</td><td>указатель на структуру struct compress </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd>В случае успеха возвращается ak_error_ok (ноль). В случае возникновения ошибки возвращается ее код. </dd></dl>
+
+<p>См. определение в файле <a class="el" href="ak__compress_8c_source.html">ak_compress.c</a> строка <a class="el" href="ak__compress_8c_source.html#l00126">126</a></p>
+<div class="fragment"><div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;{</div><div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;  <span class="keywordflow">if</span>( comp == NULL ) <span class="keywordflow">return</span> <a class="code" href="ak__log_8c.html#a80a4822cbd184b3cbcc43096126eb52b">ak_error_message</a>( <a class="code" href="libakrypt_8h.html#ab44706b2e13bc40499b30fb371ad7f9e">ak_error_null_pointer</a>, __func__,</div><div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;                                                    <span class="stringliteral">&quot;destroying null pointer to compress context&quot;</span> );</div><div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;  <span class="keywordflow">if</span>( comp-&gt;<a class="code" href="structcompress.html#ad0778c378c25c283f941383eea497d6f">data</a> != NULL ) free( comp-&gt;<a class="code" href="structcompress.html#ad0778c378c25c283f941383eea497d6f">data</a> );</div><div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;</div><div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;  comp-&gt;<a class="code" href="structcompress.html#ae809d5359ac030c60a30a8f0b2294b82">length</a> =      0;</div><div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;  comp-&gt;<a class="code" href="structcompress.html#a38b0408fc77ca676c794ef9ef33622fa">ctx</a> =      NULL;</div><div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;  comp-&gt;<a class="code" href="structcompress.html#a60efd2ffbea463b6be440d330d6c0b7f">hsize</a> =       0;</div><div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;  comp-&gt;<a class="code" href="structcompress.html#a2cbae7e4bd552155acfe6bd81683e50f">bsize</a> =       0;</div><div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;  comp-&gt;<a class="code" href="structcompress.html#a25a4b740eb7a5bf0d591ab6bd709aaed">clean</a> =    NULL;</div><div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;  comp-&gt;<a class="code" href="structcompress.html#abef332a620e87fc9a1f0c11afe144112">update</a> =   NULL;</div><div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;  comp-&gt;<a class="code" href="structcompress.html#a1dfe3612fc851f46bdd793b551ce7155">finalize</a> = NULL;</div><div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160; <span class="keywordflow">return</span> <a class="code" href="libakrypt_8h.html#aa6db0eccf8222376f61f2f033a1bbe4c">ak_error_ok</a>;</div><div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;}</div><div class="ttc" id="structcompress_html_abef332a620e87fc9a1f0c11afe144112"><div class="ttname"><a href="structcompress.html#abef332a620e87fc9a1f0c11afe144112">compress::update</a></div><div class="ttdeci">ak_function_mac_update * update</div><div class="ttdoc">функция обработки данных, длина которых кратна длине обрабатываемого блока </div><div class="ttdef"><b>Definition:</b> <a href="ak__compress_8h_source.html#l00052">ak_compress.h:52</a></div></div>
+<div class="ttc" id="structcompress_html_ad0778c378c25c283f941383eea497d6f"><div class="ttname"><a href="structcompress.html#ad0778c378c25c283f941383eea497d6f">compress::data</a></div><div class="ttdeci">ak_uint8 * data</div><div class="ttdoc">массив, предназначенный для временного хранения обрабатываемых данных </div><div class="ttdef"><b>Definition:</b> <a href="ak__compress_8h_source.html#l00040">ak_compress.h:40</a></div></div>
+<div class="ttc" id="structcompress_html_a38b0408fc77ca676c794ef9ef33622fa"><div class="ttname"><a href="structcompress.html#a38b0408fc77ca676c794ef9ef33622fa">compress::ctx</a></div><div class="ttdeci">ak_pointer ctx</div><div class="ttdoc">указатель на контекст сжимающего преобразования </div><div class="ttdef"><b>Definition:</b> <a href="ak__compress_8h_source.html#l00048">ak_compress.h:48</a></div></div>
+<div class="ttc" id="structcompress_html_ae809d5359ac030c60a30a8f0b2294b82"><div class="ttname"><a href="structcompress.html#ae809d5359ac030c60a30a8f0b2294b82">compress::length</a></div><div class="ttdeci">size_t length</div><div class="ttdoc">количество элементов, хранящихся в массиве data. </div><div class="ttdef"><b>Definition:</b> <a href="ak__compress_8h_source.html#l00046">ak_compress.h:46</a></div></div>
+<div class="ttc" id="libakrypt_8h_html_ab44706b2e13bc40499b30fb371ad7f9e"><div class="ttname"><a href="libakrypt_8h.html#ab44706b2e13bc40499b30fb371ad7f9e">ak_error_null_pointer</a></div><div class="ttdeci">#define ak_error_null_pointer</div><div class="ttdoc">Ошибка, возникающая при доступе или передаче в качестве аргумента функции null указателя. </div><div class="ttdef"><b>Definition:</b> <a href="libakrypt_8h_source.html#l00149">libakrypt.h:149</a></div></div>
+<div class="ttc" id="structcompress_html_a2cbae7e4bd552155acfe6bd81683e50f"><div class="ttname"><a href="structcompress.html#a2cbae7e4bd552155acfe6bd81683e50f">compress::bsize</a></div><div class="ttdeci">size_t bsize</div><div class="ttdoc">длина блока обрабатываемых данных </div><div class="ttdef"><b>Definition:</b> <a href="ak__compress_8h_source.html#l00042">ak_compress.h:42</a></div></div>
+<div class="ttc" id="libakrypt_8h_html_aa6db0eccf8222376f61f2f033a1bbe4c"><div class="ttname"><a href="libakrypt_8h.html#aa6db0eccf8222376f61f2f033a1bbe4c">ak_error_ok</a></div><div class="ttdeci">#define ak_error_ok</div><div class="ttdoc">Результат, говорящий об отсутствии ошибки. </div><div class="ttdef"><b>Definition:</b> <a href="libakrypt_8h_source.html#l00145">libakrypt.h:145</a></div></div>
+<div class="ttc" id="ak__log_8c_html_a80a4822cbd184b3cbcc43096126eb52b"><div class="ttname"><a href="ak__log_8c.html#a80a4822cbd184b3cbcc43096126eb52b">ak_error_message</a></div><div class="ttdeci">int ak_error_message(const int code, const char *function, const char *message)</div><div class="ttdoc">Вывод сообщений о возникшей в процессе выполнения ошибке. </div><div class="ttdef"><b>Definition:</b> <a href="ak__log_8c_source.html#l00186">ak_log.c:186</a></div></div>
+<div class="ttc" id="structcompress_html_a1dfe3612fc851f46bdd793b551ce7155"><div class="ttname"><a href="structcompress.html#a1dfe3612fc851f46bdd793b551ce7155">compress::finalize</a></div><div class="ttdeci">ak_function_mac_finalize * finalize</div><div class="ttdoc">функция завершения сжимающего преобразования </div><div class="ttdef"><b>Definition:</b> <a href="ak__compress_8h_source.html#l00054">ak_compress.h:54</a></div></div>
+<div class="ttc" id="structcompress_html_a25a4b740eb7a5bf0d591ab6bd709aaed"><div class="ttname"><a href="structcompress.html#a25a4b740eb7a5bf0d591ab6bd709aaed">compress::clean</a></div><div class="ttdeci">ak_function_mac_clean * clean</div><div class="ttdoc">функция очистки контекста сжимающего преобразования </div><div class="ttdef"><b>Definition:</b> <a href="ak__compress_8h_source.html#l00050">ak_compress.h:50</a></div></div>
+<div class="ttc" id="structcompress_html_a60efd2ffbea463b6be440d330d6c0b7f"><div class="ttname"><a href="structcompress.html#a60efd2ffbea463b6be440d330d6c0b7f">compress::hsize</a></div><div class="ttdeci">size_t hsize</div><div class="ttdoc">длина хеш-кода (результата применения сжимающего отображения) </div><div class="ttdef"><b>Definition:</b> <a href="ak__compress_8h_source.html#l00044">ak_compress.h:44</a></div></div>
+</div><!-- fragment -->
+<p><div class="dynheader">
+Граф вызовов:</div>
+<div class="dyncontent">
+<div class="center"><img src="ak__compress_8h_a3981229ddb169c8b8493d72d36bbe12e_cgraph.png" border="0" usemap="#ak__compress_8h_a3981229ddb169c8b8493d72d36bbe12e_cgraph" alt=""/></div>
+<!-- MAP 8 -->
+</div>
+</p>
+
+<p><div class="dynheader">
+Граф вызова функции:</div>
+<div class="dyncontent">
+<div class="center"><img src="ak__compress_8h_a3981229ddb169c8b8493d72d36bbe12e_icgraph.png" border="0" usemap="#ak__compress_8h_a3981229ddb169c8b8493d72d36bbe12e_icgraph" alt=""/></div>
+<!-- MAP 9 -->
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a1dc99716a32375349b2aef8996d55278"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="libakrypt_8h.html#a8618b346405887c26c4cda4b7e19a158">ak_buffer</a> ak_compress_file </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="ak__compress_8h.html#a32cb59334e3643f6ed48c82df737a764">ak_compress</a>&#160;</td>
+          <td class="paramname"><em>comp</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>filename</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="libakrypt_8h.html#a59817f4698b8d80ec2f6ef2af4111190">ak_pointer</a>&#160;</td>
+          <td class="paramname"><em>out</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Применение сжимающего отображения к заданному файлу. </p>
+<p>Функция вычисляет результат сжимающего отображения для заданного файла и помещает его в область памяти, на которую указывает out. Если out равен NULL, то функция создает новый буффер (структуру struct buffer), помещает в нее вычисленное значение и возвращает на указатель на буффер. Буффер должен позднее быть удален с помощью вызова <a class="el" href="ak__buffer_8c.html#a8211931355126eeb16e6b8d6ed7ba187" title="Уничтожение буффера. ">ak_buffer_delete()</a>.</p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">comp</td><td>указатель на структуру struct compress. </td></tr>
+    <tr><td class="paramname">filename</td><td>имя сжимаемого файла </td></tr>
+    <tr><td class="paramname">out</td><td>Область памяти, куда будет помещен результат. Память должна быть заранее выделена. Размер выделяемой памяти может быть определен с помощью вызова ak_compress_get_code_size(). Указатель out может принимать значение NULL.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd>Функция возвращает NULL, если указатель out не есть NULL, в противном случае возвращается указатель на буффер, содержащий результат вычислений. В случае возникновения ошибки возвращается NULL, при этом код ошибки может быть получен с помощью вызова функции <a class="el" href="ak__log_8c.html#aa0cdd429c558ca0448ce3a8e9529e920" title="Функция возвращает код последней ошибки выполнения программы. ">ak_error_get_value()</a>. </dd></dl>
+
+<p>См. определение в файле <a class="el" href="ak__compress_8c_source.html">ak_compress.c</a> строка <a class="el" href="ak__compress_8c_source.html#l00271">271</a></p>
+<div class="fragment"><div class="line"><a name="l00272"></a><span class="lineno">  272</span>&#160;{</div><div class="line"><a name="l00273"></a><span class="lineno">  273</span>&#160;  <span class="keywordtype">int</span> fd = 0;</div><div class="line"><a name="l00274"></a><span class="lineno">  274</span>&#160;  <span class="keyword">struct </span>stat st;</div><div class="line"><a name="l00275"></a><span class="lineno">  275</span>&#160;  <span class="keywordtype">size_t</span> len = 0;</div><div class="line"><a name="l00276"></a><span class="lineno">  276</span>&#160;  <a class="code" href="libakrypt_8h.html#abb8a94ec74dcd719f5e85ecbae89cb68">ak_uint8</a> *localbuffer; <span class="comment">/* место для локального считывания информации */</span></div><div class="line"><a name="l00277"></a><span class="lineno">  277</span>&#160;  <span class="keywordtype">size_t</span> block_size = 4096; <span class="comment">/* оптимальная длина блока для Windows пока не ясна */</span></div><div class="line"><a name="l00278"></a><span class="lineno">  278</span>&#160;  <a class="code" href="structbuffer.html">ak_buffer</a> result = NULL;</div><div class="line"><a name="l00279"></a><span class="lineno">  279</span>&#160;</div><div class="line"><a name="l00280"></a><span class="lineno">  280</span>&#160; <span class="comment">/* выполняем необходимые проверки */</span></div><div class="line"><a name="l00281"></a><span class="lineno">  281</span>&#160;  <span class="keywordflow">if</span>( comp == NULL ) {</div><div class="line"><a name="l00282"></a><span class="lineno">  282</span>&#160;    <a class="code" href="ak__log_8c.html#a80a4822cbd184b3cbcc43096126eb52b">ak_error_message</a>( <a class="code" href="libakrypt_8h.html#ab44706b2e13bc40499b30fb371ad7f9e">ak_error_null_pointer</a>, __func__ , <span class="stringliteral">&quot;use a null pointer to compress context&quot;</span> );</div><div class="line"><a name="l00283"></a><span class="lineno">  283</span>&#160;    <span class="keywordflow">return</span> NULL;</div><div class="line"><a name="l00284"></a><span class="lineno">  284</span>&#160;  }</div><div class="line"><a name="l00285"></a><span class="lineno">  285</span>&#160;  <span class="keywordflow">if</span>( filename == NULL ) {</div><div class="line"><a name="l00286"></a><span class="lineno">  286</span>&#160;    <a class="code" href="ak__log_8c.html#a80a4822cbd184b3cbcc43096126eb52b">ak_error_message</a>( <a class="code" href="libakrypt_8h.html#ab44706b2e13bc40499b30fb371ad7f9e">ak_error_null_pointer</a>, __func__ , <span class="stringliteral">&quot;use a null pointer to filename&quot;</span> );</div><div class="line"><a name="l00287"></a><span class="lineno">  287</span>&#160;    <span class="keywordflow">return</span> NULL;</div><div class="line"><a name="l00288"></a><span class="lineno">  288</span>&#160;  }</div><div class="line"><a name="l00289"></a><span class="lineno">  289</span>&#160;</div><div class="line"><a name="l00290"></a><span class="lineno">  290</span>&#160;  <span class="keywordflow">if</span>(( fd = open( filename, O_RDONLY | <a class="code" href="libakrypt_8h.html#a36fa9b2e726512bc17a7a6d3e39002be">O_BINARY</a> )) &lt; 0 ) {</div><div class="line"><a name="l00291"></a><span class="lineno">  291</span>&#160;    <a class="code" href="ak__log_8c.html#a80a4822cbd184b3cbcc43096126eb52b">ak_error_message</a>( <a class="code" href="libakrypt_8h.html#a24f4e317102c366a09fbe7fe97d737b0">ak_error_open_file</a>, __func__, strerror( errno ));</div><div class="line"><a name="l00292"></a><span class="lineno">  292</span>&#160;    <span class="keywordflow">return</span> NULL;</div><div class="line"><a name="l00293"></a><span class="lineno">  293</span>&#160;  }</div><div class="line"><a name="l00294"></a><span class="lineno">  294</span>&#160;  <span class="keywordflow">if</span>( fstat( fd, &amp;st ) ) {</div><div class="line"><a name="l00295"></a><span class="lineno">  295</span>&#160;    close( fd );</div><div class="line"><a name="l00296"></a><span class="lineno">  296</span>&#160;    <a class="code" href="ak__log_8c.html#a80a4822cbd184b3cbcc43096126eb52b">ak_error_message</a>( <a class="code" href="libakrypt_8h.html#a7a827aa46b1af0e4c4c8cc6943ac5aba">ak_error_access_file</a>,  __func__, strerror( errno ));</div><div class="line"><a name="l00297"></a><span class="lineno">  297</span>&#160;    <span class="keywordflow">return</span> NULL;</div><div class="line"><a name="l00298"></a><span class="lineno">  298</span>&#160;  }</div><div class="line"><a name="l00299"></a><span class="lineno">  299</span>&#160;</div><div class="line"><a name="l00300"></a><span class="lineno">  300</span>&#160; <span class="comment">/* для файла нулевой длины результатом будет хеш от нулевого вектора */</span></div><div class="line"><a name="l00301"></a><span class="lineno">  301</span>&#160;  <a class="code" href="ak__compress_8c.html#a4ccfd6acdaf53703e38dfb059eb66447">ak_compress_clean</a>( comp );</div><div class="line"><a name="l00302"></a><span class="lineno">  302</span>&#160;  <span class="keywordflow">if</span>( !st.st_size ) <span class="keywordflow">return</span> <a class="code" href="ak__compress_8c.html#ae83443579230980fed2cfc3c2bec0488">ak_compress_finalize</a>( comp, <span class="stringliteral">&quot;&quot;</span>, 0, out );</div><div class="line"><a name="l00303"></a><span class="lineno">  303</span>&#160;</div><div class="line"><a name="l00304"></a><span class="lineno">  304</span>&#160; <span class="comment">/* готовим область для хранения данных */</span></div><div class="line"><a name="l00305"></a><span class="lineno">  305</span>&#160;<span class="preprocessor">  #ifdef _WIN32</span></div><div class="line"><a name="l00306"></a><span class="lineno">  306</span>&#160;    block_size = <a class="code" href="libakrypt_8h.html#aa45d14f09c01de2aed4cbf2f77aa293a">ak_max</a>( 4096, comp-&gt;<a class="code" href="structcompress.html#a2cbae7e4bd552155acfe6bd81683e50f">bsize</a> );</div><div class="line"><a name="l00307"></a><span class="lineno">  307</span>&#160;<span class="preprocessor">  #else</span></div><div class="line"><a name="l00308"></a><span class="lineno">  308</span>&#160;    block_size = <a class="code" href="libakrypt_8h.html#aa45d14f09c01de2aed4cbf2f77aa293a">ak_max</a>( st.st_blksize, comp-&gt;<a class="code" href="structcompress.html#a2cbae7e4bd552155acfe6bd81683e50f">bsize</a> );</div><div class="line"><a name="l00309"></a><span class="lineno">  309</span>&#160;<span class="preprocessor">  #endif</span></div><div class="line"><a name="l00310"></a><span class="lineno">  310</span>&#160; <span class="comment">/* здесь мы выделяем локальный буффер для считывания/обработки данных */</span></div><div class="line"><a name="l00311"></a><span class="lineno">  311</span>&#160;  <span class="keywordflow">if</span>((localbuffer = ( <a class="code" href="libakrypt_8h.html#abb8a94ec74dcd719f5e85ecbae89cb68">ak_uint8</a> * ) malloc( block_size )) == NULL ) {</div><div class="line"><a name="l00312"></a><span class="lineno">  312</span>&#160;    close( fd );</div><div class="line"><a name="l00313"></a><span class="lineno">  313</span>&#160;    <a class="code" href="ak__log_8c.html#a80a4822cbd184b3cbcc43096126eb52b">ak_error_message</a>( <a class="code" href="libakrypt_8h.html#a3e8d10d4f38d2d8032c60cdca1f59db2">ak_error_out_of_memory</a>, __func__ , <span class="stringliteral">&quot;out of memory&quot;</span> );</div><div class="line"><a name="l00314"></a><span class="lineno">  314</span>&#160;    <span class="keywordflow">return</span> NULL;</div><div class="line"><a name="l00315"></a><span class="lineno">  315</span>&#160;  }</div><div class="line"><a name="l00316"></a><span class="lineno">  316</span>&#160; <span class="comment">/* теперь обрабатываем файл с данными */</span></div><div class="line"><a name="l00317"></a><span class="lineno">  317</span>&#160;<span class="preprocessor"> #ifdef _WIN32</span></div><div class="line"><a name="l00318"></a><span class="lineno">  318</span>&#160;  read_label: len = read( fd, localbuffer, (<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span>) block_size );</div><div class="line"><a name="l00319"></a><span class="lineno">  319</span>&#160;<span class="preprocessor"> #else</span></div><div class="line"><a name="l00320"></a><span class="lineno">  320</span>&#160;  read_label: len = read( fd, localbuffer, block_size );</div><div class="line"><a name="l00321"></a><span class="lineno">  321</span>&#160;<span class="preprocessor"> #endif</span></div><div class="line"><a name="l00322"></a><span class="lineno">  322</span>&#160;  <span class="keywordflow">if</span>( len == block_size ) {</div><div class="line"><a name="l00323"></a><span class="lineno">  323</span>&#160;    <a class="code" href="ak__compress_8c.html#af4e2eb8ba9cbcce1314b55811f442634">ak_compress_update</a>( comp, localbuffer, block_size ); <span class="comment">/* добавляем считанные данные */</span></div><div class="line"><a name="l00324"></a><span class="lineno">  324</span>&#160;    <span class="keywordflow">goto</span> read_label;</div><div class="line"><a name="l00325"></a><span class="lineno">  325</span>&#160;  } <span class="keywordflow">else</span> {</div><div class="line"><a name="l00326"></a><span class="lineno">  326</span>&#160;           <span class="keywordtype">size_t</span> qcnt = len / comp-&gt;<a class="code" href="structcompress.html#a2cbae7e4bd552155acfe6bd81683e50f">bsize</a>,</div><div class="line"><a name="l00327"></a><span class="lineno">  327</span>&#160;                  tail = len - qcnt*comp-&gt;<a class="code" href="structcompress.html#a2cbae7e4bd552155acfe6bd81683e50f">bsize</a>;</div><div class="line"><a name="l00328"></a><span class="lineno">  328</span>&#160;           <span class="keywordflow">if</span>( qcnt ) <a class="code" href="ak__compress_8c.html#af4e2eb8ba9cbcce1314b55811f442634">ak_compress_update</a>( comp, localbuffer, qcnt*comp-&gt;<a class="code" href="structcompress.html#a2cbae7e4bd552155acfe6bd81683e50f">bsize</a> );</div><div class="line"><a name="l00329"></a><span class="lineno">  329</span>&#160;           result = <a class="code" href="ak__compress_8c.html#ae83443579230980fed2cfc3c2bec0488">ak_compress_finalize</a>( comp, localbuffer + qcnt*comp-&gt;<a class="code" href="structcompress.html#a2cbae7e4bd552155acfe6bd81683e50f">bsize</a>, tail, out );</div><div class="line"><a name="l00330"></a><span class="lineno">  330</span>&#160;         }</div><div class="line"><a name="l00331"></a><span class="lineno">  331</span>&#160; <span class="comment">/* очищаем за собой данные, содержащиеся в контексте */</span></div><div class="line"><a name="l00332"></a><span class="lineno">  332</span>&#160;  <a class="code" href="ak__compress_8c.html#a4ccfd6acdaf53703e38dfb059eb66447">ak_compress_clean</a>( comp );</div><div class="line"><a name="l00333"></a><span class="lineno">  333</span>&#160; <span class="comment">/* закрываем данные */</span></div><div class="line"><a name="l00334"></a><span class="lineno">  334</span>&#160;  close(fd);</div><div class="line"><a name="l00335"></a><span class="lineno">  335</span>&#160;  free( localbuffer );</div><div class="line"><a name="l00336"></a><span class="lineno">  336</span>&#160; <span class="keywordflow">return</span> result;</div><div class="line"><a name="l00337"></a><span class="lineno">  337</span>&#160;}</div><div class="ttc" id="libakrypt_8h_html_a7a827aa46b1af0e4c4c8cc6943ac5aba"><div class="ttname"><a href="libakrypt_8h.html#a7a827aa46b1af0e4c4c8cc6943ac5aba">ak_error_access_file</a></div><div class="ttdeci">#define ak_error_access_file</div><div class="ttdoc">Ошибка доступа к файлу (устройству). </div><div class="ttdef"><b>Definition:</b> <a href="libakrypt_8h_source.html#l00165">libakrypt.h:165</a></div></div>
+<div class="ttc" id="ak__compress_8c_html_ae83443579230980fed2cfc3c2bec0488"><div class="ttname"><a href="ak__compress_8c.html#ae83443579230980fed2cfc3c2bec0488">ak_compress_finalize</a></div><div class="ttdeci">ak_buffer ak_compress_finalize(ak_compress comp, const ak_pointer in, const size_t size, ak_pointer out)</div><div class="ttdoc">Обновление состояние и вычисление результата применения сжимающего отображения. </div><div class="ttdef"><b>Definition:</b> <a href="ak__compress_8c_source.html#l00234">ak_compress.c:234</a></div></div>
+<div class="ttc" id="libakrypt_8h_html_abb8a94ec74dcd719f5e85ecbae89cb68"><div class="ttname"><a href="libakrypt_8h.html#abb8a94ec74dcd719f5e85ecbae89cb68">ak_uint8</a></div><div class="ttdeci">unsigned char ak_uint8</div><div class="ttdef"><b>Definition:</b> <a href="libakrypt_8h_source.html#l00113">libakrypt.h:113</a></div></div>
+<div class="ttc" id="libakrypt_8h_html_a36fa9b2e726512bc17a7a6d3e39002be"><div class="ttname"><a href="libakrypt_8h.html#a36fa9b2e726512bc17a7a6d3e39002be">O_BINARY</a></div><div class="ttdeci">#define O_BINARY</div><div class="ttdef"><b>Definition:</b> <a href="libakrypt_8h_source.html#l00506">libakrypt.h:506</a></div></div>
+<div class="ttc" id="libakrypt_8h_html_a24f4e317102c366a09fbe7fe97d737b0"><div class="ttname"><a href="libakrypt_8h.html#a24f4e317102c366a09fbe7fe97d737b0">ak_error_open_file</a></div><div class="ttdeci">#define ak_error_open_file</div><div class="ttdoc">Ошибка открытия файла (устройства). </div><div class="ttdef"><b>Definition:</b> <a href="libakrypt_8h_source.html#l00167">libakrypt.h:167</a></div></div>
+<div class="ttc" id="libakrypt_8h_html_ab44706b2e13bc40499b30fb371ad7f9e"><div class="ttname"><a href="libakrypt_8h.html#ab44706b2e13bc40499b30fb371ad7f9e">ak_error_null_pointer</a></div><div class="ttdeci">#define ak_error_null_pointer</div><div class="ttdoc">Ошибка, возникающая при доступе или передаче в качестве аргумента функции null указателя. </div><div class="ttdef"><b>Definition:</b> <a href="libakrypt_8h_source.html#l00149">libakrypt.h:149</a></div></div>
+<div class="ttc" id="structcompress_html_a2cbae7e4bd552155acfe6bd81683e50f"><div class="ttname"><a href="structcompress.html#a2cbae7e4bd552155acfe6bd81683e50f">compress::bsize</a></div><div class="ttdeci">size_t bsize</div><div class="ttdoc">длина блока обрабатываемых данных </div><div class="ttdef"><b>Definition:</b> <a href="ak__compress_8h_source.html#l00042">ak_compress.h:42</a></div></div>
+<div class="ttc" id="ak__compress_8c_html_af4e2eb8ba9cbcce1314b55811f442634"><div class="ttname"><a href="ak__compress_8c.html#af4e2eb8ba9cbcce1314b55811f442634">ak_compress_update</a></div><div class="ttdeci">int ak_compress_update(ak_compress comp, const ak_pointer in, const size_t size)</div><div class="ttdoc">Обновление состояния контекста сжимающего отображения. </div><div class="ttdef"><b>Definition:</b> <a href="ak__compress_8c_source.html#l00167">ak_compress.c:167</a></div></div>
+<div class="ttc" id="ak__compress_8c_html_a4ccfd6acdaf53703e38dfb059eb66447"><div class="ttname"><a href="ak__compress_8c.html#a4ccfd6acdaf53703e38dfb059eb66447">ak_compress_clean</a></div><div class="ttdeci">int ak_compress_clean(ak_compress comp)</div><div class="ttdoc">Очистка контекста сжимающего отображения. </div><div class="ttdef"><b>Definition:</b> <a href="ak__compress_8c_source.html#l00147">ak_compress.c:147</a></div></div>
+<div class="ttc" id="libakrypt_8h_html_aa45d14f09c01de2aed4cbf2f77aa293a"><div class="ttname"><a href="libakrypt_8h.html#aa45d14f09c01de2aed4cbf2f77aa293a">ak_max</a></div><div class="ttdeci">#define ak_max(x, y)</div><div class="ttdef"><b>Definition:</b> <a href="libakrypt_8h_source.html#l00511">libakrypt.h:511</a></div></div>
+<div class="ttc" id="ak__log_8c_html_a80a4822cbd184b3cbcc43096126eb52b"><div class="ttname"><a href="ak__log_8c.html#a80a4822cbd184b3cbcc43096126eb52b">ak_error_message</a></div><div class="ttdeci">int ak_error_message(const int code, const char *function, const char *message)</div><div class="ttdoc">Вывод сообщений о возникшей в процессе выполнения ошибке. </div><div class="ttdef"><b>Definition:</b> <a href="ak__log_8c_source.html#l00186">ak_log.c:186</a></div></div>
+<div class="ttc" id="libakrypt_8h_html_a3e8d10d4f38d2d8032c60cdca1f59db2"><div class="ttname"><a href="libakrypt_8h.html#a3e8d10d4f38d2d8032c60cdca1f59db2">ak_error_out_of_memory</a></div><div class="ttdeci">#define ak_error_out_of_memory</div><div class="ttdoc">Ошибка выделения оперативной памяти. </div><div class="ttdef"><b>Definition:</b> <a href="libakrypt_8h_source.html#l00147">libakrypt.h:147</a></div></div>
+<div class="ttc" id="structbuffer_html"><div class="ttname"><a href="structbuffer.html">buffer</a></div><div class="ttdoc">Класс для хранения двоичных данных </div><div class="ttdef"><b>Definition:</b> <a href="ak__buffer_8h_source.html#l00042">ak_buffer.h:42</a></div></div>
+</div><!-- fragment -->
+<p><div class="dynheader">
+Граф вызовов:</div>
+<div class="dyncontent">
+<div class="center"><img src="ak__compress_8h_a1dc99716a32375349b2aef8996d55278_cgraph.png" border="0" usemap="#ak__compress_8h_a1dc99716a32375349b2aef8996d55278_cgraph" alt=""/></div>
+<!-- MAP 10 -->
+</div>
+</p>
+
+<p><div class="dynheader">
+Граф вызова функции:</div>
+<div class="dyncontent">
+<div class="center"><img src="ak__compress_8h_a1dc99716a32375349b2aef8996d55278_icgraph.png" border="0" usemap="#ak__compress_8h_a1dc99716a32375349b2aef8996d55278_icgraph" alt=""/></div>
+<!-- MAP 11 -->
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="ace57e3c30adc51c14dbec198aea5dee6"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="libakrypt_8h.html#a8618b346405887c26c4cda4b7e19a158">ak_buffer</a> ak_compress_finalize </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="ak__compress_8h.html#a32cb59334e3643f6ed48c82df737a764">ak_compress</a>&#160;</td>
+          <td class="paramname"><em>comp</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="libakrypt_8h.html#a59817f4698b8d80ec2f6ef2af4111190">ak_pointer</a>&#160;</td>
+          <td class="paramname"><em>in</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const size_t&#160;</td>
+          <td class="paramname"><em>size</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="libakrypt_8h.html#a59817f4698b8d80ec2f6ef2af4111190">ak_pointer</a>&#160;</td>
+          <td class="paramname"><em>out</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Обновление состояние и вычисление результата применения сжимающего отображения. </p>
+<p>Конечный результат применения сжимающего отображения помещается в область памяти, на которую указывает out. Если out равен NULL, то функция создает новый буффер (структуру struct buffer), помещает в нее вычисленное значение и возвращает на указатель на буффер. Буффер должен позднее быть удален с помощью вызова <a class="el" href="ak__buffer_8c.html#a8211931355126eeb16e6b8d6ed7ba187" title="Уничтожение буффера. ">ak_buffer_delete()</a>.</p>
+<p>Внутренняя структура, хранящая промежуточные данные, не очищается. Это позволят повторно вызывать функцию finalize к текущему состоянию.</p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">comp</td><td>указатель на структуру struct compress. </td></tr>
+    <tr><td class="paramname">in</td><td>Указатель на входные данные для которых вычисляется хеш-код. </td></tr>
+    <tr><td class="paramname">size</td><td>Размер входных данных в байтах. </td></tr>
+    <tr><td class="paramname">out</td><td>Область памяти, куда будет помещен результат. Память должна быть заранее выделена. Размер выделяемой памяти может быть определен с помощью вызова ak_compress_get_code_size(). Указатель out может принимать значение NULL.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd>Функция возвращает NULL, если указатель out не есть NULL, в противном случае возвращается указатель на буффер, содержащий результат вычислений. В случае возникновения ошибки возвращается NULL, при этом код ошибки может быть получен с помощью вызова функции <a class="el" href="ak__log_8c.html#aa0cdd429c558ca0448ce3a8e9529e920" title="Функция возвращает код последней ошибки выполнения программы. ">ak_error_get_value()</a>. </dd></dl>
+
+<p>См. определение в файле <a class="el" href="ak__compress_8c_source.html">ak_compress.c</a> строка <a class="el" href="ak__compress_8c_source.html#l00234">234</a></p>
+<div class="fragment"><div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160;{</div><div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160;  <span class="keywordflow">if</span>( comp == NULL ) {</div><div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160;    <a class="code" href="ak__log_8c.html#a80a4822cbd184b3cbcc43096126eb52b">ak_error_message</a>( <a class="code" href="libakrypt_8h.html#ab44706b2e13bc40499b30fb371ad7f9e">ak_error_null_pointer</a>, __func__,</div><div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160;                                                  <span class="stringliteral">&quot;using a null pointer to null compress context&quot;</span> );</div><div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160;    <span class="keywordflow">return</span> NULL;</div><div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160;  }</div><div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160;  <span class="keywordflow">if</span>( comp-&gt;<a class="code" href="structcompress.html#a1dfe3612fc851f46bdd793b551ce7155">finalize</a> == NULL ) {</div><div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160;    <a class="code" href="ak__log_8c.html#a80a4822cbd184b3cbcc43096126eb52b">ak_error_message</a>( <a class="code" href="libakrypt_8h.html#a327220ab8ab5f10fcc2f1b52d4cf8c52">ak_error_undefined_function</a>, __func__ ,</div><div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160;                                                           <span class="stringliteral">&quot;using an undefined finalize function&quot;</span> );</div><div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160;    <span class="keywordflow">return</span> NULL;</div><div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160;  }</div><div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160;</div><div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160; <span class="comment">/* начинаем с того, что обрабатываем все переданные данные */</span></div><div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160;  <a class="code" href="ak__compress_8c.html#af4e2eb8ba9cbcce1314b55811f442634">ak_compress_update</a>( comp, in, size );</div><div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160; <span class="comment">/* потом обрабатываем хвост, оставшийся во временном буффере, и выходим */</span></div><div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160; <span class="keywordflow">return</span> comp-&gt;<a class="code" href="structcompress.html#a1dfe3612fc851f46bdd793b551ce7155">finalize</a>( comp-&gt;<a class="code" href="structcompress.html#a38b0408fc77ca676c794ef9ef33622fa">ctx</a>, comp-&gt;<a class="code" href="structcompress.html#ad0778c378c25c283f941383eea497d6f">data</a>, comp-&gt;<a class="code" href="structcompress.html#ae809d5359ac030c60a30a8f0b2294b82">length</a>, out );</div><div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160;}</div><div class="ttc" id="structcompress_html_ad0778c378c25c283f941383eea497d6f"><div class="ttname"><a href="structcompress.html#ad0778c378c25c283f941383eea497d6f">compress::data</a></div><div class="ttdeci">ak_uint8 * data</div><div class="ttdoc">массив, предназначенный для временного хранения обрабатываемых данных </div><div class="ttdef"><b>Definition:</b> <a href="ak__compress_8h_source.html#l00040">ak_compress.h:40</a></div></div>
+<div class="ttc" id="structcompress_html_a38b0408fc77ca676c794ef9ef33622fa"><div class="ttname"><a href="structcompress.html#a38b0408fc77ca676c794ef9ef33622fa">compress::ctx</a></div><div class="ttdeci">ak_pointer ctx</div><div class="ttdoc">указатель на контекст сжимающего преобразования </div><div class="ttdef"><b>Definition:</b> <a href="ak__compress_8h_source.html#l00048">ak_compress.h:48</a></div></div>
+<div class="ttc" id="structcompress_html_ae809d5359ac030c60a30a8f0b2294b82"><div class="ttname"><a href="structcompress.html#ae809d5359ac030c60a30a8f0b2294b82">compress::length</a></div><div class="ttdeci">size_t length</div><div class="ttdoc">количество элементов, хранящихся в массиве data. </div><div class="ttdef"><b>Definition:</b> <a href="ak__compress_8h_source.html#l00046">ak_compress.h:46</a></div></div>
+<div class="ttc" id="libakrypt_8h_html_ab44706b2e13bc40499b30fb371ad7f9e"><div class="ttname"><a href="libakrypt_8h.html#ab44706b2e13bc40499b30fb371ad7f9e">ak_error_null_pointer</a></div><div class="ttdeci">#define ak_error_null_pointer</div><div class="ttdoc">Ошибка, возникающая при доступе или передаче в качестве аргумента функции null указателя. </div><div class="ttdef"><b>Definition:</b> <a href="libakrypt_8h_source.html#l00149">libakrypt.h:149</a></div></div>
+<div class="ttc" id="ak__compress_8c_html_af4e2eb8ba9cbcce1314b55811f442634"><div class="ttname"><a href="ak__compress_8c.html#af4e2eb8ba9cbcce1314b55811f442634">ak_compress_update</a></div><div class="ttdeci">int ak_compress_update(ak_compress comp, const ak_pointer in, const size_t size)</div><div class="ttdoc">Обновление состояния контекста сжимающего отображения. </div><div class="ttdef"><b>Definition:</b> <a href="ak__compress_8c_source.html#l00167">ak_compress.c:167</a></div></div>
+<div class="ttc" id="ak__log_8c_html_a80a4822cbd184b3cbcc43096126eb52b"><div class="ttname"><a href="ak__log_8c.html#a80a4822cbd184b3cbcc43096126eb52b">ak_error_message</a></div><div class="ttdeci">int ak_error_message(const int code, const char *function, const char *message)</div><div class="ttdoc">Вывод сообщений о возникшей в процессе выполнения ошибке. </div><div class="ttdef"><b>Definition:</b> <a href="ak__log_8c_source.html#l00186">ak_log.c:186</a></div></div>
+<div class="ttc" id="structcompress_html_a1dfe3612fc851f46bdd793b551ce7155"><div class="ttname"><a href="structcompress.html#a1dfe3612fc851f46bdd793b551ce7155">compress::finalize</a></div><div class="ttdeci">ak_function_mac_finalize * finalize</div><div class="ttdoc">функция завершения сжимающего преобразования </div><div class="ttdef"><b>Definition:</b> <a href="ak__compress_8h_source.html#l00054">ak_compress.h:54</a></div></div>
+<div class="ttc" id="libakrypt_8h_html_a327220ab8ab5f10fcc2f1b52d4cf8c52"><div class="ttname"><a href="libakrypt_8h.html#a327220ab8ab5f10fcc2f1b52d4cf8c52">ak_error_undefined_function</a></div><div class="ttdeci">#define ak_error_undefined_function</div><div class="ttdoc">Использование неопределенного указателя на функцию (вызов null указателя). </div><div class="ttdef"><b>Definition:</b> <a href="libakrypt_8h_source.html#l00157">libakrypt.h:157</a></div></div>
+</div><!-- fragment -->
+<p><div class="dynheader">
+Граф вызовов:</div>
+<div class="dyncontent">
+<div class="center"><img src="ak__compress_8h_ace57e3c30adc51c14dbec198aea5dee6_cgraph.png" border="0" usemap="#ak__compress_8h_ace57e3c30adc51c14dbec198aea5dee6_cgraph" alt=""/></div>
+<!-- MAP 12 -->
+</div>
+</p>
+
+<p><div class="dynheader">
+Граф вызова функции:</div>
+<div class="dyncontent">
+<div class="center"><img src="ak__compress_8h_ace57e3c30adc51c14dbec198aea5dee6_icgraph.png" border="0" usemap="#ak__compress_8h_ace57e3c30adc51c14dbec198aea5dee6_icgraph" alt=""/></div>
+<!-- MAP 13 -->
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="ad016d1890bc07ce2d1b724abf13dcabc"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int ak_compress_update </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="ak__compress_8h.html#a32cb59334e3643f6ed48c82df737a764">ak_compress</a>&#160;</td>
+          <td class="paramname"><em>comp</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="libakrypt_8h.html#a59817f4698b8d80ec2f6ef2af4111190">ak_pointer</a>&#160;</td>
+          <td class="paramname"><em>in</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const size_t&#160;</td>
+          <td class="paramname"><em>size</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Обновление состояния контекста сжимающего отображения. </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">comp</td><td>указатель на структуру struct compress. </td></tr>
+    <tr><td class="paramname">in</td><td>Сжимаемые данные </td></tr>
+    <tr><td class="paramname">size</td><td>Размер сжимаемых данных в байтах. Данное значение может быть произвольным, в том числе равным нулю и/или не кратным длине блока обрабатываемых данных </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd>В случае успеха функция возвращает ноль (<a class="el" href="libakrypt_8h.html#aa6db0eccf8222376f61f2f033a1bbe4c">ak_error_ok</a>). В противном случае возвращается код ошибки. </dd></dl>
+
+<p>См. определение в файле <a class="el" href="ak__compress_8c_source.html">ak_compress.c</a> строка <a class="el" href="ak__compress_8c_source.html#l00167">167</a></p>
+<div class="fragment"><div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;{</div><div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;  <a class="code" href="libakrypt_8h.html#abb8a94ec74dcd719f5e85ecbae89cb68">ak_uint8</a> *ptrin = (<a class="code" href="libakrypt_8h.html#abb8a94ec74dcd719f5e85ecbae89cb68">ak_uint8</a> *) in;</div><div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;  <span class="keywordtype">size_t</span> quot = 0, offset = 0, newsize = size;</div><div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;</div><div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;  <span class="keywordflow">if</span>( comp == NULL ) <span class="keywordflow">return</span> <a class="code" href="ak__log_8c.html#a80a4822cbd184b3cbcc43096126eb52b">ak_error_message</a>( <a class="code" href="libakrypt_8h.html#ab44706b2e13bc40499b30fb371ad7f9e">ak_error_null_pointer</a>, __func__,</div><div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;                                                 <span class="stringliteral">&quot;using a null pointer to null compress context&quot;</span> );</div><div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;  <span class="keywordflow">if</span>( comp-&gt;<a class="code" href="structcompress.html#abef332a620e87fc9a1f0c11afe144112">update</a> == NULL ) <span class="keywordflow">return</span> <a class="code" href="ak__log_8c.html#a80a4822cbd184b3cbcc43096126eb52b">ak_error_message</a>( <a class="code" href="libakrypt_8h.html#a327220ab8ab5f10fcc2f1b52d4cf8c52">ak_error_undefined_function</a>, __func__ ,</div><div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;                                                            <span class="stringliteral">&quot;using an undefined update function&quot;</span> );</div><div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;</div><div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160; <span class="comment">/* в начале проверяем, есть ли данные во временном буфере */</span></div><div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;  <span class="keywordflow">if</span>( comp-&gt;<a class="code" href="structcompress.html#ae809d5359ac030c60a30a8f0b2294b82">length</a> != 0 ) {</div><div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;   <span class="comment">/* если новых данных мало, то добавляем во временный буффер и выходим */</span></div><div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;    <span class="keywordflow">if</span>(( comp-&gt;<a class="code" href="structcompress.html#ae809d5359ac030c60a30a8f0b2294b82">length</a> + newsize ) &lt; comp-&gt;<a class="code" href="structcompress.html#a2cbae7e4bd552155acfe6bd81683e50f">bsize</a> ) {</div><div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;       memcpy( comp-&gt;<a class="code" href="structcompress.html#ad0778c378c25c283f941383eea497d6f">data</a> + comp-&gt;<a class="code" href="structcompress.html#ae809d5359ac030c60a30a8f0b2294b82">length</a>, ptrin, newsize );</div><div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;       comp-&gt;<a class="code" href="structcompress.html#ae809d5359ac030c60a30a8f0b2294b82">length</a> += newsize;</div><div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;       <span class="keywordflow">return</span> <a class="code" href="libakrypt_8h.html#aa6db0eccf8222376f61f2f033a1bbe4c">ak_error_ok</a>;</div><div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;    }</div><div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;   <span class="comment">/* дополняем буффер до длины, кратной bsize */</span></div><div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;    offset = comp-&gt;<a class="code" href="structcompress.html#a2cbae7e4bd552155acfe6bd81683e50f">bsize</a> - comp-&gt;<a class="code" href="structcompress.html#ae809d5359ac030c60a30a8f0b2294b82">length</a>;</div><div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;    memcpy( comp-&gt;<a class="code" href="structcompress.html#ad0778c378c25c283f941383eea497d6f">data</a> + comp-&gt;<a class="code" href="structcompress.html#ae809d5359ac030c60a30a8f0b2294b82">length</a>, ptrin, offset );</div><div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;</div><div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;   <span class="comment">/* обновляем значение контекста функции и очищаем временный буффер */</span></div><div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;    comp-&gt;<a class="code" href="structcompress.html#abef332a620e87fc9a1f0c11afe144112">update</a>( comp-&gt;<a class="code" href="structcompress.html#a38b0408fc77ca676c794ef9ef33622fa">ctx</a>, comp-&gt;<a class="code" href="structcompress.html#ad0778c378c25c283f941383eea497d6f">data</a>, comp-&gt;<a class="code" href="structcompress.html#a2cbae7e4bd552155acfe6bd81683e50f">bsize</a> );</div><div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;    memset( comp-&gt;<a class="code" href="structcompress.html#ad0778c378c25c283f941383eea497d6f">data</a>, 0, comp-&gt;<a class="code" href="structcompress.html#a2cbae7e4bd552155acfe6bd81683e50f">bsize</a> );</div><div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;    comp-&gt;<a class="code" href="structcompress.html#ae809d5359ac030c60a30a8f0b2294b82">length</a> = 0;</div><div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;    ptrin += offset;</div><div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;    newsize -= offset;</div><div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;  }</div><div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;</div><div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160; <span class="comment">/* теперь обрабатываем входные данные с пустым временным буффером */</span></div><div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;  <span class="keywordflow">if</span>( newsize != 0 ) {</div><div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;    quot = newsize/comp-&gt;<a class="code" href="structcompress.html#a2cbae7e4bd552155acfe6bd81683e50f">bsize</a>;</div><div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;    offset = quot*comp-&gt;<a class="code" href="structcompress.html#a2cbae7e4bd552155acfe6bd81683e50f">bsize</a>;</div><div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;   <span class="comment">/* обрабатываем часть, кратную величине bsize */</span></div><div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;    <span class="keywordflow">if</span>( quot &gt; 0 ) comp-&gt;<a class="code" href="structcompress.html#abef332a620e87fc9a1f0c11afe144112">update</a>( comp-&gt;<a class="code" href="structcompress.html#a38b0408fc77ca676c794ef9ef33622fa">ctx</a>, ptrin, offset );</div><div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;   <span class="comment">/* хвост оставляем на следующий раз */</span></div><div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;    <span class="keywordflow">if</span>( offset &lt; newsize ) {</div><div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;      comp-&gt;<a class="code" href="structcompress.html#ae809d5359ac030c60a30a8f0b2294b82">length</a> = newsize - offset;</div><div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;      memcpy( comp-&gt;<a class="code" href="structcompress.html#ad0778c378c25c283f941383eea497d6f">data</a>, ptrin + offset, comp-&gt;<a class="code" href="structcompress.html#ae809d5359ac030c60a30a8f0b2294b82">length</a> );</div><div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;    }</div><div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;  }</div><div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;</div><div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160; <span class="keywordflow">return</span> <a class="code" href="libakrypt_8h.html#aa6db0eccf8222376f61f2f033a1bbe4c">ak_error_ok</a>;</div><div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;}</div><div class="ttc" id="structcompress_html_abef332a620e87fc9a1f0c11afe144112"><div class="ttname"><a href="structcompress.html#abef332a620e87fc9a1f0c11afe144112">compress::update</a></div><div class="ttdeci">ak_function_mac_update * update</div><div class="ttdoc">функция обработки данных, длина которых кратна длине обрабатываемого блока </div><div class="ttdef"><b>Definition:</b> <a href="ak__compress_8h_source.html#l00052">ak_compress.h:52</a></div></div>
+<div class="ttc" id="structcompress_html_ad0778c378c25c283f941383eea497d6f"><div class="ttname"><a href="structcompress.html#ad0778c378c25c283f941383eea497d6f">compress::data</a></div><div class="ttdeci">ak_uint8 * data</div><div class="ttdoc">массив, предназначенный для временного хранения обрабатываемых данных </div><div class="ttdef"><b>Definition:</b> <a href="ak__compress_8h_source.html#l00040">ak_compress.h:40</a></div></div>
+<div class="ttc" id="structcompress_html_a38b0408fc77ca676c794ef9ef33622fa"><div class="ttname"><a href="structcompress.html#a38b0408fc77ca676c794ef9ef33622fa">compress::ctx</a></div><div class="ttdeci">ak_pointer ctx</div><div class="ttdoc">указатель на контекст сжимающего преобразования </div><div class="ttdef"><b>Definition:</b> <a href="ak__compress_8h_source.html#l00048">ak_compress.h:48</a></div></div>
+<div class="ttc" id="libakrypt_8h_html_abb8a94ec74dcd719f5e85ecbae89cb68"><div class="ttname"><a href="libakrypt_8h.html#abb8a94ec74dcd719f5e85ecbae89cb68">ak_uint8</a></div><div class="ttdeci">unsigned char ak_uint8</div><div class="ttdef"><b>Definition:</b> <a href="libakrypt_8h_source.html#l00113">libakrypt.h:113</a></div></div>
+<div class="ttc" id="structcompress_html_ae809d5359ac030c60a30a8f0b2294b82"><div class="ttname"><a href="structcompress.html#ae809d5359ac030c60a30a8f0b2294b82">compress::length</a></div><div class="ttdeci">size_t length</div><div class="ttdoc">количество элементов, хранящихся в массиве data. </div><div class="ttdef"><b>Definition:</b> <a href="ak__compress_8h_source.html#l00046">ak_compress.h:46</a></div></div>
+<div class="ttc" id="libakrypt_8h_html_ab44706b2e13bc40499b30fb371ad7f9e"><div class="ttname"><a href="libakrypt_8h.html#ab44706b2e13bc40499b30fb371ad7f9e">ak_error_null_pointer</a></div><div class="ttdeci">#define ak_error_null_pointer</div><div class="ttdoc">Ошибка, возникающая при доступе или передаче в качестве аргумента функции null указателя. </div><div class="ttdef"><b>Definition:</b> <a href="libakrypt_8h_source.html#l00149">libakrypt.h:149</a></div></div>
+<div class="ttc" id="structcompress_html_a2cbae7e4bd552155acfe6bd81683e50f"><div class="ttname"><a href="structcompress.html#a2cbae7e4bd552155acfe6bd81683e50f">compress::bsize</a></div><div class="ttdeci">size_t bsize</div><div class="ttdoc">длина блока обрабатываемых данных </div><div class="ttdef"><b>Definition:</b> <a href="ak__compress_8h_source.html#l00042">ak_compress.h:42</a></div></div>
+<div class="ttc" id="libakrypt_8h_html_aa6db0eccf8222376f61f2f033a1bbe4c"><div class="ttname"><a href="libakrypt_8h.html#aa6db0eccf8222376f61f2f033a1bbe4c">ak_error_ok</a></div><div class="ttdeci">#define ak_error_ok</div><div class="ttdoc">Результат, говорящий об отсутствии ошибки. </div><div class="ttdef"><b>Definition:</b> <a href="libakrypt_8h_source.html#l00145">libakrypt.h:145</a></div></div>
+<div class="ttc" id="ak__log_8c_html_a80a4822cbd184b3cbcc43096126eb52b"><div class="ttname"><a href="ak__log_8c.html#a80a4822cbd184b3cbcc43096126eb52b">ak_error_message</a></div><div class="ttdeci">int ak_error_message(const int code, const char *function, const char *message)</div><div class="ttdoc">Вывод сообщений о возникшей в процессе выполнения ошибке. </div><div class="ttdef"><b>Definition:</b> <a href="ak__log_8c_source.html#l00186">ak_log.c:186</a></div></div>
+<div class="ttc" id="libakrypt_8h_html_a327220ab8ab5f10fcc2f1b52d4cf8c52"><div class="ttname"><a href="libakrypt_8h.html#a327220ab8ab5f10fcc2f1b52d4cf8c52">ak_error_undefined_function</a></div><div class="ttdeci">#define ak_error_undefined_function</div><div class="ttdoc">Использование неопределенного указателя на функцию (вызов null указателя). </div><div class="ttdef"><b>Definition:</b> <a href="libakrypt_8h_source.html#l00157">libakrypt.h:157</a></div></div>
+</div><!-- fragment -->
+<p><div class="dynheader">
+Граф вызовов:</div>
+<div class="dyncontent">
+<div class="center"><img src="ak__compress_8h_ad016d1890bc07ce2d1b724abf13dcabc_cgraph.png" border="0" usemap="#ak__compress_8h_ad016d1890bc07ce2d1b724abf13dcabc_cgraph" alt=""/></div>
+<!-- MAP 14 -->
+</div>
+</p>
+
+<p><div class="dynheader">
+Граф вызова функции:</div>
+<div class="dyncontent">
+<div class="center"><img src="ak__compress_8h_ad016d1890bc07ce2d1b724abf13dcabc_icgraph.png" border="0" usemap="#ak__compress_8h_ad016d1890bc07ce2d1b724abf13dcabc_icgraph" alt=""/></div>
+<!-- MAP 15 -->
+</div>
+</p>
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_43e0a1f539e00dcfa1a6bc4d4fee4fc2.html">home</a></li><li class="navelem"><a class="el" href="dir_32078dd46064dc5448d39191ac5534d6.html">eugene</a></li><li class="navelem"><a class="el" href="dir_90a44860457c395fae569358f05fdb49.html">Documents</a></li><li class="navelem"><a class="el" href="dir_ef0df63b0c88ed24c4c79f67668669bc.html">VKR</a></li><li class="navelem"><a class="el" href="dir_6ec071d27851548a42323e2c424bf74a.html">libakrypt-0.x</a></li><li class="navelem"><a class="el" href="dir_cc55869b84ab2b7a1ee582dd1158c3dc.html">source</a></li><li class="navelem"><a class="el" href="ak__compress_8h.html">ak_compress.h</a></li>
+    <li class="footer">Документация по libakrypt. Последние изменения: Вс 23 Сен 2018 21:13:41. Создано системой
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.11 </li>
+  </ul>
+</div>
+</body>
+</html>

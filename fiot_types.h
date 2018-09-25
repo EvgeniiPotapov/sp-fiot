@@ -62,7 +62,7 @@ typedef enum {
 /* ServerHelloMessage structure defines the message format used by server to answer the ClientHelloMessage */
     serverHello = 0x12,
 /* VerifyMessage structure defines the message format containing one or more authentication codes */
-    verify = 0x13,
+    verifyMessage = 0x13,
 /* ApplicationDataMessage structure defines the message format used during application data transfer protocol execution */
     applicationData = 0x14,
 /* AlertMessage structure defines the message format containing protocol execution error code */
@@ -88,32 +88,34 @@ verification key certificate number */
 } MessageType;
 
 /* CryptoMechanism is desired to specify cryptographic mechanisms used by client and server */
-typedef enum { 
-    streebog256 = 0x0010,
-    streebog512 = 0x0020,
+typedef enum {
+    streebog256 = 0x0013,
+    streebog512 = 0x0023,
     magmaGOST3413ePSK = 0x2051,
     kuznechikGOST3413ePSK = 0x2052,
     magmaGOST3413iPSK = 0x3101,
     kuznechikGOST3413iPSK = 0x3102,
-    hmac256ePSK = 0x2030,
-    hmac512ePSK = 0x2040,
-    hmacStreebog256iPSK = 0x3030,
-    hmacStreebog512iPSK = 0x3040,
-    magmaCTRplusOMAC = 0x1151,
-    kuznechikCTRplusOMAC = 0x1152,
+    hmac256ePSK = 0x2033,
+    hmac512ePSK = 0x2043,
+    hmac256iPSK = 0x3033,
+    hmac512iPSK = 0x3043,
+    magmaCTRplusHMAC256 = 0x1131,
+    magmaCTRplusGOST3413 = 0x1151,
+    kuznechikCTRplusHMAC256 = 0x1132,
+    kuznechikCTRplusGOST3413 = 0x1152,
     magmaAEAD = 0x1201,
     kuznechikAEAD = 0x1202
 } CryptoMechanism; 
 
 /* EllipticCurveID specifies used elliptic curve parameters */
 typedef enum {
-    id_tc26_gost3410_2012_256_paramsetA = 0x01,
-    id_tc26_gost3410_2012_512_paramsetA = 0x02,
-    id_tc26_gost3410_2012_512_paramsetB = 0x03,
-    id_tc26_gost3410_2012_512_paramsetC = 0x04,
-    id_rfc4357_gost3410_2001_paramsetA = 0x05,
-    id_rfc4357_gost3410_2001_paramsetB = 0x06,
-    id_rfc4357_gost3410_2001_paramsetC = 0x07
+    tc26_gost3410_2012_256_paramsetA = 0x01,
+    tc26_gost3410_2012_512_paramsetA = 0x02,
+    tc26_gost3410_2012_512_paramsetB = 0x03,
+    tc26_gost3410_2012_512_paramsetC = 0x04,
+    rfc4357_gost3410_2001_paramsetA = 0x05,
+    rfc4357_gost3410_2001_paramsetB = 0x06,
+    rfc4357_gost3410_2001_paramsetC = 0x07
 } EllipticCurveID; 
 
 /*  EllipticCurvePoint defines data structure used to contain elliptic curve point specified by two coordinates */
@@ -147,8 +149,15 @@ typedef Octet FrameNumber[5];
 
 /* KeyMechanismType specifies values for key transformation and derive key generating algorithms used by transport protocol */
 typedef enum {
-    standard122 = 0x00,
-    standard221 = 0x01
+    standard221 = 0x01,
+    shortKCmagma = 0x02,
+    shortKCkuznechik = 0x03,
+    longKCmagma = 0x04,
+    longKCkuznechik = 0x05,
+    shortKAmagma = 0x06,
+    shortKAkuznechik = 0x07,
+    longKAmagma = 0x08,
+    longKAkuznechik = 0x09
 } KeyMechanismType;
 
 /* AlertType specifies error codes */
@@ -205,14 +214,15 @@ typedef struct _Frame{
 typedef struct _ClientHelloMessage{
 /* algorithm defines one of CryptoMechanism used to validate unencrypted data integrity */
     CryptoMechanism algorithm;
+/* iPSK specifies the ID of auntication key generated during the previous session. */
+    PreSharedKeyID idipsk;
+/* ePSK specifies the ID of pre-shared auntication key  */
+    PreSharedKeyID idepsk;
 /* random defines the fixed-length octets sequence */
     RandomOctetString random;
 /* point specifies the elliptic curve point used in Diffie–Hellman key generation protocol */
     EllipticCurvePoint point;
-/* iPSK specifies the ID of auntication key generated during the previous session. */
-    PreSharedKeyID iPSK;
-/* ePSK specifies the ID of pre-shared auntication key  */
-    PreSharedKeyID ePSK;
+
 /* countOfExtensions defines the number of extensions that will be sent after ClientHelloMessage */
     LengthOctet countOfExtensions;
 } ClientHelloMessage;

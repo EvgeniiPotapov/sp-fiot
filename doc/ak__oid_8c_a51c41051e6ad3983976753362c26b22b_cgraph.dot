@@ -1,0 +1,32 @@
+digraph "ak_libakrypt_oid_get_engine_str"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node1 [label="ak_libakrypt_oid_get\l_engine_str",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+  Node1 -> Node2 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="ak_handle_get_context",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$ak__context__manager_8c.html#afedb3766d50dbdf85a723054566d1c2f",tooltip="Получение контекста по заданному дескриптору и типу контекста. "];
+  Node2 -> Node3 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="ak_context_manager\l_handle_check",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$ak__context__manager_8c.html#a10e36a54133c0c1758ee1a9bd86b19e8",tooltip="Проверка корректности дескриптора контекста. "];
+  Node3 -> Node4 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node4 [label="ak_error_message",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$ak__log_8c.html#a80a4822cbd184b3cbcc43096126eb52b",tooltip="Вывод сообщений о возникшей в процессе выполнения ошибке. "];
+  Node4 -> Node5 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node5 [label="ak_snprintf",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$ak__log_8c.html#a129225cc1640b6773cf0a7d629f0dca6",tooltip="Обобщенная реализация функции snprintf для различных компиляторов. "];
+  Node4 -> Node6 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node6 [label="ak_log_set_message",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$ak__log_8c.html#a25eff854c3f398d72791d04662d0978a",tooltip="Прямой вывод сообщения аудита. "];
+  Node6 -> Node7 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node7 [label="ak_error_set_value",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$ak__log_8c.html#a700e68d9e88d81489869ba269af25c7b",tooltip="Функция устанавливает значение переменной, хранящей ошибку выполнения программы. "];
+  Node6 -> Node4 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node4 -> Node7 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 -> Node8 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node8 [label="ak_context_manager\l_handle_to_idx",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$ak__context__manager_8c.html#a989ab2e0259025432069302a5286c1f7",tooltip="Получение точного значения индекса массива по значению декскриптора. "];
+  Node2 -> Node4 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node1 -> Node4 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node1 -> Node9 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node9 [label="ak_error_get_value",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$ak__log_8c.html#aa0cdd429c558ca0448ce3a8e9529e920",tooltip="Функция возвращает код последней ошибки выполнения программы. "];
+  Node1 -> Node10 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node10 [label="ak_libakrypt_get_engine_str",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$ak__oid_8c.html#a86b6712092691fcb22aa7145bd5b97e7",tooltip="Получение константного символьного описания типа криптографического механизма. "];
+  Node10 -> Node11 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node11 [label="ak_error_message_fmt",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$ak__log_8c.html#af1a0b4eeceb5a222a840dcec204cb547",tooltip="Вывод сообщений о возникшей в процессе выполнения ошибке. "];
+  Node11 -> Node4 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+}

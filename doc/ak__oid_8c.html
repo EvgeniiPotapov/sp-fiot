@@ -1,0 +1,1072 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.11"/>
+<title>libakrypt: Файл ak_oid.c</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+  $(document).ready(initResizable);
+  $(window).load(resizeHeight);
+</script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { init_search(); });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">libakrypt
+   &#160;<span id="projectnumber">Версия 0.6.7</span>
+   </div>
+   <div id="projectbrief">Модуль, реализующий криптографические преобразования для проекта OpenSKZI</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.8.11 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Поиск');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Титульная&#160;страница</span></a></li>
+      <li><a href="pages.html"><span>Описания</span></a></li>
+      <li><a href="annotated.html"><span>Структуры&#160;данных</span></a></li>
+      <li class="current"><a href="files.html"><span>Файлы</span></a></li>
+      <li><a href="examples.html"><span>Примеры</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Поиск" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>Файлы</span></a></li>
+      <li><a href="globals.html"><span>Список&#160;членов&#160;всех&#160;файлов</span></a></li>
+    </ul>
+  </div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(document).ready(function(){initNavTree('ak__oid_8c.html','');});
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#func-members">Функции</a> &#124;
+<a href="#var-members">Переменные</a>  </div>
+  <div class="headertitle">
+<div class="title">Файл ak_oid.c</div>  </div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><code>#include &lt;<a class="el" href="ak__mac_8h_source.html">ak_mac.h</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="ak__tools_8h_source.html">ak_tools.h</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="ak__parameters_8h_source.html">ak_parameters.h</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="ak__context__manager_8h_source.html">ak_context_manager.h</a>&gt;</code><br />
+</div><div class="textblock"><div class="dynheader">
+Граф включаемых заголовочных файлов для ak_oid.c:</div>
+<div class="dyncontent">
+<div class="center"><img src="ak__oid_8c__incl.png" border="0" usemap="#ak__oid_8c" alt=""/></div>
+<!-- MAP 0 -->
+</div>
+</div>
+<p><a href="ak__oid_8c_source.html">См. исходные тексты.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+Функции</h2></td></tr>
+<tr class="memitem:ab36dc28de3aef05eecb93c96ac1714de"><td class="memItemLeft" align="right" valign="top">const size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ak__oid_8c.html#ab36dc28de3aef05eecb93c96ac1714de">ak_libakrypt_engines_count</a> (void)</td></tr>
+<tr class="memdesc:ab36dc28de3aef05eecb93c96ac1714de"><td class="mdescLeft">&#160;</td><td class="mdescRight">Получение точного количества типов криптографических механизмов.  <a href="#ab36dc28de3aef05eecb93c96ac1714de">Подробнее...</a><br /></td></tr>
+<tr class="separator:ab36dc28de3aef05eecb93c96ac1714de"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a77ebfcfab26768a197d9b14355dc85ad"><td class="memItemLeft" align="right" valign="top"><a class="el" href="libakrypt_8h.html#a44748ab5acc3b5e0d78b2cb1436a0aae">ak_handle</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ak__oid_8c.html#a77ebfcfab26768a197d9b14355dc85ad">ak_libakrypt_find_oid_by_engine</a> (<a class="el" href="libakrypt_8h.html#ad058d4c98220bc1f0f872455ee71446d">ak_oid_engine</a> engine)</td></tr>
+<tr class="memdesc:a77ebfcfab26768a197d9b14355dc85ad"><td class="mdescLeft">&#160;</td><td class="mdescRight">Поиск OID по типу криптографического механизма.  <a href="#a77ebfcfab26768a197d9b14355dc85ad">Подробнее...</a><br /></td></tr>
+<tr class="separator:a77ebfcfab26768a197d9b14355dc85ad"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6120b246a2b2aaa44cc6c70174724a6b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="libakrypt_8h.html#a44748ab5acc3b5e0d78b2cb1436a0aae">ak_handle</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ak__oid_8c.html#a6120b246a2b2aaa44cc6c70174724a6b">ak_libakrypt_find_oid_by_id</a> (const char *id)</td></tr>
+<tr class="memdesc:a6120b246a2b2aaa44cc6c70174724a6b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Поиск OID по его идентификатору (строке цифр, разделенных точками).  <a href="#a6120b246a2b2aaa44cc6c70174724a6b">Подробнее...</a><br /></td></tr>
+<tr class="separator:a6120b246a2b2aaa44cc6c70174724a6b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad84a98d6d6d47c0cd276b84f72816897"><td class="memItemLeft" align="right" valign="top"><a class="el" href="libakrypt_8h.html#a44748ab5acc3b5e0d78b2cb1436a0aae">ak_handle</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ak__oid_8c.html#ad84a98d6d6d47c0cd276b84f72816897">ak_libakrypt_find_oid_by_name</a> (const char *name)</td></tr>
+<tr class="memdesc:ad84a98d6d6d47c0cd276b84f72816897"><td class="mdescLeft">&#160;</td><td class="mdescRight">Поиск OID его имени.  <a href="#ad84a98d6d6d47c0cd276b84f72816897">Подробнее...</a><br /></td></tr>
+<tr class="separator:ad84a98d6d6d47c0cd276b84f72816897"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1e6fc7d787aaeba351468bdd3ddfbaf3"><td class="memItemLeft" align="right" valign="top"><a class="el" href="libakrypt_8h.html#a44748ab5acc3b5e0d78b2cb1436a0aae">ak_handle</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ak__oid_8c.html#a1e6fc7d787aaeba351468bdd3ddfbaf3">ak_libakrypt_findnext_oid_by_engine</a> (<a class="el" href="libakrypt_8h.html#a44748ab5acc3b5e0d78b2cb1436a0aae">ak_handle</a> handle, <a class="el" href="libakrypt_8h.html#ad058d4c98220bc1f0f872455ee71446d">ak_oid_engine</a> engine)</td></tr>
+<tr class="memdesc:a1e6fc7d787aaeba351468bdd3ddfbaf3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Продолжение поиска OID по типу криптографического механизма.  <a href="#a1e6fc7d787aaeba351468bdd3ddfbaf3">Подробнее...</a><br /></td></tr>
+<tr class="separator:a1e6fc7d787aaeba351468bdd3ddfbaf3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae8f9b6d49a6b7ec88d139c8c61a9bb0d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="libakrypt_8h.html#ad058d4c98220bc1f0f872455ee71446d">ak_oid_engine</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ak__oid_8c.html#ae8f9b6d49a6b7ec88d139c8c61a9bb0d">ak_libakrypt_get_engine</a> (const char *str)</td></tr>
+<tr class="memdesc:ae8f9b6d49a6b7ec88d139c8c61a9bb0d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Получение типа криптографического механизма по его символьному описанию.  <a href="#ae8f9b6d49a6b7ec88d139c8c61a9bb0d">Подробнее...</a><br /></td></tr>
+<tr class="separator:ae8f9b6d49a6b7ec88d139c8c61a9bb0d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a86b6712092691fcb22aa7145bd5b97e7"><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ak__oid_8c.html#a86b6712092691fcb22aa7145bd5b97e7">ak_libakrypt_get_engine_str</a> (<a class="el" href="libakrypt_8h.html#ad058d4c98220bc1f0f872455ee71446d">ak_oid_engine</a> engine)</td></tr>
+<tr class="memdesc:a86b6712092691fcb22aa7145bd5b97e7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Получение константного символьного описания типа криптографического механизма.  <a href="#a86b6712092691fcb22aa7145bd5b97e7">Подробнее...</a><br /></td></tr>
+<tr class="separator:a86b6712092691fcb22aa7145bd5b97e7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a75886dbda8cb0ae7544c03586b743e3e"><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ak__oid_8c.html#a75886dbda8cb0ae7544c03586b743e3e">ak_libakrypt_get_mode_str</a> (<a class="el" href="libakrypt_8h.html#a557615e650446be74a1fcaa96708970c">ak_oid_mode</a> mode)</td></tr>
+<tr class="memdesc:a75886dbda8cb0ae7544c03586b743e3e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Получения символьного описания режима применения криптографического механизма.  <a href="#a75886dbda8cb0ae7544c03586b743e3e">Подробнее...</a><br /></td></tr>
+<tr class="separator:a75886dbda8cb0ae7544c03586b743e3e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab1a902b45a36193c9dd9343d283e9cc6"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="libakrypt_8h.html#ad058d4c98220bc1f0f872455ee71446d">ak_oid_engine</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ak__oid_8c.html#ab1a902b45a36193c9dd9343d283e9cc6">ak_libakrypt_oid_get_engine</a> (<a class="el" href="libakrypt_8h.html#a44748ab5acc3b5e0d78b2cb1436a0aae">ak_handle</a> handle)</td></tr>
+<tr class="memdesc:ab1a902b45a36193c9dd9343d283e9cc6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Получение типа криптографического механизма.  <a href="#ab1a902b45a36193c9dd9343d283e9cc6">Подробнее...</a><br /></td></tr>
+<tr class="separator:ab1a902b45a36193c9dd9343d283e9cc6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a51c41051e6ad3983976753362c26b22b"><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ak__oid_8c.html#a51c41051e6ad3983976753362c26b22b">ak_libakrypt_oid_get_engine_str</a> (<a class="el" href="libakrypt_8h.html#a44748ab5acc3b5e0d78b2cb1436a0aae">ak_handle</a> handle)</td></tr>
+<tr class="memdesc:a51c41051e6ad3983976753362c26b22b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Получение словесного описания для типа криптографического механизма.  <a href="#a51c41051e6ad3983976753362c26b22b">Подробнее...</a><br /></td></tr>
+<tr class="separator:a51c41051e6ad3983976753362c26b22b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a059bbd42bac6f089724da150616a5cf4"><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ak__oid_8c.html#a059bbd42bac6f089724da150616a5cf4">ak_libakrypt_oid_get_id</a> (<a class="el" href="libakrypt_8h.html#a44748ab5acc3b5e0d78b2cb1436a0aae">ak_handle</a> handle)</td></tr>
+<tr class="memdesc:a059bbd42bac6f089724da150616a5cf4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Получение значения OID - последовательности чисел, разделенных точками.  <a href="#a059bbd42bac6f089724da150616a5cf4">Подробнее...</a><br /></td></tr>
+<tr class="separator:a059bbd42bac6f089724da150616a5cf4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a906837800ad5ce054f8849f90fe66f8e"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="libakrypt_8h.html#a557615e650446be74a1fcaa96708970c">ak_oid_mode</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ak__oid_8c.html#a906837800ad5ce054f8849f90fe66f8e">ak_libakrypt_oid_get_mode</a> (<a class="el" href="libakrypt_8h.html#a44748ab5acc3b5e0d78b2cb1436a0aae">ak_handle</a> handle)</td></tr>
+<tr class="memdesc:a906837800ad5ce054f8849f90fe66f8e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Получение режима использования криптографического механизма.  <a href="#a906837800ad5ce054f8849f90fe66f8e">Подробнее...</a><br /></td></tr>
+<tr class="separator:a906837800ad5ce054f8849f90fe66f8e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a68ba6df00826c218013a14ca8f163457"><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ak__oid_8c.html#a68ba6df00826c218013a14ca8f163457">ak_libakrypt_oid_get_mode_str</a> (<a class="el" href="libakrypt_8h.html#a44748ab5acc3b5e0d78b2cb1436a0aae">ak_handle</a> handle)</td></tr>
+<tr class="memdesc:a68ba6df00826c218013a14ca8f163457"><td class="mdescLeft">&#160;</td><td class="mdescRight">Получение словесного описания режима использования криптографического механизма.  <a href="#a68ba6df00826c218013a14ca8f163457">Подробнее...</a><br /></td></tr>
+<tr class="separator:a68ba6df00826c218013a14ca8f163457"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a267481da1bd3fd559be7e8267a124036"><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ak__oid_8c.html#a267481da1bd3fd559be7e8267a124036">ak_libakrypt_oid_get_name</a> (<a class="el" href="libakrypt_8h.html#a44748ab5acc3b5e0d78b2cb1436a0aae">ak_handle</a> handle)</td></tr>
+<tr class="memdesc:a267481da1bd3fd559be7e8267a124036"><td class="mdescLeft">&#160;</td><td class="mdescRight">Получение читаемого имени OID.  <a href="#a267481da1bd3fd559be7e8267a124036">Подробнее...</a><br /></td></tr>
+<tr class="separator:a267481da1bd3fd559be7e8267a124036"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a40c98c3dad257cd9a3b3a3ce42eab77c"><td class="memItemLeft" align="right" valign="top">const size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ak__oid_8c.html#a40c98c3dad257cd9a3b3a3ce42eab77c">ak_libakrypt_oids_count</a> (void)</td></tr>
+<tr class="memdesc:a40c98c3dad257cd9a3b3a3ce42eab77c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Получение количества доступных OID библиотеки.  <a href="#a40c98c3dad257cd9a3b3a3ce42eab77c">Подробнее...</a><br /></td></tr>
+<tr class="separator:a40c98c3dad257cd9a3b3a3ce42eab77c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aecfea0c040912d43aed632fd9941b0b0"><td class="memItemLeft" align="right" valign="top"><a class="el" href="ak__oid_8h.html#addfd662f52444ffde7f6f398c0d33590">ak_oid</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ak__oid_8c.html#aecfea0c040912d43aed632fd9941b0b0">ak_oid_find_by_engine</a> (<a class="el" href="libakrypt_8h.html#ad058d4c98220bc1f0f872455ee71446d">ak_oid_engine</a> engine)</td></tr>
+<tr class="memdesc:aecfea0c040912d43aed632fd9941b0b0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Поиск OID по типу криптографического механизма.  <a href="#aecfea0c040912d43aed632fd9941b0b0">Подробнее...</a><br /></td></tr>
+<tr class="separator:aecfea0c040912d43aed632fd9941b0b0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a66485ee31b7e4ab3805cfce6e42556a6"><td class="memItemLeft" align="right" valign="top"><a class="el" href="ak__oid_8h.html#addfd662f52444ffde7f6f398c0d33590">ak_oid</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ak__oid_8c.html#a66485ee31b7e4ab3805cfce6e42556a6">ak_oid_find_by_id</a> (const char *id)</td></tr>
+<tr class="memdesc:a66485ee31b7e4ab3805cfce6e42556a6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Поиск OID по его идентификатору (строке цифр, разделенных точками).  <a href="#a66485ee31b7e4ab3805cfce6e42556a6">Подробнее...</a><br /></td></tr>
+<tr class="separator:a66485ee31b7e4ab3805cfce6e42556a6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a54ed66e94caacfda6aed38210b6b6443"><td class="memItemLeft" align="right" valign="top"><a class="el" href="ak__oid_8h.html#addfd662f52444ffde7f6f398c0d33590">ak_oid</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ak__oid_8c.html#a54ed66e94caacfda6aed38210b6b6443">ak_oid_find_by_name</a> (const char *name)</td></tr>
+<tr class="memdesc:a54ed66e94caacfda6aed38210b6b6443"><td class="mdescLeft">&#160;</td><td class="mdescRight">Поиск OID его имени.  <a href="#a54ed66e94caacfda6aed38210b6b6443">Подробнее...</a><br /></td></tr>
+<tr class="separator:a54ed66e94caacfda6aed38210b6b6443"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aafa6fb05275136d4004d7a0dee9ef6ba"><td class="memItemLeft" align="right" valign="top"><a class="el" href="ak__oid_8h.html#addfd662f52444ffde7f6f398c0d33590">ak_oid</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ak__oid_8c.html#aafa6fb05275136d4004d7a0dee9ef6ba">ak_oid_findnext_by_engine</a> (<a class="el" href="ak__oid_8h.html#addfd662f52444ffde7f6f398c0d33590">ak_oid</a> startoid, <a class="el" href="libakrypt_8h.html#ad058d4c98220bc1f0f872455ee71446d">ak_oid_engine</a> engine)</td></tr>
+<tr class="memdesc:aafa6fb05275136d4004d7a0dee9ef6ba"><td class="mdescLeft">&#160;</td><td class="mdescRight">Продолжение поиска OID по типу криптографического механизма.  <a href="#aafa6fb05275136d4004d7a0dee9ef6ba">Подробнее...</a><br /></td></tr>
+<tr class="separator:aafa6fb05275136d4004d7a0dee9ef6ba"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
+Переменные</h2></td></tr>
+<tr class="memitem:ad2949fee5e341b0db4fc3332ecf9b2dd"><td class="memItemLeft" align="right" valign="top">static struct <a class="el" href="structtwo__pointers.html">two_pointers</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ak__oid_8c.html#ad2949fee5e341b0db4fc3332ecf9b2dd">block_cipher_counter_functions</a></td></tr>
+<tr class="separator:ad2949fee5e341b0db4fc3332ecf9b2dd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a23dff74d87623f1a48ddb93cfee0574b"><td class="memItemLeft" align="right" valign="top">struct <a class="el" href="structoid.html">oid</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ak__oid_8c.html#a23dff74d87623f1a48ddb93cfee0574b">libakrypt_oids</a> []</td></tr>
+<tr class="separator:a23dff74d87623f1a48ddb93cfee0574b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">Функции</h2>
+<a class="anchor" id="ab36dc28de3aef05eecb93c96ac1714de"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const size_t ak_libakrypt_engines_count </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Получение точного количества типов криптографических механизмов. </p>
+
+<p>См. определение в файле <a class="el" href="ak__oid_8c_source.html">ak_oid.c</a> строка <a class="el" href="ak__oid_8c_source.html#l00465">465</a></p>
+<div class="fragment"><div class="line"><a name="l00466"></a><span class="lineno">  466</span>&#160;{</div><div class="line"><a name="l00467"></a><span class="lineno">  467</span>&#160; <span class="keywordflow">return</span> ( 1 + (<span class="keywordtype">size_t</span>)<a class="code" href="libakrypt_8h.html#ad058d4c98220bc1f0f872455ee71446da7b83fe5b161c4f787c277144be5d467b">oid_engine</a> );</div><div class="line"><a name="l00468"></a><span class="lineno">  468</span>&#160;}</div><div class="ttc" id="libakrypt_8h_html_ad058d4c98220bc1f0f872455ee71446da7b83fe5b161c4f787c277144be5d467b"><div class="ttname"><a href="libakrypt_8h.html#ad058d4c98220bc1f0f872455ee71446da7b83fe5b161c4f787c277144be5d467b">oid_engine</a></div><div class="ttdoc">механизм идентификаторов криптографических алгоритмов </div><div class="ttdef"><b>Definition:</b> <a href="libakrypt_8h_source.html#l00268">libakrypt.h:268</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a class="anchor" id="a77ebfcfab26768a197d9b14355dc85ad"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="libakrypt_8h.html#a44748ab5acc3b5e0d78b2cb1436a0aae">ak_handle</a> ak_libakrypt_find_oid_by_engine </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="libakrypt_8h.html#ad058d4c98220bc1f0f872455ee71446d">ak_oid_engine</a>&#160;</td>
+          <td class="paramname"><em>engine</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Поиск OID по типу криптографического механизма. </p>
+<p>Функция ищет первый OID с заданным значением engine и возвращает его дескриптор. Если такое значение не найдено, возвращается значение <a class="el" href="libakrypt_8h.html#a7966981a8a61d64220efb6d986fee079">ak_error_wrong_handle</a>. Если значение engine равно <a class="el" href="libakrypt_8h.html#ad058d4c98220bc1f0f872455ee71446da50d17ca9177a4eb00153e01bf6a21f0d">undefined_engine</a>, то возвращается первый OID в списке, следовательно, значение <a class="el" href="libakrypt_8h.html#ad058d4c98220bc1f0f872455ee71446da50d17ca9177a4eb00153e01bf6a21f0d">undefined_engine</a> может использоваться для перебора всех возможных OID библиотеки.</p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">engine</td><td>тип криптографического механизма. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd>Функция возвращает дескриптор найденного OID. В случае неверного поиска возвращается <a class="el" href="libakrypt_8h.html#a7966981a8a61d64220efb6d986fee079">ak_error_wrong_handle</a>, код ошибки может быть получен с помощью вызова функции <a class="el" href="ak__log_8c.html#aa0cdd429c558ca0448ce3a8e9529e920" title="Функция возвращает код последней ошибки выполнения программы. ">ak_error_get_value()</a>. </dd></dl>
+<dl><dt><b>Примеры: </b></dt><dd><a class="el" href="example-hash-oids_8c-example.html#a5">example-hash-oids.c</a> и <a class="el" href="example-oid_8c-example.html#a5">example-oid.c</a>.</dd>
+</dl>
+<p>См. определение в файле <a class="el" href="ak__oid_8c_source.html">ak_oid.c</a> строка <a class="el" href="ak__oid_8c_source.html#l00251">251</a></p>
+<div class="fragment"><div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160;{</div><div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160;  <span class="keywordtype">size_t</span> idx = 0;</div><div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160;  <a class="code" href="libakrypt_8h.html#a44748ab5acc3b5e0d78b2cb1436a0aae">ak_handle</a> handle = <a class="code" href="libakrypt_8h.html#a7966981a8a61d64220efb6d986fee079">ak_error_wrong_handle</a>;</div><div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160;</div><div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160;  <span class="keywordflow">if</span>( engine != <a class="code" href="libakrypt_8h.html#ad058d4c98220bc1f0f872455ee71446da50d17ca9177a4eb00153e01bf6a21f0d">undefined_engine</a> ) {</div><div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160;    <span class="comment">/* переборный цикл с первого элемента массива */</span></div><div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160;    <span class="keywordflow">do</span>{</div><div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160;      <span class="keywordflow">if</span>( <a class="code" href="ak__oid_8c.html#a23dff74d87623f1a48ddb93cfee0574b">libakrypt_oids</a>[idx].engine == engine ) <span class="keywordflow">break</span>; <span class="comment">/* случай совпадения engine */</span></div><div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160;    } <span class="keywordflow">while</span>( ++idx &lt; <a class="code" href="ak__oid_8c.html#a40c98c3dad257cd9a3b3a3ce42eab77c">ak_libakrypt_oids_count</a>( ));</div><div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160;    <span class="keywordflow">if</span>( idx == <a class="code" href="ak__oid_8c.html#a40c98c3dad257cd9a3b3a3ce42eab77c">ak_libakrypt_oids_count</a>( )) <span class="keywordflow">return</span> handle;</div><div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160;  }</div><div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160;</div><div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160; <span class="comment">/* создаем дескриптор */</span></div><div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160;  <span class="keywordflow">if</span>(( handle = <a class="code" href="ak__context__manager_8c.html#a0843a172b494b2ffa5c705cdc1a02c72">ak_context_manager_add_node</a>( <a class="code" href="ak__context__manager_8c.html#ab05fb0871d26ba7e3a61afb6e452561e">ak_libakrypt_get_context_manager</a>(),</div><div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160;                         &amp;<a class="code" href="ak__oid_8c.html#a23dff74d87623f1a48ddb93cfee0574b">libakrypt_oids</a>[idx], <a class="code" href="libakrypt_8h.html#ad058d4c98220bc1f0f872455ee71446da7b83fe5b161c4f787c277144be5d467b">oid_engine</a>, <span class="stringliteral">&quot;&quot;</span>, NULL )) == <a class="code" href="libakrypt_8h.html#a7966981a8a61d64220efb6d986fee079">ak_error_wrong_handle</a> ) {</div><div class="line"><a name="l00267"></a><span class="lineno">  267</span>&#160;    <a class="code" href="ak__log_8c.html#a80a4822cbd184b3cbcc43096126eb52b">ak_error_message</a>( <a class="code" href="ak__log_8c.html#aa0cdd429c558ca0448ce3a8e9529e920">ak_error_get_value</a>(), __func__ , <span class="stringliteral">&quot;wrong creation of context manager node&quot;</span> );</div><div class="line"><a name="l00268"></a><span class="lineno">  268</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="libakrypt_8h.html#a7966981a8a61d64220efb6d986fee079">ak_error_wrong_handle</a>;</div><div class="line"><a name="l00269"></a><span class="lineno">  269</span>&#160;  }</div><div class="line"><a name="l00270"></a><span class="lineno">  270</span>&#160;</div><div class="line"><a name="l00271"></a><span class="lineno">  271</span>&#160; <span class="keywordflow">return</span> handle;</div><div class="line"><a name="l00272"></a><span class="lineno">  272</span>&#160;}</div><div class="ttc" id="libakrypt_8h_html_a44748ab5acc3b5e0d78b2cb1436a0aae"><div class="ttname"><a href="libakrypt_8h.html#a44748ab5acc3b5e0d78b2cb1436a0aae">ak_handle</a></div><div class="ttdeci">ak_int64 ak_handle</div><div class="ttdoc">Дескриптор произвольного объекта библиотеки. </div><div class="ttdef"><b>Definition:</b> <a href="libakrypt_8h_source.html#l00131">libakrypt.h:131</a></div></div>
+<div class="ttc" id="libakrypt_8h_html_ad058d4c98220bc1f0f872455ee71446da7b83fe5b161c4f787c277144be5d467b"><div class="ttname"><a href="libakrypt_8h.html#ad058d4c98220bc1f0f872455ee71446da7b83fe5b161c4f787c277144be5d467b">oid_engine</a></div><div class="ttdoc">механизм идентификаторов криптографических алгоритмов </div><div class="ttdef"><b>Definition:</b> <a href="libakrypt_8h_source.html#l00268">libakrypt.h:268</a></div></div>
+<div class="ttc" id="libakrypt_8h_html_ad058d4c98220bc1f0f872455ee71446da50d17ca9177a4eb00153e01bf6a21f0d"><div class="ttname"><a href="libakrypt_8h.html#ad058d4c98220bc1f0f872455ee71446da50d17ca9177a4eb00153e01bf6a21f0d">undefined_engine</a></div><div class="ttdoc">неопределенный механизм, может возвращаться как ошибка </div><div class="ttdef"><b>Definition:</b> <a href="libakrypt_8h_source.html#l00246">libakrypt.h:246</a></div></div>
+<div class="ttc" id="libakrypt_8h_html_a7966981a8a61d64220efb6d986fee079"><div class="ttname"><a href="libakrypt_8h.html#a7966981a8a61d64220efb6d986fee079">ak_error_wrong_handle</a></div><div class="ttdeci">#define ak_error_wrong_handle</div><div class="ttdoc">Неверное значение дескриптора объекта. </div><div class="ttdef"><b>Definition:</b> <a href="libakrypt_8h_source.html#l00177">libakrypt.h:177</a></div></div>
+<div class="ttc" id="ak__log_8c_html_aa0cdd429c558ca0448ce3a8e9529e920"><div class="ttname"><a href="ak__log_8c.html#aa0cdd429c558ca0448ce3a8e9529e920">ak_error_get_value</a></div><div class="ttdeci">int ak_error_get_value(void)</div><div class="ttdoc">Функция возвращает код последней ошибки выполнения программы. </div><div class="ttdef"><b>Definition:</b> <a href="ak__log_8c_source.html#l00067">ak_log.c:67</a></div></div>
+<div class="ttc" id="ak__oid_8c_html_a23dff74d87623f1a48ddb93cfee0574b"><div class="ttname"><a href="ak__oid_8c.html#a23dff74d87623f1a48ddb93cfee0574b">libakrypt_oids</a></div><div class="ttdeci">struct oid libakrypt_oids[]</div><div class="ttdef"><b>Definition:</b> <a href="ak__oid_8c_source.html#l00044">ak_oid.c:44</a></div></div>
+<div class="ttc" id="ak__log_8c_html_a80a4822cbd184b3cbcc43096126eb52b"><div class="ttname"><a href="ak__log_8c.html#a80a4822cbd184b3cbcc43096126eb52b">ak_error_message</a></div><div class="ttdeci">int ak_error_message(const int code, const char *function, const char *message)</div><div class="ttdoc">Вывод сообщений о возникшей в процессе выполнения ошибке. </div><div class="ttdef"><b>Definition:</b> <a href="ak__log_8c_source.html#l00186">ak_log.c:186</a></div></div>
+<div class="ttc" id="ak__oid_8c_html_a40c98c3dad257cd9a3b3a3ce42eab77c"><div class="ttname"><a href="ak__oid_8c.html#a40c98c3dad257cd9a3b3a3ce42eab77c">ak_libakrypt_oids_count</a></div><div class="ttdeci">const size_t ak_libakrypt_oids_count(void)</div><div class="ttdoc">Получение количества доступных OID библиотеки. </div><div class="ttdef"><b>Definition:</b> <a href="ak__oid_8c_source.html#l00168">ak_oid.c:168</a></div></div>
+<div class="ttc" id="ak__context__manager_8c_html_ab05fb0871d26ba7e3a61afb6e452561e"><div class="ttname"><a href="ak__context__manager_8c.html#ab05fb0871d26ba7e3a61afb6e452561e">ak_libakrypt_get_context_manager</a></div><div class="ttdeci">ak_context_manager ak_libakrypt_get_context_manager(void)</div><div class="ttdoc">Получение указателя на глобальную структуру управления контекстами. </div><div class="ttdef"><b>Definition:</b> <a href="ak__context__manager_8c_source.html#l00462">ak_context_manager.c:462</a></div></div>
+<div class="ttc" id="ak__context__manager_8c_html_a0843a172b494b2ffa5c705cdc1a02c72"><div class="ttname"><a href="ak__context__manager_8c.html#a0843a172b494b2ffa5c705cdc1a02c72">ak_context_manager_add_node</a></div><div class="ttdeci">ak_handle ak_context_manager_add_node(ak_context_manager manager, ak_pointer ctx, ak_oid_engine engine, const char *description, ak_function_free_object *func)</div><div class="ttdoc">Добавление контекста в структуру управления контекстами. </div><div class="ttdef"><b>Definition:</b> <a href="ak__context__manager_8c_source.html#l00313">ak_context_manager.c:313</a></div></div>
+</div><!-- fragment -->
+<p><div class="dynheader">
+Граф вызовов:</div>
+<div class="dyncontent">
+<div class="center"><img src="ak__oid_8c_a77ebfcfab26768a197d9b14355dc85ad_cgraph.png" border="0" usemap="#ak__oid_8c_a77ebfcfab26768a197d9b14355dc85ad_cgraph" alt=""/></div>
+<!-- MAP 1 -->
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a6120b246a2b2aaa44cc6c70174724a6b"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="libakrypt_8h.html#a44748ab5acc3b5e0d78b2cb1436a0aae">ak_handle</a> ak_libakrypt_find_oid_by_id </td>
+          <td>(</td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>id</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Поиск OID по его идентификатору (строке цифр, разделенных точками). </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">id</td><td>Идентификатор, заданный в виде последовательности чисел, разделенных точками </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd>Функция возвращает дескриптор найденного OID. В случае неверного поиска возвращается <a class="el" href="libakrypt_8h.html#a7966981a8a61d64220efb6d986fee079">ak_error_wrong_handle</a>, код ошибки может быть получен с помощью вызова функции <a class="el" href="ak__log_8c.html#aa0cdd429c558ca0448ce3a8e9529e920" title="Функция возвращает код последней ошибки выполнения программы. ">ak_error_get_value()</a>. </dd></dl>
+<dl><dt><b>Примеры: </b></dt><dd><a class="el" href="example-oid_8c-example.html#a12">example-oid.c</a>.</dd>
+</dl>
+<p>См. определение в файле <a class="el" href="ak__oid_8c_source.html">ak_oid.c</a> строка <a class="el" href="ak__oid_8c_source.html#l00371">371</a></p>
+<div class="fragment"><div class="line"><a name="l00372"></a><span class="lineno">  372</span>&#160;{</div><div class="line"><a name="l00373"></a><span class="lineno">  373</span>&#160;  <span class="keywordtype">size_t</span> idx = 0;</div><div class="line"><a name="l00374"></a><span class="lineno">  374</span>&#160;  <a class="code" href="libakrypt_8h.html#a44748ab5acc3b5e0d78b2cb1436a0aae">ak_handle</a> handle = <a class="code" href="libakrypt_8h.html#a7966981a8a61d64220efb6d986fee079">ak_error_wrong_handle</a>;</div><div class="line"><a name="l00375"></a><span class="lineno">  375</span>&#160;</div><div class="line"><a name="l00376"></a><span class="lineno">  376</span>&#160; <span class="comment">/* переборный цикл с первого элемента массива */</span></div><div class="line"><a name="l00377"></a><span class="lineno">  377</span>&#160;  <span class="keywordflow">do</span>{</div><div class="line"><a name="l00378"></a><span class="lineno">  378</span>&#160;     <span class="keywordflow">if</span>( <a class="code" href="ak__tools_8c.html#aad0f57a8872509185b031a4dca334f98">ak_ptr_is_equal</a>( (<span class="keywordtype">void</span> *) <span class="keywordtype">id</span>,</div><div class="line"><a name="l00379"></a><span class="lineno">  379</span>&#160;                        (<span class="keywordtype">void</span> *)<a class="code" href="ak__oid_8c.html#a23dff74d87623f1a48ddb93cfee0574b">libakrypt_oids</a>[idx].<span class="keywordtype">id</span>, strlen( <a class="code" href="ak__oid_8c.html#a23dff74d87623f1a48ddb93cfee0574b">libakrypt_oids</a>[idx].<span class="keywordtype">id</span> ))) <span class="keywordflow">break</span>;</div><div class="line"><a name="l00380"></a><span class="lineno">  380</span>&#160;  } <span class="keywordflow">while</span>( ++idx &lt; <a class="code" href="ak__oid_8c.html#a40c98c3dad257cd9a3b3a3ce42eab77c">ak_libakrypt_oids_count</a>( ));</div><div class="line"><a name="l00381"></a><span class="lineno">  381</span>&#160;  <span class="keywordflow">if</span>( idx == <a class="code" href="ak__oid_8c.html#a40c98c3dad257cd9a3b3a3ce42eab77c">ak_libakrypt_oids_count</a>( )) <span class="keywordflow">return</span> handle;</div><div class="line"><a name="l00382"></a><span class="lineno">  382</span>&#160;</div><div class="line"><a name="l00383"></a><span class="lineno">  383</span>&#160; <span class="comment">/* создаем дескриптор */</span></div><div class="line"><a name="l00384"></a><span class="lineno">  384</span>&#160;  <span class="keywordflow">if</span>(( handle = <a class="code" href="ak__context__manager_8c.html#a0843a172b494b2ffa5c705cdc1a02c72">ak_context_manager_add_node</a>( <a class="code" href="ak__context__manager_8c.html#ab05fb0871d26ba7e3a61afb6e452561e">ak_libakrypt_get_context_manager</a>(),</div><div class="line"><a name="l00385"></a><span class="lineno">  385</span>&#160;                         &amp;<a class="code" href="ak__oid_8c.html#a23dff74d87623f1a48ddb93cfee0574b">libakrypt_oids</a>[idx], <a class="code" href="libakrypt_8h.html#ad058d4c98220bc1f0f872455ee71446da7b83fe5b161c4f787c277144be5d467b">oid_engine</a>, <span class="stringliteral">&quot;&quot;</span>, NULL )) == <a class="code" href="libakrypt_8h.html#a7966981a8a61d64220efb6d986fee079">ak_error_wrong_handle</a> ) {</div><div class="line"><a name="l00386"></a><span class="lineno">  386</span>&#160;    <a class="code" href="ak__log_8c.html#a80a4822cbd184b3cbcc43096126eb52b">ak_error_message</a>( <a class="code" href="ak__log_8c.html#aa0cdd429c558ca0448ce3a8e9529e920">ak_error_get_value</a>(), __func__ , <span class="stringliteral">&quot;wrong creation of context manager node&quot;</span> );</div><div class="line"><a name="l00387"></a><span class="lineno">  387</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="libakrypt_8h.html#a7966981a8a61d64220efb6d986fee079">ak_error_wrong_handle</a>;</div><div class="line"><a name="l00388"></a><span class="lineno">  388</span>&#160;  }</div><div class="line"><a name="l00389"></a><span class="lineno">  389</span>&#160;</div><div class="line"><a name="l00390"></a><span class="lineno">  390</span>&#160; <span class="keywordflow">return</span> handle;</div><div class="line"><a name="l00391"></a><span class="lineno">  391</span>&#160;}</div><div class="ttc" id="libakrypt_8h_html_a44748ab5acc3b5e0d78b2cb1436a0aae"><div class="ttname"><a href="libakrypt_8h.html#a44748ab5acc3b5e0d78b2cb1436a0aae">ak_handle</a></div><div class="ttdeci">ak_int64 ak_handle</div><div class="ttdoc">Дескриптор произвольного объекта библиотеки. </div><div class="ttdef"><b>Definition:</b> <a href="libakrypt_8h_source.html#l00131">libakrypt.h:131</a></div></div>
+<div class="ttc" id="libakrypt_8h_html_ad058d4c98220bc1f0f872455ee71446da7b83fe5b161c4f787c277144be5d467b"><div class="ttname"><a href="libakrypt_8h.html#ad058d4c98220bc1f0f872455ee71446da7b83fe5b161c4f787c277144be5d467b">oid_engine</a></div><div class="ttdoc">механизм идентификаторов криптографических алгоритмов </div><div class="ttdef"><b>Definition:</b> <a href="libakrypt_8h_source.html#l00268">libakrypt.h:268</a></div></div>
+<div class="ttc" id="libakrypt_8h_html_a7966981a8a61d64220efb6d986fee079"><div class="ttname"><a href="libakrypt_8h.html#a7966981a8a61d64220efb6d986fee079">ak_error_wrong_handle</a></div><div class="ttdeci">#define ak_error_wrong_handle</div><div class="ttdoc">Неверное значение дескриптора объекта. </div><div class="ttdef"><b>Definition:</b> <a href="libakrypt_8h_source.html#l00177">libakrypt.h:177</a></div></div>
+<div class="ttc" id="ak__tools_8c_html_aad0f57a8872509185b031a4dca334f98"><div class="ttname"><a href="ak__tools_8c.html#aad0f57a8872509185b031a4dca334f98">ak_ptr_is_equal</a></div><div class="ttdeci">ak_bool ak_ptr_is_equal(const ak_pointer left, const ak_pointer right, const size_t size)</div><div class="ttdoc">Сравнение двух областей памяти. </div><div class="ttdef"><b>Definition:</b> <a href="ak__tools_8c_source.html#l00266">ak_tools.c:266</a></div></div>
+<div class="ttc" id="ak__log_8c_html_aa0cdd429c558ca0448ce3a8e9529e920"><div class="ttname"><a href="ak__log_8c.html#aa0cdd429c558ca0448ce3a8e9529e920">ak_error_get_value</a></div><div class="ttdeci">int ak_error_get_value(void)</div><div class="ttdoc">Функция возвращает код последней ошибки выполнения программы. </div><div class="ttdef"><b>Definition:</b> <a href="ak__log_8c_source.html#l00067">ak_log.c:67</a></div></div>
+<div class="ttc" id="ak__oid_8c_html_a23dff74d87623f1a48ddb93cfee0574b"><div class="ttname"><a href="ak__oid_8c.html#a23dff74d87623f1a48ddb93cfee0574b">libakrypt_oids</a></div><div class="ttdeci">struct oid libakrypt_oids[]</div><div class="ttdef"><b>Definition:</b> <a href="ak__oid_8c_source.html#l00044">ak_oid.c:44</a></div></div>
+<div class="ttc" id="ak__log_8c_html_a80a4822cbd184b3cbcc43096126eb52b"><div class="ttname"><a href="ak__log_8c.html#a80a4822cbd184b3cbcc43096126eb52b">ak_error_message</a></div><div class="ttdeci">int ak_error_message(const int code, const char *function, const char *message)</div><div class="ttdoc">Вывод сообщений о возникшей в процессе выполнения ошибке. </div><div class="ttdef"><b>Definition:</b> <a href="ak__log_8c_source.html#l00186">ak_log.c:186</a></div></div>
+<div class="ttc" id="ak__oid_8c_html_a40c98c3dad257cd9a3b3a3ce42eab77c"><div class="ttname"><a href="ak__oid_8c.html#a40c98c3dad257cd9a3b3a3ce42eab77c">ak_libakrypt_oids_count</a></div><div class="ttdeci">const size_t ak_libakrypt_oids_count(void)</div><div class="ttdoc">Получение количества доступных OID библиотеки. </div><div class="ttdef"><b>Definition:</b> <a href="ak__oid_8c_source.html#l00168">ak_oid.c:168</a></div></div>
+<div class="ttc" id="ak__context__manager_8c_html_ab05fb0871d26ba7e3a61afb6e452561e"><div class="ttname"><a href="ak__context__manager_8c.html#ab05fb0871d26ba7e3a61afb6e452561e">ak_libakrypt_get_context_manager</a></div><div class="ttdeci">ak_context_manager ak_libakrypt_get_context_manager(void)</div><div class="ttdoc">Получение указателя на глобальную структуру управления контекстами. </div><div class="ttdef"><b>Definition:</b> <a href="ak__context__manager_8c_source.html#l00462">ak_context_manager.c:462</a></div></div>
+<div class="ttc" id="ak__context__manager_8c_html_a0843a172b494b2ffa5c705cdc1a02c72"><div class="ttname"><a href="ak__context__manager_8c.html#a0843a172b494b2ffa5c705cdc1a02c72">ak_context_manager_add_node</a></div><div class="ttdeci">ak_handle ak_context_manager_add_node(ak_context_manager manager, ak_pointer ctx, ak_oid_engine engine, const char *description, ak_function_free_object *func)</div><div class="ttdoc">Добавление контекста в структуру управления контекстами. </div><div class="ttdef"><b>Definition:</b> <a href="ak__context__manager_8c_source.html#l00313">ak_context_manager.c:313</a></div></div>
+</div><!-- fragment -->
+<p><div class="dynheader">
+Граф вызовов:</div>
+<div class="dyncontent">
+<div class="center"><img src="ak__oid_8c_a6120b246a2b2aaa44cc6c70174724a6b_cgraph.png" border="0" usemap="#ak__oid_8c_a6120b246a2b2aaa44cc6c70174724a6b_cgraph" alt=""/></div>
+<!-- MAP 2 -->
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="ad84a98d6d6d47c0cd276b84f72816897"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="libakrypt_8h.html#a44748ab5acc3b5e0d78b2cb1436a0aae">ak_handle</a> ak_libakrypt_find_oid_by_name </td>
+          <td>(</td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>name</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Поиск OID его имени. </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">name</td><td>Человекочитаемое имя разыскиваемого идентификатора. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd>Функция возвращает дескриптор найденного OID. В случае неверного поиска возвращается <a class="el" href="libakrypt_8h.html#a7966981a8a61d64220efb6d986fee079">ak_error_wrong_handle</a>, код ошибки может быть получен с помощью вызова функции <a class="el" href="ak__log_8c.html#aa0cdd429c558ca0448ce3a8e9529e920" title="Функция возвращает код последней ошибки выполнения программы. ">ak_error_get_value()</a>. </dd></dl>
+<dl><dt><b>Примеры: </b></dt><dd><a class="el" href="example-oid_8c-example.html#a11">example-oid.c</a>.</dd>
+</dl>
+<p>См. определение в файле <a class="el" href="ak__oid_8c_source.html">ak_oid.c</a> строка <a class="el" href="ak__oid_8c_source.html#l00343">343</a></p>
+<div class="fragment"><div class="line"><a name="l00344"></a><span class="lineno">  344</span>&#160;{</div><div class="line"><a name="l00345"></a><span class="lineno">  345</span>&#160;  <span class="keywordtype">size_t</span> idx = 0;</div><div class="line"><a name="l00346"></a><span class="lineno">  346</span>&#160;  <a class="code" href="libakrypt_8h.html#a44748ab5acc3b5e0d78b2cb1436a0aae">ak_handle</a> handle = <a class="code" href="libakrypt_8h.html#a7966981a8a61d64220efb6d986fee079">ak_error_wrong_handle</a>;</div><div class="line"><a name="l00347"></a><span class="lineno">  347</span>&#160;</div><div class="line"><a name="l00348"></a><span class="lineno">  348</span>&#160; <span class="comment">/* переборный цикл с первого элемента массива */</span></div><div class="line"><a name="l00349"></a><span class="lineno">  349</span>&#160;  <span class="keywordflow">do</span>{</div><div class="line"><a name="l00350"></a><span class="lineno">  350</span>&#160;     <span class="keywordflow">if</span>( <a class="code" href="ak__tools_8c.html#aad0f57a8872509185b031a4dca334f98">ak_ptr_is_equal</a>( (<span class="keywordtype">void</span> *) name,</div><div class="line"><a name="l00351"></a><span class="lineno">  351</span>&#160;                      (<span class="keywordtype">void</span> *)<a class="code" href="ak__oid_8c.html#a23dff74d87623f1a48ddb93cfee0574b">libakrypt_oids</a>[idx].name, strlen( <a class="code" href="ak__oid_8c.html#a23dff74d87623f1a48ddb93cfee0574b">libakrypt_oids</a>[idx].name ))) <span class="keywordflow">break</span>;</div><div class="line"><a name="l00352"></a><span class="lineno">  352</span>&#160;  } <span class="keywordflow">while</span>( ++idx &lt; <a class="code" href="ak__oid_8c.html#a40c98c3dad257cd9a3b3a3ce42eab77c">ak_libakrypt_oids_count</a>( ));</div><div class="line"><a name="l00353"></a><span class="lineno">  353</span>&#160;  <span class="keywordflow">if</span>( idx == <a class="code" href="ak__oid_8c.html#a40c98c3dad257cd9a3b3a3ce42eab77c">ak_libakrypt_oids_count</a>( )) <span class="keywordflow">return</span> handle;</div><div class="line"><a name="l00354"></a><span class="lineno">  354</span>&#160;</div><div class="line"><a name="l00355"></a><span class="lineno">  355</span>&#160; <span class="comment">/* создаем дескриптор */</span></div><div class="line"><a name="l00356"></a><span class="lineno">  356</span>&#160;  <span class="keywordflow">if</span>(( handle = <a class="code" href="ak__context__manager_8c.html#a0843a172b494b2ffa5c705cdc1a02c72">ak_context_manager_add_node</a>( <a class="code" href="ak__context__manager_8c.html#ab05fb0871d26ba7e3a61afb6e452561e">ak_libakrypt_get_context_manager</a>(),</div><div class="line"><a name="l00357"></a><span class="lineno">  357</span>&#160;                         &amp;<a class="code" href="ak__oid_8c.html#a23dff74d87623f1a48ddb93cfee0574b">libakrypt_oids</a>[idx], <a class="code" href="libakrypt_8h.html#ad058d4c98220bc1f0f872455ee71446da7b83fe5b161c4f787c277144be5d467b">oid_engine</a>, <span class="stringliteral">&quot;&quot;</span>, NULL )) == <a class="code" href="libakrypt_8h.html#a7966981a8a61d64220efb6d986fee079">ak_error_wrong_handle</a> ) {</div><div class="line"><a name="l00358"></a><span class="lineno">  358</span>&#160;    <a class="code" href="ak__log_8c.html#a80a4822cbd184b3cbcc43096126eb52b">ak_error_message</a>( <a class="code" href="ak__log_8c.html#aa0cdd429c558ca0448ce3a8e9529e920">ak_error_get_value</a>(), __func__ , <span class="stringliteral">&quot;wrong creation of context manager node&quot;</span> );</div><div class="line"><a name="l00359"></a><span class="lineno">  359</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="libakrypt_8h.html#a7966981a8a61d64220efb6d986fee079">ak_error_wrong_handle</a>;</div><div class="line"><a name="l00360"></a><span class="lineno">  360</span>&#160;  }</div><div class="line"><a name="l00361"></a><span class="lineno">  361</span>&#160;</div><div class="line"><a name="l00362"></a><span class="lineno">  362</span>&#160; <span class="keywordflow">return</span> handle;</div><div class="line"><a name="l00363"></a><span class="lineno">  363</span>&#160;}</div><div class="ttc" id="libakrypt_8h_html_a44748ab5acc3b5e0d78b2cb1436a0aae"><div class="ttname"><a href="libakrypt_8h.html#a44748ab5acc3b5e0d78b2cb1436a0aae">ak_handle</a></div><div class="ttdeci">ak_int64 ak_handle</div><div class="ttdoc">Дескриптор произвольного объекта библиотеки. </div><div class="ttdef"><b>Definition:</b> <a href="libakrypt_8h_source.html#l00131">libakrypt.h:131</a></div></div>
+<div class="ttc" id="libakrypt_8h_html_ad058d4c98220bc1f0f872455ee71446da7b83fe5b161c4f787c277144be5d467b"><div class="ttname"><a href="libakrypt_8h.html#ad058d4c98220bc1f0f872455ee71446da7b83fe5b161c4f787c277144be5d467b">oid_engine</a></div><div class="ttdoc">механизм идентификаторов криптографических алгоритмов </div><div class="ttdef"><b>Definition:</b> <a href="libakrypt_8h_source.html#l00268">libakrypt.h:268</a></div></div>
+<div class="ttc" id="libakrypt_8h_html_a7966981a8a61d64220efb6d986fee079"><div class="ttname"><a href="libakrypt_8h.html#a7966981a8a61d64220efb6d986fee079">ak_error_wrong_handle</a></div><div class="ttdeci">#define ak_error_wrong_handle</div><div class="ttdoc">Неверное значение дескриптора объекта. </div><div class="ttdef"><b>Definition:</b> <a href="libakrypt_8h_source.html#l00177">libakrypt.h:177</a></div></div>
+<div class="ttc" id="ak__tools_8c_html_aad0f57a8872509185b031a4dca334f98"><div class="ttname"><a href="ak__tools_8c.html#aad0f57a8872509185b031a4dca334f98">ak_ptr_is_equal</a></div><div class="ttdeci">ak_bool ak_ptr_is_equal(const ak_pointer left, const ak_pointer right, const size_t size)</div><div class="ttdoc">Сравнение двух областей памяти. </div><div class="ttdef"><b>Definition:</b> <a href="ak__tools_8c_source.html#l00266">ak_tools.c:266</a></div></div>
+<div class="ttc" id="ak__log_8c_html_aa0cdd429c558ca0448ce3a8e9529e920"><div class="ttname"><a href="ak__log_8c.html#aa0cdd429c558ca0448ce3a8e9529e920">ak_error_get_value</a></div><div class="ttdeci">int ak_error_get_value(void)</div><div class="ttdoc">Функция возвращает код последней ошибки выполнения программы. </div><div class="ttdef"><b>Definition:</b> <a href="ak__log_8c_source.html#l00067">ak_log.c:67</a></div></div>
+<div class="ttc" id="ak__oid_8c_html_a23dff74d87623f1a48ddb93cfee0574b"><div class="ttname"><a href="ak__oid_8c.html#a23dff74d87623f1a48ddb93cfee0574b">libakrypt_oids</a></div><div class="ttdeci">struct oid libakrypt_oids[]</div><div class="ttdef"><b>Definition:</b> <a href="ak__oid_8c_source.html#l00044">ak_oid.c:44</a></div></div>
+<div class="ttc" id="ak__log_8c_html_a80a4822cbd184b3cbcc43096126eb52b"><div class="ttname"><a href="ak__log_8c.html#a80a4822cbd184b3cbcc43096126eb52b">ak_error_message</a></div><div class="ttdeci">int ak_error_message(const int code, const char *function, const char *message)</div><div class="ttdoc">Вывод сообщений о возникшей в процессе выполнения ошибке. </div><div class="ttdef"><b>Definition:</b> <a href="ak__log_8c_source.html#l00186">ak_log.c:186</a></div></div>
+<div class="ttc" id="ak__oid_8c_html_a40c98c3dad257cd9a3b3a3ce42eab77c"><div class="ttname"><a href="ak__oid_8c.html#a40c98c3dad257cd9a3b3a3ce42eab77c">ak_libakrypt_oids_count</a></div><div class="ttdeci">const size_t ak_libakrypt_oids_count(void)</div><div class="ttdoc">Получение количества доступных OID библиотеки. </div><div class="ttdef"><b>Definition:</b> <a href="ak__oid_8c_source.html#l00168">ak_oid.c:168</a></div></div>
+<div class="ttc" id="ak__context__manager_8c_html_ab05fb0871d26ba7e3a61afb6e452561e"><div class="ttname"><a href="ak__context__manager_8c.html#ab05fb0871d26ba7e3a61afb6e452561e">ak_libakrypt_get_context_manager</a></div><div class="ttdeci">ak_context_manager ak_libakrypt_get_context_manager(void)</div><div class="ttdoc">Получение указателя на глобальную структуру управления контекстами. </div><div class="ttdef"><b>Definition:</b> <a href="ak__context__manager_8c_source.html#l00462">ak_context_manager.c:462</a></div></div>
+<div class="ttc" id="ak__context__manager_8c_html_a0843a172b494b2ffa5c705cdc1a02c72"><div class="ttname"><a href="ak__context__manager_8c.html#a0843a172b494b2ffa5c705cdc1a02c72">ak_context_manager_add_node</a></div><div class="ttdeci">ak_handle ak_context_manager_add_node(ak_context_manager manager, ak_pointer ctx, ak_oid_engine engine, const char *description, ak_function_free_object *func)</div><div class="ttdoc">Добавление контекста в структуру управления контекстами. </div><div class="ttdef"><b>Definition:</b> <a href="ak__context__manager_8c_source.html#l00313">ak_context_manager.c:313</a></div></div>
+</div><!-- fragment -->
+<p><div class="dynheader">
+Граф вызовов:</div>
+<div class="dyncontent">
+<div class="center"><img src="ak__oid_8c_ad84a98d6d6d47c0cd276b84f72816897_cgraph.png" border="0" usemap="#ak__oid_8c_ad84a98d6d6d47c0cd276b84f72816897_cgraph" alt=""/></div>
+<!-- MAP 3 -->
+</div>
+</p>
+
+<p><div class="dynheader">
+Граф вызова функции:</div>
+<div class="dyncontent">
+<div class="center"><img src="ak__oid_8c_ad84a98d6d6d47c0cd276b84f72816897_icgraph.png" border="0" usemap="#ak__oid_8c_ad84a98d6d6d47c0cd276b84f72816897_icgraph" alt=""/></div>
+<!-- MAP 4 -->
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a1e6fc7d787aaeba351468bdd3ddfbaf3"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="libakrypt_8h.html#a44748ab5acc3b5e0d78b2cb1436a0aae">ak_handle</a> ak_libakrypt_findnext_oid_by_engine </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="libakrypt_8h.html#a44748ab5acc3b5e0d78b2cb1436a0aae">ak_handle</a>&#160;</td>
+          <td class="paramname"><em>handle</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="libakrypt_8h.html#ad058d4c98220bc1f0f872455ee71446d">ak_oid_engine</a>&#160;</td>
+          <td class="paramname"><em>engine</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Продолжение поиска OID по типу криптографического механизма. </p>
+<p>Функция продолжает поиск в структуре управления контекстами OID'а с заданным значением engine и возвращает его дескриптор. Если такое значение не найдено, возвращается значение <a class="el" href="libakrypt_8h.html#a7966981a8a61d64220efb6d986fee079">ak_error_wrong_handle</a>. Если значение engine равно <a class="el" href="libakrypt_8h.html#ad058d4c98220bc1f0f872455ee71446da50d17ca9177a4eb00153e01bf6a21f0d">undefined_engine</a>, то возвращается следующий OID в списке, следовательно, значение <a class="el" href="libakrypt_8h.html#ad058d4c98220bc1f0f872455ee71446da50d17ca9177a4eb00153e01bf6a21f0d">undefined_engine</a> может использоваться для перебора всех возможных OID библиотеки.</p>
+<p>Пример для перебора всех существующих OID блочного шифрования.</p>
+<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;ak_handle handle = ak_libakrypt_find_oid_by_engine( block_cipher );</div><div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;</div><div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;while( handle != ak_error_wrong_handle )</div><div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;  handle = ak_libakrypt_findnext_oid_by_engine( handle, block_cipher );</div></div><!-- fragment --><dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">handle</td><td>Дескриптор, начиная с которого производится поиск. </td></tr>
+    <tr><td class="paramname">engine</td><td>тип криптографического механизма. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd>Функция возвращает дескриптор найденного OID. В случае неверного поиска возвращается <a class="el" href="libakrypt_8h.html#a7966981a8a61d64220efb6d986fee079">ak_error_wrong_handle</a>, код ошибки может быть получен с помощью вызова функции <a class="el" href="ak__log_8c.html#aa0cdd429c558ca0448ce3a8e9529e920" title="Функция возвращает код последней ошибки выполнения программы. ">ak_error_get_value()</a>. </dd></dl>
+<dl><dt><b>Примеры: </b></dt><dd><a class="el" href="example-hash-oids_8c-example.html#a18">example-hash-oids.c</a> и <a class="el" href="example-oid_8c-example.html#a9">example-oid.c</a>.</dd>
+</dl>
+<p>См. определение в файле <a class="el" href="ak__oid_8c_source.html">ak_oid.c</a> строка <a class="el" href="ak__oid_8c_source.html#l00297">297</a></p>
+<div class="fragment"><div class="line"><a name="l00298"></a><span class="lineno">  298</span>&#160;{</div><div class="line"><a name="l00299"></a><span class="lineno">  299</span>&#160;  <span class="keywordtype">size_t</span> idx = 0;</div><div class="line"><a name="l00300"></a><span class="lineno">  300</span>&#160;  <a class="code" href="structoid.html">ak_oid</a> <a class="code" href="structoid.html">oid</a> = NULL;</div><div class="line"><a name="l00301"></a><span class="lineno">  301</span>&#160;  <span class="keywordtype">int</span> error = <a class="code" href="libakrypt_8h.html#aa6db0eccf8222376f61f2f033a1bbe4c">ak_error_ok</a>;</div><div class="line"><a name="l00302"></a><span class="lineno">  302</span>&#160;  <a class="code" href="structcontext__manager.html">ak_context_manager</a> manager = <a class="code" href="ak__context__manager_8c.html#ab05fb0871d26ba7e3a61afb6e452561e">ak_libakrypt_get_context_manager</a>();</div><div class="line"><a name="l00303"></a><span class="lineno">  303</span>&#160;</div><div class="line"><a name="l00304"></a><span class="lineno">  304</span>&#160; <span class="comment">/* для того чтобы не создавать новый дескриптор, приходится эмулировать</span></div><div class="line"><a name="l00305"></a><span class="lineno">  305</span>&#160;<span class="comment">    работу функции ak_handle_get_context() */</span></div><div class="line"><a name="l00306"></a><span class="lineno">  306</span>&#160;  <span class="keywordflow">if</span>( manager == NULL ) {</div><div class="line"><a name="l00307"></a><span class="lineno">  307</span>&#160;    <a class="code" href="ak__log_8c.html#a80a4822cbd184b3cbcc43096126eb52b">ak_error_message</a>( <a class="code" href="libakrypt_8h.html#ab44706b2e13bc40499b30fb371ad7f9e">ak_error_null_pointer</a>, __func__, <span class="stringliteral">&quot;null pointer to internal context manager&quot;</span>);</div><div class="line"><a name="l00308"></a><span class="lineno">  308</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="libakrypt_8h.html#a7966981a8a61d64220efb6d986fee079">ak_error_wrong_handle</a>;</div><div class="line"><a name="l00309"></a><span class="lineno">  309</span>&#160;  }</div><div class="line"><a name="l00310"></a><span class="lineno">  310</span>&#160;  <span class="keywordflow">if</span>(( error = <a class="code" href="ak__context__manager_8c.html#a10e36a54133c0c1758ee1a9bd86b19e8">ak_context_manager_handle_check</a>( manager, handle, &amp;idx ))!= <a class="code" href="libakrypt_8h.html#aa6db0eccf8222376f61f2f033a1bbe4c">ak_error_ok</a> ) {</div><div class="line"><a name="l00311"></a><span class="lineno">  311</span>&#160;    <a class="code" href="ak__log_8c.html#a80a4822cbd184b3cbcc43096126eb52b">ak_error_message</a>( error, __func__, <span class="stringliteral">&quot;wrong handle&quot;</span> );</div><div class="line"><a name="l00312"></a><span class="lineno">  312</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="libakrypt_8h.html#a7966981a8a61d64220efb6d986fee079">ak_error_wrong_handle</a>;</div><div class="line"><a name="l00313"></a><span class="lineno">  313</span>&#160;  }</div><div class="line"><a name="l00314"></a><span class="lineno">  314</span>&#160;  <span class="keywordflow">if</span>( manager-&gt;<a class="code" href="structcontext__manager.html#aa662b866bd62c0bdfa049324b13447c1">array</a>[idx]-&gt;<a class="code" href="structcontext__node.html#a5937bd1634d14c68ac13b36b04084e97">engine</a> != <a class="code" href="libakrypt_8h.html#ad058d4c98220bc1f0f872455ee71446da7b83fe5b161c4f787c277144be5d467b">oid_engine</a> ) {</div><div class="line"><a name="l00315"></a><span class="lineno">  315</span>&#160;    <a class="code" href="ak__log_8c.html#a80a4822cbd184b3cbcc43096126eb52b">ak_error_message</a>( <a class="code" href="libakrypt_8h.html#a9bd7363bd4654d60ddfdd46e3cf7880a">ak_error_oid_engine</a>, __func__, <span class="stringliteral">&quot;using wrong engine for given handle&quot;</span> );</div><div class="line"><a name="l00316"></a><span class="lineno">  316</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="libakrypt_8h.html#a7966981a8a61d64220efb6d986fee079">ak_error_wrong_handle</a>;</div><div class="line"><a name="l00317"></a><span class="lineno">  317</span>&#160;  }</div><div class="line"><a name="l00318"></a><span class="lineno">  318</span>&#160;</div><div class="line"><a name="l00319"></a><span class="lineno">  319</span>&#160; <span class="comment">/* получаем рабочий указатель на OID в качестве элемента глобального массива контекстов */</span></div><div class="line"><a name="l00320"></a><span class="lineno">  320</span>&#160;  <span class="keywordflow">if</span>(( oid = (<a class="code" href="structoid.html">ak_oid</a>) manager-&gt;<a class="code" href="structcontext__manager.html#aa662b866bd62c0bdfa049324b13447c1">array</a>[idx]-&gt;<a class="code" href="structcontext__node.html#a38b0408fc77ca676c794ef9ef33622fa">ctx</a> ) == NULL ) {</div><div class="line"><a name="l00321"></a><span class="lineno">  321</span>&#160;    <a class="code" href="ak__log_8c.html#a80a4822cbd184b3cbcc43096126eb52b">ak_error_message</a>( <a class="code" href="libakrypt_8h.html#ab44706b2e13bc40499b30fb371ad7f9e">ak_error_null_pointer</a>, __func__,</div><div class="line"><a name="l00322"></a><span class="lineno">  322</span>&#160;                                           <span class="stringliteral">&quot;using null pointer in handle to internal structure&quot;</span> );</div><div class="line"><a name="l00323"></a><span class="lineno">  323</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="libakrypt_8h.html#a7966981a8a61d64220efb6d986fee079">ak_error_wrong_handle</a>;</div><div class="line"><a name="l00324"></a><span class="lineno">  324</span>&#160;  }</div><div class="line"><a name="l00325"></a><span class="lineno">  325</span>&#160;</div><div class="line"><a name="l00326"></a><span class="lineno">  326</span>&#160; <span class="comment">/* сдвигаемся по массиву OID вперед */</span></div><div class="line"><a name="l00327"></a><span class="lineno">  327</span>&#160;  <span class="keywordflow">while</span>( (++oid)-&gt;engine != <a class="code" href="libakrypt_8h.html#ad058d4c98220bc1f0f872455ee71446da50d17ca9177a4eb00153e01bf6a21f0d">undefined_engine</a> ) {</div><div class="line"><a name="l00328"></a><span class="lineno">  328</span>&#160;   <span class="comment">/* в случае успешного поиска устанавливаем новое значение контекста в глобальном массиве */</span></div><div class="line"><a name="l00329"></a><span class="lineno">  329</span>&#160;    <span class="keywordflow">if</span>( engine == <a class="code" href="libakrypt_8h.html#ad058d4c98220bc1f0f872455ee71446da50d17ca9177a4eb00153e01bf6a21f0d">undefined_engine</a> ) { manager-&gt;<a class="code" href="structcontext__manager.html#aa662b866bd62c0bdfa049324b13447c1">array</a>[idx]-&gt;<a class="code" href="structcontext__node.html#a38b0408fc77ca676c794ef9ef33622fa">ctx</a> = oid; <span class="keywordflow">return</span> handle; }</div><div class="line"><a name="l00330"></a><span class="lineno">  330</span>&#160;    <span class="keywordflow">if</span>( oid-&gt;<a class="code" href="structoid.html#a5937bd1634d14c68ac13b36b04084e97">engine</a> == engine ) { manager-&gt;<a class="code" href="structcontext__manager.html#aa662b866bd62c0bdfa049324b13447c1">array</a>[idx]-&gt;<a class="code" href="structcontext__node.html#a38b0408fc77ca676c794ef9ef33622fa">ctx</a> = oid; <span class="keywordflow">return</span> handle; }</div><div class="line"><a name="l00331"></a><span class="lineno">  331</span>&#160;  }</div><div class="line"><a name="l00332"></a><span class="lineno">  332</span>&#160;  <span class="keywordflow">if</span>(( error = <a class="code" href="ak__context__manager_8c.html#a9fe2e33b1c4ad354f2a38dcf65ab0ec2">ak_handle_delete</a>( handle )) != <a class="code" href="libakrypt_8h.html#aa6db0eccf8222376f61f2f033a1bbe4c">ak_error_ok</a> )</div><div class="line"><a name="l00333"></a><span class="lineno">  333</span>&#160;    <a class="code" href="ak__log_8c.html#a80a4822cbd184b3cbcc43096126eb52b">ak_error_message</a>( error, __func__, <span class="stringliteral">&quot;incorrect handle destroying&quot;</span>);</div><div class="line"><a name="l00334"></a><span class="lineno">  334</span>&#160; <span class="keywordflow">return</span> <a class="code" href="libakrypt_8h.html#a7966981a8a61d64220efb6d986fee079">ak_error_wrong_handle</a>;</div><div class="line"><a name="l00335"></a><span class="lineno">  335</span>&#160;}</div><div class="ttc" id="libakrypt_8h_html_ad058d4c98220bc1f0f872455ee71446da7b83fe5b161c4f787c277144be5d467b"><div class="ttname"><a href="libakrypt_8h.html#ad058d4c98220bc1f0f872455ee71446da7b83fe5b161c4f787c277144be5d467b">oid_engine</a></div><div class="ttdoc">механизм идентификаторов криптографических алгоритмов </div><div class="ttdef"><b>Definition:</b> <a href="libakrypt_8h_source.html#l00268">libakrypt.h:268</a></div></div>
+<div class="ttc" id="libakrypt_8h_html_ad058d4c98220bc1f0f872455ee71446da50d17ca9177a4eb00153e01bf6a21f0d"><div class="ttname"><a href="libakrypt_8h.html#ad058d4c98220bc1f0f872455ee71446da50d17ca9177a4eb00153e01bf6a21f0d">undefined_engine</a></div><div class="ttdoc">неопределенный механизм, может возвращаться как ошибка </div><div class="ttdef"><b>Definition:</b> <a href="libakrypt_8h_source.html#l00246">libakrypt.h:246</a></div></div>
+<div class="ttc" id="libakrypt_8h_html_a7966981a8a61d64220efb6d986fee079"><div class="ttname"><a href="libakrypt_8h.html#a7966981a8a61d64220efb6d986fee079">ak_error_wrong_handle</a></div><div class="ttdeci">#define ak_error_wrong_handle</div><div class="ttdoc">Неверное значение дескриптора объекта. </div><div class="ttdef"><b>Definition:</b> <a href="libakrypt_8h_source.html#l00177">libakrypt.h:177</a></div></div>
+<div class="ttc" id="ak__context__manager_8c_html_a9fe2e33b1c4ad354f2a38dcf65ab0ec2"><div class="ttname"><a href="ak__context__manager_8c.html#a9fe2e33b1c4ad354f2a38dcf65ab0ec2">ak_handle_delete</a></div><div class="ttdeci">int ak_handle_delete(ak_handle handle)</div><div class="ttdoc">Удаление дескриптора объекта. </div><div class="ttdef"><b>Definition:</b> <a href="ak__context__manager_8c_source.html#l00570">ak_context_manager.c:570</a></div></div>
+<div class="ttc" id="structcontext__manager_html_aa662b866bd62c0bdfa049324b13447c1"><div class="ttname"><a href="structcontext__manager.html#aa662b866bd62c0bdfa049324b13447c1">context_manager::array</a></div><div class="ttdeci">ak_context_node * array</div><div class="ttdoc">массив указателей на структуры управления контекстами </div><div class="ttdef"><b>Definition:</b> <a href="ak__context__manager_8h_source.html#l00093">ak_context_manager.h:93</a></div></div>
+<div class="ttc" id="structoid_html_a5937bd1634d14c68ac13b36b04084e97"><div class="ttname"><a href="structoid.html#a5937bd1634d14c68ac13b36b04084e97">oid::engine</a></div><div class="ttdeci">ak_oid_engine engine</div><div class="ttdoc">криптографический механизм </div><div class="ttdef"><b>Definition:</b> <a href="ak__oid_8h_source.html#l00055">ak_oid.h:55</a></div></div>
+<div class="ttc" id="structcontext__node_html_a38b0408fc77ca676c794ef9ef33622fa"><div class="ttname"><a href="structcontext__node.html#a38b0408fc77ca676c794ef9ef33622fa">context_node::ctx</a></div><div class="ttdeci">ak_pointer ctx</div><div class="ttdoc">указатель на контекст </div><div class="ttdef"><b>Definition:</b> <a href="ak__context__manager_8h_source.html#l00055">ak_context_manager.h:55</a></div></div>
+<div class="ttc" id="libakrypt_8h_html_ab44706b2e13bc40499b30fb371ad7f9e"><div class="ttname"><a href="libakrypt_8h.html#ab44706b2e13bc40499b30fb371ad7f9e">ak_error_null_pointer</a></div><div class="ttdeci">#define ak_error_null_pointer</div><div class="ttdoc">Ошибка, возникающая при доступе или передаче в качестве аргумента функции null указателя. </div><div class="ttdef"><b>Definition:</b> <a href="libakrypt_8h_source.html#l00149">libakrypt.h:149</a></div></div>
+<div class="ttc" id="libakrypt_8h_html_aa6db0eccf8222376f61f2f033a1bbe4c"><div class="ttname"><a href="libakrypt_8h.html#aa6db0eccf8222376f61f2f033a1bbe4c">ak_error_ok</a></div><div class="ttdeci">#define ak_error_ok</div><div class="ttdoc">Результат, говорящий об отсутствии ошибки. </div><div class="ttdef"><b>Definition:</b> <a href="libakrypt_8h_source.html#l00145">libakrypt.h:145</a></div></div>
+<div class="ttc" id="structcontext__node_html_a5937bd1634d14c68ac13b36b04084e97"><div class="ttname"><a href="structcontext__node.html#a5937bd1634d14c68ac13b36b04084e97">context_node::engine</a></div><div class="ttdeci">ak_oid_engine engine</div><div class="ttdoc">тип контекста </div><div class="ttdef"><b>Definition:</b> <a href="ak__context__manager_8h_source.html#l00059">ak_context_manager.h:59</a></div></div>
+<div class="ttc" id="ak__log_8c_html_a80a4822cbd184b3cbcc43096126eb52b"><div class="ttname"><a href="ak__log_8c.html#a80a4822cbd184b3cbcc43096126eb52b">ak_error_message</a></div><div class="ttdeci">int ak_error_message(const int code, const char *function, const char *message)</div><div class="ttdoc">Вывод сообщений о возникшей в процессе выполнения ошибке. </div><div class="ttdef"><b>Definition:</b> <a href="ak__log_8c_source.html#l00186">ak_log.c:186</a></div></div>
+<div class="ttc" id="structcontext__manager_html"><div class="ttname"><a href="structcontext__manager.html">context_manager</a></div><div class="ttdoc">Структура, предназначенная для управления контекстами. </div><div class="ttdef"><b>Definition:</b> <a href="ak__context__manager_8h_source.html#l00091">ak_context_manager.h:91</a></div></div>
+<div class="ttc" id="libakrypt_8h_html_a9bd7363bd4654d60ddfdd46e3cf7880a"><div class="ttname"><a href="libakrypt_8h.html#a9bd7363bd4654d60ddfdd46e3cf7880a">ak_error_oid_engine</a></div><div class="ttdeci">#define ak_error_oid_engine</div><div class="ttdoc">Неверный тип криптографического механизма. </div><div class="ttdef"><b>Definition:</b> <a href="libakrypt_8h_source.html#l00184">libakrypt.h:184</a></div></div>
+<div class="ttc" id="ak__context__manager_8c_html_ab05fb0871d26ba7e3a61afb6e452561e"><div class="ttname"><a href="ak__context__manager_8c.html#ab05fb0871d26ba7e3a61afb6e452561e">ak_libakrypt_get_context_manager</a></div><div class="ttdeci">ak_context_manager ak_libakrypt_get_context_manager(void)</div><div class="ttdoc">Получение указателя на глобальную структуру управления контекстами. </div><div class="ttdef"><b>Definition:</b> <a href="ak__context__manager_8c_source.html#l00462">ak_context_manager.c:462</a></div></div>
+<div class="ttc" id="structoid_html"><div class="ttname"><a href="structoid.html">oid</a></div><div class="ttdoc">Класс для хранения идентификаторов объектов (криптографических механизмов) и их данных. </div><div class="ttdef"><b>Definition:</b> <a href="ak__oid_8h_source.html#l00053">ak_oid.h:53</a></div></div>
+<div class="ttc" id="ak__context__manager_8c_html_a10e36a54133c0c1758ee1a9bd86b19e8"><div class="ttname"><a href="ak__context__manager_8c.html#a10e36a54133c0c1758ee1a9bd86b19e8">ak_context_manager_handle_check</a></div><div class="ttdeci">int ak_context_manager_handle_check(ak_context_manager manager, ak_handle handle, size_t *idx)</div><div class="ttdoc">Проверка корректности дескриптора контекста. </div><div class="ttdef"><b>Definition:</b> <a href="ak__context__manager_8c_source.html#l00393">ak_context_manager.c:393</a></div></div>
+</div><!-- fragment -->
+<p><div class="dynheader">
+Граф вызовов:</div>
+<div class="dyncontent">
+<div class="center"><img src="ak__oid_8c_a1e6fc7d787aaeba351468bdd3ddfbaf3_cgraph.png" border="0" usemap="#ak__oid_8c_a1e6fc7d787aaeba351468bdd3ddfbaf3_cgraph" alt=""/></div>
+<!-- MAP 5 -->
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="ae8f9b6d49a6b7ec88d139c8c61a9bb0d"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="libakrypt_8h.html#ad058d4c98220bc1f0f872455ee71446d">ak_oid_engine</a> ak_libakrypt_get_engine </td>
+          <td>(</td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>str</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Получение типа криптографического механизма по его символьному описанию. </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">str</td><td>символьное описание, должно в точности совпадать с тем, что возвращает функция ak_engine_get_str(). </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd>В случае успеха, возвращается значение, соответстующее символьному описанию. В случае, если описание неверно, то возбуждается ошибка и возвращается значение <a class="el" href="libakrypt_8h.html#ad058d4c98220bc1f0f872455ee71446da50d17ca9177a4eb00153e01bf6a21f0d">undefined_engine</a>. </dd></dl>
+
+<p>См. определение в файле <a class="el" href="ak__oid_8c_source.html">ak_oid.c</a> строка <a class="el" href="ak__oid_8c_source.html#l00506">506</a></p>
+<div class="fragment"><div class="line"><a name="l00507"></a><span class="lineno">  507</span>&#160;{</div><div class="line"><a name="l00508"></a><span class="lineno">  508</span>&#160;  <span class="keywordflow">if</span>(( strlen( str ) == 16 ) &amp;&amp; <a class="code" href="ak__tools_8c.html#aad0f57a8872509185b031a4dca334f98">ak_ptr_is_equal</a>( <span class="stringliteral">&quot;undefined engine&quot;</span>, (<span class="keywordtype">void</span> *)str, 16 ))</div><div class="line"><a name="l00509"></a><span class="lineno">  509</span>&#160;                                                                            <span class="keywordflow">return</span> <a class="code" href="libakrypt_8h.html#ad058d4c98220bc1f0f872455ee71446da50d17ca9177a4eb00153e01bf6a21f0d">undefined_engine</a>;</div><div class="line"><a name="l00510"></a><span class="lineno">  510</span>&#160;  <span class="keywordflow">if</span>(( strlen( str ) == 10 ) &amp;&amp; <a class="code" href="ak__tools_8c.html#aad0f57a8872509185b031a4dca334f98">ak_ptr_is_equal</a>( <span class="stringliteral">&quot;identifier&quot;</span>, (<span class="keywordtype">void</span> *)str, 10 )) <span class="keywordflow">return</span> <a class="code" href="libakrypt_8h.html#ad058d4c98220bc1f0f872455ee71446daab35f3685bc3187907daa0613168f3c5">identifier</a>;</div><div class="line"><a name="l00511"></a><span class="lineno">  511</span>&#160;  <span class="keywordflow">if</span>(( strlen( str ) == 12 ) &amp;&amp; <a class="code" href="ak__tools_8c.html#aad0f57a8872509185b031a4dca334f98">ak_ptr_is_equal</a>( <span class="stringliteral">&quot;block cipher&quot;</span>, (<span class="keywordtype">void</span> *)str, 12 ))</div><div class="line"><a name="l00512"></a><span class="lineno">  512</span>&#160;                                                                                <span class="keywordflow">return</span> <a class="code" href="libakrypt_8h.html#ad058d4c98220bc1f0f872455ee71446da2ba823ab4d57e4ce3715d014300dd6c3">block_cipher</a>;</div><div class="line"><a name="l00513"></a><span class="lineno">  513</span>&#160;  <span class="keywordflow">if</span>(( strlen( str ) == 13 ) &amp;&amp; <a class="code" href="ak__tools_8c.html#aad0f57a8872509185b031a4dca334f98">ak_ptr_is_equal</a>( <span class="stringliteral">&quot;stream cipher&quot;</span>, (<span class="keywordtype">void</span> *)str, 13 ))</div><div class="line"><a name="l00514"></a><span class="lineno">  514</span>&#160;                                                                               <span class="keywordflow">return</span> <a class="code" href="libakrypt_8h.html#ad058d4c98220bc1f0f872455ee71446dab79b212fb3d4ac7650e4cb6fdfa31fa3">stream_cipher</a>;</div><div class="line"><a name="l00515"></a><span class="lineno">  515</span>&#160;  <span class="keywordflow">if</span>(( strlen( str ) == 13 ) &amp;&amp; <a class="code" href="ak__tools_8c.html#aad0f57a8872509185b031a4dca334f98">ak_ptr_is_equal</a>( <span class="stringliteral">&quot;hybrid cipher&quot;</span>, (<span class="keywordtype">void</span> *)str, 13 ))</div><div class="line"><a name="l00516"></a><span class="lineno">  516</span>&#160;                                                                               <span class="keywordflow">return</span> <a class="code" href="libakrypt_8h.html#ad058d4c98220bc1f0f872455ee71446dad55f50dd50a4a8472b4a28333124646f">hybrid_cipher</a>;</div><div class="line"><a name="l00517"></a><span class="lineno">  517</span>&#160;  <span class="keywordflow">if</span>(( strlen( str ) == 13 ) &amp;&amp; <a class="code" href="ak__tools_8c.html#aad0f57a8872509185b031a4dca334f98">ak_ptr_is_equal</a>( <span class="stringliteral">&quot;hash function&quot;</span>, (<span class="keywordtype">void</span> *)str, 13 ))</div><div class="line"><a name="l00518"></a><span class="lineno">  518</span>&#160;                                                                               <span class="keywordflow">return</span> <a class="code" href="libakrypt_8h.html#ad058d4c98220bc1f0f872455ee71446dae012867033f090c05eb3bc1bafe323a0">hash_function</a>;</div><div class="line"><a name="l00519"></a><span class="lineno">  519</span>&#160;  <span class="keywordflow">if</span>(( strlen( str ) == 12 ) &amp;&amp; <a class="code" href="ak__tools_8c.html#aad0f57a8872509185b031a4dca334f98">ak_ptr_is_equal</a>( <span class="stringliteral">&quot;mac function&quot;</span>, (<span class="keywordtype">void</span> *)str, 12 ))</div><div class="line"><a name="l00520"></a><span class="lineno">  520</span>&#160;                                                                                <span class="keywordflow">return</span> <a class="code" href="libakrypt_8h.html#ad058d4c98220bc1f0f872455ee71446da6c6ddd52f44ab0716c7657768aa927f0">mac_function</a>;</div><div class="line"><a name="l00521"></a><span class="lineno">  521</span>&#160;  <span class="keywordflow">if</span>(( strlen( str ) == 31 ) &amp;&amp; <a class="code" href="ak__tools_8c.html#aad0f57a8872509185b031a4dca334f98">ak_ptr_is_equal</a>( <span class="stringliteral">&quot;digital signature sign function&quot;</span>,</div><div class="line"><a name="l00522"></a><span class="lineno">  522</span>&#160;                                                            (<span class="keywordtype">void</span> *)str, 31 )) <span class="keywordflow">return</span> <a class="code" href="libakrypt_8h.html#ad058d4c98220bc1f0f872455ee71446da99573f6a9c9dc548119810eea5a5bcc8">sign_function</a>;</div><div class="line"><a name="l00523"></a><span class="lineno">  523</span>&#160;  <span class="keywordflow">if</span>(( strlen( str ) == 33 ) &amp;&amp; <a class="code" href="ak__tools_8c.html#aad0f57a8872509185b031a4dca334f98">ak_ptr_is_equal</a>( <span class="stringliteral">&quot;digital signature verify function&quot;</span>,</div><div class="line"><a name="l00524"></a><span class="lineno">  524</span>&#160;                                                          (<span class="keywordtype">void</span> *)str, 33 )) <span class="keywordflow">return</span> <a class="code" href="libakrypt_8h.html#ad058d4c98220bc1f0f872455ee71446daeff512d102f134db83eeb6de511f0d14">verify_function</a>;</div><div class="line"><a name="l00525"></a><span class="lineno">  525</span>&#160;  <span class="keywordflow">if</span>(( strlen( str ) == 16 ) &amp;&amp; <a class="code" href="ak__tools_8c.html#aad0f57a8872509185b031a4dca334f98">ak_ptr_is_equal</a>( <span class="stringliteral">&quot;random generator&quot;</span>, (<span class="keywordtype">void</span> *)str, 16 ))</div><div class="line"><a name="l00526"></a><span class="lineno">  526</span>&#160;                                                                            <span class="keywordflow">return</span> <a class="code" href="libakrypt_8h.html#ad058d4c98220bc1f0f872455ee71446da313f808ab7328815b2e69fad04648030">random_generator</a>;</div><div class="line"><a name="l00527"></a><span class="lineno">  527</span>&#160;  <span class="keywordflow">if</span>(( strlen( str ) == 13 ) &amp;&amp; <a class="code" href="ak__tools_8c.html#aad0f57a8872509185b031a4dca334f98">ak_ptr_is_equal</a>( <span class="stringliteral">&quot;update engine&quot;</span>, (<span class="keywordtype">void</span> *)str, 13 ))</div><div class="line"><a name="l00528"></a><span class="lineno">  528</span>&#160;                                                                               <span class="keywordflow">return</span> <a class="code" href="libakrypt_8h.html#ad058d4c98220bc1f0f872455ee71446da1fab6e21bef9f5e0fdee3cb7ae9da8a3">update_engine</a>;</div><div class="line"><a name="l00529"></a><span class="lineno">  529</span>&#160;  <span class="keywordflow">if</span>(( strlen( str ) == 3 ) &amp;&amp; <a class="code" href="ak__tools_8c.html#aad0f57a8872509185b031a4dca334f98">ak_ptr_is_equal</a>( <span class="stringliteral">&quot;oid&quot;</span>, (<span class="keywordtype">void</span> *)str, 3 )) <span class="keywordflow">return</span> <a class="code" href="libakrypt_8h.html#ad058d4c98220bc1f0f872455ee71446da7b83fe5b161c4f787c277144be5d467b">oid_engine</a>;</div><div class="line"><a name="l00530"></a><span class="lineno">  530</span>&#160;</div><div class="line"><a name="l00531"></a><span class="lineno">  531</span>&#160;  <a class="code" href="ak__log_8c.html#af1a0b4eeceb5a222a840dcec204cb547">ak_error_message_fmt</a>( <a class="code" href="libakrypt_8h.html#ad5a7a0de9ac88ceb69ed51d95fb89df5">ak_error_undefined_value</a>, __func__,</div><div class="line"><a name="l00532"></a><span class="lineno">  532</span>&#160;                                             <span class="stringliteral">&quot;string \&quot;%s\&quot; is not valid engine description&quot;</span>, str );</div><div class="line"><a name="l00533"></a><span class="lineno">  533</span>&#160; <span class="keywordflow">return</span> <a class="code" href="libakrypt_8h.html#ad058d4c98220bc1f0f872455ee71446da50d17ca9177a4eb00153e01bf6a21f0d">undefined_engine</a>;</div><div class="line"><a name="l00534"></a><span class="lineno">  534</span>&#160;}</div><div class="ttc" id="libakrypt_8h_html_ad058d4c98220bc1f0f872455ee71446da7b83fe5b161c4f787c277144be5d467b"><div class="ttname"><a href="libakrypt_8h.html#ad058d4c98220bc1f0f872455ee71446da7b83fe5b161c4f787c277144be5d467b">oid_engine</a></div><div class="ttdoc">механизм идентификаторов криптографических алгоритмов </div><div class="ttdef"><b>Definition:</b> <a href="libakrypt_8h_source.html#l00268">libakrypt.h:268</a></div></div>
+<div class="ttc" id="libakrypt_8h_html_ad058d4c98220bc1f0f872455ee71446da50d17ca9177a4eb00153e01bf6a21f0d"><div class="ttname"><a href="libakrypt_8h.html#ad058d4c98220bc1f0f872455ee71446da50d17ca9177a4eb00153e01bf6a21f0d">undefined_engine</a></div><div class="ttdoc">неопределенный механизм, может возвращаться как ошибка </div><div class="ttdef"><b>Definition:</b> <a href="libakrypt_8h_source.html#l00246">libakrypt.h:246</a></div></div>
+<div class="ttc" id="libakrypt_8h_html_ad058d4c98220bc1f0f872455ee71446da2ba823ab4d57e4ce3715d014300dd6c3"><div class="ttname"><a href="libakrypt_8h.html#ad058d4c98220bc1f0f872455ee71446da2ba823ab4d57e4ce3715d014300dd6c3">block_cipher</a></div><div class="ttdoc">симметричный шифр (блочный алгоритм) </div><div class="ttdef"><b>Definition:</b> <a href="libakrypt_8h_source.html#l00250">libakrypt.h:250</a></div></div>
+<div class="ttc" id="libakrypt_8h_html_ad5a7a0de9ac88ceb69ed51d95fb89df5"><div class="ttname"><a href="libakrypt_8h.html#ad5a7a0de9ac88ceb69ed51d95fb89df5">ak_error_undefined_value</a></div><div class="ttdeci">#define ak_error_undefined_value</div><div class="ttdoc">Использование неопределенного значения. </div><div class="ttdef"><b>Definition:</b> <a href="libakrypt_8h_source.html#l00155">libakrypt.h:155</a></div></div>
+<div class="ttc" id="libakrypt_8h_html_ad058d4c98220bc1f0f872455ee71446daab35f3685bc3187907daa0613168f3c5"><div class="ttname"><a href="libakrypt_8h.html#ad058d4c98220bc1f0f872455ee71446daab35f3685bc3187907daa0613168f3c5">identifier</a></div><div class="ttdoc">идентификатор </div><div class="ttdef"><b>Definition:</b> <a href="libakrypt_8h_source.html#l00248">libakrypt.h:248</a></div></div>
+<div class="ttc" id="ak__tools_8c_html_aad0f57a8872509185b031a4dca334f98"><div class="ttname"><a href="ak__tools_8c.html#aad0f57a8872509185b031a4dca334f98">ak_ptr_is_equal</a></div><div class="ttdeci">ak_bool ak_ptr_is_equal(const ak_pointer left, const ak_pointer right, const size_t size)</div><div class="ttdoc">Сравнение двух областей памяти. </div><div class="ttdef"><b>Definition:</b> <a href="ak__tools_8c_source.html#l00266">ak_tools.c:266</a></div></div>
+<div class="ttc" id="libakrypt_8h_html_ad058d4c98220bc1f0f872455ee71446da99573f6a9c9dc548119810eea5a5bcc8"><div class="ttname"><a href="libakrypt_8h.html#ad058d4c98220bc1f0f872455ee71446da99573f6a9c9dc548119810eea5a5bcc8">sign_function</a></div><div class="ttdoc">функция выработки электронной подписи (секретный ключ электронной подписи) </div><div class="ttdef"><b>Definition:</b> <a href="libakrypt_8h_source.html#l00260">libakrypt.h:260</a></div></div>
+<div class="ttc" id="libakrypt_8h_html_ad058d4c98220bc1f0f872455ee71446da6c6ddd52f44ab0716c7657768aa927f0"><div class="ttname"><a href="libakrypt_8h.html#ad058d4c98220bc1f0f872455ee71446da6c6ddd52f44ab0716c7657768aa927f0">mac_function</a></div><div class="ttdoc">ключевая функция хеширования (функция вычисления имитовставки) </div><div class="ttdef"><b>Definition:</b> <a href="libakrypt_8h_source.html#l00258">libakrypt.h:258</a></div></div>
+<div class="ttc" id="libakrypt_8h_html_ad058d4c98220bc1f0f872455ee71446da313f808ab7328815b2e69fad04648030"><div class="ttname"><a href="libakrypt_8h.html#ad058d4c98220bc1f0f872455ee71446da313f808ab7328815b2e69fad04648030">random_generator</a></div><div class="ttdoc">генератор случайных и псевдо-случайных последовательностей </div><div class="ttdef"><b>Definition:</b> <a href="libakrypt_8h_source.html#l00264">libakrypt.h:264</a></div></div>
+<div class="ttc" id="libakrypt_8h_html_ad058d4c98220bc1f0f872455ee71446dae012867033f090c05eb3bc1bafe323a0"><div class="ttname"><a href="libakrypt_8h.html#ad058d4c98220bc1f0f872455ee71446dae012867033f090c05eb3bc1bafe323a0">hash_function</a></div><div class="ttdoc">функция хеширования </div><div class="ttdef"><b>Definition:</b> <a href="libakrypt_8h_source.html#l00256">libakrypt.h:256</a></div></div>
+<div class="ttc" id="libakrypt_8h_html_ad058d4c98220bc1f0f872455ee71446dab79b212fb3d4ac7650e4cb6fdfa31fa3"><div class="ttname"><a href="libakrypt_8h.html#ad058d4c98220bc1f0f872455ee71446dab79b212fb3d4ac7650e4cb6fdfa31fa3">stream_cipher</a></div><div class="ttdoc">симметричный шифр (поточный алгоритм) </div><div class="ttdef"><b>Definition:</b> <a href="libakrypt_8h_source.html#l00252">libakrypt.h:252</a></div></div>
+<div class="ttc" id="ak__log_8c_html_af1a0b4eeceb5a222a840dcec204cb547"><div class="ttname"><a href="ak__log_8c.html#af1a0b4eeceb5a222a840dcec204cb547">ak_error_message_fmt</a></div><div class="ttdeci">int ak_error_message_fmt(const int code, const char *function, const char *format,...)</div><div class="ttdoc">Вывод сообщений о возникшей в процессе выполнения ошибке. </div><div class="ttdef"><b>Definition:</b> <a href="ak__log_8c_source.html#l00212">ak_log.c:212</a></div></div>
+<div class="ttc" id="libakrypt_8h_html_ad058d4c98220bc1f0f872455ee71446da1fab6e21bef9f5e0fdee3cb7ae9da8a3"><div class="ttname"><a href="libakrypt_8h.html#ad058d4c98220bc1f0f872455ee71446da1fab6e21bef9f5e0fdee3cb7ae9da8a3">update_engine</a></div><div class="ttdoc">механизм итерационного вычисления сжимающих отображений </div><div class="ttdef"><b>Definition:</b> <a href="libakrypt_8h_source.html#l00266">libakrypt.h:266</a></div></div>
+<div class="ttc" id="libakrypt_8h_html_ad058d4c98220bc1f0f872455ee71446dad55f50dd50a4a8472b4a28333124646f"><div class="ttname"><a href="libakrypt_8h.html#ad058d4c98220bc1f0f872455ee71446dad55f50dd50a4a8472b4a28333124646f">hybrid_cipher</a></div><div class="ttdoc">схема гибридного шифрования </div><div class="ttdef"><b>Definition:</b> <a href="libakrypt_8h_source.html#l00254">libakrypt.h:254</a></div></div>
+<div class="ttc" id="libakrypt_8h_html_ad058d4c98220bc1f0f872455ee71446daeff512d102f134db83eeb6de511f0d14"><div class="ttname"><a href="libakrypt_8h.html#ad058d4c98220bc1f0f872455ee71446daeff512d102f134db83eeb6de511f0d14">verify_function</a></div><div class="ttdoc">функция проверки электронной подписи (ключ проверки электронной подписи) </div><div class="ttdef"><b>Definition:</b> <a href="libakrypt_8h_source.html#l00262">libakrypt.h:262</a></div></div>
+</div><!-- fragment -->
+<p><div class="dynheader">
+Граф вызовов:</div>
+<div class="dyncontent">
+<div class="center"><img src="ak__oid_8c_ae8f9b6d49a6b7ec88d139c8c61a9bb0d_cgraph.png" border="0" usemap="#ak__oid_8c_ae8f9b6d49a6b7ec88d139c8c61a9bb0d_cgraph" alt=""/></div>
+<!-- MAP 6 -->
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a86b6712092691fcb22aa7145bd5b97e7"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const char* ak_libakrypt_get_engine_str </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="libakrypt_8h.html#ad058d4c98220bc1f0f872455ee71446d">ak_oid_engine</a>&#160;</td>
+          <td class="paramname"><em>engine</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Получение константного символьного описания типа криптографического механизма. </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">engine</td><td>тип криптографического механизма </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd>Функция возвращает указатель на строку, сожержащую описание типа криптографического механизма. Если значение engine неверно, то возбуждается ошибка и возвращается указатель на null-строку </dd></dl>
+
+<p>См. определение в файле <a class="el" href="ak__oid_8c_source.html">ak_oid.c</a> строка <a class="el" href="ak__oid_8c_source.html#l00476">476</a></p>
+<div class="fragment"><div class="line"><a name="l00477"></a><span class="lineno">  477</span>&#160;{</div><div class="line"><a name="l00478"></a><span class="lineno">  478</span>&#160;  <span class="keywordflow">switch</span>( engine )</div><div class="line"><a name="l00479"></a><span class="lineno">  479</span>&#160; {</div><div class="line"><a name="l00480"></a><span class="lineno">  480</span>&#160;   <span class="keywordflow">case</span> <a class="code" href="libakrypt_8h.html#ad058d4c98220bc1f0f872455ee71446da50d17ca9177a4eb00153e01bf6a21f0d">undefined_engine</a>:  <span class="keywordflow">return</span> <span class="stringliteral">&quot;undefined engine&quot;</span>;</div><div class="line"><a name="l00481"></a><span class="lineno">  481</span>&#160;   <span class="keywordflow">case</span> <a class="code" href="libakrypt_8h.html#ad058d4c98220bc1f0f872455ee71446daab35f3685bc3187907daa0613168f3c5">identifier</a>:        <span class="keywordflow">return</span> <span class="stringliteral">&quot;identifier&quot;</span>;</div><div class="line"><a name="l00482"></a><span class="lineno">  482</span>&#160;   <span class="keywordflow">case</span> <a class="code" href="libakrypt_8h.html#ad058d4c98220bc1f0f872455ee71446da2ba823ab4d57e4ce3715d014300dd6c3">block_cipher</a>:      <span class="keywordflow">return</span> <span class="stringliteral">&quot;block cipher&quot;</span>;</div><div class="line"><a name="l00483"></a><span class="lineno">  483</span>&#160;   <span class="keywordflow">case</span> <a class="code" href="libakrypt_8h.html#ad058d4c98220bc1f0f872455ee71446dab79b212fb3d4ac7650e4cb6fdfa31fa3">stream_cipher</a>:     <span class="keywordflow">return</span> <span class="stringliteral">&quot;stream cipher&quot;</span>;</div><div class="line"><a name="l00484"></a><span class="lineno">  484</span>&#160;   <span class="keywordflow">case</span> <a class="code" href="libakrypt_8h.html#ad058d4c98220bc1f0f872455ee71446dad55f50dd50a4a8472b4a28333124646f">hybrid_cipher</a>:     <span class="keywordflow">return</span> <span class="stringliteral">&quot;hybrid cipher&quot;</span>;</div><div class="line"><a name="l00485"></a><span class="lineno">  485</span>&#160;   <span class="keywordflow">case</span> <a class="code" href="libakrypt_8h.html#ad058d4c98220bc1f0f872455ee71446dae012867033f090c05eb3bc1bafe323a0">hash_function</a>:     <span class="keywordflow">return</span> <span class="stringliteral">&quot;hash function&quot;</span>;</div><div class="line"><a name="l00486"></a><span class="lineno">  486</span>&#160;   <span class="keywordflow">case</span> <a class="code" href="libakrypt_8h.html#ad058d4c98220bc1f0f872455ee71446da6c6ddd52f44ab0716c7657768aa927f0">mac_function</a>:      <span class="keywordflow">return</span> <span class="stringliteral">&quot;mac function&quot;</span>;</div><div class="line"><a name="l00487"></a><span class="lineno">  487</span>&#160;   <span class="keywordflow">case</span> <a class="code" href="libakrypt_8h.html#ad058d4c98220bc1f0f872455ee71446da99573f6a9c9dc548119810eea5a5bcc8">sign_function</a>:     <span class="keywordflow">return</span> <span class="stringliteral">&quot;digital signature sign function&quot;</span>;</div><div class="line"><a name="l00488"></a><span class="lineno">  488</span>&#160;   <span class="keywordflow">case</span> <a class="code" href="libakrypt_8h.html#ad058d4c98220bc1f0f872455ee71446daeff512d102f134db83eeb6de511f0d14">verify_function</a>:   <span class="keywordflow">return</span> <span class="stringliteral">&quot;digital signature verify fucntion&quot;</span>;</div><div class="line"><a name="l00489"></a><span class="lineno">  489</span>&#160;   <span class="keywordflow">case</span> <a class="code" href="libakrypt_8h.html#ad058d4c98220bc1f0f872455ee71446da313f808ab7328815b2e69fad04648030">random_generator</a>:  <span class="keywordflow">return</span> <span class="stringliteral">&quot;random generator&quot;</span>;</div><div class="line"><a name="l00490"></a><span class="lineno">  490</span>&#160;   <span class="keywordflow">case</span> <a class="code" href="libakrypt_8h.html#ad058d4c98220bc1f0f872455ee71446da1fab6e21bef9f5e0fdee3cb7ae9da8a3">update_engine</a>:     <span class="keywordflow">return</span> <span class="stringliteral">&quot;update engine&quot;</span>;</div><div class="line"><a name="l00491"></a><span class="lineno">  491</span>&#160;   <span class="keywordflow">case</span> <a class="code" href="libakrypt_8h.html#ad058d4c98220bc1f0f872455ee71446da7b83fe5b161c4f787c277144be5d467b">oid_engine</a>:        <span class="keywordflow">return</span> <span class="stringliteral">&quot;oid&quot;</span>;</div><div class="line"><a name="l00492"></a><span class="lineno">  492</span>&#160;   <span class="keywordflow">default</span>:                <span class="keywordflow">break</span>;</div><div class="line"><a name="l00493"></a><span class="lineno">  493</span>&#160; }</div><div class="line"><a name="l00494"></a><span class="lineno">  494</span>&#160;  <a class="code" href="ak__log_8c.html#af1a0b4eeceb5a222a840dcec204cb547">ak_error_message_fmt</a>( <a class="code" href="libakrypt_8h.html#ad5a7a0de9ac88ceb69ed51d95fb89df5">ak_error_undefined_value</a>, __func__,</div><div class="line"><a name="l00495"></a><span class="lineno">  495</span>&#160;                                                <span class="stringliteral">&quot;using a non defined engine&#39;s value %d&quot;</span>, engine );</div><div class="line"><a name="l00496"></a><span class="lineno">  496</span>&#160; <span class="keywordflow">return</span> <a class="code" href="libakrypt_8h.html#a2131e17cca1e32bf4e8f501c0518b6c9">ak_null_string</a>;</div><div class="line"><a name="l00497"></a><span class="lineno">  497</span>&#160;}</div><div class="ttc" id="libakrypt_8h_html_ad058d4c98220bc1f0f872455ee71446da7b83fe5b161c4f787c277144be5d467b"><div class="ttname"><a href="libakrypt_8h.html#ad058d4c98220bc1f0f872455ee71446da7b83fe5b161c4f787c277144be5d467b">oid_engine</a></div><div class="ttdoc">механизм идентификаторов криптографических алгоритмов </div><div class="ttdef"><b>Definition:</b> <a href="libakrypt_8h_source.html#l00268">libakrypt.h:268</a></div></div>
+<div class="ttc" id="libakrypt_8h_html_ad058d4c98220bc1f0f872455ee71446da50d17ca9177a4eb00153e01bf6a21f0d"><div class="ttname"><a href="libakrypt_8h.html#ad058d4c98220bc1f0f872455ee71446da50d17ca9177a4eb00153e01bf6a21f0d">undefined_engine</a></div><div class="ttdoc">неопределенный механизм, может возвращаться как ошибка </div><div class="ttdef"><b>Definition:</b> <a href="libakrypt_8h_source.html#l00246">libakrypt.h:246</a></div></div>
+<div class="ttc" id="libakrypt_8h_html_ad058d4c98220bc1f0f872455ee71446da2ba823ab4d57e4ce3715d014300dd6c3"><div class="ttname"><a href="libakrypt_8h.html#ad058d4c98220bc1f0f872455ee71446da2ba823ab4d57e4ce3715d014300dd6c3">block_cipher</a></div><div class="ttdoc">симметричный шифр (блочный алгоритм) </div><div class="ttdef"><b>Definition:</b> <a href="libakrypt_8h_source.html#l00250">libakrypt.h:250</a></div></div>
+<div class="ttc" id="libakrypt_8h_html_ad5a7a0de9ac88ceb69ed51d95fb89df5"><div class="ttname"><a href="libakrypt_8h.html#ad5a7a0de9ac88ceb69ed51d95fb89df5">ak_error_undefined_value</a></div><div class="ttdeci">#define ak_error_undefined_value</div><div class="ttdoc">Использование неопределенного значения. </div><div class="ttdef"><b>Definition:</b> <a href="libakrypt_8h_source.html#l00155">libakrypt.h:155</a></div></div>
+<div class="ttc" id="libakrypt_8h_html_ad058d4c98220bc1f0f872455ee71446daab35f3685bc3187907daa0613168f3c5"><div class="ttname"><a href="libakrypt_8h.html#ad058d4c98220bc1f0f872455ee71446daab35f3685bc3187907daa0613168f3c5">identifier</a></div><div class="ttdoc">идентификатор </div><div class="ttdef"><b>Definition:</b> <a href="libakrypt_8h_source.html#l00248">libakrypt.h:248</a></div></div>
+<div class="ttc" id="libakrypt_8h_html_ad058d4c98220bc1f0f872455ee71446da99573f6a9c9dc548119810eea5a5bcc8"><div class="ttname"><a href="libakrypt_8h.html#ad058d4c98220bc1f0f872455ee71446da99573f6a9c9dc548119810eea5a5bcc8">sign_function</a></div><div class="ttdoc">функция выработки электронной подписи (секретный ключ электронной подписи) </div><div class="ttdef"><b>Definition:</b> <a href="libakrypt_8h_source.html#l00260">libakrypt.h:260</a></div></div>
+<div class="ttc" id="libakrypt_8h_html_ad058d4c98220bc1f0f872455ee71446da6c6ddd52f44ab0716c7657768aa927f0"><div class="ttname"><a href="libakrypt_8h.html#ad058d4c98220bc1f0f872455ee71446da6c6ddd52f44ab0716c7657768aa927f0">mac_function</a></div><div class="ttdoc">ключевая функция хеширования (функция вычисления имитовставки) </div><div class="ttdef"><b>Definition:</b> <a href="libakrypt_8h_source.html#l00258">libakrypt.h:258</a></div></div>
+<div class="ttc" id="libakrypt_8h_html_ad058d4c98220bc1f0f872455ee71446da313f808ab7328815b2e69fad04648030"><div class="ttname"><a href="libakrypt_8h.html#ad058d4c98220bc1f0f872455ee71446da313f808ab7328815b2e69fad04648030">random_generator</a></div><div class="ttdoc">генератор случайных и псевдо-случайных последовательностей </div><div class="ttdef"><b>Definition:</b> <a href="libakrypt_8h_source.html#l00264">libakrypt.h:264</a></div></div>
+<div class="ttc" id="libakrypt_8h_html_ad058d4c98220bc1f0f872455ee71446dae012867033f090c05eb3bc1bafe323a0"><div class="ttname"><a href="libakrypt_8h.html#ad058d4c98220bc1f0f872455ee71446dae012867033f090c05eb3bc1bafe323a0">hash_function</a></div><div class="ttdoc">функция хеширования </div><div class="ttdef"><b>Definition:</b> <a href="libakrypt_8h_source.html#l00256">libakrypt.h:256</a></div></div>
+<div class="ttc" id="libakrypt_8h_html_ad058d4c98220bc1f0f872455ee71446dab79b212fb3d4ac7650e4cb6fdfa31fa3"><div class="ttname"><a href="libakrypt_8h.html#ad058d4c98220bc1f0f872455ee71446dab79b212fb3d4ac7650e4cb6fdfa31fa3">stream_cipher</a></div><div class="ttdoc">симметричный шифр (поточный алгоритм) </div><div class="ttdef"><b>Definition:</b> <a href="libakrypt_8h_source.html#l00252">libakrypt.h:252</a></div></div>
+<div class="ttc" id="ak__log_8c_html_af1a0b4eeceb5a222a840dcec204cb547"><div class="ttname"><a href="ak__log_8c.html#af1a0b4eeceb5a222a840dcec204cb547">ak_error_message_fmt</a></div><div class="ttdeci">int ak_error_message_fmt(const int code, const char *function, const char *format,...)</div><div class="ttdoc">Вывод сообщений о возникшей в процессе выполнения ошибке. </div><div class="ttdef"><b>Definition:</b> <a href="ak__log_8c_source.html#l00212">ak_log.c:212</a></div></div>
+<div class="ttc" id="libakrypt_8h_html_a2131e17cca1e32bf4e8f501c0518b6c9"><div class="ttname"><a href="libakrypt_8h.html#a2131e17cca1e32bf4e8f501c0518b6c9">ak_null_string</a></div><div class="ttdeci">#define ak_null_string</div><div class="ttdef"><b>Definition:</b> <a href="libakrypt_8h_source.html#l00233">libakrypt.h:233</a></div></div>
+<div class="ttc" id="libakrypt_8h_html_ad058d4c98220bc1f0f872455ee71446da1fab6e21bef9f5e0fdee3cb7ae9da8a3"><div class="ttname"><a href="libakrypt_8h.html#ad058d4c98220bc1f0f872455ee71446da1fab6e21bef9f5e0fdee3cb7ae9da8a3">update_engine</a></div><div class="ttdoc">механизм итерационного вычисления сжимающих отображений </div><div class="ttdef"><b>Definition:</b> <a href="libakrypt_8h_source.html#l00266">libakrypt.h:266</a></div></div>
+<div class="ttc" id="libakrypt_8h_html_ad058d4c98220bc1f0f872455ee71446dad55f50dd50a4a8472b4a28333124646f"><div class="ttname"><a href="libakrypt_8h.html#ad058d4c98220bc1f0f872455ee71446dad55f50dd50a4a8472b4a28333124646f">hybrid_cipher</a></div><div class="ttdoc">схема гибридного шифрования </div><div class="ttdef"><b>Definition:</b> <a href="libakrypt_8h_source.html#l00254">libakrypt.h:254</a></div></div>
+<div class="ttc" id="libakrypt_8h_html_ad058d4c98220bc1f0f872455ee71446daeff512d102f134db83eeb6de511f0d14"><div class="ttname"><a href="libakrypt_8h.html#ad058d4c98220bc1f0f872455ee71446daeff512d102f134db83eeb6de511f0d14">verify_function</a></div><div class="ttdoc">функция проверки электронной подписи (ключ проверки электронной подписи) </div><div class="ttdef"><b>Definition:</b> <a href="libakrypt_8h_source.html#l00262">libakrypt.h:262</a></div></div>
+</div><!-- fragment -->
+<p><div class="dynheader">
+Граф вызовов:</div>
+<div class="dyncontent">
+<div class="center"><img src="ak__oid_8c_a86b6712092691fcb22aa7145bd5b97e7_cgraph.png" border="0" usemap="#ak__oid_8c_a86b6712092691fcb22aa7145bd5b97e7_cgraph" alt=""/></div>
+<!-- MAP 7 -->
+</div>
+</p>
+
+<p><div class="dynheader">
+Граф вызова функции:</div>
+<div class="dyncontent">
+<div class="center"><img src="ak__oid_8c_a86b6712092691fcb22aa7145bd5b97e7_icgraph.png" border="0" usemap="#ak__oid_8c_a86b6712092691fcb22aa7145bd5b97e7_icgraph" alt=""/></div>
+<!-- MAP 8 -->
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a75886dbda8cb0ae7544c03586b743e3e"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const char* ak_libakrypt_get_mode_str </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="libakrypt_8h.html#a557615e650446be74a1fcaa96708970c">ak_oid_mode</a>&#160;</td>
+          <td class="paramname"><em>mode</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Получения символьного описания режима применения криптографического механизма. </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">mode</td><td>режим использованиея криптографического механизма </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd>Функция возвращает указатель на строку, сожержащую описание типа криптографического механизма. Если значение engine неверно, то возбуждается ошибка и возвращается указатель на null-строку </dd></dl>
+
+<p>См. определение в файле <a class="el" href="ak__oid_8c_source.html">ak_oid.c</a> строка <a class="el" href="ak__oid_8c_source.html#l00543">543</a></p>
+<div class="fragment"><div class="line"><a name="l00544"></a><span class="lineno">  544</span>&#160;{</div><div class="line"><a name="l00545"></a><span class="lineno">  545</span>&#160;  <span class="keywordflow">switch</span>( mode )</div><div class="line"><a name="l00546"></a><span class="lineno">  546</span>&#160; {</div><div class="line"><a name="l00547"></a><span class="lineno">  547</span>&#160;   <span class="keywordflow">case</span> <a class="code" href="libakrypt_8h.html#a557615e650446be74a1fcaa96708970ca99594e10440faa50135cd746725e92e3">undefined_mode</a>:  <span class="keywordflow">return</span> <span class="stringliteral">&quot;undefined mode&quot;</span>;</div><div class="line"><a name="l00548"></a><span class="lineno">  548</span>&#160;   <span class="keywordflow">case</span> <a class="code" href="libakrypt_8h.html#a557615e650446be74a1fcaa96708970ca31d8091e4d95de6a5c7963dfaa9466c8">algorithm</a>:       <span class="keywordflow">return</span> <span class="stringliteral">&quot;algorithm&quot;</span>;</div><div class="line"><a name="l00549"></a><span class="lineno">  549</span>&#160;   <span class="keywordflow">case</span> <a class="code" href="libakrypt_8h.html#a557615e650446be74a1fcaa96708970cae7731519cb6c1281973399cbefa90833">parameter</a>:       <span class="keywordflow">return</span> <span class="stringliteral">&quot;parameter&quot;</span>;</div><div class="line"><a name="l00550"></a><span class="lineno">  550</span>&#160;   <span class="keywordflow">case</span> <a class="code" href="libakrypt_8h.html#a557615e650446be74a1fcaa96708970ca54b0468b1f19047a51856cb18eacbcdb">wcurve_params</a>:   <span class="keywordflow">return</span> <span class="stringliteral">&quot;weierstrass curve parameters&quot;</span>;</div><div class="line"><a name="l00551"></a><span class="lineno">  551</span>&#160;   <span class="keywordflow">case</span> <a class="code" href="libakrypt_8h.html#a557615e650446be74a1fcaa96708970caadcc99e7e0e5b5ddaf50d5fa94f4b301">ecurve_params</a>:   <span class="keywordflow">return</span> <span class="stringliteral">&quot;edwards curve parameters&quot;</span>;</div><div class="line"><a name="l00552"></a><span class="lineno">  552</span>&#160;   <span class="keywordflow">case</span> <a class="code" href="libakrypt_8h.html#a557615e650446be74a1fcaa96708970ca3ac5923f037e900d883b15496c82c199">kbox_params</a>:     <span class="keywordflow">return</span> <span class="stringliteral">&quot;kboxes&quot;</span>;</div><div class="line"><a name="l00553"></a><span class="lineno">  553</span>&#160;   <span class="keywordflow">case</span> <a class="code" href="libakrypt_8h.html#a557615e650446be74a1fcaa96708970ca4e339aaf72adfc2c92da4f24e1132673">ecb</a>:             <span class="keywordflow">return</span> <span class="stringliteral">&quot;ecb mode&quot;</span>;</div><div class="line"><a name="l00554"></a><span class="lineno">  554</span>&#160;   <span class="keywordflow">case</span> <a class="code" href="libakrypt_8h.html#a557615e650446be74a1fcaa96708970ca68a6ef529584271aadc85233653c062c">ofb</a>:             <span class="keywordflow">return</span> <span class="stringliteral">&quot;ofb mode&quot;</span>;</div><div class="line"><a name="l00555"></a><span class="lineno">  555</span>&#160;   <span class="keywordflow">case</span> <a class="code" href="libakrypt_8h.html#a557615e650446be74a1fcaa96708970cab54458bc17c5d0a56d74e1b40037e979">counter</a>:         <span class="keywordflow">return</span> <span class="stringliteral">&quot;counter mode&quot;</span>;</div><div class="line"><a name="l00556"></a><span class="lineno">  556</span>&#160;   <span class="keywordflow">case</span> <a class="code" href="libakrypt_8h.html#a557615e650446be74a1fcaa96708970ca047017b64496baf1fb335ab759a4c271">counter_gost</a>:    <span class="keywordflow">return</span> <span class="stringliteral">&quot;gost28147-89 counter mode&quot;</span>;</div><div class="line"><a name="l00557"></a><span class="lineno">  557</span>&#160;   <span class="keywordflow">case</span> <a class="code" href="libakrypt_8h.html#a557615e650446be74a1fcaa96708970ca9ee30bce870814ca53fca14640bf0855">cfb</a>:             <span class="keywordflow">return</span> <span class="stringliteral">&quot;cfb mode&quot;</span>;</div><div class="line"><a name="l00558"></a><span class="lineno">  558</span>&#160;   <span class="keywordflow">case</span> <a class="code" href="libakrypt_8h.html#a557615e650446be74a1fcaa96708970ca8e7bf74c7d5d23eb076d7fd7a2ae33b5">cbc</a>:             <span class="keywordflow">return</span> <span class="stringliteral">&quot;cbc mode&quot;</span>;</div><div class="line"><a name="l00559"></a><span class="lineno">  559</span>&#160;   <span class="keywordflow">case</span> <a class="code" href="libakrypt_8h.html#a557615e650446be74a1fcaa96708970ca646417c4ed0ed79d7d1b2ed990fb3140">xts</a>:             <span class="keywordflow">return</span> <span class="stringliteral">&quot;xts mode&quot;</span>;</div><div class="line"><a name="l00560"></a><span class="lineno">  560</span>&#160;   <span class="keywordflow">case</span> <a class="code" href="libakrypt_8h.html#a557615e650446be74a1fcaa96708970ca26c4463be326c0d64cac1f21807a7512">xts_mac</a>:         <span class="keywordflow">return</span> <span class="stringliteral">&quot;xts mode with authenication&quot;</span>;</div><div class="line"><a name="l00561"></a><span class="lineno">  561</span>&#160;   <span class="keywordflow">case</span> <a class="code" href="libakrypt_8h.html#a557615e650446be74a1fcaa96708970ca1d1f01846849bf7d8162154f96725bcb">xcrypt</a>:          <span class="keywordflow">return</span> <span class="stringliteral">&quot;stream cipher xor mode&quot;</span>;</div><div class="line"><a name="l00562"></a><span class="lineno">  562</span>&#160;   <span class="keywordflow">case</span> <a class="code" href="libakrypt_8h.html#a557615e650446be74a1fcaa96708970caa3a0cd62a77951568d3097482e1166b9">a8</a>:              <span class="keywordflow">return</span> <span class="stringliteral">&quot;stream cipher addition mode&quot;</span>;</div><div class="line"><a name="l00563"></a><span class="lineno">  563</span>&#160;   <span class="keywordflow">case</span> <a class="code" href="libakrypt_8h.html#a557615e650446be74a1fcaa96708970ca26bd79d95fad2f2c1cabebaa2fee75cb">signify</a>:         <span class="keywordflow">return</span> <span class="stringliteral">&quot;signify mode&quot;</span>;</div><div class="line"><a name="l00564"></a><span class="lineno">  564</span>&#160;   <span class="keywordflow">case</span> <a class="code" href="libakrypt_8h.html#a557615e650446be74a1fcaa96708970ca9e30821ba95a94edfbf2103e587854b3">verify</a>:          <span class="keywordflow">return</span> <span class="stringliteral">&quot;verify mode&quot;</span>;</div><div class="line"><a name="l00565"></a><span class="lineno">  565</span>&#160;   <span class="keywordflow">default</span>:              <span class="keywordflow">break</span>;</div><div class="line"><a name="l00566"></a><span class="lineno">  566</span>&#160; }</div><div class="line"><a name="l00567"></a><span class="lineno">  567</span>&#160;  <a class="code" href="ak__log_8c.html#af1a0b4eeceb5a222a840dcec204cb547">ak_error_message_fmt</a>( <a class="code" href="libakrypt_8h.html#ad5a7a0de9ac88ceb69ed51d95fb89df5">ak_error_undefined_value</a>, __func__,</div><div class="line"><a name="l00568"></a><span class="lineno">  568</span>&#160;                                                      <span class="stringliteral">&quot;using a non defined mode&#39;s value %d&quot;</span>, mode );</div><div class="line"><a name="l00569"></a><span class="lineno">  569</span>&#160; <span class="keywordflow">return</span> <a class="code" href="libakrypt_8h.html#a2131e17cca1e32bf4e8f501c0518b6c9">ak_null_string</a>;</div><div class="line"><a name="l00570"></a><span class="lineno">  570</span>&#160;}</div><div class="ttc" id="libakrypt_8h_html_a557615e650446be74a1fcaa96708970ca9ee30bce870814ca53fca14640bf0855"><div class="ttname"><a href="libakrypt_8h.html#a557615e650446be74a1fcaa96708970ca9ee30bce870814ca53fca14640bf0855">cfb</a></div><div class="ttdoc">режим гаммирования c обратной связью по шифртексту (ГОСТ Р 34.13-2015, раздел 5.5) ...</div><div class="ttdef"><b>Definition:</b> <a href="libakrypt_8h_source.html#l00297">libakrypt.h:297</a></div></div>
+<div class="ttc" id="libakrypt_8h_html_a557615e650446be74a1fcaa96708970ca047017b64496baf1fb335ab759a4c271"><div class="ttname"><a href="libakrypt_8h.html#a557615e650446be74a1fcaa96708970ca047017b64496baf1fb335ab759a4c271">counter_gost</a></div><div class="ttdoc">режим гаммирования для блочного шифра согласно ГОСТ 28147-89. </div><div class="ttdef"><b>Definition:</b> <a href="libakrypt_8h_source.html#l00291">libakrypt.h:291</a></div></div>
+<div class="ttc" id="libakrypt_8h_html_a557615e650446be74a1fcaa96708970ca9e30821ba95a94edfbf2103e587854b3"><div class="ttname"><a href="libakrypt_8h.html#a557615e650446be74a1fcaa96708970ca9e30821ba95a94edfbf2103e587854b3">verify</a></div><div class="ttdoc">проверка электронной подписи </div><div class="ttdef"><b>Definition:</b> <a href="libakrypt_8h_source.html#l00309">libakrypt.h:309</a></div></div>
+<div class="ttc" id="libakrypt_8h_html_a557615e650446be74a1fcaa96708970ca26bd79d95fad2f2c1cabebaa2fee75cb"><div class="ttname"><a href="libakrypt_8h.html#a557615e650446be74a1fcaa96708970ca26bd79d95fad2f2c1cabebaa2fee75cb">signify</a></div><div class="ttdoc">вычисление электронной подписи </div><div class="ttdef"><b>Definition:</b> <a href="libakrypt_8h_source.html#l00307">libakrypt.h:307</a></div></div>
+<div class="ttc" id="libakrypt_8h_html_ad5a7a0de9ac88ceb69ed51d95fb89df5"><div class="ttname"><a href="libakrypt_8h.html#ad5a7a0de9ac88ceb69ed51d95fb89df5">ak_error_undefined_value</a></div><div class="ttdeci">#define ak_error_undefined_value</div><div class="ttdoc">Использование неопределенного значения. </div><div class="ttdef"><b>Definition:</b> <a href="libakrypt_8h_source.html#l00155">libakrypt.h:155</a></div></div>
+<div class="ttc" id="libakrypt_8h_html_a557615e650446be74a1fcaa96708970ca68a6ef529584271aadc85233653c062c"><div class="ttname"><a href="libakrypt_8h.html#a557615e650446be74a1fcaa96708970ca68a6ef529584271aadc85233653c062c">ofb</a></div><div class="ttdoc">режим гаммирования c обратной связью по выходу (ГОСТ Р 34.13-2015, раздел 5.3) </div><div class="ttdef"><b>Definition:</b> <a href="libakrypt_8h_source.html#l00293">libakrypt.h:293</a></div></div>
+<div class="ttc" id="libakrypt_8h_html_a557615e650446be74a1fcaa96708970ca8e7bf74c7d5d23eb076d7fd7a2ae33b5"><div class="ttname"><a href="libakrypt_8h.html#a557615e650446be74a1fcaa96708970ca8e7bf74c7d5d23eb076d7fd7a2ae33b5">cbc</a></div><div class="ttdoc">режим простой замены с зацеплением (ГОСТ Р 34.13-2015, раздел 5.4) </div><div class="ttdef"><b>Definition:</b> <a href="libakrypt_8h_source.html#l00295">libakrypt.h:295</a></div></div>
+<div class="ttc" id="libakrypt_8h_html_a557615e650446be74a1fcaa96708970ca4e339aaf72adfc2c92da4f24e1132673"><div class="ttname"><a href="libakrypt_8h.html#a557615e650446be74a1fcaa96708970ca4e339aaf72adfc2c92da4f24e1132673">ecb</a></div><div class="ttdoc">режим простой замены блочного шифра (ГОСТ Р 34.13-2015, раздел 5.1) </div><div class="ttdef"><b>Definition:</b> <a href="libakrypt_8h_source.html#l00287">libakrypt.h:287</a></div></div>
+<div class="ttc" id="ak__log_8c_html_af1a0b4eeceb5a222a840dcec204cb547"><div class="ttname"><a href="ak__log_8c.html#af1a0b4eeceb5a222a840dcec204cb547">ak_error_message_fmt</a></div><div class="ttdeci">int ak_error_message_fmt(const int code, const char *function, const char *format,...)</div><div class="ttdoc">Вывод сообщений о возникшей в процессе выполнения ошибке. </div><div class="ttdef"><b>Definition:</b> <a href="ak__log_8c_source.html#l00212">ak_log.c:212</a></div></div>
+<div class="ttc" id="libakrypt_8h_html_a557615e650446be74a1fcaa96708970ca54b0468b1f19047a51856cb18eacbcdb"><div class="ttname"><a href="libakrypt_8h.html#a557615e650446be74a1fcaa96708970ca54b0468b1f19047a51856cb18eacbcdb">wcurve_params</a></div><div class="ttdoc">набор параметров эллиптической кривой в форме Вейерштрасса </div><div class="ttdef"><b>Definition:</b> <a href="libakrypt_8h_source.html#l00281">libakrypt.h:281</a></div></div>
+<div class="ttc" id="libakrypt_8h_html_a557615e650446be74a1fcaa96708970ca1d1f01846849bf7d8162154f96725bcb"><div class="ttname"><a href="libakrypt_8h.html#a557615e650446be74a1fcaa96708970ca1d1f01846849bf7d8162154f96725bcb">xcrypt</a></div><div class="ttdoc">режим гаммирования поточного шифра (сложение по модулю 2) </div><div class="ttdef"><b>Definition:</b> <a href="libakrypt_8h_source.html#l00303">libakrypt.h:303</a></div></div>
+<div class="ttc" id="libakrypt_8h_html_a557615e650446be74a1fcaa96708970cab54458bc17c5d0a56d74e1b40037e979"><div class="ttname"><a href="libakrypt_8h.html#a557615e650446be74a1fcaa96708970cab54458bc17c5d0a56d74e1b40037e979">counter</a></div><div class="ttdoc">режим гаммирования для блочного шифра (ГОСТ Р 34.13-2015, раздел 5.2) </div><div class="ttdef"><b>Definition:</b> <a href="libakrypt_8h_source.html#l00289">libakrypt.h:289</a></div></div>
+<div class="ttc" id="libakrypt_8h_html_a2131e17cca1e32bf4e8f501c0518b6c9"><div class="ttname"><a href="libakrypt_8h.html#a2131e17cca1e32bf4e8f501c0518b6c9">ak_null_string</a></div><div class="ttdeci">#define ak_null_string</div><div class="ttdef"><b>Definition:</b> <a href="libakrypt_8h_source.html#l00233">libakrypt.h:233</a></div></div>
+<div class="ttc" id="libakrypt_8h_html_a557615e650446be74a1fcaa96708970caa3a0cd62a77951568d3097482e1166b9"><div class="ttname"><a href="libakrypt_8h.html#a557615e650446be74a1fcaa96708970caa3a0cd62a77951568d3097482e1166b9">a8</a></div><div class="ttdoc">гаммирование по модулю  поточного шифра </div><div class="ttdef"><b>Definition:</b> <a href="libakrypt_8h_source.html#l00305">libakrypt.h:305</a></div></div>
+<div class="ttc" id="libakrypt_8h_html_a557615e650446be74a1fcaa96708970caadcc99e7e0e5b5ddaf50d5fa94f4b301"><div class="ttname"><a href="libakrypt_8h.html#a557615e650446be74a1fcaa96708970caadcc99e7e0e5b5ddaf50d5fa94f4b301">ecurve_params</a></div><div class="ttdoc">набор параметров эллиптической кривой в форме Эдвардса </div><div class="ttdef"><b>Definition:</b> <a href="libakrypt_8h_source.html#l00283">libakrypt.h:283</a></div></div>
+<div class="ttc" id="libakrypt_8h_html_a557615e650446be74a1fcaa96708970cae7731519cb6c1281973399cbefa90833"><div class="ttname"><a href="libakrypt_8h.html#a557615e650446be74a1fcaa96708970cae7731519cb6c1281973399cbefa90833">parameter</a></div><div class="ttdoc">данные </div><div class="ttdef"><b>Definition:</b> <a href="libakrypt_8h_source.html#l00279">libakrypt.h:279</a></div></div>
+<div class="ttc" id="libakrypt_8h_html_a557615e650446be74a1fcaa96708970ca31d8091e4d95de6a5c7963dfaa9466c8"><div class="ttname"><a href="libakrypt_8h.html#a557615e650446be74a1fcaa96708970ca31d8091e4d95de6a5c7963dfaa9466c8">algorithm</a></div><div class="ttdoc">собственно криптографический механизм (алгоритм) </div><div class="ttdef"><b>Definition:</b> <a href="libakrypt_8h_source.html#l00277">libakrypt.h:277</a></div></div>
+<div class="ttc" id="libakrypt_8h_html_a557615e650446be74a1fcaa96708970ca3ac5923f037e900d883b15496c82c199"><div class="ttname"><a href="libakrypt_8h.html#a557615e650446be74a1fcaa96708970ca3ac5923f037e900d883b15496c82c199">kbox_params</a></div><div class="ttdoc">набор перестановок </div><div class="ttdef"><b>Definition:</b> <a href="libakrypt_8h_source.html#l00285">libakrypt.h:285</a></div></div>
+<div class="ttc" id="libakrypt_8h_html_a557615e650446be74a1fcaa96708970ca646417c4ed0ed79d7d1b2ed990fb3140"><div class="ttname"><a href="libakrypt_8h.html#a557615e650446be74a1fcaa96708970ca646417c4ed0ed79d7d1b2ed990fb3140">xts</a></div><div class="ttdoc">режим шифрования XTS для блочного шифра </div><div class="ttdef"><b>Definition:</b> <a href="libakrypt_8h_source.html#l00299">libakrypt.h:299</a></div></div>
+<div class="ttc" id="libakrypt_8h_html_a557615e650446be74a1fcaa96708970ca99594e10440faa50135cd746725e92e3"><div class="ttname"><a href="libakrypt_8h.html#a557615e650446be74a1fcaa96708970ca99594e10440faa50135cd746725e92e3">undefined_mode</a></div><div class="ttdoc">неопределенный режим, может возвращаться в как ошибка </div><div class="ttdef"><b>Definition:</b> <a href="libakrypt_8h_source.html#l00275">libakrypt.h:275</a></div></div>
+<div class="ttc" id="libakrypt_8h_html_a557615e650446be74a1fcaa96708970ca26c4463be326c0d64cac1f21807a7512"><div class="ttname"><a href="libakrypt_8h.html#a557615e650446be74a1fcaa96708970ca26c4463be326c0d64cac1f21807a7512">xts_mac</a></div><div class="ttdoc">шифрование с аутентификацией сообщений </div><div class="ttdef"><b>Definition:</b> <a href="libakrypt_8h_source.html#l00301">libakrypt.h:301</a></div></div>
+</div><!-- fragment -->
+<p><div class="dynheader">
+Граф вызовов:</div>
+<div class="dyncontent">
+<div class="center"><img src="ak__oid_8c_a75886dbda8cb0ae7544c03586b743e3e_cgraph.png" border="0" usemap="#ak__oid_8c_a75886dbda8cb0ae7544c03586b743e3e_cgraph" alt=""/></div>
+<!-- MAP 9 -->
+</div>
+</p>
+
+<p><div class="dynheader">
+Граф вызова функции:</div>
+<div class="dyncontent">
+<div class="center"><img src="ak__oid_8c_a75886dbda8cb0ae7544c03586b743e3e_icgraph.png" border="0" usemap="#ak__oid_8c_a75886dbda8cb0ae7544c03586b743e3e_icgraph" alt=""/></div>
+<!-- MAP 10 -->
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="ab1a902b45a36193c9dd9343d283e9cc6"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="libakrypt_8h.html#ad058d4c98220bc1f0f872455ee71446d">ak_oid_engine</a> ak_libakrypt_oid_get_engine </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="libakrypt_8h.html#a44748ab5acc3b5e0d78b2cb1436a0aae">ak_handle</a>&#160;</td>
+          <td class="paramname"><em>handle</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Получение типа криптографического механизма. </p>
+
+<p>См. определение в файле <a class="el" href="ak__oid_8c_source.html">ak_oid.c</a> строка <a class="el" href="ak__oid_8c_source.html#l00207">207</a></p>
+<div class="fragment"><div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;{</div><div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;  <a class="code" href="structoid.html">ak_oid</a> <a class="code" href="structoid.html">oid</a> = <a class="code" href="ak__context__manager_8c.html#afedb3766d50dbdf85a723054566d1c2f">ak_handle_get_context</a>( handle, <a class="code" href="libakrypt_8h.html#ad058d4c98220bc1f0f872455ee71446da7b83fe5b161c4f787c277144be5d467b">oid_engine</a> );</div><div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;  <span class="keywordflow">if</span>( oid == NULL ) {</div><div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;    <a class="code" href="ak__log_8c.html#a80a4822cbd184b3cbcc43096126eb52b">ak_error_message</a>( <a class="code" href="ak__log_8c.html#aa0cdd429c558ca0448ce3a8e9529e920">ak_error_get_value</a>(), __func__, <span class="stringliteral">&quot;wrong handle&quot;</span> );</div><div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="libakrypt_8h.html#ad058d4c98220bc1f0f872455ee71446da50d17ca9177a4eb00153e01bf6a21f0d">undefined_engine</a>;</div><div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;  }</div><div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160; <span class="keywordflow">return</span> oid-&gt;<a class="code" href="structoid.html#a5937bd1634d14c68ac13b36b04084e97">engine</a>;</div><div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160;}</div><div class="ttc" id="libakrypt_8h_html_ad058d4c98220bc1f0f872455ee71446da7b83fe5b161c4f787c277144be5d467b"><div class="ttname"><a href="libakrypt_8h.html#ad058d4c98220bc1f0f872455ee71446da7b83fe5b161c4f787c277144be5d467b">oid_engine</a></div><div class="ttdoc">механизм идентификаторов криптографических алгоритмов </div><div class="ttdef"><b>Definition:</b> <a href="libakrypt_8h_source.html#l00268">libakrypt.h:268</a></div></div>
+<div class="ttc" id="libakrypt_8h_html_ad058d4c98220bc1f0f872455ee71446da50d17ca9177a4eb00153e01bf6a21f0d"><div class="ttname"><a href="libakrypt_8h.html#ad058d4c98220bc1f0f872455ee71446da50d17ca9177a4eb00153e01bf6a21f0d">undefined_engine</a></div><div class="ttdoc">неопределенный механизм, может возвращаться как ошибка </div><div class="ttdef"><b>Definition:</b> <a href="libakrypt_8h_source.html#l00246">libakrypt.h:246</a></div></div>
+<div class="ttc" id="structoid_html_a5937bd1634d14c68ac13b36b04084e97"><div class="ttname"><a href="structoid.html#a5937bd1634d14c68ac13b36b04084e97">oid::engine</a></div><div class="ttdeci">ak_oid_engine engine</div><div class="ttdoc">криптографический механизм </div><div class="ttdef"><b>Definition:</b> <a href="ak__oid_8h_source.html#l00055">ak_oid.h:55</a></div></div>
+<div class="ttc" id="ak__log_8c_html_aa0cdd429c558ca0448ce3a8e9529e920"><div class="ttname"><a href="ak__log_8c.html#aa0cdd429c558ca0448ce3a8e9529e920">ak_error_get_value</a></div><div class="ttdeci">int ak_error_get_value(void)</div><div class="ttdoc">Функция возвращает код последней ошибки выполнения программы. </div><div class="ttdef"><b>Definition:</b> <a href="ak__log_8c_source.html#l00067">ak_log.c:67</a></div></div>
+<div class="ttc" id="ak__log_8c_html_a80a4822cbd184b3cbcc43096126eb52b"><div class="ttname"><a href="ak__log_8c.html#a80a4822cbd184b3cbcc43096126eb52b">ak_error_message</a></div><div class="ttdeci">int ak_error_message(const int code, const char *function, const char *message)</div><div class="ttdoc">Вывод сообщений о возникшей в процессе выполнения ошибке. </div><div class="ttdef"><b>Definition:</b> <a href="ak__log_8c_source.html#l00186">ak_log.c:186</a></div></div>
+<div class="ttc" id="structoid_html"><div class="ttname"><a href="structoid.html">oid</a></div><div class="ttdoc">Класс для хранения идентификаторов объектов (криптографических механизмов) и их данных. </div><div class="ttdef"><b>Definition:</b> <a href="ak__oid_8h_source.html#l00053">ak_oid.h:53</a></div></div>
+<div class="ttc" id="ak__context__manager_8c_html_afedb3766d50dbdf85a723054566d1c2f"><div class="ttname"><a href="ak__context__manager_8c.html#afedb3766d50dbdf85a723054566d1c2f">ak_handle_get_context</a></div><div class="ttdeci">ak_pointer ak_handle_get_context(ak_handle handle, ak_oid_engine engine)</div><div class="ttdoc">Получение контекста по заданному дескриптору и типу контекста. </div><div class="ttdef"><b>Definition:</b> <a href="ak__context__manager_8c_source.html#l00509">ak_context_manager.c:509</a></div></div>
+</div><!-- fragment -->
+<p><div class="dynheader">
+Граф вызовов:</div>
+<div class="dyncontent">
+<div class="center"><img src="ak__oid_8c_ab1a902b45a36193c9dd9343d283e9cc6_cgraph.png" border="0" usemap="#ak__oid_8c_ab1a902b45a36193c9dd9343d283e9cc6_cgraph" alt=""/></div>
+<!-- MAP 11 -->
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a51c41051e6ad3983976753362c26b22b"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const char* ak_libakrypt_oid_get_engine_str </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="libakrypt_8h.html#a44748ab5acc3b5e0d78b2cb1436a0aae">ak_handle</a>&#160;</td>
+          <td class="paramname"><em>handle</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Получение словесного описания для типа криптографического механизма. </p>
+<dl><dt><b>Примеры: </b></dt><dd><a class="el" href="example-oid_8c-example.html#a16">example-oid.c</a>.</dd>
+</dl>
+<p>См. определение в файле <a class="el" href="ak__oid_8c_source.html">ak_oid.c</a> строка <a class="el" href="ak__oid_8c_source.html#l00196">196</a></p>
+<div class="fragment"><div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;{</div><div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;  <a class="code" href="structoid.html">ak_oid</a> <a class="code" href="structoid.html">oid</a> = <a class="code" href="ak__context__manager_8c.html#afedb3766d50dbdf85a723054566d1c2f">ak_handle_get_context</a>( handle, <a class="code" href="libakrypt_8h.html#ad058d4c98220bc1f0f872455ee71446da7b83fe5b161c4f787c277144be5d467b">oid_engine</a> );</div><div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;  <span class="keywordflow">if</span>( oid == NULL ) {</div><div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;    <a class="code" href="ak__log_8c.html#a80a4822cbd184b3cbcc43096126eb52b">ak_error_message</a>( <a class="code" href="ak__log_8c.html#aa0cdd429c558ca0448ce3a8e9529e920">ak_error_get_value</a>(), __func__, <span class="stringliteral">&quot;wrong handle&quot;</span> );</div><div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="libakrypt_8h.html#a2131e17cca1e32bf4e8f501c0518b6c9">ak_null_string</a>;</div><div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;  }</div><div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160; <span class="keywordflow">return</span> <a class="code" href="ak__oid_8c.html#a86b6712092691fcb22aa7145bd5b97e7">ak_libakrypt_get_engine_str</a>( oid-&gt;<a class="code" href="structoid.html#a5937bd1634d14c68ac13b36b04084e97">engine</a> );</div><div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;}</div><div class="ttc" id="libakrypt_8h_html_ad058d4c98220bc1f0f872455ee71446da7b83fe5b161c4f787c277144be5d467b"><div class="ttname"><a href="libakrypt_8h.html#ad058d4c98220bc1f0f872455ee71446da7b83fe5b161c4f787c277144be5d467b">oid_engine</a></div><div class="ttdoc">механизм идентификаторов криптографических алгоритмов </div><div class="ttdef"><b>Definition:</b> <a href="libakrypt_8h_source.html#l00268">libakrypt.h:268</a></div></div>
+<div class="ttc" id="structoid_html_a5937bd1634d14c68ac13b36b04084e97"><div class="ttname"><a href="structoid.html#a5937bd1634d14c68ac13b36b04084e97">oid::engine</a></div><div class="ttdeci">ak_oid_engine engine</div><div class="ttdoc">криптографический механизм </div><div class="ttdef"><b>Definition:</b> <a href="ak__oid_8h_source.html#l00055">ak_oid.h:55</a></div></div>
+<div class="ttc" id="ak__log_8c_html_aa0cdd429c558ca0448ce3a8e9529e920"><div class="ttname"><a href="ak__log_8c.html#aa0cdd429c558ca0448ce3a8e9529e920">ak_error_get_value</a></div><div class="ttdeci">int ak_error_get_value(void)</div><div class="ttdoc">Функция возвращает код последней ошибки выполнения программы. </div><div class="ttdef"><b>Definition:</b> <a href="ak__log_8c_source.html#l00067">ak_log.c:67</a></div></div>
+<div class="ttc" id="ak__oid_8c_html_a86b6712092691fcb22aa7145bd5b97e7"><div class="ttname"><a href="ak__oid_8c.html#a86b6712092691fcb22aa7145bd5b97e7">ak_libakrypt_get_engine_str</a></div><div class="ttdeci">const char * ak_libakrypt_get_engine_str(ak_oid_engine engine)</div><div class="ttdoc">Получение константного символьного описания типа криптографического механизма. </div><div class="ttdef"><b>Definition:</b> <a href="ak__oid_8c_source.html#l00476">ak_oid.c:476</a></div></div>
+<div class="ttc" id="libakrypt_8h_html_a2131e17cca1e32bf4e8f501c0518b6c9"><div class="ttname"><a href="libakrypt_8h.html#a2131e17cca1e32bf4e8f501c0518b6c9">ak_null_string</a></div><div class="ttdeci">#define ak_null_string</div><div class="ttdef"><b>Definition:</b> <a href="libakrypt_8h_source.html#l00233">libakrypt.h:233</a></div></div>
+<div class="ttc" id="ak__log_8c_html_a80a4822cbd184b3cbcc43096126eb52b"><div class="ttname"><a href="ak__log_8c.html#a80a4822cbd184b3cbcc43096126eb52b">ak_error_message</a></div><div class="ttdeci">int ak_error_message(const int code, const char *function, const char *message)</div><div class="ttdoc">Вывод сообщений о возникшей в процессе выполнения ошибке. </div><div class="ttdef"><b>Definition:</b> <a href="ak__log_8c_source.html#l00186">ak_log.c:186</a></div></div>
+<div class="ttc" id="structoid_html"><div class="ttname"><a href="structoid.html">oid</a></div><div class="ttdoc">Класс для хранения идентификаторов объектов (криптографических механизмов) и их данных. </div><div class="ttdef"><b>Definition:</b> <a href="ak__oid_8h_source.html#l00053">ak_oid.h:53</a></div></div>
+<div class="ttc" id="ak__context__manager_8c_html_afedb3766d50dbdf85a723054566d1c2f"><div class="ttname"><a href="ak__context__manager_8c.html#afedb3766d50dbdf85a723054566d1c2f">ak_handle_get_context</a></div><div class="ttdeci">ak_pointer ak_handle_get_context(ak_handle handle, ak_oid_engine engine)</div><div class="ttdoc">Получение контекста по заданному дескриптору и типу контекста. </div><div class="ttdef"><b>Definition:</b> <a href="ak__context__manager_8c_source.html#l00509">ak_context_manager.c:509</a></div></div>
+</div><!-- fragment -->
+<p><div class="dynheader">
+Граф вызовов:</div>
+<div class="dyncontent">
+<div class="center"><img src="ak__oid_8c_a51c41051e6ad3983976753362c26b22b_cgraph.png" border="0" usemap="#ak__oid_8c_a51c41051e6ad3983976753362c26b22b_cgraph" alt=""/></div>
+<!-- MAP 12 -->
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a059bbd42bac6f089724da150616a5cf4"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const char* ak_libakrypt_oid_get_id </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="libakrypt_8h.html#a44748ab5acc3b5e0d78b2cb1436a0aae">ak_handle</a>&#160;</td>
+          <td class="paramname"><em>handle</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Получение значения OID - последовательности чисел, разделенных точками. </p>
+<dl><dt><b>Примеры: </b></dt><dd><a class="el" href="example-hash-oids_8c-example.html#a12">example-hash-oids.c</a> и <a class="el" href="example-oid_8c-example.html#a15">example-oid.c</a>.</dd>
+</dl>
+<p>См. определение в файле <a class="el" href="ak__oid_8c_source.html">ak_oid.c</a> строка <a class="el" href="ak__oid_8c_source.html#l00185">185</a></p>
+<div class="fragment"><div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;{</div><div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;  <a class="code" href="structoid.html">ak_oid</a> <a class="code" href="structoid.html">oid</a> = <a class="code" href="ak__context__manager_8c.html#afedb3766d50dbdf85a723054566d1c2f">ak_handle_get_context</a>( handle, <a class="code" href="libakrypt_8h.html#ad058d4c98220bc1f0f872455ee71446da7b83fe5b161c4f787c277144be5d467b">oid_engine</a> );</div><div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;  <span class="keywordflow">if</span>( oid == NULL ) {</div><div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;    <a class="code" href="ak__log_8c.html#a80a4822cbd184b3cbcc43096126eb52b">ak_error_message</a>( <a class="code" href="ak__log_8c.html#aa0cdd429c558ca0448ce3a8e9529e920">ak_error_get_value</a>(), __func__, <span class="stringliteral">&quot;wrong handle&quot;</span> );</div><div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="libakrypt_8h.html#a2131e17cca1e32bf4e8f501c0518b6c9">ak_null_string</a>;</div><div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;  }</div><div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160; <span class="keywordflow">return</span> oid-&gt;<a class="code" href="structoid.html#aeffa2f0815ce90fecbda9aac199143db">id</a>;</div><div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;}</div><div class="ttc" id="libakrypt_8h_html_ad058d4c98220bc1f0f872455ee71446da7b83fe5b161c4f787c277144be5d467b"><div class="ttname"><a href="libakrypt_8h.html#ad058d4c98220bc1f0f872455ee71446da7b83fe5b161c4f787c277144be5d467b">oid_engine</a></div><div class="ttdoc">механизм идентификаторов криптографических алгоритмов </div><div class="ttdef"><b>Definition:</b> <a href="libakrypt_8h_source.html#l00268">libakrypt.h:268</a></div></div>
+<div class="ttc" id="structoid_html_aeffa2f0815ce90fecbda9aac199143db"><div class="ttname"><a href="structoid.html#aeffa2f0815ce90fecbda9aac199143db">oid::id</a></div><div class="ttdeci">const char * id</div><div class="ttdoc">собственно OID (cтрока чисел, разделенных точками) </div><div class="ttdef"><b>Definition:</b> <a href="ak__oid_8h_source.html#l00061">ak_oid.h:61</a></div></div>
+<div class="ttc" id="ak__log_8c_html_aa0cdd429c558ca0448ce3a8e9529e920"><div class="ttname"><a href="ak__log_8c.html#aa0cdd429c558ca0448ce3a8e9529e920">ak_error_get_value</a></div><div class="ttdeci">int ak_error_get_value(void)</div><div class="ttdoc">Функция возвращает код последней ошибки выполнения программы. </div><div class="ttdef"><b>Definition:</b> <a href="ak__log_8c_source.html#l00067">ak_log.c:67</a></div></div>
+<div class="ttc" id="libakrypt_8h_html_a2131e17cca1e32bf4e8f501c0518b6c9"><div class="ttname"><a href="libakrypt_8h.html#a2131e17cca1e32bf4e8f501c0518b6c9">ak_null_string</a></div><div class="ttdeci">#define ak_null_string</div><div class="ttdef"><b>Definition:</b> <a href="libakrypt_8h_source.html#l00233">libakrypt.h:233</a></div></div>
+<div class="ttc" id="ak__log_8c_html_a80a4822cbd184b3cbcc43096126eb52b"><div class="ttname"><a href="ak__log_8c.html#a80a4822cbd184b3cbcc43096126eb52b">ak_error_message</a></div><div class="ttdeci">int ak_error_message(const int code, const char *function, const char *message)</div><div class="ttdoc">Вывод сообщений о возникшей в процессе выполнения ошибке. </div><div class="ttdef"><b>Definition:</b> <a href="ak__log_8c_source.html#l00186">ak_log.c:186</a></div></div>
+<div class="ttc" id="structoid_html"><div class="ttname"><a href="structoid.html">oid</a></div><div class="ttdoc">Класс для хранения идентификаторов объектов (криптографических механизмов) и их данных. </div><div class="ttdef"><b>Definition:</b> <a href="ak__oid_8h_source.html#l00053">ak_oid.h:53</a></div></div>
+<div class="ttc" id="ak__context__manager_8c_html_afedb3766d50dbdf85a723054566d1c2f"><div class="ttname"><a href="ak__context__manager_8c.html#afedb3766d50dbdf85a723054566d1c2f">ak_handle_get_context</a></div><div class="ttdeci">ak_pointer ak_handle_get_context(ak_handle handle, ak_oid_engine engine)</div><div class="ttdoc">Получение контекста по заданному дескриптору и типу контекста. </div><div class="ttdef"><b>Definition:</b> <a href="ak__context__manager_8c_source.html#l00509">ak_context_manager.c:509</a></div></div>
+</div><!-- fragment -->
+<p><div class="dynheader">
+Граф вызовов:</div>
+<div class="dyncontent">
+<div class="center"><img src="ak__oid_8c_a059bbd42bac6f089724da150616a5cf4_cgraph.png" border="0" usemap="#ak__oid_8c_a059bbd42bac6f089724da150616a5cf4_cgraph" alt=""/></div>
+<!-- MAP 13 -->
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a906837800ad5ce054f8849f90fe66f8e"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="libakrypt_8h.html#a557615e650446be74a1fcaa96708970c">ak_oid_mode</a> ak_libakrypt_oid_get_mode </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="libakrypt_8h.html#a44748ab5acc3b5e0d78b2cb1436a0aae">ak_handle</a>&#160;</td>
+          <td class="paramname"><em>handle</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Получение режима использования криптографического механизма. </p>
+<dl><dt><b>Примеры: </b></dt><dd><a class="el" href="example-hash-oids_8c-example.html#a7">example-hash-oids.c</a>.</dd>
+</dl>
+<p>См. определение в файле <a class="el" href="ak__oid_8c_source.html">ak_oid.c</a> строка <a class="el" href="ak__oid_8c_source.html#l00229">229</a></p>
+<div class="fragment"><div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;{</div><div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160;  <a class="code" href="structoid.html">ak_oid</a> <a class="code" href="structoid.html">oid</a> = <a class="code" href="ak__context__manager_8c.html#afedb3766d50dbdf85a723054566d1c2f">ak_handle_get_context</a>( handle, <a class="code" href="libakrypt_8h.html#ad058d4c98220bc1f0f872455ee71446da7b83fe5b161c4f787c277144be5d467b">oid_engine</a> );</div><div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;  <span class="keywordflow">if</span>( oid == NULL ) {</div><div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;    <a class="code" href="ak__log_8c.html#a80a4822cbd184b3cbcc43096126eb52b">ak_error_message</a>( <a class="code" href="ak__log_8c.html#aa0cdd429c558ca0448ce3a8e9529e920">ak_error_get_value</a>(), __func__, <span class="stringliteral">&quot;wrong handle&quot;</span> );</div><div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="libakrypt_8h.html#a557615e650446be74a1fcaa96708970ca99594e10440faa50135cd746725e92e3">undefined_mode</a>;</div><div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160;  }</div><div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160; <span class="keywordflow">return</span> oid-&gt;<a class="code" href="structoid.html#aac06f9c21b551a478dfd613dd020b472">mode</a>;</div><div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160;}</div><div class="ttc" id="libakrypt_8h_html_ad058d4c98220bc1f0f872455ee71446da7b83fe5b161c4f787c277144be5d467b"><div class="ttname"><a href="libakrypt_8h.html#ad058d4c98220bc1f0f872455ee71446da7b83fe5b161c4f787c277144be5d467b">oid_engine</a></div><div class="ttdoc">механизм идентификаторов криптографических алгоритмов </div><div class="ttdef"><b>Definition:</b> <a href="libakrypt_8h_source.html#l00268">libakrypt.h:268</a></div></div>
+<div class="ttc" id="ak__log_8c_html_aa0cdd429c558ca0448ce3a8e9529e920"><div class="ttname"><a href="ak__log_8c.html#aa0cdd429c558ca0448ce3a8e9529e920">ak_error_get_value</a></div><div class="ttdeci">int ak_error_get_value(void)</div><div class="ttdoc">Функция возвращает код последней ошибки выполнения программы. </div><div class="ttdef"><b>Definition:</b> <a href="ak__log_8c_source.html#l00067">ak_log.c:67</a></div></div>
+<div class="ttc" id="ak__log_8c_html_a80a4822cbd184b3cbcc43096126eb52b"><div class="ttname"><a href="ak__log_8c.html#a80a4822cbd184b3cbcc43096126eb52b">ak_error_message</a></div><div class="ttdeci">int ak_error_message(const int code, const char *function, const char *message)</div><div class="ttdoc">Вывод сообщений о возникшей в процессе выполнения ошибке. </div><div class="ttdef"><b>Definition:</b> <a href="ak__log_8c_source.html#l00186">ak_log.c:186</a></div></div>
+<div class="ttc" id="structoid_html_aac06f9c21b551a478dfd613dd020b472"><div class="ttname"><a href="structoid.html#aac06f9c21b551a478dfd613dd020b472">oid::mode</a></div><div class="ttdeci">ak_oid_mode mode</div><div class="ttdoc">режим использования криптографического алгоритма </div><div class="ttdef"><b>Definition:</b> <a href="ak__oid_8h_source.html#l00057">ak_oid.h:57</a></div></div>
+<div class="ttc" id="structoid_html"><div class="ttname"><a href="structoid.html">oid</a></div><div class="ttdoc">Класс для хранения идентификаторов объектов (криптографических механизмов) и их данных. </div><div class="ttdef"><b>Definition:</b> <a href="ak__oid_8h_source.html#l00053">ak_oid.h:53</a></div></div>
+<div class="ttc" id="ak__context__manager_8c_html_afedb3766d50dbdf85a723054566d1c2f"><div class="ttname"><a href="ak__context__manager_8c.html#afedb3766d50dbdf85a723054566d1c2f">ak_handle_get_context</a></div><div class="ttdeci">ak_pointer ak_handle_get_context(ak_handle handle, ak_oid_engine engine)</div><div class="ttdoc">Получение контекста по заданному дескриптору и типу контекста. </div><div class="ttdef"><b>Definition:</b> <a href="ak__context__manager_8c_source.html#l00509">ak_context_manager.c:509</a></div></div>
+<div class="ttc" id="libakrypt_8h_html_a557615e650446be74a1fcaa96708970ca99594e10440faa50135cd746725e92e3"><div class="ttname"><a href="libakrypt_8h.html#a557615e650446be74a1fcaa96708970ca99594e10440faa50135cd746725e92e3">undefined_mode</a></div><div class="ttdoc">неопределенный режим, может возвращаться в как ошибка </div><div class="ttdef"><b>Definition:</b> <a href="libakrypt_8h_source.html#l00275">libakrypt.h:275</a></div></div>
+</div><!-- fragment -->
+<p><div class="dynheader">
+Граф вызовов:</div>
+<div class="dyncontent">
+<div class="center"><img src="ak__oid_8c_a906837800ad5ce054f8849f90fe66f8e_cgraph.png" border="0" usemap="#ak__oid_8c_a906837800ad5ce054f8849f90fe66f8e_cgraph" alt=""/></div>
+<!-- MAP 14 -->
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a68ba6df00826c218013a14ca8f163457"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const char* ak_libakrypt_oid_get_mode_str </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="libakrypt_8h.html#a44748ab5acc3b5e0d78b2cb1436a0aae">ak_handle</a>&#160;</td>
+          <td class="paramname"><em>handle</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Получение словесного описания режима использования криптографического механизма. </p>
+<dl><dt><b>Примеры: </b></dt><dd><a class="el" href="example-oid_8c-example.html#a17">example-oid.c</a>.</dd>
+</dl>
+<p>См. определение в файле <a class="el" href="ak__oid_8c_source.html">ak_oid.c</a> строка <a class="el" href="ak__oid_8c_source.html#l00218">218</a></p>
+<div class="fragment"><div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160;{</div><div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;  <a class="code" href="structoid.html">ak_oid</a> <a class="code" href="structoid.html">oid</a> = <a class="code" href="ak__context__manager_8c.html#afedb3766d50dbdf85a723054566d1c2f">ak_handle_get_context</a>( handle, <a class="code" href="libakrypt_8h.html#ad058d4c98220bc1f0f872455ee71446da7b83fe5b161c4f787c277144be5d467b">oid_engine</a> );</div><div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;  <span class="keywordflow">if</span>( oid == NULL ) {</div><div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;    <a class="code" href="ak__log_8c.html#a80a4822cbd184b3cbcc43096126eb52b">ak_error_message</a>( <a class="code" href="ak__log_8c.html#aa0cdd429c558ca0448ce3a8e9529e920">ak_error_get_value</a>(), __func__, <span class="stringliteral">&quot;wrong handle&quot;</span> );</div><div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="libakrypt_8h.html#a2131e17cca1e32bf4e8f501c0518b6c9">ak_null_string</a>;</div><div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;  }</div><div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160; <span class="keywordflow">return</span> <a class="code" href="ak__oid_8c.html#a75886dbda8cb0ae7544c03586b743e3e">ak_libakrypt_get_mode_str</a>( oid-&gt;<a class="code" href="structoid.html#aac06f9c21b551a478dfd613dd020b472">mode</a> );</div><div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;}</div><div class="ttc" id="libakrypt_8h_html_ad058d4c98220bc1f0f872455ee71446da7b83fe5b161c4f787c277144be5d467b"><div class="ttname"><a href="libakrypt_8h.html#ad058d4c98220bc1f0f872455ee71446da7b83fe5b161c4f787c277144be5d467b">oid_engine</a></div><div class="ttdoc">механизм идентификаторов криптографических алгоритмов </div><div class="ttdef"><b>Definition:</b> <a href="libakrypt_8h_source.html#l00268">libakrypt.h:268</a></div></div>
+<div class="ttc" id="ak__log_8c_html_aa0cdd429c558ca0448ce3a8e9529e920"><div class="ttname"><a href="ak__log_8c.html#aa0cdd429c558ca0448ce3a8e9529e920">ak_error_get_value</a></div><div class="ttdeci">int ak_error_get_value(void)</div><div class="ttdoc">Функция возвращает код последней ошибки выполнения программы. </div><div class="ttdef"><b>Definition:</b> <a href="ak__log_8c_source.html#l00067">ak_log.c:67</a></div></div>
+<div class="ttc" id="ak__oid_8c_html_a75886dbda8cb0ae7544c03586b743e3e"><div class="ttname"><a href="ak__oid_8c.html#a75886dbda8cb0ae7544c03586b743e3e">ak_libakrypt_get_mode_str</a></div><div class="ttdeci">const char * ak_libakrypt_get_mode_str(ak_oid_mode mode)</div><div class="ttdoc">Получения символьного описания режима применения криптографического механизма. </div><div class="ttdef"><b>Definition:</b> <a href="ak__oid_8c_source.html#l00543">ak_oid.c:543</a></div></div>
+<div class="ttc" id="libakrypt_8h_html_a2131e17cca1e32bf4e8f501c0518b6c9"><div class="ttname"><a href="libakrypt_8h.html#a2131e17cca1e32bf4e8f501c0518b6c9">ak_null_string</a></div><div class="ttdeci">#define ak_null_string</div><div class="ttdef"><b>Definition:</b> <a href="libakrypt_8h_source.html#l00233">libakrypt.h:233</a></div></div>
+<div class="ttc" id="ak__log_8c_html_a80a4822cbd184b3cbcc43096126eb52b"><div class="ttname"><a href="ak__log_8c.html#a80a4822cbd184b3cbcc43096126eb52b">ak_error_message</a></div><div class="ttdeci">int ak_error_message(const int code, const char *function, const char *message)</div><div class="ttdoc">Вывод сообщений о возникшей в процессе выполнения ошибке. </div><div class="ttdef"><b>Definition:</b> <a href="ak__log_8c_source.html#l00186">ak_log.c:186</a></div></div>
+<div class="ttc" id="structoid_html_aac06f9c21b551a478dfd613dd020b472"><div class="ttname"><a href="structoid.html#aac06f9c21b551a478dfd613dd020b472">oid::mode</a></div><div class="ttdeci">ak_oid_mode mode</div><div class="ttdoc">режим использования криптографического алгоритма </div><div class="ttdef"><b>Definition:</b> <a href="ak__oid_8h_source.html#l00057">ak_oid.h:57</a></div></div>
+<div class="ttc" id="structoid_html"><div class="ttname"><a href="structoid.html">oid</a></div><div class="ttdoc">Класс для хранения идентификаторов объектов (криптографических механизмов) и их данных. </div><div class="ttdef"><b>Definition:</b> <a href="ak__oid_8h_source.html#l00053">ak_oid.h:53</a></div></div>
+<div class="ttc" id="ak__context__manager_8c_html_afedb3766d50dbdf85a723054566d1c2f"><div class="ttname"><a href="ak__context__manager_8c.html#afedb3766d50dbdf85a723054566d1c2f">ak_handle_get_context</a></div><div class="ttdeci">ak_pointer ak_handle_get_context(ak_handle handle, ak_oid_engine engine)</div><div class="ttdoc">Получение контекста по заданному дескриптору и типу контекста. </div><div class="ttdef"><b>Definition:</b> <a href="ak__context__manager_8c_source.html#l00509">ak_context_manager.c:509</a></div></div>
+</div><!-- fragment -->
+<p><div class="dynheader">
+Граф вызовов:</div>
+<div class="dyncontent">
+<div class="center"><img src="ak__oid_8c_a68ba6df00826c218013a14ca8f163457_cgraph.png" border="0" usemap="#ak__oid_8c_a68ba6df00826c218013a14ca8f163457_cgraph" alt=""/></div>
+<!-- MAP 15 -->
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a267481da1bd3fd559be7e8267a124036"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const char* ak_libakrypt_oid_get_name </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="libakrypt_8h.html#a44748ab5acc3b5e0d78b2cb1436a0aae">ak_handle</a>&#160;</td>
+          <td class="paramname"><em>handle</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Получение читаемого имени OID. </p>
+<dl><dt><b>Примеры: </b></dt><dd><a class="el" href="example-hash-oids_8c-example.html#a11">example-hash-oids.c</a> и <a class="el" href="example-oid_8c-example.html#a14">example-oid.c</a>.</dd>
+</dl>
+<p>См. определение в файле <a class="el" href="ak__oid_8c_source.html">ak_oid.c</a> строка <a class="el" href="ak__oid_8c_source.html#l00174">174</a></p>
+<div class="fragment"><div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;{</div><div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;  <a class="code" href="structoid.html">ak_oid</a> <a class="code" href="structoid.html">oid</a> = <a class="code" href="ak__context__manager_8c.html#afedb3766d50dbdf85a723054566d1c2f">ak_handle_get_context</a>( handle, <a class="code" href="libakrypt_8h.html#ad058d4c98220bc1f0f872455ee71446da7b83fe5b161c4f787c277144be5d467b">oid_engine</a> );</div><div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;  <span class="keywordflow">if</span>( oid == NULL ) {</div><div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;    <a class="code" href="ak__log_8c.html#a80a4822cbd184b3cbcc43096126eb52b">ak_error_message</a>( <a class="code" href="ak__log_8c.html#aa0cdd429c558ca0448ce3a8e9529e920">ak_error_get_value</a>(), __func__, <span class="stringliteral">&quot;wrong handle&quot;</span> );</div><div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="libakrypt_8h.html#a2131e17cca1e32bf4e8f501c0518b6c9">ak_null_string</a>;</div><div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;  }</div><div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160; <span class="keywordflow">return</span> oid-&gt;<a class="code" href="structoid.html#a8f8f80d37794cde9472343e4487ba3eb">name</a>;</div><div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;}</div><div class="ttc" id="libakrypt_8h_html_ad058d4c98220bc1f0f872455ee71446da7b83fe5b161c4f787c277144be5d467b"><div class="ttname"><a href="libakrypt_8h.html#ad058d4c98220bc1f0f872455ee71446da7b83fe5b161c4f787c277144be5d467b">oid_engine</a></div><div class="ttdoc">механизм идентификаторов криптографических алгоритмов </div><div class="ttdef"><b>Definition:</b> <a href="libakrypt_8h_source.html#l00268">libakrypt.h:268</a></div></div>
+<div class="ttc" id="ak__log_8c_html_aa0cdd429c558ca0448ce3a8e9529e920"><div class="ttname"><a href="ak__log_8c.html#aa0cdd429c558ca0448ce3a8e9529e920">ak_error_get_value</a></div><div class="ttdeci">int ak_error_get_value(void)</div><div class="ttdoc">Функция возвращает код последней ошибки выполнения программы. </div><div class="ttdef"><b>Definition:</b> <a href="ak__log_8c_source.html#l00067">ak_log.c:67</a></div></div>
+<div class="ttc" id="structoid_html_a8f8f80d37794cde9472343e4487ba3eb"><div class="ttname"><a href="structoid.html#a8f8f80d37794cde9472343e4487ba3eb">oid::name</a></div><div class="ttdeci">const char * name</div><div class="ttdoc">читаемое имя (для пользователя) </div><div class="ttdef"><b>Definition:</b> <a href="ak__oid_8h_source.html#l00059">ak_oid.h:59</a></div></div>
+<div class="ttc" id="libakrypt_8h_html_a2131e17cca1e32bf4e8f501c0518b6c9"><div class="ttname"><a href="libakrypt_8h.html#a2131e17cca1e32bf4e8f501c0518b6c9">ak_null_string</a></div><div class="ttdeci">#define ak_null_string</div><div class="ttdef"><b>Definition:</b> <a href="libakrypt_8h_source.html#l00233">libakrypt.h:233</a></div></div>
+<div class="ttc" id="ak__log_8c_html_a80a4822cbd184b3cbcc43096126eb52b"><div class="ttname"><a href="ak__log_8c.html#a80a4822cbd184b3cbcc43096126eb52b">ak_error_message</a></div><div class="ttdeci">int ak_error_message(const int code, const char *function, const char *message)</div><div class="ttdoc">Вывод сообщений о возникшей в процессе выполнения ошибке. </div><div class="ttdef"><b>Definition:</b> <a href="ak__log_8c_source.html#l00186">ak_log.c:186</a></div></div>
+<div class="ttc" id="structoid_html"><div class="ttname"><a href="structoid.html">oid</a></div><div class="ttdoc">Класс для хранения идентификаторов объектов (криптографических механизмов) и их данных. </div><div class="ttdef"><b>Definition:</b> <a href="ak__oid_8h_source.html#l00053">ak_oid.h:53</a></div></div>
+<div class="ttc" id="ak__context__manager_8c_html_afedb3766d50dbdf85a723054566d1c2f"><div class="ttname"><a href="ak__context__manager_8c.html#afedb3766d50dbdf85a723054566d1c2f">ak_handle_get_context</a></div><div class="ttdeci">ak_pointer ak_handle_get_context(ak_handle handle, ak_oid_engine engine)</div><div class="ttdoc">Получение контекста по заданному дескриптору и типу контекста. </div><div class="ttdef"><b>Definition:</b> <a href="ak__context__manager_8c_source.html#l00509">ak_context_manager.c:509</a></div></div>
+</div><!-- fragment -->
+<p><div class="dynheader">
+Граф вызовов:</div>
+<div class="dyncontent">
+<div class="center"><img src="ak__oid_8c_a267481da1bd3fd559be7e8267a124036_cgraph.png" border="0" usemap="#ak__oid_8c_a267481da1bd3fd559be7e8267a124036_cgraph" alt=""/></div>
+<!-- MAP 16 -->
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a40c98c3dad257cd9a3b3a3ce42eab77c"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const size_t ak_libakrypt_oids_count </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Получение количества доступных OID библиотеки. </p>
+<dl><dt><b>Примеры: </b></dt><dd><a class="el" href="example-oid_8c-example.html#a10">example-oid.c</a>.</dd>
+</dl>
+<p>См. определение в файле <a class="el" href="ak__oid_8c_source.html">ak_oid.c</a> строка <a class="el" href="ak__oid_8c_source.html#l00168">168</a></p>
+<div class="fragment"><div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;{</div><div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160; <span class="keywordflow">return</span> ( <span class="keyword">sizeof</span>( <a class="code" href="ak__oid_8c.html#a23dff74d87623f1a48ddb93cfee0574b">libakrypt_oids</a> )/( <span class="keyword">sizeof</span>( <span class="keyword">struct</span> <a class="code" href="structoid.html">oid</a> )) - 1 );</div><div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;}</div><div class="ttc" id="ak__oid_8c_html_a23dff74d87623f1a48ddb93cfee0574b"><div class="ttname"><a href="ak__oid_8c.html#a23dff74d87623f1a48ddb93cfee0574b">libakrypt_oids</a></div><div class="ttdeci">struct oid libakrypt_oids[]</div><div class="ttdef"><b>Definition:</b> <a href="ak__oid_8c_source.html#l00044">ak_oid.c:44</a></div></div>
+<div class="ttc" id="structoid_html"><div class="ttname"><a href="structoid.html">oid</a></div><div class="ttdoc">Класс для хранения идентификаторов объектов (криптографических механизмов) и их данных. </div><div class="ttdef"><b>Definition:</b> <a href="ak__oid_8h_source.html#l00053">ak_oid.h:53</a></div></div>
+</div><!-- fragment -->
+<p><div class="dynheader">
+Граф вызова функции:</div>
+<div class="dyncontent">
+<div class="center"><img src="ak__oid_8c_a40c98c3dad257cd9a3b3a3ce42eab77c_icgraph.png" border="0" usemap="#ak__oid_8c_a40c98c3dad257cd9a3b3a3ce42eab77c_icgraph" alt=""/></div>
+<!-- MAP 17 -->
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="aecfea0c040912d43aed632fd9941b0b0"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="ak__oid_8h.html#addfd662f52444ffde7f6f398c0d33590">ak_oid</a> ak_oid_find_by_engine </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="libakrypt_8h.html#ad058d4c98220bc1f0f872455ee71446d">ak_oid_engine</a>&#160;</td>
+          <td class="paramname"><em>engine</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Поиск OID по типу криптографического механизма. </p>
+<dl><dt><b>Примеры: </b></dt><dd><a class="el" href="example-mpzn-montgomery_8c-example.html#a15">example-mpzn-montgomery.c</a> и <a class="el" href="example-mpzn-rem_8c-example.html#a14">example-mpzn-rem.c</a>.</dd>
+</dl>
+<p>См. определение в файле <a class="el" href="ak__oid_8c_source.html">ak_oid.c</a> строка <a class="el" href="ak__oid_8c_source.html#l00433">433</a></p>
+<div class="fragment"><div class="line"><a name="l00434"></a><span class="lineno">  434</span>&#160;{</div><div class="line"><a name="l00435"></a><span class="lineno">  435</span>&#160;  <span class="keywordtype">size_t</span> idx = 0;</div><div class="line"><a name="l00436"></a><span class="lineno">  436</span>&#160;  <span class="keywordflow">do</span>{</div><div class="line"><a name="l00437"></a><span class="lineno">  437</span>&#160;     <span class="keywordflow">if</span>( <a class="code" href="ak__oid_8c.html#a23dff74d87623f1a48ddb93cfee0574b">libakrypt_oids</a>[idx].engine == engine ) <span class="keywordflow">return</span> &amp;<a class="code" href="ak__oid_8c.html#a23dff74d87623f1a48ddb93cfee0574b">libakrypt_oids</a>[idx];</div><div class="line"><a name="l00438"></a><span class="lineno">  438</span>&#160;  } <span class="keywordflow">while</span>( ++idx &lt; <a class="code" href="ak__oid_8c.html#a40c98c3dad257cd9a3b3a3ce42eab77c">ak_libakrypt_oids_count</a>( ));</div><div class="line"><a name="l00439"></a><span class="lineno">  439</span>&#160;  <a class="code" href="ak__log_8c.html#a80a4822cbd184b3cbcc43096126eb52b">ak_error_message</a>( <a class="code" href="libakrypt_8h.html#af3acca0ebba45e213b620b04fd90b2fd">ak_error_oid_name</a>, __func__, <span class="stringliteral">&quot;searching oid with wrong engine&quot;</span> );</div><div class="line"><a name="l00440"></a><span class="lineno">  440</span>&#160;</div><div class="line"><a name="l00441"></a><span class="lineno">  441</span>&#160; <span class="keywordflow">return</span> NULL;</div><div class="line"><a name="l00442"></a><span class="lineno">  442</span>&#160;}</div><div class="ttc" id="ak__oid_8c_html_a23dff74d87623f1a48ddb93cfee0574b"><div class="ttname"><a href="ak__oid_8c.html#a23dff74d87623f1a48ddb93cfee0574b">libakrypt_oids</a></div><div class="ttdeci">struct oid libakrypt_oids[]</div><div class="ttdef"><b>Definition:</b> <a href="ak__oid_8c_source.html#l00044">ak_oid.c:44</a></div></div>
+<div class="ttc" id="libakrypt_8h_html_af3acca0ebba45e213b620b04fd90b2fd"><div class="ttname"><a href="libakrypt_8h.html#af3acca0ebba45e213b620b04fd90b2fd">ak_error_oid_name</a></div><div class="ttdeci">#define ak_error_oid_name</div><div class="ttdoc">Ошибочное или не определенное имя криптографического механизма. </div><div class="ttdef"><b>Definition:</b> <a href="libakrypt_8h_source.html#l00188">libakrypt.h:188</a></div></div>
+<div class="ttc" id="ak__log_8c_html_a80a4822cbd184b3cbcc43096126eb52b"><div class="ttname"><a href="ak__log_8c.html#a80a4822cbd184b3cbcc43096126eb52b">ak_error_message</a></div><div class="ttdeci">int ak_error_message(const int code, const char *function, const char *message)</div><div class="ttdoc">Вывод сообщений о возникшей в процессе выполнения ошибке. </div><div class="ttdef"><b>Definition:</b> <a href="ak__log_8c_source.html#l00186">ak_log.c:186</a></div></div>
+<div class="ttc" id="ak__oid_8c_html_a40c98c3dad257cd9a3b3a3ce42eab77c"><div class="ttname"><a href="ak__oid_8c.html#a40c98c3dad257cd9a3b3a3ce42eab77c">ak_libakrypt_oids_count</a></div><div class="ttdeci">const size_t ak_libakrypt_oids_count(void)</div><div class="ttdoc">Получение количества доступных OID библиотеки. </div><div class="ttdef"><b>Definition:</b> <a href="ak__oid_8c_source.html#l00168">ak_oid.c:168</a></div></div>
+</div><!-- fragment -->
+<p><div class="dynheader">
+Граф вызовов:</div>
+<div class="dyncontent">
+<div class="center"><img src="ak__oid_8c_aecfea0c040912d43aed632fd9941b0b0_cgraph.png" border="0" usemap="#ak__oid_8c_aecfea0c040912d43aed632fd9941b0b0_cgraph" alt=""/></div>
+<!-- MAP 18 -->
+</div>
+</p>
+
+<p><div class="dynheader">
+Граф вызова функции:</div>
+<div class="dyncontent">
+<div class="center"><img src="ak__oid_8c_aecfea0c040912d43aed632fd9941b0b0_icgraph.png" border="0" usemap="#ak__oid_8c_aecfea0c040912d43aed632fd9941b0b0_icgraph" alt=""/></div>
+<!-- MAP 19 -->
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a66485ee31b7e4ab3805cfce6e42556a6"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="ak__oid_8h.html#addfd662f52444ffde7f6f398c0d33590">ak_oid</a> ak_oid_find_by_id </td>
+          <td>(</td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>id</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Поиск OID по его идентификатору (строке цифр, разделенных точками). </p>
+
+<p>См. определение в файле <a class="el" href="ak__oid_8c_source.html">ak_oid.c</a> строка <a class="el" href="ak__oid_8c_source.html#l00414">414</a></p>
+<div class="fragment"><div class="line"><a name="l00415"></a><span class="lineno">  415</span>&#160;{</div><div class="line"><a name="l00416"></a><span class="lineno">  416</span>&#160;  <span class="keywordtype">size_t</span> idx = 0;</div><div class="line"><a name="l00417"></a><span class="lineno">  417</span>&#160;  <span class="keywordflow">if</span>( <span class="keywordtype">id</span> == NULL ) {</div><div class="line"><a name="l00418"></a><span class="lineno">  418</span>&#160;    <a class="code" href="ak__log_8c.html#a80a4822cbd184b3cbcc43096126eb52b">ak_error_message</a>( <a class="code" href="libakrypt_8h.html#ab44706b2e13bc40499b30fb371ad7f9e">ak_error_null_pointer</a>, __func__, <span class="stringliteral">&quot;using null pointer to oid identifier&quot;</span> );</div><div class="line"><a name="l00419"></a><span class="lineno">  419</span>&#160;    <span class="keywordflow">return</span> NULL;</div><div class="line"><a name="l00420"></a><span class="lineno">  420</span>&#160;  }</div><div class="line"><a name="l00421"></a><span class="lineno">  421</span>&#160;</div><div class="line"><a name="l00422"></a><span class="lineno">  422</span>&#160;  <span class="keywordflow">do</span>{</div><div class="line"><a name="l00423"></a><span class="lineno">  423</span>&#160;     <span class="keywordflow">if</span>(( strlen( <span class="keywordtype">id</span> ) == strlen( <a class="code" href="ak__oid_8c.html#a23dff74d87623f1a48ddb93cfee0574b">libakrypt_oids</a>[idx].<span class="keywordtype">id</span> )) &amp;&amp;</div><div class="line"><a name="l00424"></a><span class="lineno">  424</span>&#160;            <a class="code" href="ak__tools_8c.html#aad0f57a8872509185b031a4dca334f98">ak_ptr_is_equal</a>( (<span class="keywordtype">char</span> *)<span class="keywordtype">id</span>, (<span class="keywordtype">char</span> *)<a class="code" href="ak__oid_8c.html#a23dff74d87623f1a48ddb93cfee0574b">libakrypt_oids</a>[idx].<span class="keywordtype">id</span>,</div><div class="line"><a name="l00425"></a><span class="lineno">  425</span>&#160;                                strlen( <a class="code" href="ak__oid_8c.html#a23dff74d87623f1a48ddb93cfee0574b">libakrypt_oids</a>[idx].<span class="keywordtype">id</span> ))) <span class="keywordflow">return</span> &amp;<a class="code" href="ak__oid_8c.html#a23dff74d87623f1a48ddb93cfee0574b">libakrypt_oids</a>[idx];</div><div class="line"><a name="l00426"></a><span class="lineno">  426</span>&#160;  } <span class="keywordflow">while</span>( ++idx &lt; <a class="code" href="ak__oid_8c.html#a40c98c3dad257cd9a3b3a3ce42eab77c">ak_libakrypt_oids_count</a>( ));</div><div class="line"><a name="l00427"></a><span class="lineno">  427</span>&#160;  <a class="code" href="ak__log_8c.html#a80a4822cbd184b3cbcc43096126eb52b">ak_error_message</a>( <a class="code" href="libakrypt_8h.html#a1cd1e422a283f12435827363959ac6ab">ak_error_oid_id</a>, __func__, <span class="stringliteral">&quot;searching oid with wrong idetifier&quot;</span> );</div><div class="line"><a name="l00428"></a><span class="lineno">  428</span>&#160;</div><div class="line"><a name="l00429"></a><span class="lineno">  429</span>&#160; <span class="keywordflow">return</span> NULL;</div><div class="line"><a name="l00430"></a><span class="lineno">  430</span>&#160;}</div><div class="ttc" id="ak__tools_8c_html_aad0f57a8872509185b031a4dca334f98"><div class="ttname"><a href="ak__tools_8c.html#aad0f57a8872509185b031a4dca334f98">ak_ptr_is_equal</a></div><div class="ttdeci">ak_bool ak_ptr_is_equal(const ak_pointer left, const ak_pointer right, const size_t size)</div><div class="ttdoc">Сравнение двух областей памяти. </div><div class="ttdef"><b>Definition:</b> <a href="ak__tools_8c_source.html#l00266">ak_tools.c:266</a></div></div>
+<div class="ttc" id="libakrypt_8h_html_a1cd1e422a283f12435827363959ac6ab"><div class="ttname"><a href="libakrypt_8h.html#a1cd1e422a283f12435827363959ac6ab">ak_error_oid_id</a></div><div class="ttdeci">#define ak_error_oid_id</div><div class="ttdoc">Ошибочный или неопределенный идентификатор криптографического механизма. </div><div class="ttdef"><b>Definition:</b> <a href="libakrypt_8h_source.html#l00190">libakrypt.h:190</a></div></div>
+<div class="ttc" id="ak__oid_8c_html_a23dff74d87623f1a48ddb93cfee0574b"><div class="ttname"><a href="ak__oid_8c.html#a23dff74d87623f1a48ddb93cfee0574b">libakrypt_oids</a></div><div class="ttdeci">struct oid libakrypt_oids[]</div><div class="ttdef"><b>Definition:</b> <a href="ak__oid_8c_source.html#l00044">ak_oid.c:44</a></div></div>
+<div class="ttc" id="libakrypt_8h_html_ab44706b2e13bc40499b30fb371ad7f9e"><div class="ttname"><a href="libakrypt_8h.html#ab44706b2e13bc40499b30fb371ad7f9e">ak_error_null_pointer</a></div><div class="ttdeci">#define ak_error_null_pointer</div><div class="ttdoc">Ошибка, возникающая при доступе или передаче в качестве аргумента функции null указателя. </div><div class="ttdef"><b>Definition:</b> <a href="libakrypt_8h_source.html#l00149">libakrypt.h:149</a></div></div>
+<div class="ttc" id="ak__log_8c_html_a80a4822cbd184b3cbcc43096126eb52b"><div class="ttname"><a href="ak__log_8c.html#a80a4822cbd184b3cbcc43096126eb52b">ak_error_message</a></div><div class="ttdeci">int ak_error_message(const int code, const char *function, const char *message)</div><div class="ttdoc">Вывод сообщений о возникшей в процессе выполнения ошибке. </div><div class="ttdef"><b>Definition:</b> <a href="ak__log_8c_source.html#l00186">ak_log.c:186</a></div></div>
+<div class="ttc" id="ak__oid_8c_html_a40c98c3dad257cd9a3b3a3ce42eab77c"><div class="ttname"><a href="ak__oid_8c.html#a40c98c3dad257cd9a3b3a3ce42eab77c">ak_libakrypt_oids_count</a></div><div class="ttdeci">const size_t ak_libakrypt_oids_count(void)</div><div class="ttdoc">Получение количества доступных OID библиотеки. </div><div class="ttdef"><b>Definition:</b> <a href="ak__oid_8c_source.html#l00168">ak_oid.c:168</a></div></div>
+</div><!-- fragment -->
+<p><div class="dynheader">
+Граф вызовов:</div>
+<div class="dyncontent">
+<div class="center"><img src="ak__oid_8c_a66485ee31b7e4ab3805cfce6e42556a6_cgraph.png" border="0" usemap="#ak__oid_8c_a66485ee31b7e4ab3805cfce6e42556a6_cgraph" alt=""/></div>
+<!-- MAP 20 -->
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a54ed66e94caacfda6aed38210b6b6443"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="ak__oid_8h.html#addfd662f52444ffde7f6f398c0d33590">ak_oid</a> ak_oid_find_by_name </td>
+          <td>(</td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>name</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Поиск OID его имени. </p>
+
+<p>См. определение в файле <a class="el" href="ak__oid_8c_source.html">ak_oid.c</a> строка <a class="el" href="ak__oid_8c_source.html#l00396">396</a></p>
+<div class="fragment"><div class="line"><a name="l00397"></a><span class="lineno">  397</span>&#160;{</div><div class="line"><a name="l00398"></a><span class="lineno">  398</span>&#160;  <span class="keywordtype">size_t</span> idx = 0;</div><div class="line"><a name="l00399"></a><span class="lineno">  399</span>&#160;  <span class="keywordflow">if</span>( name == NULL ) {</div><div class="line"><a name="l00400"></a><span class="lineno">  400</span>&#160;    <a class="code" href="ak__log_8c.html#a80a4822cbd184b3cbcc43096126eb52b">ak_error_message</a>( <a class="code" href="libakrypt_8h.html#ab44706b2e13bc40499b30fb371ad7f9e">ak_error_null_pointer</a>, __func__, <span class="stringliteral">&quot;using null pointer to oid name&quot;</span> );</div><div class="line"><a name="l00401"></a><span class="lineno">  401</span>&#160;    <span class="keywordflow">return</span> NULL;</div><div class="line"><a name="l00402"></a><span class="lineno">  402</span>&#160;  }</div><div class="line"><a name="l00403"></a><span class="lineno">  403</span>&#160;  <span class="keywordflow">do</span>{</div><div class="line"><a name="l00404"></a><span class="lineno">  404</span>&#160;     <span class="keywordflow">if</span>(( strlen( name ) == strlen( <a class="code" href="ak__oid_8c.html#a23dff74d87623f1a48ddb93cfee0574b">libakrypt_oids</a>[idx].name )) &amp;&amp;</div><div class="line"><a name="l00405"></a><span class="lineno">  405</span>&#160;            <a class="code" href="ak__tools_8c.html#aad0f57a8872509185b031a4dca334f98">ak_ptr_is_equal</a>( (<span class="keywordtype">char</span> *)name, (<span class="keywordtype">char</span> *)<a class="code" href="ak__oid_8c.html#a23dff74d87623f1a48ddb93cfee0574b">libakrypt_oids</a>[idx].name,</div><div class="line"><a name="l00406"></a><span class="lineno">  406</span>&#160;                                strlen( <a class="code" href="ak__oid_8c.html#a23dff74d87623f1a48ddb93cfee0574b">libakrypt_oids</a>[idx].name ))) <span class="keywordflow">return</span> &amp;<a class="code" href="ak__oid_8c.html#a23dff74d87623f1a48ddb93cfee0574b">libakrypt_oids</a>[idx];</div><div class="line"><a name="l00407"></a><span class="lineno">  407</span>&#160;  } <span class="keywordflow">while</span>( ++idx &lt; <a class="code" href="ak__oid_8c.html#a40c98c3dad257cd9a3b3a3ce42eab77c">ak_libakrypt_oids_count</a>( ));</div><div class="line"><a name="l00408"></a><span class="lineno">  408</span>&#160;  <a class="code" href="ak__log_8c.html#a80a4822cbd184b3cbcc43096126eb52b">ak_error_message</a>( <a class="code" href="libakrypt_8h.html#af3acca0ebba45e213b620b04fd90b2fd">ak_error_oid_name</a>, __func__, <span class="stringliteral">&quot;searching oid with wrong name&quot;</span> );</div><div class="line"><a name="l00409"></a><span class="lineno">  409</span>&#160;</div><div class="line"><a name="l00410"></a><span class="lineno">  410</span>&#160; <span class="keywordflow">return</span> NULL;</div><div class="line"><a name="l00411"></a><span class="lineno">  411</span>&#160;}</div><div class="ttc" id="ak__tools_8c_html_aad0f57a8872509185b031a4dca334f98"><div class="ttname"><a href="ak__tools_8c.html#aad0f57a8872509185b031a4dca334f98">ak_ptr_is_equal</a></div><div class="ttdeci">ak_bool ak_ptr_is_equal(const ak_pointer left, const ak_pointer right, const size_t size)</div><div class="ttdoc">Сравнение двух областей памяти. </div><div class="ttdef"><b>Definition:</b> <a href="ak__tools_8c_source.html#l00266">ak_tools.c:266</a></div></div>
+<div class="ttc" id="ak__oid_8c_html_a23dff74d87623f1a48ddb93cfee0574b"><div class="ttname"><a href="ak__oid_8c.html#a23dff74d87623f1a48ddb93cfee0574b">libakrypt_oids</a></div><div class="ttdeci">struct oid libakrypt_oids[]</div><div class="ttdef"><b>Definition:</b> <a href="ak__oid_8c_source.html#l00044">ak_oid.c:44</a></div></div>
+<div class="ttc" id="libakrypt_8h_html_ab44706b2e13bc40499b30fb371ad7f9e"><div class="ttname"><a href="libakrypt_8h.html#ab44706b2e13bc40499b30fb371ad7f9e">ak_error_null_pointer</a></div><div class="ttdeci">#define ak_error_null_pointer</div><div class="ttdoc">Ошибка, возникающая при доступе или передаче в качестве аргумента функции null указателя. </div><div class="ttdef"><b>Definition:</b> <a href="libakrypt_8h_source.html#l00149">libakrypt.h:149</a></div></div>
+<div class="ttc" id="libakrypt_8h_html_af3acca0ebba45e213b620b04fd90b2fd"><div class="ttname"><a href="libakrypt_8h.html#af3acca0ebba45e213b620b04fd90b2fd">ak_error_oid_name</a></div><div class="ttdeci">#define ak_error_oid_name</div><div class="ttdoc">Ошибочное или не определенное имя криптографического механизма. </div><div class="ttdef"><b>Definition:</b> <a href="libakrypt_8h_source.html#l00188">libakrypt.h:188</a></div></div>
+<div class="ttc" id="ak__log_8c_html_a80a4822cbd184b3cbcc43096126eb52b"><div class="ttname"><a href="ak__log_8c.html#a80a4822cbd184b3cbcc43096126eb52b">ak_error_message</a></div><div class="ttdeci">int ak_error_message(const int code, const char *function, const char *message)</div><div class="ttdoc">Вывод сообщений о возникшей в процессе выполнения ошибке. </div><div class="ttdef"><b>Definition:</b> <a href="ak__log_8c_source.html#l00186">ak_log.c:186</a></div></div>
+<div class="ttc" id="ak__oid_8c_html_a40c98c3dad257cd9a3b3a3ce42eab77c"><div class="ttname"><a href="ak__oid_8c.html#a40c98c3dad257cd9a3b3a3ce42eab77c">ak_libakrypt_oids_count</a></div><div class="ttdeci">const size_t ak_libakrypt_oids_count(void)</div><div class="ttdoc">Получение количества доступных OID библиотеки. </div><div class="ttdef"><b>Definition:</b> <a href="ak__oid_8c_source.html#l00168">ak_oid.c:168</a></div></div>
+</div><!-- fragment -->
+<p><div class="dynheader">
+Граф вызовов:</div>
+<div class="dyncontent">
+<div class="center"><img src="ak__oid_8c_a54ed66e94caacfda6aed38210b6b6443_cgraph.png" border="0" usemap="#ak__oid_8c_a54ed66e94caacfda6aed38210b6b6443_cgraph" alt=""/></div>
+<!-- MAP 21 -->
+</div>
+</p>
+
+<p><div class="dynheader">
+Граф вызова функции:</div>
+<div class="dyncontent">
+<div class="center"><img src="ak__oid_8c_a54ed66e94caacfda6aed38210b6b6443_icgraph.png" border="0" usemap="#ak__oid_8c_a54ed66e94caacfda6aed38210b6b6443_icgraph" alt=""/></div>
+<!-- MAP 22 -->
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="aafa6fb05275136d4004d7a0dee9ef6ba"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="ak__oid_8h.html#addfd662f52444ffde7f6f398c0d33590">ak_oid</a> ak_oid_findnext_by_engine </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="ak__oid_8h.html#addfd662f52444ffde7f6f398c0d33590">ak_oid</a>&#160;</td>
+          <td class="paramname"><em>startoid</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="libakrypt_8h.html#ad058d4c98220bc1f0f872455ee71446d">ak_oid_engine</a>&#160;</td>
+          <td class="paramname"><em>engine</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Продолжение поиска OID по типу криптографического механизма. </p>
+<dl><dt><b>Примеры: </b></dt><dd><a class="el" href="example-mpzn-montgomery_8c-example.html#a27">example-mpzn-montgomery.c</a> и <a class="el" href="example-mpzn-rem_8c-example.html#a19">example-mpzn-rem.c</a>.</dd>
+</dl>
+<p>См. определение в файле <a class="el" href="ak__oid_8c_source.html">ak_oid.c</a> строка <a class="el" href="ak__oid_8c_source.html#l00445">445</a></p>
+<div class="fragment"><div class="line"><a name="l00446"></a><span class="lineno">  446</span>&#160;{</div><div class="line"><a name="l00447"></a><span class="lineno">  447</span>&#160; <a class="code" href="structoid.html">ak_oid</a> <a class="code" href="structoid.html">oid</a> = startoid;</div><div class="line"><a name="l00448"></a><span class="lineno">  448</span>&#160;</div><div class="line"><a name="l00449"></a><span class="lineno">  449</span>&#160; <span class="keywordflow">if</span>( oid == NULL) {</div><div class="line"><a name="l00450"></a><span class="lineno">  450</span>&#160;   <a class="code" href="ak__log_8c.html#a80a4822cbd184b3cbcc43096126eb52b">ak_error_message</a>( <a class="code" href="libakrypt_8h.html#ab44706b2e13bc40499b30fb371ad7f9e">ak_error_null_pointer</a>, __func__, <span class="stringliteral">&quot;using null pointer to oid&quot;</span> );</div><div class="line"><a name="l00451"></a><span class="lineno">  451</span>&#160;   <span class="keywordflow">return</span> NULL;</div><div class="line"><a name="l00452"></a><span class="lineno">  452</span>&#160; }</div><div class="line"><a name="l00453"></a><span class="lineno">  453</span>&#160;</div><div class="line"><a name="l00454"></a><span class="lineno">  454</span>&#160; <span class="comment">/* сдвигаемся по массиву OID вперед */</span></div><div class="line"><a name="l00455"></a><span class="lineno">  455</span>&#160;  <span class="keywordflow">while</span>( (++oid)-&gt;engine != <a class="code" href="libakrypt_8h.html#ad058d4c98220bc1f0f872455ee71446da50d17ca9177a4eb00153e01bf6a21f0d">undefined_engine</a> ) {</div><div class="line"><a name="l00456"></a><span class="lineno">  456</span>&#160;    <span class="keywordflow">if</span>( oid-&gt;<a class="code" href="structoid.html#a5937bd1634d14c68ac13b36b04084e97">engine</a> == engine ) <span class="keywordflow">return</span> oid;</div><div class="line"><a name="l00457"></a><span class="lineno">  457</span>&#160;  }</div><div class="line"><a name="l00458"></a><span class="lineno">  458</span>&#160;</div><div class="line"><a name="l00459"></a><span class="lineno">  459</span>&#160; <span class="keywordflow">return</span> NULL;</div><div class="line"><a name="l00460"></a><span class="lineno">  460</span>&#160;}</div><div class="ttc" id="libakrypt_8h_html_ad058d4c98220bc1f0f872455ee71446da50d17ca9177a4eb00153e01bf6a21f0d"><div class="ttname"><a href="libakrypt_8h.html#ad058d4c98220bc1f0f872455ee71446da50d17ca9177a4eb00153e01bf6a21f0d">undefined_engine</a></div><div class="ttdoc">неопределенный механизм, может возвращаться как ошибка </div><div class="ttdef"><b>Definition:</b> <a href="libakrypt_8h_source.html#l00246">libakrypt.h:246</a></div></div>
+<div class="ttc" id="structoid_html_a5937bd1634d14c68ac13b36b04084e97"><div class="ttname"><a href="structoid.html#a5937bd1634d14c68ac13b36b04084e97">oid::engine</a></div><div class="ttdeci">ak_oid_engine engine</div><div class="ttdoc">криптографический механизм </div><div class="ttdef"><b>Definition:</b> <a href="ak__oid_8h_source.html#l00055">ak_oid.h:55</a></div></div>
+<div class="ttc" id="libakrypt_8h_html_ab44706b2e13bc40499b30fb371ad7f9e"><div class="ttname"><a href="libakrypt_8h.html#ab44706b2e13bc40499b30fb371ad7f9e">ak_error_null_pointer</a></div><div class="ttdeci">#define ak_error_null_pointer</div><div class="ttdoc">Ошибка, возникающая при доступе или передаче в качестве аргумента функции null указателя. </div><div class="ttdef"><b>Definition:</b> <a href="libakrypt_8h_source.html#l00149">libakrypt.h:149</a></div></div>
+<div class="ttc" id="ak__log_8c_html_a80a4822cbd184b3cbcc43096126eb52b"><div class="ttname"><a href="ak__log_8c.html#a80a4822cbd184b3cbcc43096126eb52b">ak_error_message</a></div><div class="ttdeci">int ak_error_message(const int code, const char *function, const char *message)</div><div class="ttdoc">Вывод сообщений о возникшей в процессе выполнения ошибке. </div><div class="ttdef"><b>Definition:</b> <a href="ak__log_8c_source.html#l00186">ak_log.c:186</a></div></div>
+<div class="ttc" id="structoid_html"><div class="ttname"><a href="structoid.html">oid</a></div><div class="ttdoc">Класс для хранения идентификаторов объектов (криптографических механизмов) и их данных. </div><div class="ttdef"><b>Definition:</b> <a href="ak__oid_8h_source.html#l00053">ak_oid.h:53</a></div></div>
+</div><!-- fragment -->
+<p><div class="dynheader">
+Граф вызовов:</div>
+<div class="dyncontent">
+<div class="center"><img src="ak__oid_8c_aafa6fb05275136d4004d7a0dee9ef6ba_cgraph.png" border="0" usemap="#ak__oid_8c_aafa6fb05275136d4004d7a0dee9ef6ba_cgraph" alt=""/></div>
+<!-- MAP 23 -->
+</div>
+</p>
+
+<p><div class="dynheader">
+Граф вызова функции:</div>
+<div class="dyncontent">
+<div class="center"><img src="ak__oid_8c_aafa6fb05275136d4004d7a0dee9ef6ba_icgraph.png" border="0" usemap="#ak__oid_8c_aafa6fb05275136d4004d7a0dee9ef6ba_icgraph" alt=""/></div>
+<!-- MAP 24 -->
+</div>
+</p>
+
+</div>
+</div>
+<h2 class="groupheader">Переменные</h2>
+<a class="anchor" id="ad2949fee5e341b0db4fc3332ecf9b2dd"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">struct <a class="el" href="structtwo__pointers.html">two_pointers</a> block_cipher_counter_functions</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<b>Инициализатор</b><div class="fragment"><div class="line">= {</div><div class="line">  (<a class="code" href="ak__oid_8h.html#a08ac54767d2e99a8123e5aced6c02bbd">ak_function_void</a> *) <a class="code" href="ak__bckey_8c.html#a2d387c7ba5591de1afac4c61c1fff5fd">ak_bckey_context_xcrypt</a>, </div><div class="line">  (<a class="code" href="ak__oid_8h.html#a08ac54767d2e99a8123e5aced6c02bbd">ak_function_void</a> *) <a class="code" href="ak__bckey_8c.html#a2d387c7ba5591de1afac4c61c1fff5fd">ak_bckey_context_xcrypt</a> </div><div class="line"> }</div><div class="ttc" id="ak__oid_8h_html_a08ac54767d2e99a8123e5aced6c02bbd"><div class="ttname"><a href="ak__oid_8h.html#a08ac54767d2e99a8123e5aced6c02bbd">ak_function_void</a></div><div class="ttdeci">ak_pointer( ak_function_void)(void)</div><div class="ttdoc">Класс функций без параметра </div><div class="ttdef"><b>Definition:</b> <a href="ak__oid_8h_source.html#l00038">ak_oid.h:38</a></div></div>
+<div class="ttc" id="ak__bckey_8c_html_a2d387c7ba5591de1afac4c61c1fff5fd"><div class="ttname"><a href="ak__bckey_8c.html#a2d387c7ba5591de1afac4c61c1fff5fd">ak_bckey_context_xcrypt</a></div><div class="ttdeci">int ak_bckey_context_xcrypt(ak_bckey bkey, ak_pointer in, ak_pointer out, size_t size, ak_pointer iv, size_t iv_size)</div><div class="ttdoc">Зашифрование/расшифрование данных в режиме гаммирования из ГОСТ Р 34.13-2015. </div><div class="ttdef"><b>Definition:</b> <a href="ak__bckey_8c_source.html#l00379">ak_bckey.c:379</a></div></div>
+</div><!-- fragment --><p>Структура, сожержащая указатели на функции зашифрования/расшифрования в режиме счетчика </p>
+
+<p>См. определение в файле <a class="el" href="ak__oid_8c_source.html">ak_oid.c</a> строка <a class="el" href="ak__oid_8c_source.html#l00037">37</a></p>
+
+</div>
+</div>
+<a class="anchor" id="a23dff74d87623f1a48ddb93cfee0574b"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">struct <a class="el" href="structoid.html">oid</a> libakrypt_oids[]</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Константные значения OID библиотеки </p>
+
+<p>См. определение в файле <a class="el" href="ak__oid_8c_source.html">ak_oid.c</a> строка <a class="el" href="ak__oid_8c_source.html#l00044">44</a></p>
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_43e0a1f539e00dcfa1a6bc4d4fee4fc2.html">home</a></li><li class="navelem"><a class="el" href="dir_32078dd46064dc5448d39191ac5534d6.html">eugene</a></li><li class="navelem"><a class="el" href="dir_90a44860457c395fae569358f05fdb49.html">Documents</a></li><li class="navelem"><a class="el" href="dir_ef0df63b0c88ed24c4c79f67668669bc.html">VKR</a></li><li class="navelem"><a class="el" href="dir_6ec071d27851548a42323e2c424bf74a.html">libakrypt-0.x</a></li><li class="navelem"><a class="el" href="dir_cc55869b84ab2b7a1ee582dd1158c3dc.html">source</a></li><li class="navelem"><a class="el" href="ak__oid_8c.html">ak_oid.c</a></li>
+    <li class="footer">Документация по libakrypt. Последние изменения: Вс 23 Сен 2018 21:13:41. Создано системой
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.11 </li>
+  </ul>
+</div>
+</body>
+</html>

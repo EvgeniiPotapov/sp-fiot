@@ -1,0 +1,29 @@
+digraph "ak_kbox_to_sbox"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node1 [label="ak_kbox_to_sbox",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+  Node1 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="ak_kbox_to_magma",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$ak__hash_8h.html#a248a42de0908b29d3e69057510c23df9",tooltip="Преобразование перестановок. "];
+  Node1 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="ak_hash_create_gosthash94",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$ak__hash_8h.html#a9a826ab9e2a066366148052366dede2a",tooltip="Инициализация контекста функции бесключевого хеширования ГОСТ Р 34.11-94. "];
+  Node3 -> Node4 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node4 [label="ak_hash_create_gosthash94_csp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$ak__hash_8h.html#ab2c111fe5de0eb339d83a28ebcce55ad",tooltip="Инициализация контекста функции бесключевого хеширования ГОСТ Р 34.11-94 с таблицами замен из RFC 435..."];
+  Node4 -> Node5 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node5 [label="ak_signkey_create_ak\l_signkey_create_gosthash94",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$ak__sign_8c.html#ab41c7a5de3fd53204024124911c6bcb3"];
+  Node3 -> Node6 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node6 [label="ak_hash_test_gosthash94",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$ak__hash_8h.html#a2d8b94bc0ca5535c982d9f999b41ff05",tooltip="Проверка корректной работы функции хеширования ГОСТ Р 34.11-94. "];
+  Node6 -> Node7 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node7 [label="ak_libakrypt_test_hash\l_functions",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$ak__libakrypt_8c.html#ab12e34c59af186f76114be6aa91a3a54",tooltip="Функция проверяет корректность реализации алгоритмов хеширования "];
+  Node7 -> Node8 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node8 [label="ak_libakrypt_create",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$libakrypt_8h.html#a3f840f1a40839f867ba729aa1c5d67b8",tooltip="Функция инициализации и тестирования криптографических механизмов библиотеки. "];
+  Node3 -> Node9 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node9 [label="ak_hash_new_gosthash94",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$libakrypt_8h.html#a9e050b9bdcf3fb28b7722b4509098f3f",tooltip="Создание дескриптора функции хеширования ГОСТ Р 34.11-94 с заданными таблицами замен. "];
+  Node9 -> Node10 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node10 [label="ak_hash_new_gosthash94_csp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$libakrypt_8h.html#ae57de30d80d6a08d239c23d437031e32",tooltip="Создание дескриптора функции хеширования ГОСТ Р 34.11-94 с таблицами замен из CSP. "];
+  Node3 -> Node11 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node11 [label="ak_mac_create_hmac\l_gosthash94",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$ak__mac_8h.html#a9fcc5ec7353b4083c710df81a1b84b9d",tooltip="Инициализация ключа алгоритма выработки имитовставки hmac на основе gosthash94. "];
+  Node11 -> Node12 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node12 [label="ak_mac_create_hmac\l_gosthash94_csp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$ak__mac_8h.html#a27be4dbff70e4546d5e0d4b62bd322c4",tooltip="Инициализация ключа алгоритма выработки имитовставки hmac на основе gosthash94 с таблицами из RFC 435..."];
+}

@@ -1,0 +1,699 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.11"/>
+<title>libakrypt: Файл ak_parameters.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+  $(document).ready(initResizable);
+  $(window).load(resizeHeight);
+</script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { init_search(); });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">libakrypt
+   &#160;<span id="projectnumber">Версия 0.6.7</span>
+   </div>
+   <div id="projectbrief">Модуль, реализующий криптографические преобразования для проекта OpenSKZI</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.8.11 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Поиск');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Титульная&#160;страница</span></a></li>
+      <li><a href="pages.html"><span>Описания</span></a></li>
+      <li><a href="annotated.html"><span>Структуры&#160;данных</span></a></li>
+      <li class="current"><a href="files.html"><span>Файлы</span></a></li>
+      <li><a href="examples.html"><span>Примеры</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Поиск" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>Файлы</span></a></li>
+      <li><a href="globals.html"><span>Список&#160;членов&#160;всех&#160;файлов</span></a></li>
+    </ul>
+  </div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(document).ready(function(){initNavTree('ak__parameters_8h.html','');});
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#var-members">Переменные</a>  </div>
+  <div class="headertitle">
+<div class="title">Файл ak_parameters.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><code>#include &lt;<a class="el" href="ak__hash_8h_source.html">ak_hash.h</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="ak__curves_8h_source.html">ak_curves.h</a>&gt;</code><br />
+</div><div class="textblock"><div class="dynheader">
+Граф включаемых заголовочных файлов для ak_parameters.h:</div>
+<div class="dyncontent">
+<div class="center"><img src="ak__parameters_8h__incl.png" border="0" usemap="#ak__parameters_8h" alt=""/></div>
+<!-- MAP 0 -->
+</div>
+</div><div class="textblock"><div class="dynheader">
+Граф файлов, в которые включается этот файл:</div>
+<div class="dyncontent">
+<div class="center"><img src="ak__parameters_8h__dep__incl.png" border="0" usemap="#ak__parameters_8hdep" alt=""/></div>
+<!-- MAP 1 -->
+</div>
+</div>
+<p><a href="ak__parameters_8h_source.html">См. исходные тексты.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
+Переменные</h2></td></tr>
+<tr class="memitem:a74d17f912400a07e93457dfb91de523e"><td class="memItemLeft" align="right" valign="top">static const <a class="el" href="libakrypt_8h.html#abb8a94ec74dcd719f5e85ecbae89cb68">ak_uint8</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ak__parameters_8h.html#a74d17f912400a07e93457dfb91de523e">gost_pi</a> [256]</td></tr>
+<tr class="memdesc:a74d17f912400a07e93457dfb91de523e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Нелинейное биективное преобразование байт (алгоритмы Стрибог и Кузнечик).  <a href="#a74d17f912400a07e93457dfb91de523e">Подробнее...</a><br /></td></tr>
+<tr class="separator:a74d17f912400a07e93457dfb91de523e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7d66b40dab7200d007c45ef20538d5d3"><td class="memItemLeft" align="right" valign="top">static const <a class="el" href="libakrypt_8h.html#abb8a94ec74dcd719f5e85ecbae89cb68">ak_uint8</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ak__parameters_8h.html#a7d66b40dab7200d007c45ef20538d5d3">gost_pinv</a> [256]</td></tr>
+<tr class="memdesc:a7d66b40dab7200d007c45ef20538d5d3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Обратная нелинейная перестановка алгоритма Кузнечик (ГОСТ Р 34.12-2015)  <a href="#a7d66b40dab7200d007c45ef20538d5d3">Подробнее...</a><br /></td></tr>
+<tr class="separator:a7d66b40dab7200d007c45ef20538d5d3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa75268a2674aa3b2a8d6c7f63c9ed64f"><td class="memItemLeft" align="right" valign="top">static const <a class="el" href="ak__hash_8h.html#aa2d663e66dd66714c92fca6aedb60ca7">kbox</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ak__parameters_8h.html#aa75268a2674aa3b2a8d6c7f63c9ed64f">hash_box</a></td></tr>
+<tr class="memdesc:aa75268a2674aa3b2a8d6c7f63c9ed64f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Перестановки со значениями по-умолчанию для алгоритма бесключевого хеширования. Определены ГОСТР Р 34.11-94, приложение А.  <a href="#aa75268a2674aa3b2a8d6c7f63c9ed64f">Подробнее...</a><br /></td></tr>
+<tr class="separator:aa75268a2674aa3b2a8d6c7f63c9ed64f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9006e5ccef862443333c8fb8da5d4767"><td class="memItemLeft" align="right" valign="top">static const <a class="el" href="ak__hash_8h.html#aa2d663e66dd66714c92fca6aedb60ca7">kbox</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ak__parameters_8h.html#a9006e5ccef862443333c8fb8da5d4767">hash_box_CSPA</a></td></tr>
+<tr class="memdesc:a9006e5ccef862443333c8fb8da5d4767"><td class="mdescLeft">&#160;</td><td class="mdescRight">Перестановки для алгоритма бесключевого хеширования ГОСТ Р 34.11-94. Набор параметров А компании КриптоПро.  <a href="#a9006e5ccef862443333c8fb8da5d4767">Подробнее...</a><br /></td></tr>
+<tr class="separator:a9006e5ccef862443333c8fb8da5d4767"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a13a4c37bcc55f4b7c7e1fd4dfc5ea8bf"><td class="memItemLeft" align="right" valign="top">static const <a class="el" href="ak__hash_8h.html#aa2d663e66dd66714c92fca6aedb60ca7">kbox</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ak__parameters_8h.html#a13a4c37bcc55f4b7c7e1fd4dfc5ea8bf">hash_box_VerbaO</a></td></tr>
+<tr class="memdesc:a13a4c37bcc55f4b7c7e1fd4dfc5ea8bf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Перестановки для алгоритма бесключевого хеширования ГОСТ Р 34.11-94. Набор параметров средства ВербаО.  <a href="#a13a4c37bcc55f4b7c7e1fd4dfc5ea8bf">Подробнее...</a><br /></td></tr>
+<tr class="separator:a13a4c37bcc55f4b7c7e1fd4dfc5ea8bf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a07b24c0fbb75f0b975464a7a4de485df"><td class="memItemLeft" align="right" valign="top">static const struct <a class="el" href="structwcurve.html">wcurve</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ak__parameters_8h.html#a07b24c0fbb75f0b975464a7a4de485df">id_axel_gost3410_2012_256_paramsetA</a></td></tr>
+<tr class="memdesc:a07b24c0fbb75f0b975464a7a4de485df"><td class="mdescLeft">&#160;</td><td class="mdescRight">Параметры 256-ти битной эллиптической кривой выработанные авторами библиотеки (paramSetA).  <a href="#a07b24c0fbb75f0b975464a7a4de485df">Подробнее...</a><br /></td></tr>
+<tr class="separator:a07b24c0fbb75f0b975464a7a4de485df"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a89affed146eab658a0b5562d625d0fd2"><td class="memItemLeft" align="right" valign="top">static const struct <a class="el" href="structwcurve.html">wcurve</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ak__parameters_8h.html#a89affed146eab658a0b5562d625d0fd2">id_axel_gost3410_2012_512_paramsetA</a></td></tr>
+<tr class="memdesc:a89affed146eab658a0b5562d625d0fd2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Параметры 512-ти битной эллиптической кривой выработанные авторами библиотеки (paramSetA).  <a href="#a89affed146eab658a0b5562d625d0fd2">Подробнее...</a><br /></td></tr>
+<tr class="separator:a89affed146eab658a0b5562d625d0fd2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4a375fe6f2f3558f72ee4c53315e9785"><td class="memItemLeft" align="right" valign="top">static const struct <a class="el" href="structwcurve.html">wcurve</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ak__parameters_8h.html#a4a375fe6f2f3558f72ee4c53315e9785">id_rfc4357_gost3410_2001_paramsetA</a></td></tr>
+<tr class="memdesc:a4a375fe6f2f3558f72ee4c53315e9785"><td class="mdescLeft">&#160;</td><td class="mdescRight">Параметры 256-ти битной эллиптической кривой, определяемые RFC-4357, set A (вариант КриптоПро).  <a href="#a4a375fe6f2f3558f72ee4c53315e9785">Подробнее...</a><br /></td></tr>
+<tr class="separator:a4a375fe6f2f3558f72ee4c53315e9785"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aef8b42702c9743d89cb2aa2380d45f12"><td class="memItemLeft" align="right" valign="top">static const struct <a class="el" href="structwcurve.html">wcurve</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ak__parameters_8h.html#aef8b42702c9743d89cb2aa2380d45f12">id_rfc4357_gost3410_2001_paramsetB</a></td></tr>
+<tr class="memdesc:aef8b42702c9743d89cb2aa2380d45f12"><td class="mdescLeft">&#160;</td><td class="mdescRight">Параметры 256-ти битной эллиптической кривой, определяемые RFC-4357, set B (вариант КриптоПро).  <a href="#aef8b42702c9743d89cb2aa2380d45f12">Подробнее...</a><br /></td></tr>
+<tr class="separator:aef8b42702c9743d89cb2aa2380d45f12"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab1c9c010e53f61a01295d153f9c900de"><td class="memItemLeft" align="right" valign="top">static const struct <a class="el" href="structwcurve.html">wcurve</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ak__parameters_8h.html#ab1c9c010e53f61a01295d153f9c900de">id_rfc4357_gost3410_2001_paramsetC</a></td></tr>
+<tr class="memdesc:ab1c9c010e53f61a01295d153f9c900de"><td class="mdescLeft">&#160;</td><td class="mdescRight">Параметры 256-ти битной эллиптической кривой, определяемые RFC-4357, set C (вариант КриптоПро).  <a href="#ab1c9c010e53f61a01295d153f9c900de">Подробнее...</a><br /></td></tr>
+<tr class="separator:ab1c9c010e53f61a01295d153f9c900de"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5587ab65791bbcd398e3402da1b755fd"><td class="memItemLeft" align="right" valign="top">static const struct <a class="el" href="structwcurve.html">wcurve</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ak__parameters_8h.html#a5587ab65791bbcd398e3402da1b755fd">id_tc26_gost3410_2012_256_paramsetA</a></td></tr>
+<tr class="memdesc:a5587ab65791bbcd398e3402da1b755fd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Параметры 256-ти битной эллиптической кривой из рекомендаций Р 50.1.114-2016 (paramSetA).  <a href="#a5587ab65791bbcd398e3402da1b755fd">Подробнее...</a><br /></td></tr>
+<tr class="separator:a5587ab65791bbcd398e3402da1b755fd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abf8793a99cd405e50ed647948a7674d6"><td class="memItemLeft" align="right" valign="top">static const struct <a class="el" href="structwcurve.html">wcurve</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ak__parameters_8h.html#abf8793a99cd405e50ed647948a7674d6">id_tc26_gost3410_2012_256_test_paramset</a></td></tr>
+<tr class="memdesc:abf8793a99cd405e50ed647948a7674d6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Параметры 256-ти битной эллиптической кривой из тестового примера ГОСТ Р 34.10-2012 (Приложение А.1).  <a href="#abf8793a99cd405e50ed647948a7674d6">Подробнее...</a><br /></td></tr>
+<tr class="separator:abf8793a99cd405e50ed647948a7674d6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6c8571f499098a341865eccafbe0375f"><td class="memItemLeft" align="right" valign="top">static const struct <a class="el" href="structwcurve.html">wcurve</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ak__parameters_8h.html#a6c8571f499098a341865eccafbe0375f">id_tc26_gost3410_2012_512_paramsetA</a></td></tr>
+<tr class="memdesc:a6c8571f499098a341865eccafbe0375f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Параметры 512-ти битной эллиптической кривой из рекомендаций Р 50.1.114-2016 (paramSetA).  <a href="#a6c8571f499098a341865eccafbe0375f">Подробнее...</a><br /></td></tr>
+<tr class="separator:a6c8571f499098a341865eccafbe0375f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a158308d8f0281a13cabdb61b0950daf4"><td class="memItemLeft" align="right" valign="top">static const struct <a class="el" href="structwcurve.html">wcurve</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ak__parameters_8h.html#a158308d8f0281a13cabdb61b0950daf4">id_tc26_gost3410_2012_512_paramsetB</a></td></tr>
+<tr class="memdesc:a158308d8f0281a13cabdb61b0950daf4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Параметры 512-ти битной эллиптической кривой из рекомендаций Р 50.1.114-2016 (paramSetB).  <a href="#a158308d8f0281a13cabdb61b0950daf4">Подробнее...</a><br /></td></tr>
+<tr class="separator:a158308d8f0281a13cabdb61b0950daf4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8651663314a88b593bd21073d3242295"><td class="memItemLeft" align="right" valign="top">static const struct <a class="el" href="structwcurve.html">wcurve</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ak__parameters_8h.html#a8651663314a88b593bd21073d3242295">id_tc26_gost3410_2012_512_paramsetC</a></td></tr>
+<tr class="memdesc:a8651663314a88b593bd21073d3242295"><td class="mdescLeft">&#160;</td><td class="mdescRight">Параметры 512-ти битной эллиптической кривой из рекомендаций Р 50.1.114-2016 (paramSetC).  <a href="#a8651663314a88b593bd21073d3242295">Подробнее...</a><br /></td></tr>
+<tr class="separator:a8651663314a88b593bd21073d3242295"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9ea955ec2806d28ca4a4b972ba8a1526"><td class="memItemLeft" align="right" valign="top">static const struct <a class="el" href="structwcurve.html">wcurve</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ak__parameters_8h.html#a9ea955ec2806d28ca4a4b972ba8a1526">id_tc26_gost3410_2012_512_test_paramset</a></td></tr>
+<tr class="memdesc:a9ea955ec2806d28ca4a4b972ba8a1526"><td class="mdescLeft">&#160;</td><td class="mdescRight">Параметры 512-ти битной эллиптической кривой из тестового примера ГОСТ Р 34.10-2012 (Приложение А.2).  <a href="#a9ea955ec2806d28ca4a4b972ba8a1526">Подробнее...</a><br /></td></tr>
+<tr class="separator:a9ea955ec2806d28ca4a4b972ba8a1526"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae3c2cc6dd1b9b61af9395e67abe09567"><td class="memItemLeft" align="right" valign="top">static const <a class="el" href="libakrypt_8h.html#abb8a94ec74dcd719f5e85ecbae89cb68">ak_uint8</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ak__parameters_8h.html#ae3c2cc6dd1b9b61af9395e67abe09567">L</a> [16][16]</td></tr>
+<tr class="memdesc:ae3c2cc6dd1b9b61af9395e67abe09567"><td class="mdescLeft">&#160;</td><td class="mdescRight">16-я степень сопровождающей матрицы линейного регистра сдвига, определяемого в алгоритме Кузнечик (ГОСТ Р 34.12-2015).  <a href="#ae3c2cc6dd1b9b61af9395e67abe09567">Подробнее...</a><br /></td></tr>
+<tr class="separator:ae3c2cc6dd1b9b61af9395e67abe09567"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adcf2ad2a2b92cd3dbcc54dc05decf17f"><td class="memItemLeft" align="right" valign="top">static const <a class="el" href="libakrypt_8h.html#abb8a94ec74dcd719f5e85ecbae89cb68">ak_uint8</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ak__parameters_8h.html#adcf2ad2a2b92cd3dbcc54dc05decf17f">Linv</a> [16][16]</td></tr>
+<tr class="memdesc:adcf2ad2a2b92cd3dbcc54dc05decf17f"><td class="mdescLeft">&#160;</td><td class="mdescRight">16-я степень обратной матрицы к сопровождающей матрице линейного регистра сдвига, определяемого в алгоритме Кузнечик (ГОСТ Р 34.12-2015).  <a href="#adcf2ad2a2b92cd3dbcc54dc05decf17f">Подробнее...</a><br /></td></tr>
+<tr class="separator:adcf2ad2a2b92cd3dbcc54dc05decf17f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abd494da10b1163a910b5390ac8fd361a"><td class="memItemLeft" align="right" valign="top">static const ak_uint64&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ak__parameters_8h.html#abd494da10b1163a910b5390ac8fd361a">streebog_Areverse_expand</a> [8][256]</td></tr>
+<tr class="memdesc:abd494da10b1163a910b5390ac8fd361a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Развернутые константы для линейного преобразования (алгоритм Стрибог).  <a href="#abd494da10b1163a910b5390ac8fd361a">Подробнее...</a><br /></td></tr>
+<tr class="separator:abd494da10b1163a910b5390ac8fd361a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab59d5feb2d7af91118e7d3002c13ea1c"><td class="memItemLeft" align="right" valign="top">static const ak_uint64&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ak__parameters_8h.html#ab59d5feb2d7af91118e7d3002c13ea1c">streebog_c</a> [12][8]</td></tr>
+<tr class="memdesc:ab59d5feb2d7af91118e7d3002c13ea1c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Итерационные константы (алгоритм Стрибог).  <a href="#ab59d5feb2d7af91118e7d3002c13ea1c">Подробнее...</a><br /></td></tr>
+<tr class="separator:ab59d5feb2d7af91118e7d3002c13ea1c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">Переменные</h2>
+<a class="anchor" id="a74d17f912400a07e93457dfb91de523e"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="libakrypt_8h.html#abb8a94ec74dcd719f5e85ecbae89cb68">ak_uint8</a> gost_pi[256]</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<b>Инициализатор</b><div class="fragment"><div class="line">= {</div><div class="line">   0xFC, 0xEE, 0xDD, 0x11, 0xCF, 0x6E, 0x31, 0x16, 0xFB, 0xC4, 0xFA, 0xDA, 0x23, 0xC5, 0x04, 0x4D,</div><div class="line">   0xE9, 0x77, 0xF0, 0xDB, 0x93, 0x2E, 0x99, 0xBA, 0x17, 0x36, 0xF1, 0xBB, 0x14, 0xCD, 0x5F, 0xC1,</div><div class="line">   0xF9, 0x18, 0x65, 0x5A, 0xE2, 0x5C, 0xEF, 0x21, 0x81, 0x1C, 0x3C, 0x42, 0x8B, 0x01, 0x8E, 0x4F,</div><div class="line">   0x05, 0x84, 0x02, 0xAE, 0xE3, 0x6A, 0x8F, 0xA0, 0x06, 0x0B, 0xED, 0x98, 0x7F, 0xD4, 0xD3, 0x1F,</div><div class="line">   0xEB, 0x34, 0x2C, 0x51, 0xEA, 0xC8, 0x48, 0xAB, 0xF2, 0x2A, 0x68, 0xA2, 0xFD, 0x3A, 0xCE, 0xCC,</div><div class="line">   0xB5, 0x70, 0x0E, 0x56, 0x08, 0x0C, 0x76, 0x12, 0xBF, 0x72, 0x13, 0x47, 0x9C, 0xB7, 0x5D, 0x87,</div><div class="line">   0x15, 0xA1, 0x96, 0x29, 0x10, 0x7B, 0x9A, 0xC7, 0xF3, 0x91, 0x78, 0x6F, 0x9D, 0x9E, 0xB2, 0xB1,</div><div class="line">   0x32, 0x75, 0x19, 0x3D, 0xFF, 0x35, 0x8A, 0x7E, 0x6D, 0x54, 0xC6, 0x80, 0xC3, 0xBD, 0x0D, 0x57,</div><div class="line">   0xDF, 0xF5, 0x24, 0xA9, 0x3E, 0xA8, 0x43, 0xC9, 0xD7, 0x79, 0xD6, 0xF6, 0x7C, 0x22, 0xB9, 0x03,</div><div class="line">   0xE0, 0x0F, 0xEC, 0xDE, 0x7A, 0x94, 0xB0, 0xBC, 0xDC, 0xE8, 0x28, 0x50, 0x4E, 0x33, 0x0A, 0x4A,</div><div class="line">   0xA7, 0x97, 0x60, 0x73, 0x1E, 0x00, 0x62, 0x44, 0x1A, 0xB8, 0x38, 0x82, 0x64, 0x9F, 0x26, 0x41,</div><div class="line">   0xAD, 0x45, 0x46, 0x92, 0x27, 0x5E, 0x55, 0x2F, 0x8C, 0xA3, 0xA5, 0x7D, 0x69, 0xD5, 0x95, 0x3B,</div><div class="line">   0x07, 0x58, 0xB3, 0x40, 0x86, 0xAC, 0x1D, 0xF7, 0x30, 0x37, 0x6B, 0xE4, 0x88, 0xD9, 0xE7, 0x89,</div><div class="line">   0xE1, 0x1B, 0x83, 0x49, 0x4C, 0x3F, 0xF8, 0xFE, 0x8D, 0x53, 0xAA, 0x90, 0xCA, 0xD8, 0x85, 0x61,</div><div class="line">   0x20, 0x71, 0x67, 0xA4, 0x2D, 0x2B, 0x09, 0x5B, 0xCB, 0x9B, 0x25, 0xD0, 0xBE, 0xE5, 0x6C, 0x52,</div><div class="line">   0x59, 0xA6, 0x74, 0xD2, 0xE6, 0xF4, 0xB4, 0xC0, 0xD1, 0x66, 0xAF, 0xC2, 0x39, 0x4B, 0x63, 0xB6</div><div class="line"> }</div></div><!-- fragment -->
+<p>Нелинейное биективное преобразование байт (алгоритмы Стрибог и Кузнечик). </p>
+
+<p>См. определение в файле <a class="el" href="ak__parameters_8h_source.html">ak_parameters.h</a> строка <a class="el" href="ak__parameters_8h_source.html#l00080">80</a></p>
+
+</div>
+</div>
+<a class="anchor" id="a7d66b40dab7200d007c45ef20538d5d3"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="libakrypt_8h.html#abb8a94ec74dcd719f5e85ecbae89cb68">ak_uint8</a> gost_pinv[256]</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<b>Инициализатор</b><div class="fragment"><div class="line">= {</div><div class="line">   0xA5, 0x2D, 0x32, 0x8F, 0x0E, 0x30, 0x38, 0xC0, 0x54, 0xE6, 0x9E, 0x39, 0x55, 0x7E, 0x52, 0x91,</div><div class="line">   0x64, 0x03, 0x57, 0x5A, 0x1C, 0x60, 0x07, 0x18, 0x21, 0x72, 0xA8, 0xD1, 0x29, 0xC6, 0xA4, 0x3F,</div><div class="line">   0xE0, 0x27, 0x8D, 0x0C, 0x82, 0xEA, 0xAE, 0xB4, 0x9A, 0x63, 0x49, 0xE5, 0x42, 0xE4, 0x15, 0xB7,</div><div class="line">   0xC8, 0x06, 0x70, 0x9D, 0x41, 0x75, 0x19, 0xC9, 0xAA, 0xFC, 0x4D, 0xBF, 0x2A, 0x73, 0x84, 0xD5,</div><div class="line">   0xC3, 0xAF, 0x2B, 0x86, 0xA7, 0xB1, 0xB2, 0x5B, 0x46, 0xD3, 0x9F, 0xFD, 0xD4, 0x0F, 0x9C, 0x2F,</div><div class="line">   0x9B, 0x43, 0xEF, 0xD9, 0x79, 0xB6, 0x53, 0x7F, 0xC1, 0xF0, 0x23, 0xE7, 0x25, 0x5E, 0xB5, 0x1E,</div><div class="line">   0xA2, 0xDF, 0xA6, 0xFE, 0xAC, 0x22, 0xF9, 0xE2, 0x4A, 0xBC, 0x35, 0xCA, 0xEE, 0x78, 0x05, 0x6B,</div><div class="line">   0x51, 0xE1, 0x59, 0xA3, 0xF2, 0x71, 0x56, 0x11, 0x6A, 0x89, 0x94, 0x65, 0x8C, 0xBB, 0x77, 0x3C,</div><div class="line">   0x7B, 0x28, 0xAB, 0xD2, 0x31, 0xDE, 0xC4, 0x5F, 0xCC, 0xCF, 0x76, 0x2C, 0xB8, 0xD8, 0x2E, 0x36,</div><div class="line">   0xDB, 0x69, 0xB3, 0x14, 0x95, 0xBE, 0x62, 0xA1, 0x3B, 0x16, 0x66, 0xE9, 0x5C, 0x6C, 0x6D, 0xAD,</div><div class="line">   0x37, 0x61, 0x4B, 0xB9, 0xE3, 0xBA, 0xF1, 0xA0, 0x85, 0x83, 0xDA, 0x47, 0xC5, 0xB0, 0x33, 0xFA,</div><div class="line">   0x96, 0x6F, 0x6E, 0xC2, 0xF6, 0x50, 0xFF, 0x5D, 0xA9, 0x8E, 0x17, 0x1B, 0x97, 0x7D, 0xEC, 0x58,</div><div class="line">   0xF7, 0x1F, 0xFB, 0x7C, 0x09, 0x0D, 0x7A, 0x67, 0x45, 0x87, 0xDC, 0xE8, 0x4F, 0x1D, 0x4E, 0x04,</div><div class="line">   0xEB, 0xF8, 0xF3, 0x3E, 0x3D, 0xBD, 0x8A, 0x88, 0xDD, 0xCD, 0x0B, 0x13, 0x98, 0x02, 0x93, 0x80,</div><div class="line">   0x90, 0xD0, 0x24, 0x34, 0xCB, 0xED, 0xF4, 0xCE, 0x99, 0x10, 0x44, 0x40, 0x92, 0x3A, 0x01, 0x26,</div><div class="line">   0x12, 0x1A, 0x48, 0x68, 0xF5, 0x81, 0x8B, 0xC7, 0xD6, 0x20, 0x0A, 0x08, 0x00, 0x4C, 0xD7, 0x74</div><div class="line"> }</div></div><!-- fragment -->
+<p>Обратная нелинейная перестановка алгоритма Кузнечик (ГОСТ Р 34.12-2015) </p>
+
+<p>См. определение в файле <a class="el" href="ak__parameters_8h_source.html">ak_parameters.h</a> строка <a class="el" href="ak__parameters_8h_source.html#l00101">101</a></p>
+
+</div>
+</div>
+<a class="anchor" id="aa75268a2674aa3b2a8d6c7f63c9ed64f"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="ak__hash_8h.html#aa2d663e66dd66714c92fca6aedb60ca7">kbox</a> hash_box</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<b>Инициализатор</b><div class="fragment"><div class="line">= {</div><div class="line">               { 4, 10, 9, 2, 13, 8, 0, 14, 6, 11, 1, 12, 7, 15, 5, 3 },</div><div class="line">               { 14, 11, 4, 12, 6, 13, 15, 10, 2, 3, 8, 1, 0, 7, 5, 9 },</div><div class="line">               { 5, 8, 1, 13, 10, 3, 4, 2, 14, 15, 12, 7, 6, 0, 9, 11 },</div><div class="line">               { 7, 13, 10, 1, 0, 8, 9, 15, 14, 4, 6, 12, 11, 2, 5, 3 },</div><div class="line">               { 6, 12, 7, 1, 5, 15, 13, 8, 4, 10, 9, 14, 0, 3, 11, 2 },</div><div class="line">               { 4, 11, 10, 0, 7, 2, 1, 13, 3, 6, 8, 5, 9, 12, 15, 14 },</div><div class="line">               { 13, 11, 4, 1, 3, 15, 5, 9, 0, 10, 14, 7, 6, 8, 2, 12 },</div><div class="line">               { 1, 15, 13, 0, 5, 7, 10, 4, 9, 2, 3, 14, 6, 11, 8, 12 }</div><div class="line">}</div></div><!-- fragment -->
+<p>Перестановки со значениями по-умолчанию для алгоритма бесключевого хеширования. Определены ГОСТР Р 34.11-94, приложение А. </p>
+
+<p>См. определение в файле <a class="el" href="ak__parameters_8h_source.html">ak_parameters.h</a> строка <a class="el" href="ak__parameters_8h_source.html#l00039">39</a></p>
+
+</div>
+</div>
+<a class="anchor" id="a9006e5ccef862443333c8fb8da5d4767"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="ak__hash_8h.html#aa2d663e66dd66714c92fca6aedb60ca7">kbox</a> hash_box_CSPA</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<b>Инициализатор</b><div class="fragment"><div class="line">= {</div><div class="line">               { 10, 4, 5, 6, 8, 1, 3, 7, 13, 12, 14, 0, 9, 2, 11, 15 },</div><div class="line">               { 5, 15, 4, 0, 2, 13, 11, 9, 1, 7, 6, 3, 12, 14, 10, 8 },</div><div class="line">               { 7, 15, 12, 14, 9, 4, 1, 0, 3, 11, 5, 2, 6, 10, 8, 13 },</div><div class="line">               { 4, 10, 7, 12, 0, 15, 2, 8, 14, 1, 6, 5, 13, 11, 9, 3 },</div><div class="line">               { 7, 6, 4, 11, 9, 12, 2, 10, 1, 8, 0, 14, 15, 13, 3, 5 },</div><div class="line">               { 7, 6, 2, 4, 13, 9, 15, 0, 10, 1, 5, 11, 8, 14, 12, 3 },</div><div class="line">               { 13, 14, 4, 1, 7, 0, 5, 10, 3, 12, 8, 15, 6, 2, 9, 11 },</div><div class="line">               { 1, 3, 10, 9, 5, 11, 4, 15, 8, 6, 7, 14, 13, 0, 2, 12 }</div><div class="line">}</div></div><!-- fragment -->
+<p>Перестановки для алгоритма бесключевого хеширования ГОСТ Р 34.11-94. Набор параметров А компании КриптоПро. </p>
+
+<p>См. определение в файле <a class="el" href="ak__parameters_8h_source.html">ak_parameters.h</a> строка <a class="el" href="ak__parameters_8h_source.html#l00053">53</a></p>
+
+</div>
+</div>
+<a class="anchor" id="a13a4c37bcc55f4b7c7e1fd4dfc5ea8bf"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="ak__hash_8h.html#aa2d663e66dd66714c92fca6aedb60ca7">kbox</a> hash_box_VerbaO</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<b>Инициализатор</b><div class="fragment"><div class="line">= {</div><div class="line">               { 3, 6, 7, 8, 2, 5, 12, 14, 9, 13, 0, 10, 1, 11, 4, 15 },</div><div class="line">               { 1, 13, 6, 2, 9, 10, 4, 3, 7, 14, 5, 11, 12, 0, 15, 8 },</div><div class="line">               { 7, 15, 12, 3, 0, 13, 10, 5, 14, 9, 11, 2, 4, 1, 6, 8 },</div><div class="line">               { 11, 4, 9, 1, 6, 8, 13, 10, 0, 3, 7, 14, 5, 12, 15, 2 },</div><div class="line">               { 3, 15, 10, 0, 2, 5, 11, 6, 9, 14, 1, 8, 13, 12, 7, 4 },</div><div class="line">               { 13, 9, 4, 11, 7, 12, 8, 3, 10, 2, 1, 15, 5, 6, 0, 14 },</div><div class="line">               { 1, 4, 9, 3, 10, 0, 15, 2, 7, 12, 11, 13, 14, 6, 8, 5 },</div><div class="line">               { 4, 10, 8, 11, 1, 13, 14, 6, 9, 2, 12, 15, 7, 0, 5, 3 }</div><div class="line">}</div></div><!-- fragment -->
+<p>Перестановки для алгоритма бесключевого хеширования ГОСТ Р 34.11-94. Набор параметров средства ВербаО. </p>
+
+<p>См. определение в файле <a class="el" href="ak__parameters_8h_source.html">ak_parameters.h</a> строка <a class="el" href="ak__parameters_8h_source.html#l00067">67</a></p>
+
+</div>
+</div>
+<a class="anchor" id="a07b24c0fbb75f0b975464a7a4de485df"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const struct <a class="el" href="structwcurve.html">wcurve</a> id_axel_gost3410_2012_256_paramsetA</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<b>Инициализатор</b><div class="fragment"><div class="line">= {</div><div class="line">  <a class="code" href="ak__mpzn_8h.html#ac9eaaeffead76c3db6fc9e7e6bbc93cf">ak_mpzn256_size</a>,</div><div class="line">  1,</div><div class="line">  { 0xcf8cf68bc7aa236c, 0x6eddf790d342ba58, 0x781f3e6a3733e505, 0x00023ab954654ea8 }, </div><div class="line">  { 0x560020c5e85d6e00, 0x149565e889215788, 0x5aa364f74663be3b, 0x14ba0ee9c98bc6a2 }, </div><div class="line">  { 0x33e33da2f1ea88db, 0x5bb77de434d0ae96, 0x1e07cf9a8dccf941, 0x80008eae551953aa }, </div><div class="line">  { 0x93189730fd45fede, 0xac7513dbc87fef31, 0x614cafbadb0cddb4, 0x2303790d5067be5d }, </div><div class="line">  { 0x299c1ed853d129f1, 0xb24c7d30a656c695, 0x1e07cf9a8dccf942, 0x80008eae551953aa }, </div><div class="line">  { 0x053a94a83d077055, 0xe8002ffbf5cdbc94, 0xe5908ace6a4f46af, 0x79f340513f7d85d9 }, </div><div class="line">  {</div><div class="line">    { 0x0000000000000001, 0x0000000000000000, 0x0000000000000000, 0x0000000000000000 }, </div><div class="line">    { 0x083af1d2bbad5116, 0x7dc1a0b4eccc5224, 0x6c1b6506acb81c4c, 0x50ad006962fa5d1e }, </div><div class="line">    { 0x0000000000000001, 0x0000000000000000, 0x0000000000000000, 0x0000000000000000 }  </div><div class="line">  },</div><div class="line">  0xe39d517a9b49ccadLL, </div><div class="line">  0x56407ad9f73f58efLL </div><div class="line"> }</div><div class="ttc" id="ak__mpzn_8h_html_ac9eaaeffead76c3db6fc9e7e6bbc93cf"><div class="ttname"><a href="ak__mpzn_8h.html#ac9eaaeffead76c3db6fc9e7e6bbc93cf">ak_mpzn256_size</a></div><div class="ttdeci">#define ak_mpzn256_size</div><div class="ttdef"><b>Definition:</b> <a href="ak__mpzn_8h_source.html#l00040">ak_mpzn.h:40</a></div></div>
+</div><!-- fragment -->
+<p>Параметры 256-ти битной эллиптической кривой выработанные авторами библиотеки (paramSetA). </p>
+<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160; a = &quot;80008EAE551953AA1E07CF9A8DCCF9415BB77DE434D0AE9633E33DA2F1EA88D9&quot;,</div><div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160; b = &quot;B2A49D5ADCC33A6693F21A71CD49B376D79B33655D9071CF6DB57BCA67E21B&quot;,</div><div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160; p = &quot;80008EAE551953AA1E07CF9A8DCCF9415BB77DE434D0AE9633E33DA2F1EA88DB&quot;,</div><div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160; q = &quot;80008EAE551953AA1E07CF9A8DCCF942B24C7D30A656C695299C1ED853D129F1&quot;,</div><div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;px = &quot;1&quot;,</div><div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;qx = &quot;50AD006962FA5D1E6C1B6506ACB81C4C7DC1A0B4ECCC5224083AF1D2BBAD5116&quot;</div></div><!-- fragment --> 
+<p>См. определение в файле <a class="el" href="ak__parameters_8h_source.html">ak_parameters.h</a> строка <a class="el" href="ak__parameters_8h_source.html#l00877">877</a></p>
+
+</div>
+</div>
+<a class="anchor" id="a89affed146eab658a0b5562d625d0fd2"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const struct <a class="el" href="structwcurve.html">wcurve</a> id_axel_gost3410_2012_512_paramsetA</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<b>Инициализатор</b><div class="fragment"><div class="line">= {</div><div class="line">  <a class="code" href="ak__mpzn_8h.html#ae3a03a58af935676f03cee42ad961343">ak_mpzn512_size</a>,</div><div class="line">  1,</div><div class="line">  { 0x1da0166fa278dabc, 0x0f690acd5d5ee00e, 0x782eb62219788769, 0xbeb32969cc8da148, 0x434339e0f97af422, 0x65700802eb8609c4, 0x3020b556c89387da, 0x0001f03440378769 }, </div><div class="line">  { 0x73ecbcbbc2fe516a, 0x21a88b46019ee078, 0x6f78f8f821cdf972, 0x51902755c97474e1, 0x036fde5f4ca75dcb, 0x81f2aa5e0bce663f, 0x0071956b012817c0, 0x2770dcf7f7185a2b }, </div><div class="line">  { 0x8768059be89e36af, 0x43da42b35757b803, 0x1e0bad88865e21da, 0xafacca5a73236852, 0x10d0ce783e5ebd08, 0x995c0200bae18271, 0x4c082d55b224e1f6, 0x80007c0d100de1da }, </div><div class="line">  { 0x10e955e894409333, 0xa5c29e884d86660d, 0x42d778a51b701611, 0x693b56cc4d41c7fb, 0x95e660d3b641c6d7, 0x73f78460a43b9f66, 0x87fdda647bb639ca, 0x53590545a052051b }, </div><div class="line">  { 0x717db632094f9b5b, 0x018ef3923b4255f8, 0xd6115c0919412876, 0x1d1c41e039fb32b9, 0x10d0ce783e5ebd09, 0x995c0200bae18271, 0x4c082d55b224e1f6, 0x80007c0d100de1da }, </div><div class="line">  { 0xb1a195717a8fd5bc, 0x37b778339d769403, 0x0ba7d97bc29b15ab, 0xd42b26c7559affa8, 0x636df8374e2d9569, 0xc68958170104b889, 0xc0435800db018e2c, 0x32573df368d3abbb }, </div><div class="line">  {</div><div class="line">    { 0x0000000000000003, 0x0000000000000000, 0x0000000000000000, 0x0000000000000000, 0x0000000000000000, 0x0000000000000000, 0x0000000000000000, 0x0000000000000000 }, </div><div class="line">    { 0xe109f64b0d2845b5, 0x2112f42600d5783a, 0xb62b18e2d6d4bcf1, 0x1d69806e0cc5e38c, 0x9fdb7a1e9230f078, 0x870727c3df007d3a, 0x5e7221d67a01b361, 0x3f1f3a51b164ffc0 }, </div><div class="line">    { 0x0000000000000001, 0x0000000000000000, 0x0000000000000000, 0x0000000000000000, 0x0000000000000000, 0x0000000000000000, 0x0000000000000000, 0x0000000000000000 }  </div><div class="line">  },</div><div class="line">  0x8f69d5c0fd131fb1LL, </div><div class="line">  0xd7f54d8866c0e32dLL </div><div class="line"> }</div><div class="ttc" id="ak__mpzn_8h_html_ae3a03a58af935676f03cee42ad961343"><div class="ttname"><a href="ak__mpzn_8h.html#ae3a03a58af935676f03cee42ad961343">ak_mpzn512_size</a></div><div class="ttdeci">#define ak_mpzn512_size</div><div class="ttdef"><b>Definition:</b> <a href="ak__mpzn_8h_source.html#l00041">ak_mpzn.h:41</a></div></div>
+</div><!-- fragment -->
+<p>Параметры 512-ти битной эллиптической кривой выработанные авторами библиотеки (paramSetA). </p>
+<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160; a = &quot;80007C0D100DE1DA4C082D55B224E1F6995C0200BAE1827110D0CE783E5EBD08AFACCA5A732368521E0BAD88865E21DA43DA42B35757B8038768059BE89E36AD&quot;,</div><div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160; b = &quot;7633E0B39500943957990D315BE1F4B2B971527863EB30D9D1A0B52A8489484212502F709F1D067DFC109E06AF608B8DD4F854E4F45DF4309506452C499A102D&quot;,</div><div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160; p = &quot;80007C0D100DE1DA4C082D55B224E1F6995C0200BAE1827110D0CE783E5EBD08AFACCA5A732368521E0BAD88865E21DA43DA42B35757B8038768059BE89E36AF&quot;,</div><div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160; q = &quot;80007C0D100DE1DA4C082D55B224E1F6995C0200BAE1827110D0CE783E5EBD091D1C41E039FB32B9D6115C0919412876018EF3923B4255F8717DB632094F9B5B&quot;,</div><div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;px = &quot;3&quot;,</div><div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;py = &quot;3F1F3A51B164FFC05E7221D67A01B361870727C3DF007D3A9FDB7A1E9230F0781D69806E0CC5E38CB62B18E2D6D4BCF12112F42600D5783AE109F64B0D2845B5&quot;,</div></div><!-- fragment --> 
+<p>См. определение в файле <a class="el" href="ak__parameters_8h_source.html">ak_parameters.h</a> строка <a class="el" href="ak__parameters_8h_source.html#l01023">1023</a></p>
+
+</div>
+</div>
+<a class="anchor" id="a4a375fe6f2f3558f72ee4c53315e9785"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const struct <a class="el" href="structwcurve.html">wcurve</a> id_rfc4357_gost3410_2001_paramsetA</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<b>Инициализатор</b><div class="fragment"><div class="line">= {</div><div class="line">  <a class="code" href="ak__mpzn_8h.html#ac9eaaeffead76c3db6fc9e7e6bbc93cf">ak_mpzn256_size</a>,</div><div class="line">  1,</div><div class="line">  { 0xfffffffffffff65c, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff }, </div><div class="line">  { 0x0000000000019016, 0x0000000000000000, 0x0000000000000000, 0x0000000000000000 }, </div><div class="line">  { 0xfffffffffffffd97, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff }, </div><div class="line">  { 0x000000000005cf11, 0x0000000000000000, 0x0000000000000000, 0x0000000000000000 }, </div><div class="line">  { 0x45841b09b761b893, 0x6c611070995ad100, 0xffffffffffffffff, 0xffffffffffffffff }, </div><div class="line">  { 0x9ac2d7858e79a469, 0xfb07f8222e76dd52, 0xf74885d08a3714c6, 0x551fe9cb451179db }, </div><div class="line">  {</div><div class="line">    { 0x0000000000000001, 0x0000000000000000, 0x0000000000000000, 0x0000000000000000 }, </div><div class="line">    { 0x22acc99c9e9f1e14, 0x35294f2ddf23e3b1, 0x27df505a453f2b76, 0x8d91e471e0989cda }, </div><div class="line">    { 0x0000000000000001, 0x0000000000000000, 0x0000000000000000, 0x0000000000000000 }  </div><div class="line">  },</div><div class="line">  0x46f3234475d5add9LL, </div><div class="line">  0x9ee6ea0b57c7da65LL </div><div class="line"> }</div><div class="ttc" id="ak__mpzn_8h_html_ac9eaaeffead76c3db6fc9e7e6bbc93cf"><div class="ttname"><a href="ak__mpzn_8h.html#ac9eaaeffead76c3db6fc9e7e6bbc93cf">ak_mpzn256_size</a></div><div class="ttdeci">#define ak_mpzn256_size</div><div class="ttdef"><b>Definition:</b> <a href="ak__mpzn_8h_source.html#l00040">ak_mpzn.h:40</a></div></div>
+</div><!-- fragment -->
+<p>Параметры 256-ти битной эллиптической кривой, определяемые RFC-4357, set A (вариант КриптоПро). </p>
+<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160; a = &quot;FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFD94&quot;,</div><div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160; b = &quot;A6&quot;,</div><div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160; p = &quot;FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFD97&quot;,</div><div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160; q = &quot;FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF6C611070995AD10045841B09B761B893&quot;,</div><div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;px = &quot;1&quot;,</div><div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;qx = &quot;8D91E471E0989CDA27DF505A453F2B7635294F2DDF23E3B122ACC99C9E9F1E14&quot;</div></div><!-- fragment --> 
+<p>См. определение в файле <a class="el" href="ak__parameters_8h_source.html">ak_parameters.h</a> строка <a class="el" href="ak__parameters_8h_source.html#l00790">790</a></p>
+
+</div>
+</div>
+<a class="anchor" id="aef8b42702c9743d89cb2aa2380d45f12"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const struct <a class="el" href="structwcurve.html">wcurve</a> id_rfc4357_gost3410_2001_paramsetB</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<b>Инициализатор</b><div class="fragment"><div class="line">= {</div><div class="line">  <a class="code" href="ak__mpzn_8h.html#ac9eaaeffead76c3db6fc9e7e6bbc93cf">ak_mpzn256_size</a>,</div><div class="line">  1,</div><div class="line">  { 0x0000000000004b96, 0x0000000000000000, 0x0000000000000000, 0x0000000000000000 }, </div><div class="line">  { 0x8dcc455aa9c5a084, 0x91ab42df6cf438a8, 0x8f8aa907eeac7d11, 0x3ce5d221f6285375 }, </div><div class="line">  { 0x0000000000000c99, 0x0000000000000000, 0x0000000000000000, 0x8000000000000000 }, </div><div class="line">  { 0x00000000027acdc4, 0x0000000000000000, 0x0000000000000000, 0x0000000000000000 }, </div><div class="line">  { 0xe497161bcc8a198f, 0x5f700cfff1a624e5, 0x0000000000000001, 0x8000000000000000 }, </div><div class="line">  { 0x29b721f4e6cd7823, 0x2a3104a7ea43e855, 0x4a2e7e2f6882cf10, 0x09d1d2c4e5082466 }, </div><div class="line">  {</div><div class="line">    { 0x0000000000000001, 0x0000000000000000, 0x0000000000000000, 0x0000000000000000 }, </div><div class="line">    { 0x744bf8d717717efc, 0xc545c9858d03ecfb, 0xb83d1c3eb2c070e5, 0x3fa8124359f96680 }, </div><div class="line">    { 0x0000000000000001, 0x0000000000000000, 0x0000000000000000, 0x0000000000000000 }  </div><div class="line">  },</div><div class="line">  0xbd667ab8a3347857LL, </div><div class="line">  0xca89614990611a91LL </div><div class="line"> }</div><div class="ttc" id="ak__mpzn_8h_html_ac9eaaeffead76c3db6fc9e7e6bbc93cf"><div class="ttname"><a href="ak__mpzn_8h.html#ac9eaaeffead76c3db6fc9e7e6bbc93cf">ak_mpzn256_size</a></div><div class="ttdeci">#define ak_mpzn256_size</div><div class="ttdef"><b>Definition:</b> <a href="ak__mpzn_8h_source.html#l00040">ak_mpzn.h:40</a></div></div>
+</div><!-- fragment -->
+<p>Параметры 256-ти битной эллиптической кривой, определяемые RFC-4357, set B (вариант КриптоПро). </p>
+<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160; a = &quot;8000000000000000000000000000000000000000000000000000000000000C96&quot;,</div><div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160; b = &quot;3E1AF419A269A5F866A7D3C25C3DF80AE979259373FF2B182F49D4CE7E1BBC8B&quot;,</div><div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160; p = &quot;8000000000000000000000000000000000000000000000000000000000000C99&quot;,</div><div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160; q = &quot;800000000000000000000000000000015F700CFFF1A624E5E497161BCC8A198F&quot;,</div><div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;px = &quot;1&quot;,</div><div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;py = &quot;3FA8124359F96680B83D1C3EB2C070E5C545C9858D03ECFB744BF8D717717EFC&quot;</div></div><!-- fragment --> 
+<p>См. определение в файле <a class="el" href="ak__parameters_8h_source.html">ak_parameters.h</a> строка <a class="el" href="ak__parameters_8h_source.html#l00819">819</a></p>
+
+</div>
+</div>
+<a class="anchor" id="ab1c9c010e53f61a01295d153f9c900de"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const struct <a class="el" href="structwcurve.html">wcurve</a> id_rfc4357_gost3410_2001_paramsetC</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<b>Инициализатор</b><div class="fragment"><div class="line">= {</div><div class="line">  <a class="code" href="ak__mpzn_8h.html#ac9eaaeffead76c3db6fc9e7e6bbc93cf">ak_mpzn256_size</a>,</div><div class="line">  1,</div><div class="line">  { 0x5ffcd69d0ae34c07, 0x0d9628a05ad19921, 0x5799e9d81848eb56, 0x0a1ce1dcc49b8526 }, </div><div class="line">  { 0x4be8a4e93bda2acf, 0x79cc0e3e90d382dd, 0x3ba4c8b01d9cc79b, 0x5cc73b5a966609e9 }, </div><div class="line">  { 0x7998f7b9022d759b, 0xcf846e86789051d3, 0xab1ec85e6b41c8aa, 0x9b9f605f5a858107 }, </div><div class="line">  { 0x409973b4c427fcea, 0x1017bb39c2d346c5, 0x186304212849c07b, 0x807a394ede097652 }, </div><div class="line">  { 0xf02f3a6598980bb9, 0x582ca3511eddfb74, 0xab1ec85e6b41c8aa, 0x9b9f605f5a858107 }, </div><div class="line">  { 0xe94faab66aba180e, 0x04fda8694afda24b, 0xc67e5d0ee96e8ed3, 0x7aa61b49a49d4759 }, </div><div class="line">  {</div><div class="line">    { 0x0000000000000000, 0x0000000000000000, 0x0000000000000000, 0x0000000000000000 }, </div><div class="line">    { 0x366e550dfdb3bb67, 0x4d4dc440d4641a8f, 0x3cbf3783cd08c0ee, 0x41ece55743711a8c }, </div><div class="line">    { 0x0000000000000001, 0x0000000000000000, 0x0000000000000000, 0x0000000000000000 }  </div><div class="line">  },</div><div class="line">  0xdf6e6c2c727c176dLL, </div><div class="line">  0xa1c6af0a552f7577LL </div><div class="line"> }</div><div class="ttc" id="ak__mpzn_8h_html_ac9eaaeffead76c3db6fc9e7e6bbc93cf"><div class="ttname"><a href="ak__mpzn_8h.html#ac9eaaeffead76c3db6fc9e7e6bbc93cf">ak_mpzn256_size</a></div><div class="ttdeci">#define ak_mpzn256_size</div><div class="ttdef"><b>Definition:</b> <a href="ak__mpzn_8h_source.html#l00040">ak_mpzn.h:40</a></div></div>
+</div><!-- fragment -->
+<p>Параметры 256-ти битной эллиптической кривой, определяемые RFC-4357, set C (вариант КриптоПро). </p>
+<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160; a = &quot;9B9F605F5A858107AB1EC85E6B41C8AACF846E86789051D37998F7B9022D7598&quot;,</div><div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160; b = &quot;805A&quot;,</div><div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160; p = &quot;9B9F605F5A858107AB1EC85E6B41C8AACF846E86789051D37998F7B9022D759B&quot;,</div><div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160; q = &quot;9B9F605F5A858107AB1EC85E6B41C8AA582CA3511EDDFB74F02F3A6598980BB9&quot;,</div><div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;px = &quot;0&quot;,</div><div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;py = &quot;41ECE55743711A8C3CBF3783CD08C0EE4D4DC440D4641A8F366E550DFDB3BB67&quot;</div></div><!-- fragment --> 
+<p>См. определение в файле <a class="el" href="ak__parameters_8h_source.html">ak_parameters.h</a> строка <a class="el" href="ak__parameters_8h_source.html#l00848">848</a></p>
+
+</div>
+</div>
+<a class="anchor" id="a5587ab65791bbcd398e3402da1b755fd"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const struct <a class="el" href="structwcurve.html">wcurve</a> id_tc26_gost3410_2012_256_paramsetA</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<b>Инициализатор</b><div class="fragment"><div class="line">= {</div><div class="line">  <a class="code" href="ak__mpzn_8h.html#ac9eaaeffead76c3db6fc9e7e6bbc93cf">ak_mpzn256_size</a>,</div><div class="line">  4, </div><div class="line">  { 0x6d0078e62fc81048, 0x94db4f98bfb73698, 0x75e9b60631449efd, 0xca0709cc398e1cd1 }, </div><div class="line">  { 0xacd1216d5cc63966, 0x534b728e6773c810, 0xfb4e95d31a5032fe, 0xb76e3775f6a4aee7 }, </div><div class="line">  { 0xfffffffffffffd97, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff }, </div><div class="line">  { 0x000000000005cf11, 0x0000000000000000, 0x0000000000000000, 0x0000000000000000 }, </div><div class="line">  { 0xc115af556c360c67, 0x0fd8cddfc87b6635, 0x0000000000000000, 0x4000000000000000 }, </div><div class="line">  { 0x57cb446240dd1710, 0x7556091c4805caa4, 0xd0593365f9384bcd, 0x0fb1fbc48b0f0eb4 }, </div><div class="line">  {</div><div class="line">    { 0x8b2582fe742daa28, 0x658b9196932e02c7, 0x880923425712b2bb, 0x91e38443a5e82c0d }, </div><div class="line">    { 0xaf268adb32322e5c, 0x5fde0b5344766740, 0x895786c4bb46e956, 0x32879423ab1a0375 }, </div><div class="line">    { 0x0000000000000001, 0x0000000000000000, 0x0000000000000000, 0x0000000000000000 }  </div><div class="line">  },</div><div class="line">  0x46f3234475d5add9LL, </div><div class="line">  0x035bdd1aeafdb0a9LL </div><div class="line"> }</div><div class="ttc" id="ak__mpzn_8h_html_ac9eaaeffead76c3db6fc9e7e6bbc93cf"><div class="ttname"><a href="ak__mpzn_8h.html#ac9eaaeffead76c3db6fc9e7e6bbc93cf">ak_mpzn256_size</a></div><div class="ttdeci">#define ak_mpzn256_size</div><div class="ttdef"><b>Definition:</b> <a href="ak__mpzn_8h_source.html#l00040">ak_mpzn.h:40</a></div></div>
+</div><!-- fragment -->
+<p>Параметры 256-ти битной эллиптической кривой из рекомендаций Р 50.1.114-2016 (paramSetA). </p>
+<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160; a = &quot;C2173F1513981673AF4892C23035A27CE25E2013BF95AA33B22C656F277E7335&quot;,</div><div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160; b = &quot;295F9BAE7428ED9CCC20E7C359A9D41A22FCCD9108E17BF7BA9337A6F8AE9513&quot;,</div><div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160; p = &quot;FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFD97&quot;,</div><div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160; q = &quot;400000000000000000000000000000000FD8CDDFC87B6635C115AF556C360C67&quot;,</div><div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;px = &quot;91E38443A5E82C0D880923425712B2BB658B9196932E02C78B2582FE742DAA28&quot;,</div><div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;py = &quot;32879423AB1A0375895786C4BB46E9565FDE0B5344766740AF268ADB32322E5C&quot;,</div></div><!-- fragment --> 
+<p>См. определение в файле <a class="el" href="ak__parameters_8h_source.html">ak_parameters.h</a> строка <a class="el" href="ak__parameters_8h_source.html#l00761">761</a></p>
+
+</div>
+</div>
+<a class="anchor" id="abf8793a99cd405e50ed647948a7674d6"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const struct <a class="el" href="structwcurve.html">wcurve</a> id_tc26_gost3410_2012_256_test_paramset</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<b>Инициализатор</b><div class="fragment"><div class="line">= {</div><div class="line">  <a class="code" href="ak__mpzn_8h.html#ac9eaaeffead76c3db6fc9e7e6bbc93cf">ak_mpzn256_size</a>,</div><div class="line">  1,</div><div class="line">  { 0xffffffffffffc983, 0xffffffffffffffff, 0xffffffffffffffff, 0x7fffffffffffffff }, </div><div class="line">  { 0x807bbfa323a3952a, 0x004469b4541a2542, 0x20391abe272c66ad, 0x58df983a171cd5ae }, </div><div class="line">  { 0x0000000000000431, 0x0000000000000000, 0x0000000000000000, 0x8000000000000000 }, </div><div class="line">  { 0x0000000000464584, 0x0000000000000000, 0x0000000000000000, 0x0000000000000000 }, </div><div class="line">  { 0xc59cfc193accf5b3, 0x50fe8a1892976154, 0x0000000000000001, 0x8000000000000000 }, </div><div class="line">  { 0xecaed44677f7f28d, 0x4af1f8ac73c6c555, 0xc0db8b05c83ad16a, 0x6e749e5b503b112a }, </div><div class="line">  {</div><div class="line">    { 0x0000000000000002, 0x0000000000000000, 0x0000000000000000, 0x0000000000000000 }, </div><div class="line">    { 0x2b96abbcea7e8fc8, 0x85c97f0a9ca26712, 0xbd6316030e16d19c, 0x08e2a8a0e65147d4 }, </div><div class="line">    { 0x0000000000000001, 0x0000000000000000, 0x0000000000000000, 0x0000000000000000 }  </div><div class="line">  },</div><div class="line">  0xdbf951d5883b2b2fLL, </div><div class="line">  0x66ff43a234713e85LL </div><div class="line"> }</div><div class="ttc" id="ak__mpzn_8h_html_ac9eaaeffead76c3db6fc9e7e6bbc93cf"><div class="ttname"><a href="ak__mpzn_8h.html#ac9eaaeffead76c3db6fc9e7e6bbc93cf">ak_mpzn256_size</a></div><div class="ttdeci">#define ak_mpzn256_size</div><div class="ttdef"><b>Definition:</b> <a href="ak__mpzn_8h_source.html#l00040">ak_mpzn.h:40</a></div></div>
+</div><!-- fragment -->
+<p>Параметры 256-ти битной эллиптической кривой из тестового примера ГОСТ Р 34.10-2012 (Приложение А.1). </p>
+<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160; a = &quot;7&quot;,</div><div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160; b = &quot;5FBFF498AA938CE739B8E022FBAFEF40563F6E6A3472FC2A514C0CE9DAE23B7E&quot;,</div><div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160; p = &quot;8000000000000000000000000000000000000000000000000000000000000431&quot;,</div><div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160; q = &quot;8000000000000000000000000000000150FE8A1892976154C59CFC193ACCF5B3&quot;,</div><div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;px = &quot;2&quot;,</div><div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;py = &quot;8E2A8A0E65147D4BD6316030E16D19C85C97F0A9CA267122B96ABBCEA7E8FC8&quot;</div></div><!-- fragment --> 
+<p>См. определение в файле <a class="el" href="ak__parameters_8h_source.html">ak_parameters.h</a> строка <a class="el" href="ak__parameters_8h_source.html#l00732">732</a></p>
+
+</div>
+</div>
+<a class="anchor" id="a6c8571f499098a341865eccafbe0375f"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const struct <a class="el" href="structwcurve.html">wcurve</a> id_tc26_gost3410_2012_512_paramsetA</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<b>Инициализатор</b><div class="fragment"><div class="line">= {</div><div class="line">  <a class="code" href="ak__mpzn_8h.html#ae3a03a58af935676f03cee42ad961343">ak_mpzn512_size</a>,</div><div class="line">  1,</div><div class="line">  { 0xfffffffffffff71c, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff }, </div><div class="line">  { 0x3e2a1b8106e8a17d, 0x3e694a40649ca74b, 0x7cd5ed6575cbfc5f, 0x84e4722c383c8743, 0x9527086e6e4db48e, 0x2d4b3fda85c534b6, 0x9d2dd3769d088dff, 0x57e4a0c5f647c2e3 }, </div><div class="line">  { 0xfffffffffffffdc7, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff }, </div><div class="line">  { 0x000000000004f0b1, 0x0000000000000000, 0x0000000000000000, 0x0000000000000000, 0x0000000000000000, 0x0000000000000000, 0x0000000000000000, 0x0000000000000000 }, </div><div class="line">  { 0xcacdb1411f10b275, 0x9b4b38abfad2b85d, 0x6ff22b8d4e056060, 0x27e69532f48d8911, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff }, </div><div class="line">  { 0x546775b92106e979, 0xb55cd33800ab10e6, 0x80b08b27e9cebbc7, 0xa06b76a2bae6fc86, 0xc7433579e382956f, 0xbab8be5dd7b1651d, 0xee028bf9d8ed3314, 0xb66ae6c00bebd6c3 }, </div><div class="line">  {</div><div class="line">    { 0x0000000000000003, 0x0000000000000000, 0x0000000000000000, 0x0000000000000000, 0x0000000000000000, 0x0000000000000000, 0x0000000000000000, 0x0000000000000000 }, </div><div class="line">    { 0x89a589cb5215f2a4, 0x8028fe5fc235f5b8, 0x3d75e6a50e3a41e9, 0xdf1626be4fd036e9, 0x778064fdcbefa921, 0xce5e1c93acf1abc1, 0xa61b8816e25450e6, 0x7503cfe87a836ae3 }, </div><div class="line">    { 0x0000000000000001, 0x0000000000000000, 0x0000000000000000, 0x0000000000000000, 0x0000000000000000, 0x0000000000000000, 0x0000000000000000, 0x0000000000000000 }  </div><div class="line">  },</div><div class="line">  0x58a1f7e6ce0f4c09LL, </div><div class="line">  0x02ccc1665d51f223LL </div><div class="line"> }</div><div class="ttc" id="ak__mpzn_8h_html_ae3a03a58af935676f03cee42ad961343"><div class="ttname"><a href="ak__mpzn_8h.html#ae3a03a58af935676f03cee42ad961343">ak_mpzn512_size</a></div><div class="ttdeci">#define ak_mpzn512_size</div><div class="ttdef"><b>Definition:</b> <a href="ak__mpzn_8h_source.html#l00041">ak_mpzn.h:41</a></div></div>
+</div><!-- fragment -->
+<p>Параметры 512-ти битной эллиптической кривой из рекомендаций Р 50.1.114-2016 (paramSetA). </p>
+<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160; a = &quot;FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFDC4&quot;,</div><div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160; b = &quot;E8C2505DEDFC86DDC1BD0B2B6667F1DA34B82574761CB0E879BD081CFD0B6265EE3CB090F30D27614CB4574010DA90DD862EF9D4EBEE4761503190785A71C760&quot;,</div><div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160; p = &quot;FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFDC7&quot;,</div><div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160; q = &quot;FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF27E69532F48D89116FF22B8D4E0560609B4B38ABFAD2B85DCACDB1411F10B275&quot;,</div><div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;px = &quot;3&quot;,</div><div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;py = &quot;7503CFE87A836AE3A61B8816E25450E6CE5E1C93ACF1ABC1778064FDCBEFA921DF1626BE4FD036E93D75E6A50E3A41E98028FE5FC235F5B889A589CB5215F2A4&quot;,</div></div><!-- fragment --> 
+<p>См. определение в файле <a class="el" href="ak__parameters_8h_source.html">ak_parameters.h</a> строка <a class="el" href="ak__parameters_8h_source.html#l00936">936</a></p>
+
+</div>
+</div>
+<a class="anchor" id="a158308d8f0281a13cabdb61b0950daf4"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const struct <a class="el" href="structwcurve.html">wcurve</a> id_tc26_gost3410_2012_512_paramsetB</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<b>Инициализатор</b><div class="fragment"><div class="line">= {</div><div class="line">  <a class="code" href="ak__mpzn_8h.html#ae3a03a58af935676f03cee42ad961343">ak_mpzn512_size</a>,</div><div class="line">  1,</div><div class="line">  { 0x000000000000029a, 0x0000000000000000, 0x0000000000000000, 0x0000000000000000, 0x0000000000000000, 0x0000000000000000, 0x0000000000000000, 0x0000000000000000 }, </div><div class="line">  { 0xdbe748c318a75dd6, 0xc954a7809097bfc1, 0x6553cd27e2d5a471, 0xb99b326049435cf3, 0xe9eac8a216d2c5e7, 0x260b45a102d0cc51, 0x8636181d6c5bd56d, 0x638259a12c5765bc }, </div><div class="line">  { 0x000000000000006f, 0x0000000000000000, 0x0000000000000000, 0x0000000000000000, 0x0000000000000000, 0x0000000000000000, 0x0000000000000000, 0x8000000000000000 }, </div><div class="line">  { 0x000000000000c084, 0x0000000000000000, 0x0000000000000000, 0x0000000000000000, 0x0000000000000000, 0x0000000000000000, 0x0000000000000000, 0x0000000000000000 }, </div><div class="line">  { 0xc6346c54374f25bd, 0x8b996712101bea0e, 0xacfdb77bd9d40cfa, 0x49a1ec142565a545, 0x0000000000000001, 0x0000000000000000, 0x0000000000000000, 0x8000000000000000 }, </div><div class="line">  { 0x3163da9749d3cb8b, 0x267d56905313f38b, 0xc55538cf997acac4, 0xb1532b08f1e25e5c, 0xc385980eb887a3f9, 0x9f96043308eeb401, 0xf96232d7a52b18fe, 0x21c65cda4cadccc0 }, </div><div class="line">  {</div><div class="line">    { 0x0000000000000002, 0x0000000000000000, 0x0000000000000000, 0x0000000000000000, 0x0000000000000000, 0x0000000000000000, 0x0000000000000000, 0x0000000000000000 }, </div><div class="line">    { 0x7e21340780fe41bd, 0x28041055f94ceeec, 0x152cbcaaf8c03988, 0xdcb228fd1edf4a39, 0xbe6dd9e6c8ec7335, 0x3c123b697578c213, 0x2c071e3647a8940f, 0x1a8f7eda389b094c }, </div><div class="line">    { 0x0000000000000001, 0x0000000000000000, 0x0000000000000000, 0x0000000000000000, 0x0000000000000000, 0x0000000000000000, 0x0000000000000000, 0x0000000000000000 }  </div><div class="line">  },</div><div class="line">  0x4e6a171024e6a171LL, </div><div class="line">  0xc07d62492cbac26bLL </div><div class="line"> }</div><div class="ttc" id="ak__mpzn_8h_html_ae3a03a58af935676f03cee42ad961343"><div class="ttname"><a href="ak__mpzn_8h.html#ae3a03a58af935676f03cee42ad961343">ak_mpzn512_size</a></div><div class="ttdeci">#define ak_mpzn512_size</div><div class="ttdef"><b>Definition:</b> <a href="ak__mpzn_8h_source.html#l00041">ak_mpzn.h:41</a></div></div>
+</div><!-- fragment -->
+<p>Параметры 512-ти битной эллиптической кривой из рекомендаций Р 50.1.114-2016 (paramSetB). </p>
+<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160; a = &quot;8000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000006C&quot;,</div><div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160; b = &quot;687D1B459DC841457E3E06CF6F5E2517B97C7D614AF138BCBF85DC806C4B289F3E965D2DB1416D217F8B276FAD1AB69C50F78BEE1FA3106EFB8CCBC7C5140116&quot;,</div><div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160; p = &quot;8000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000006F&quot;,</div><div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160; q = &quot;800000000000000000000000000000000000000000000000000000000000000149A1EC142565A545ACFDB77BD9D40CFA8B996712101BEA0EC6346C54374F25BD&quot;,</div><div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;px = &quot;2&quot;,</div><div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;py = &quot;1A8F7EDA389B094C2C071E3647A8940F3C123B697578C213BE6DD9E6C8EC7335DCB228FD1EDF4A39152CBCAAF8C0398828041055F94CEEEC7E21340780FE41BD&quot;,</div></div><!-- fragment --> 
+<p>См. определение в файле <a class="el" href="ak__parameters_8h_source.html">ak_parameters.h</a> строка <a class="el" href="ak__parameters_8h_source.html#l00965">965</a></p>
+
+</div>
+</div>
+<a class="anchor" id="a8651663314a88b593bd21073d3242295"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const struct <a class="el" href="structwcurve.html">wcurve</a> id_tc26_gost3410_2012_512_paramsetC</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<b>Инициализатор</b><div class="fragment"><div class="line">= {</div><div class="line">  <a class="code" href="ak__mpzn_8h.html#ae3a03a58af935676f03cee42ad961343">ak_mpzn512_size</a>,</div><div class="line">  4,</div><div class="line">  { 0xd341ab3699869915, 0x3d6c9273ccebc4c1, 0x486b484c83cb0726, 0x9a8145b812d1a7b0, 0x2003251cadf8effa, 0x6b20d9f8b7db94f1, 0xdd0c19f57c9cc019, 0x408aa82ae77985ca }, </div><div class="line">  { 0xb304002a3c03ce62, 0xcbe7bfdf359dc095, 0x57398fea29abadad, 0x3ce46aec38657034, 0xabf0edb5e37f775e, 0x63ccffc5280e7697, 0x6754d90e93579656, 0xc9b558b380cc6f00 }, </div><div class="line">  { 0xfffffffffffffdc7, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff }, </div><div class="line">  { 0x000000000004f0b1, 0x0000000000000000, 0x0000000000000000, 0x0000000000000000, 0x0000000000000000, 0x0000000000000000, 0x0000000000000000, 0x0000000000000000 }, </div><div class="line">  { 0x94623cef47f023ed, 0xc8eda9e7a769a126, 0x4c33a9ff5147502c, 0xc98cdba46506ab00, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0x3fffffffffffffff }, </div><div class="line">  { 0xe58fa18ee6ca4eb6, 0xe79280282d956fca, 0xd016086ec2d4f903, 0x542f8f3fa490666a, 0x04f77045db49adc9, 0x314e0a57f445b20e, 0x8910352f3bea2192, 0x394c72054d8503be }, </div><div class="line">  {</div><div class="line">    { 0xc5bc7928c1950148, 0xc6fb85487eae97aa, 0xa7b9033db9ed3610, 0xa27272a7ae602bf2, 0xd385f7074cea043a, 0x2295b7a9cbaef021, 0xebe241ce593ef5de, 0xe2e31edfc23de7bd }, </div><div class="line">    { 0xd0396e9a9addc40f, 0x04f726aa854bae07, 0xef32d85822423b63, 0xe18e2d33e3021ed2, 0x8c108c3d2090ff9b, 0x7939804d6527378b, 0xabbccff5911cb857, 0xf5ce40d95b5eb899 }, </div><div class="line">    { 0x0000000000000001, 0x0000000000000000, 0x0000000000000000, 0x0000000000000000, 0x0000000000000000, 0x0000000000000000, 0x0000000000000000, 0x0000000000000000 }  </div><div class="line">  },</div><div class="line">  0x58a1f7e6ce0f4c09LL, </div><div class="line">  0x0ed9d8e0b6624e1bLL </div><div class="line"> }</div><div class="ttc" id="ak__mpzn_8h_html_ae3a03a58af935676f03cee42ad961343"><div class="ttname"><a href="ak__mpzn_8h.html#ae3a03a58af935676f03cee42ad961343">ak_mpzn512_size</a></div><div class="ttdeci">#define ak_mpzn512_size</div><div class="ttdef"><b>Definition:</b> <a href="ak__mpzn_8h_source.html#l00041">ak_mpzn.h:41</a></div></div>
+</div><!-- fragment -->
+<p>Параметры 512-ти битной эллиптической кривой из рекомендаций Р 50.1.114-2016 (paramSetC). </p>
+<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160; a = &quot;DC9203E514A721875485A529D2C722FB187BC8980EB866644DE41C68E143064546E861C0E2C9EDD92ADE71F46FCF50FF2AD97F951FDA9F2A2EB6546F39689BD3&quot;,</div><div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160; b = &quot;B4C4EE28CEBC6C2C8AC12952CF37F16AC7EFB6A9F69F4B57FFDA2E4F0DE5ADE038CBC2FFF719D2C18DE0284B8BFEF3B52B8CC7A5F5BF0A3C8D2319A5312557E1&quot;,</div><div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160; p = &quot;FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFDC7&quot;,</div><div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160; q = &quot;3FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFC98CDBA46506AB004C33A9FF5147502CC8EDA9E7A769A12694623CEF47F023ED&quot;,</div><div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;px = &quot;E2E31EDFC23DE7BDEBE241CE593EF5DE2295B7A9CBAEF021D385F7074CEA043AA27272A7AE602BF2A7B9033DB9ED3610C6FB85487EAE97AAC5BC7928C1950148&quot;,</div><div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;py = &quot;F5CE40D95B5EB899ABBCCFF5911CB8577939804D6527378B8C108C3D2090FF9BE18E2D33E3021ED2EF32D85822423B6304F726AA854BAE07D0396E9A9ADDC40F&quot;,</div></div><!-- fragment --> 
+<p>См. определение в файле <a class="el" href="ak__parameters_8h_source.html">ak_parameters.h</a> строка <a class="el" href="ak__parameters_8h_source.html#l00994">994</a></p>
+
+</div>
+</div>
+<a class="anchor" id="a9ea955ec2806d28ca4a4b972ba8a1526"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const struct <a class="el" href="structwcurve.html">wcurve</a> id_tc26_gost3410_2012_512_test_paramset</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<b>Инициализатор</b><div class="fragment"><div class="line">= {</div><div class="line">  <a class="code" href="ak__mpzn_8h.html#ae3a03a58af935676f03cee42ad961343">ak_mpzn512_size</a>,</div><div class="line">  1,</div><div class="line">  { 0xd029a50f056849c5, 0xc102fa1830a665e5, 0x93678fa569b3c155, 0x61dff2a95e2108c5, 0x3500e30d3e698dd3, 0xb9cafa8506ed8887, 0xb1b73df28851b571, 0x3e261f7e31fc8188 }, </div><div class="line">  { 0x3d869f8d06cde456, 0x22167b920ce0bfcb, 0xf7fdd636df3cc250, 0x45228319a5e6292d, 0xfd513828d9ad288d, 0xc7d45cb277e670aa, 0x04890c718bc5c744, 0x1a693f403fc50f21 }, </div><div class="line">  { 0x1664bbf528be6373, 0x35b8336fac224dd8, 0x0458047e80e4546d, 0xf1d852741af4704a, 0xd4eb7c09b5d2d15d, 0x922b14b2ffb90f04, 0x550d267b6b2fee80, 0x4531acd1fe0023c7 }, </div><div class="line">  { 0x001c10bc2d005b65, 0x4b907a71e647ee63, 0xe417d58d200c2aa0, 0x0815b9eb1e7dd300, 0xca0bc8af77c8690a, 0xfcd983cfb7c663d9, 0x01fde9ca99de0852, 0x1d887dcd9cd19c10 }, </div><div class="line">  { 0xd644aaf187e6e6df, 0xd86e25edbe23c595, 0x19905c5eecc423f1, 0xa82f2d7ecb1dbac7, 0xd4eb7c09b5d2d15d, 0x922b14b2ffb90f04, 0x550d267b6b2fee80, 0x4531acd1fe0023c7 }, </div><div class="line">  { 0xb03174e56db6ba90, 0x561500cb39a9b66b, 0x929e0924887fab48, 0xe23c04dc39c8c930, 0x0cc44723bcc36979, 0xd70dfcccc3dd062f, 0x80bc9d923a08f9a9, 0x3057350e3201bb36 }, </div><div class="line">  {</div><div class="line">    { 0xb530f1b120248a9a, 0x8bc849977fac33b4, 0xc6b60aa7eee804e2, 0xfd60611262cd838d, 0x25f91093a68cd762, 0x5213b3b3d7057cc8, 0xf396bf6ebbfd7a6c, 0x24d19cc64572ee30 }, </div><div class="line">    { 0x6dbb92cb1add371e, 0xdc1a18b91b24640b, 0xf7eb3351e1ee4e43, 0x83ab156d77f1496b, 0xf32447c259f39b2c, 0xcfbf061e91e5f2c3, 0x0d020613c857acdd, 0x2bb312a43bd2ce6e }, </div><div class="line">    { 0x0000000000000001, 0x0000000000000000, 0x0000000000000000, 0x0000000000000000, 0x0000000000000000, 0x0000000000000000, 0x0000000000000000, 0x0000000000000000 }  </div><div class="line">  },</div><div class="line">  0xd6412ff7c29b8645LL, </div><div class="line">  0x50bc7d084a21aae1LL </div><div class="line"> }</div><div class="ttc" id="ak__mpzn_8h_html_ae3a03a58af935676f03cee42ad961343"><div class="ttname"><a href="ak__mpzn_8h.html#ae3a03a58af935676f03cee42ad961343">ak_mpzn512_size</a></div><div class="ttdeci">#define ak_mpzn512_size</div><div class="ttdef"><b>Definition:</b> <a href="ak__mpzn_8h_source.html#l00041">ak_mpzn.h:41</a></div></div>
+</div><!-- fragment -->
+<p>Параметры 512-ти битной эллиптической кривой из тестового примера ГОСТ Р 34.10-2012 (Приложение А.2). </p>
+<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160; a = &quot;7&quot;,</div><div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160; b = &quot;1CFF0806A31116DA29D8CFA54E57EB748BC5F377E49400FDD788B649ECA1AC4361834013B2AD7322480A89CA58E0CF74BC9E540C2ADD6897FAD0A3084F302ADC&quot;,</div><div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160; p = &quot;4531ACD1FE0023C7550D267B6B2FEE80922B14B2FFB90F04D4EB7C09B5D2D15DF1D852741AF4704A0458047E80E4546D35B8336FAC224DD81664BBF528BE6373&quot;,</div><div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160; q = &quot;4531ACD1FE0023C7550D267B6B2FEE80922B14B2FFB90F04D4EB7C09B5D2D15DA82F2D7ECB1DBAC719905C5EECC423F1D86E25EDBE23C595D644AAF187E6E6DF&quot;,</div><div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;px = &quot;24D19CC64572EE30F396BF6EBBFD7A6C5213B3B3D7057CC825F91093A68CD762FD60611262CD838DC6B60AA7EEE804E28BC849977FAC33B4B530F1B120248A9A&quot;,</div><div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;py = &quot;2BB312A43BD2CE6E0D020613C857ACDDCFBF061E91E5F2C3F32447C259F39B2C83AB156D77F1496BF7EB3351E1EE4E43DC1A18B91B24640B6DBB92CB1ADD371E&quot;,</div></div><!-- fragment --> 
+<p>См. определение в файле <a class="el" href="ak__parameters_8h_source.html">ak_parameters.h</a> строка <a class="el" href="ak__parameters_8h_source.html#l00906">906</a></p>
+
+</div>
+</div>
+<a class="anchor" id="ae3c2cc6dd1b9b61af9395e67abe09567"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="libakrypt_8h.html#abb8a94ec74dcd719f5e85ecbae89cb68">ak_uint8</a> L[16][16]</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<b>Инициализатор</b><div class="fragment"><div class="line">= {</div><div class="line"> { 0x01, 0x94, 0x20, 0x85, 0x10, 0xC2, 0xC0, 0x01, 0xFB, 0x01, 0xC0, 0xC2, 0x10, 0x85, 0x20, 0x94 },</div><div class="line"> { 0x94, 0xA5, 0x3C, 0x44, 0xD1, 0x8D, 0xB4, 0x54, 0xDE, 0x6F, 0x77, 0x5D, 0x96, 0x74, 0x2D, 0x84 },</div><div class="line"> { 0x84, 0x64, 0x48, 0xDF, 0xD3, 0x31, 0xA6, 0x30, 0xE0, 0x5A, 0x44, 0x97, 0xCA, 0x75, 0x99, 0xDD },</div><div class="line"> { 0xDD, 0x0D, 0xF8, 0x52, 0x91, 0x64, 0xFF, 0x7B, 0xAF, 0x3D, 0x94, 0xF3, 0xD9, 0xD0, 0xE9, 0x10 },</div><div class="line"> { 0x10, 0x89, 0x48, 0x7F, 0x91, 0xEC, 0x39, 0xEF, 0x10, 0xBF, 0x60, 0xE9, 0x30, 0x5E, 0x95, 0xBD },</div><div class="line"> { 0xBD, 0xA2, 0x48, 0xC6, 0xFE, 0xEB, 0x2F, 0x84, 0xC9, 0xAD, 0x7C, 0x1A, 0x68, 0xBE, 0x9F, 0x27 },</div><div class="line"> { 0x27, 0x7F, 0xC8, 0x98, 0xF3, 0x0F, 0x54, 0x08, 0xF6, 0xEE, 0x12, 0x8D, 0x2F, 0xB8, 0xD4, 0x5D },</div><div class="line"> { 0x5D, 0x4B, 0x8E, 0x60, 0x01, 0x2A, 0x6C, 0x09, 0x49, 0xAB, 0x8D, 0xCB, 0x14, 0x87, 0x49, 0xB8 },</div><div class="line"> { 0xB8, 0x6E, 0x2A, 0xD4, 0xB1, 0x37, 0xAF, 0xD4, 0xBE, 0xF1, 0x2E, 0xBB, 0x1A, 0x4E, 0xE6, 0x7A },</div><div class="line"> { 0x7A, 0x16, 0xF5, 0x52, 0x78, 0x99, 0xEB, 0xD5, 0xE7, 0xC4, 0x2D, 0x06, 0x17, 0x62, 0xD5, 0x48 },</div><div class="line"> { 0x48, 0xC3, 0x02, 0x0E, 0x58, 0x90, 0xE1, 0xA3, 0x6E, 0xAF, 0xBC, 0xC5, 0x0C, 0xEC, 0x76, 0x6C },</div><div class="line"> { 0x6C, 0x4C, 0xDD, 0x65, 0x01, 0xC4, 0xD4, 0x8D, 0xA4, 0x02, 0xEB, 0x20, 0xCA, 0x6B, 0xF2, 0x72 },</div><div class="line"> { 0x72, 0xE8, 0x14, 0x07, 0x49, 0xF6, 0xD7, 0xA6, 0x6A, 0xD6, 0x11, 0x1C, 0x0C, 0x10, 0x33, 0x76 },</div><div class="line"> { 0x76, 0xE3, 0x30, 0x9F, 0x6B, 0x30, 0x63, 0xA1, 0x2B, 0x1C, 0x43, 0x68, 0x70, 0x87, 0xC8, 0xA2 },</div><div class="line"> { 0xA2, 0xD0, 0x44, 0x86, 0x2D, 0xB8, 0x64, 0xC1, 0x9C, 0x89, 0x48, 0x90, 0xDA, 0xC6, 0x20, 0x6E },</div><div class="line"> { 0x6E, 0x4D, 0x8E, 0xEA, 0xA9, 0xF6, 0xBF, 0x0A, 0xF3, 0xF2, 0x8E, 0x93, 0xBF, 0x74, 0x98,  0xCF }</div><div class="line">}</div></div><!-- fragment -->
+<p>16-я степень сопровождающей матрицы линейного регистра сдвига, определяемого в алгоритме Кузнечик (ГОСТ Р 34.12-2015). </p>
+
+<p>См. определение в файле <a class="el" href="ak__parameters_8h_source.html">ak_parameters.h</a> строка <a class="el" href="ak__parameters_8h_source.html#l00679">679</a></p>
+
+</div>
+</div>
+<a class="anchor" id="adcf2ad2a2b92cd3dbcc54dc05decf17f"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="libakrypt_8h.html#abb8a94ec74dcd719f5e85ecbae89cb68">ak_uint8</a> Linv[16][16]</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<b>Инициализатор</b><div class="fragment"><div class="line">= {</div><div class="line"> { 0xCF, 0x98, 0x74, 0xBF, 0x93, 0x8E, 0xF2, 0xF3, 0x0A, 0xBF, 0xF6, 0xA9, 0xEA, 0x8E, 0x4D, 0x6E },</div><div class="line"> { 0x6E, 0x20, 0xC6, 0xDA, 0x90, 0x48, 0x89, 0x9C, 0xC1, 0x64, 0xB8, 0x2D, 0x86, 0x44, 0xD0, 0xA2 },</div><div class="line"> { 0xA2, 0xC8, 0x87, 0x70, 0x68, 0x43, 0x1C, 0x2B, 0xA1, 0x63, 0x30, 0x6B, 0x9F, 0x30, 0xE3, 0x76 },</div><div class="line"> { 0x76, 0x33, 0x10, 0x0C, 0x1C, 0x11, 0xD6, 0x6A, 0xA6, 0xD7, 0xF6, 0x49, 0x07, 0x14, 0xE8, 0x72 },</div><div class="line"> { 0x72, 0xF2, 0x6B, 0xCA, 0x20, 0xEB, 0x02, 0xA4, 0x8D, 0xD4, 0xC4, 0x01, 0x65, 0xDD, 0x4C, 0x6C },</div><div class="line"> { 0x6C, 0x76, 0xEC, 0x0C, 0xC5, 0xBC, 0xAF, 0x6E, 0xA3, 0xE1, 0x90, 0x58, 0x0E, 0x02, 0xC3, 0x48 },</div><div class="line"> { 0x48, 0xD5, 0x62, 0x17, 0x06, 0x2D, 0xC4, 0xE7, 0xD5, 0xEB, 0x99, 0x78, 0x52, 0xF5, 0x16, 0x7A },</div><div class="line"> { 0x7A, 0xE6, 0x4E, 0x1A, 0xBB, 0x2E, 0xF1, 0xBE, 0xD4, 0xAF, 0x37, 0xB1, 0xD4, 0x2A, 0x6E, 0xB8 },</div><div class="line"> { 0xB8, 0x49, 0x87, 0x14, 0xCB, 0x8D, 0xAB, 0x49, 0x09, 0x6C, 0x2A, 0x01, 0x60, 0x8E, 0x4B, 0x5D },</div><div class="line"> { 0x5D, 0xD4, 0xB8, 0x2F, 0x8D, 0x12, 0xEE, 0xF6, 0x08, 0x54, 0x0F, 0xF3, 0x98, 0xC8, 0x7F, 0x27 },</div><div class="line"> { 0x27, 0x9F, 0xBE, 0x68, 0x1A, 0x7C, 0xAD, 0xC9, 0x84, 0x2F, 0xEB, 0xFE, 0xC6, 0x48, 0xA2, 0xBD },</div><div class="line"> { 0xBD, 0x95, 0x5E, 0x30, 0xE9, 0x60, 0xBF, 0x10, 0xEF, 0x39, 0xEC, 0x91, 0x7F, 0x48, 0x89, 0x10 },</div><div class="line"> { 0x10, 0xE9, 0xD0, 0xD9, 0xF3, 0x94, 0x3D, 0xAF, 0x7B, 0xFF, 0x64, 0x91, 0x52, 0xF8, 0x0D, 0xDD },</div><div class="line"> { 0xDD, 0x99, 0x75, 0xCA, 0x97, 0x44, 0x5A, 0xE0, 0x30, 0xA6, 0x31, 0xD3, 0xDF, 0x48, 0x64, 0x84 },</div><div class="line"> { 0x84, 0x2D, 0x74, 0x96, 0x5D, 0x77, 0x6F, 0xDE, 0x54, 0xB4, 0x8D, 0xD1, 0x44, 0x3C, 0xA5, 0x94 },</div><div class="line"> { 0x94, 0x20, 0x85, 0x10, 0xC2, 0xC0, 0x01, 0xFB, 0x01, 0xC0, 0xC2, 0x10, 0x85, 0x20, 0x94, 0x01 }</div><div class="line">}</div></div><!-- fragment -->
+<p>16-я степень обратной матрицы к сопровождающей матрице линейного регистра сдвига, определяемого в алгоритме Кузнечик (ГОСТ Р 34.12-2015). </p>
+
+<p>См. определение в файле <a class="el" href="ak__parameters_8h_source.html">ak_parameters.h</a> строка <a class="el" href="ak__parameters_8h_source.html#l00702">702</a></p>
+
+</div>
+</div>
+<a class="anchor" id="abd494da10b1163a910b5390ac8fd361a"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const ak_uint64 streebog_Areverse_expand[8][256]</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Развернутые константы для линейного преобразования (алгоритм Стрибог). </p>
+
+<p>См. определение в файле <a class="el" href="ak__parameters_8h_source.html">ak_parameters.h</a> строка <a class="el" href="ak__parameters_8h_source.html#l00151">151</a></p>
+
+</div>
+</div>
+<a class="anchor" id="ab59d5feb2d7af91118e7d3002c13ea1c"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const ak_uint64 streebog_c[12][8]</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<b>Инициализатор</b><div class="fragment"><div class="line">= {</div><div class="line">  { 0xdd806559f2a64507, 0x05767436cc744d23, 0xa2422a08a460d315, 0x4b7ce09192676901,</div><div class="line">    0x714eb88d7585c4fc, 0x2f6a76432e45d016, 0xebcb2f81c0657c1f, 0xb1085bda1ecadae9 },</div><div class="line">  { 0xe679047021b19bb7, 0x55dda21bd7cbcd56, 0x5cb561c2db0aa7ca, 0x9ab5176b12d69958,</div><div class="line">    0x61d55e0f16b50131, 0xf3feea720a232b98, 0x4fe39d460f70b5d7, 0x6fa3b58aa99d2f1a },</div><div class="line">  { 0x991e96f50aba0ab2, 0xc2b6f443867adb31, 0xc1c93a376062db09, 0xd3e20fe490359eb1,</div><div class="line">    0xf2ea7514b1297b7b, 0x06f15e5f529c1f8b, 0x0a39fc286a3d8435, 0xf574dcac2bce2fc7 },</div><div class="line">  { 0x220cbebc84e3d12e, 0x3453eaa193e837f1, 0xd8b71333935203be, 0xa9d72c82ed03d675,</div><div class="line">    0x9d721cad685e353f, 0x488e857e335c3c7d, 0xf948e1a05d71e4dd, 0xef1fdfb3e81566d2 },</div><div class="line">  { 0x601758fd7c6cfe57, 0x7a56a27ea9ea63f5, 0xdfff00b723271a16, 0xbfcd1747253af5a3,</div><div class="line">    0x359e35d7800fffbd, 0x7f151c1f1686104a, 0x9a3f410c6ca92363, 0x4bea6bacad474799 },</div><div class="line">  { 0xfa68407a46647d6e, 0xbf71c57236904f35, 0x0af21f66c2bec6b6, 0xcffaa6b71c9ab7b4,</div><div class="line">    0x187f9ab49af08ec6, 0x2d66c4f95142a46c, 0x6fa4c33b7a3039c0, 0xae4faeae1d3ad3d9 },</div><div class="line">  { 0x8886564d3a14d493, 0x3517454ca23c4af3, 0x06476983284a0504, 0x0992abc52d822c37,</div><div class="line">    0xd3473e33197a93c9, 0x399ec6c7e6bf87c9, 0x51ac86febf240954, 0xf4c70e16eeaac5ec },</div><div class="line">  { 0xa47f0dd4bf02e71e, 0x36acc2355951a8d9, 0x69d18d2bd1a5c42f, 0xf4892bcb929b0690,</div><div class="line">    0x89b4443b4ddbc49a, 0x4eb7f8719c36de1e, 0x03e7aa020c6e4141, 0x9b1f5b424d93c9a7 },</div><div class="line">  { 0x7261445183235adb, 0x0e38dc92cb1f2a60, 0x7b2b8a9aa6079c54, 0x800a440bdbb2ceb1,</div><div class="line">    0x3cd955b7e00d0984, 0x3a7d3a1b25894224, 0x944c9ad8ec165fde, 0x378f5a541631229b },</div><div class="line">  { 0x74b4c7fb98459ced, 0x3698fad1153bb6c3, 0x7a1e6c303b7652f4, 0x9fe76702af69334b,</div><div class="line">    0x1fffe18a1b336103, 0x8941e71cff8a78db, 0x382ae548b2e4f3f3, 0xabbedea680056f52 },</div><div class="line">  { 0x6bcaa4cd81f32d1b, 0xdea2594ac06fd85d, 0xefbacd1d7d476e98, 0x8a1d71efea48b9ca,</div><div class="line">    0x2001802114846679, 0xd8fa6bbbebab0761, 0x3002c6cd635afe94, 0x7bcd9ed0efc889fb },</div><div class="line">  { 0x48bc924af11bd720, 0xfaf417d5d9b21b99, 0xe71da4aa88e12852, 0x5d80ef9d1891cc86,</div><div class="line">    0xf82012d430219f9b, 0xcda43c32bcdf1d77, 0xd21380b00449b17a, 0x378ee767f11631ba }</div><div class="line"> }</div></div><!-- fragment -->
+<p>Итерационные константы (алгоритм Стрибог). </p>
+
+<p>См. определение в файле <a class="el" href="ak__parameters_8h_source.html">ak_parameters.h</a> строка <a class="el" href="ak__parameters_8h_source.html#l00122">122</a></p>
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_43e0a1f539e00dcfa1a6bc4d4fee4fc2.html">home</a></li><li class="navelem"><a class="el" href="dir_32078dd46064dc5448d39191ac5534d6.html">eugene</a></li><li class="navelem"><a class="el" href="dir_90a44860457c395fae569358f05fdb49.html">Documents</a></li><li class="navelem"><a class="el" href="dir_ef0df63b0c88ed24c4c79f67668669bc.html">VKR</a></li><li class="navelem"><a class="el" href="dir_6ec071d27851548a42323e2c424bf74a.html">libakrypt-0.x</a></li><li class="navelem"><a class="el" href="dir_cc55869b84ab2b7a1ee582dd1158c3dc.html">source</a></li><li class="navelem"><a class="el" href="ak__parameters_8h.html">ak_parameters.h</a></li>
+    <li class="footer">Документация по libakrypt. Последние изменения: Вс 23 Сен 2018 21:13:41. Создано системой
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.11 </li>
+  </ul>
+</div>
+</body>
+</html>

@@ -1,0 +1,118 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.11"/>
+<title>libakrypt: example-oid.c</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+  $(document).ready(initResizable);
+  $(window).load(resizeHeight);
+</script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { init_search(); });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">libakrypt
+   &#160;<span id="projectnumber">Версия 0.6.7</span>
+   </div>
+   <div id="projectbrief">Модуль, реализующий криптографические преобразования для проекта OpenSKZI</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.8.11 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Поиск');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Титульная&#160;страница</span></a></li>
+      <li><a href="pages.html"><span>Описания</span></a></li>
+      <li><a href="annotated.html"><span>Структуры&#160;данных</span></a></li>
+      <li><a href="files.html"><span>Файлы</span></a></li>
+      <li><a href="examples.html"><span>Примеры</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Поиск" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(document).ready(function(){initNavTree('example-oid_8c-example.html','');});
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="headertitle">
+<div class="title">example-oid.c</div>  </div>
+</div><!--header-->
+<div class="contents">
+<div class="fragment"><div class="line"><span class="preprocessor"> #include &lt;stdio.h&gt;</span></div><div class="line"><span class="preprocessor"> #include &lt;<a class="code" href="libakrypt_8h.html">libakrypt.h</a>&gt;</span></div><div class="line"></div><div class="line"><span class="comment">/* предварительное описание функции вывода информации об OID */</span></div><div class="line"> <span class="keywordtype">void</span> print_oid_info( <a class="code" href="libakrypt_8h.html#a44748ab5acc3b5e0d78b2cb1436a0aae">ak_handle</a> );</div><div class="line"></div><div class="line"> <span class="keywordtype">int</span> main( <span class="keywordtype">void</span> )</div><div class="line">{</div><div class="line">  <a class="code" href="libakrypt_8h.html#a44748ab5acc3b5e0d78b2cb1436a0aae">ak_handle</a> handle = <a name="a0"></a><a class="code" href="libakrypt_8h.html#a7966981a8a61d64220efb6d986fee079">ak_error_wrong_handle</a>;</div><div class="line">  <span class="keyword">const</span> <span class="keywordtype">char</span> *good = <span class="stringliteral">&quot;streebog512&quot;</span>; <span class="comment">/* это имя функции хеширования */</span></div><div class="line">  <span class="keyword">const</span> <span class="keywordtype">char</span> *wrong = <span class="stringliteral">&quot;2.16.840.1.101.3.4.2.3&quot;</span>; <span class="comment">/* это OID функции SHA2-256 */</span></div><div class="line"></div><div class="line"> <span class="comment">/* инициализируем библиотеку */</span></div><div class="line">  <span class="keywordflow">if</span>( <a name="a1"></a><a class="code" href="ak__libakrypt_8c.html#abd613394f9e581b93407381a15751200">ak_libakrypt_create</a>( <a name="a2"></a><a class="code" href="ak__log_8c.html#a6b9332de8025dac9ac816bf2f303d39c">ak_function_log_stderr</a> ) != <a name="a3"></a><a class="code" href="libakrypt_8h.html#a8d5ecbffb7fc8e1aa60754ae866eb486a76821fa33e47cc8cbc32aecf832da9c0">ak_true</a> )</div><div class="line">    <span class="keywordflow">return</span> <a name="a4"></a><a class="code" href="ak__libakrypt_8c.html#a7b2010bf04cdfa2e9575dbe570de71cb">ak_libakrypt_destroy</a>();</div><div class="line"></div><div class="line"> <span class="comment">/* выводим информацию о всех доступных OID библиотеки</span></div><div class="line"><span class="comment">    (для поиска всех используется параметр undefined_engine) */</span></div><div class="line">  handle = <a name="a5"></a><a class="code" href="ak__oid_8c.html#a77ebfcfab26768a197d9b14355dc85ad">ak_libakrypt_find_oid_by_engine</a>( <a name="a6"></a><a class="code" href="libakrypt_8h.html#ad058d4c98220bc1f0f872455ee71446da50d17ca9177a4eb00153e01bf6a21f0d">undefined_engine</a> );</div><div class="line">  <span class="keywordflow">while</span>( handle != <a class="code" href="libakrypt_8h.html#a7966981a8a61d64220efb6d986fee079">ak_error_wrong_handle</a> ) {</div><div class="line"></div><div class="line">    <span class="comment">/* если мы действительно нашли OID - выводим информацию о нем */</span></div><div class="line">     <span class="keywordflow">if</span>( <a name="a7"></a><a class="code" href="ak__context__manager_8c.html#a95f368b40de93d6d82eeb56e01321efc">ak_handle_get_engine</a>( handle ) == <a name="a8"></a><a class="code" href="libakrypt_8h.html#ad058d4c98220bc1f0f872455ee71446da7b83fe5b161c4f787c277144be5d467b">oid_engine</a> ) print_oid_info( handle );</div><div class="line">      <span class="keywordflow">else</span> printf(<span class="stringliteral">&quot;broken handle\n&quot;</span>);</div><div class="line"></div><div class="line">    <span class="comment">/* ищем следующий OID с тем же типом криптографического механизма */</span></div><div class="line">     handle = <a name="a9"></a><a class="code" href="ak__oid_8c.html#a1e6fc7d787aaeba351468bdd3ddfbaf3">ak_libakrypt_findnext_oid_by_engine</a>( handle, <a class="code" href="libakrypt_8h.html#ad058d4c98220bc1f0f872455ee71446da50d17ca9177a4eb00153e01bf6a21f0d">undefined_engine</a> );</div><div class="line">  }</div><div class="line"></div><div class="line"> <span class="comment">/* выводим информацию об общем количестве OID библиотеки */</span></div><div class="line"> printf(<span class="stringliteral">&quot;total count of oid&#39;s: %lu\n&quot;</span>, (<span class="keywordtype">unsigned</span> <span class="keywordtype">long</span> <span class="keywordtype">int</span>) <a name="a10"></a><a class="code" href="ak__oid_8c.html#a40c98c3dad257cd9a3b3a3ce42eab77c">ak_libakrypt_oids_count</a>( ));</div><div class="line"></div><div class="line"> <span class="comment">/* ищем OID по его имени */</span></div><div class="line">  printf(<span class="stringliteral">&quot;\nsearch results:\n&quot;</span>);</div><div class="line">  <span class="keywordflow">if</span>(( handle = <a name="a11"></a><a class="code" href="ak__oid_8c.html#ad84a98d6d6d47c0cd276b84f72816897">ak_libakrypt_find_oid_by_name</a>( good )) != <a class="code" href="libakrypt_8h.html#a7966981a8a61d64220efb6d986fee079">ak_error_wrong_handle</a> )</div><div class="line">     print_oid_info( handle );</div><div class="line">   <span class="keywordflow">else</span> printf(<span class="stringliteral">&quot;oid with name \&quot;%s\&quot; not found\n&quot;</span>, good );</div><div class="line"></div><div class="line"> <span class="comment">/* ищем OID по его цифровому идентификатору (последовательности чисел, разделенных точками */</span></div><div class="line">  <span class="keywordflow">if</span>(( handle = <a name="a12"></a><a class="code" href="ak__oid_8c.html#a6120b246a2b2aaa44cc6c70174724a6b">ak_libakrypt_find_oid_by_id</a>( wrong )) != <a class="code" href="libakrypt_8h.html#a7966981a8a61d64220efb6d986fee079">ak_error_wrong_handle</a> )</div><div class="line">    print_oid_info( handle );</div><div class="line">  <span class="keywordflow">else</span> printf(<span class="stringliteral">&quot;oid with id \&quot;%s\&quot; not found\n&quot;</span>, wrong );</div><div class="line"></div><div class="line"> <span class="keywordflow">return</span> <a class="code" href="ak__libakrypt_8c.html#a7b2010bf04cdfa2e9575dbe570de71cb">ak_libakrypt_destroy</a>(); <span class="comment">/* останавливаем библиотеку и выходим */</span></div><div class="line">}</div><div class="line"></div><div class="line"><span class="comment">/* реализация функции вывода информации об OID */</span></div><div class="line"> <span class="keywordtype">void</span> print_oid_info( <a class="code" href="libakrypt_8h.html#a44748ab5acc3b5e0d78b2cb1436a0aae">ak_handle</a> handle )</div><div class="line">{</div><div class="line">  printf(<span class="stringliteral">&quot;%s: %s (%s) [%s, %s]\n&quot;</span>,</div><div class="line">    <a name="a13"></a><a class="code" href="ak__context__manager_8c.html#a4638feb53c6e91fbe50c2b130f7658ee">ak_handle_get_engine_str</a>( handle ),</div><div class="line">    <a name="a14"></a><a class="code" href="ak__oid_8c.html#a267481da1bd3fd559be7e8267a124036">ak_libakrypt_oid_get_name</a>( handle ),</div><div class="line">    <a name="a15"></a><a class="code" href="ak__oid_8c.html#a059bbd42bac6f089724da150616a5cf4">ak_libakrypt_oid_get_id</a>( handle ),</div><div class="line">    <a name="a16"></a><a class="code" href="ak__oid_8c.html#a51c41051e6ad3983976753362c26b22b">ak_libakrypt_oid_get_engine_str</a>( handle ),</div><div class="line">    <a name="a17"></a><a class="code" href="ak__oid_8c.html#a68ba6df00826c218013a14ca8f163457">ak_libakrypt_oid_get_mode_str</a>( handle )</div><div class="line">  );</div><div class="line">}</div></div><!-- fragment --> </div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="footer">Документация по libakrypt. Последние изменения: Вс 23 Сен 2018 21:13:41. Создано системой
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.11 </li>
+  </ul>
+</div>
+</body>
+</html>

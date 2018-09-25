@@ -1,0 +1,118 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.11"/>
+<title>libakrypt: example-mpzn-convert.c</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+  $(document).ready(initResizable);
+  $(window).load(resizeHeight);
+</script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { init_search(); });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">libakrypt
+   &#160;<span id="projectnumber">Версия 0.6.7</span>
+   </div>
+   <div id="projectbrief">Модуль, реализующий криптографические преобразования для проекта OpenSKZI</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.8.11 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Поиск');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Титульная&#160;страница</span></a></li>
+      <li><a href="pages.html"><span>Описания</span></a></li>
+      <li><a href="annotated.html"><span>Структуры&#160;данных</span></a></li>
+      <li><a href="files.html"><span>Файлы</span></a></li>
+      <li><a href="examples.html"><span>Примеры</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Поиск" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(document).ready(function(){initNavTree('example-mpzn-convert_8c-example.html','');});
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="headertitle">
+<div class="title">example-mpzn-convert.c</div>  </div>
+</div><!--header-->
+<div class="contents">
+<div class="fragment"><div class="line"><span class="preprocessor"> #include &lt;<a class="code" href="ak__mpzn_8h.html">ak_mpzn.h</a>&gt;</span></div><div class="line"></div><div class="line"><span class="comment">/* основная тестирующая программа */</span></div><div class="line"> <span class="keywordtype">int</span> main( <span class="keywordtype">void</span> )</div><div class="line">{</div><div class="line">  mpz_t xm, ym;</div><div class="line">  <a name="a0"></a><a class="code" href="ak__mpzn_8h.html#af2b666365a77f78f482461a36bb432a3">ak_mpzn256</a> x, y;</div><div class="line">  <span class="keywordtype">size_t</span> i = 0, j = 0, len, count = 100000; <span class="comment">/* количество тестов */</span></div><div class="line">  <span class="keyword">struct </span><a name="_a1"></a><a class="code" href="structrandom.html">random</a> generator;</div><div class="line">  <span class="keywordtype">char</span> sx[160], sy[160];</div><div class="line">  <span class="keywordtype">size_t</span> cntstr = 0, cntmpz = 0, cntrev = 0;</div><div class="line"></div><div class="line">  mpz_init( xm );</div><div class="line">  mpz_init( ym );</div><div class="line">  <a name="a2"></a><a class="code" href="ak__libakrypt_8c.html#abd613394f9e581b93407381a15751200">ak_libakrypt_create</a>( <a name="a3"></a><a class="code" href="ak__log_8c.html#a6b9332de8025dac9ac816bf2f303d39c">ak_function_log_stderr</a> );</div><div class="line">  <a name="a4"></a><a class="code" href="ak__random_8c.html#a7591cdc413cb73da8b1eb463aebc2530">ak_random_create_lcg</a>( &amp;generator );</div><div class="line"></div><div class="line"> <span class="comment">/* путь преобразования и сравнения (функции сравнения считаются корректными):</span></div><div class="line"><span class="comment"></span></div><div class="line"><span class="comment">    random -&gt; mpzn (x) -&gt; mpz (xm) -&gt; mpzn (y) -&gt; str (sy) -&gt; mpzn (ym)</span></div><div class="line"><span class="comment">               |</span></div><div class="line"><span class="comment">               -&gt; str (sx)</span></div><div class="line"><span class="comment"></span></div><div class="line"><span class="comment">    1) sx == sy (сравнение строк)</span></div><div class="line"><span class="comment">    2) xm == ym (сравнение mpz)</span></div><div class="line"><span class="comment"> */</span></div><div class="line"></div><div class="line">  <span class="keywordflow">for</span>( i = 0; i &lt; count; i++ ) {</div><div class="line">    <span class="comment">/* генерация случайного числа */</span></div><div class="line">     <a name="a5"></a><a class="code" href="ak__mpzn_8c.html#af35e70a8f73121c4cf6471a0c4b4fa11">ak_mpzn_set_random</a>( x, <a name="a6"></a><a class="code" href="ak__mpzn_8h.html#ac9eaaeffead76c3db6fc9e7e6bbc93cf">ak_mpzn256_size</a>, &amp;generator );</div><div class="line">    <span class="comment">/* преобразование в mpz_t */</span></div><div class="line">     ak_mpzn_to_mpz( x, <a class="code" href="ak__mpzn_8h.html#ac9eaaeffead76c3db6fc9e7e6bbc93cf">ak_mpzn256_size</a>, xm );</div><div class="line">    <span class="comment">/* обратное преобразование */</span></div><div class="line">     ak_mpz_to_mpzn( xm, y, <a class="code" href="ak__mpzn_8h.html#ac9eaaeffead76c3db6fc9e7e6bbc93cf">ak_mpzn256_size</a> );</div><div class="line">     <a name="a7"></a><a class="code" href="ak__tools_8c.html#a20fa595a38b20425248b6fe4d6faa069">ak_ptr_to_hexstr_static</a>( x, <a class="code" href="ak__mpzn_8h.html#ac9eaaeffead76c3db6fc9e7e6bbc93cf">ak_mpzn256_size</a>*<span class="keyword">sizeof</span>( ak_uint64 ), sx, 160, <a name="a8"></a><a class="code" href="libakrypt_8h.html#a8d5ecbffb7fc8e1aa60754ae866eb486a76821fa33e47cc8cbc32aecf832da9c0">ak_true</a> );</div><div class="line">     <a class="code" href="ak__tools_8c.html#a20fa595a38b20425248b6fe4d6faa069">ak_ptr_to_hexstr_static</a>( y, <a class="code" href="ak__mpzn_8h.html#ac9eaaeffead76c3db6fc9e7e6bbc93cf">ak_mpzn256_size</a>*<span class="keyword">sizeof</span>( ak_uint64 ), sy, 160, <a class="code" href="libakrypt_8h.html#a8d5ecbffb7fc8e1aa60754ae866eb486a76821fa33e47cc8cbc32aecf832da9c0">ak_true</a> );</div><div class="line">    <span class="comment">/* проверка совпадения строк, содержащих запись числа до преобразования и после */</span></div><div class="line">     <span class="keywordflow">if</span>( !strcmp( sx, sy )) cntstr++;</div><div class="line"></div><div class="line">    <span class="comment">/* преобразование строки в число mpz_t */</span></div><div class="line">     mpz_set_str( ym, sy, 16 );</div><div class="line">    <span class="comment">/* сравнение двух чисел типа mpz_t */</span></div><div class="line">     <span class="keywordflow">if</span>( !mpz_cmp( xm, ym )) cntmpz++;</div><div class="line">  }</div><div class="line">  mpz_clear( ym );</div><div class="line">  mpz_clear( xm );</div><div class="line">  printf(<span class="stringliteral">&quot; string comparison: %lu equals from %lu\n&quot;</span>, cntstr, count );</div><div class="line">  printf(<span class="stringliteral">&quot; mpz_t comparison:  %lu equals from %lu\n&quot;</span>, cntmpz, count );</div><div class="line"></div><div class="line">  <span class="comment">/*</span></div><div class="line"><span class="comment">    random -&gt; str (sx) -&gt; mpzn (x) -&gt; str (sy)</span></div><div class="line"><span class="comment"></span></div><div class="line"><span class="comment">    сравнение sx == sy</span></div><div class="line"><span class="comment">  */</span></div><div class="line"></div><div class="line">  <span class="keywordtype">char</span> digits[16] = { <span class="charliteral">&#39;0&#39;</span>, <span class="charliteral">&#39;1&#39;</span>, <span class="charliteral">&#39;2&#39;</span>, <span class="charliteral">&#39;3&#39;</span>, <span class="charliteral">&#39;4&#39;</span>, <span class="charliteral">&#39;5&#39;</span>, <span class="charliteral">&#39;6&#39;</span>, <span class="charliteral">&#39;7&#39;</span>,</div><div class="line">                      <span class="charliteral">&#39;8&#39;</span>, <span class="charliteral">&#39;9&#39;</span>, <span class="charliteral">&#39;A&#39;</span>, <span class="charliteral">&#39;B&#39;</span>, <span class="charliteral">&#39;C&#39;</span>, <span class="charliteral">&#39;D&#39;</span>, <span class="charliteral">&#39;E&#39;</span>, <span class="charliteral">&#39;F&#39;</span> };</div><div class="line"></div><div class="line">  cntstr = 0; cntmpz = 0; cntrev = 0;</div><div class="line">  <span class="keywordflow">for</span>( len = 1; len &lt;= 64; len++ ) {</div><div class="line">   <span class="comment">/* тестируем строки всех длин от 1 до 64 символов (64 = 2*32 байта = 2* 256 бит) */</span></div><div class="line"></div><div class="line">   <span class="keywordflow">for</span>( i = 0; i &lt; count; i++ ) {</div><div class="line">      <span class="comment">/* генерим случайную строку */</span></div><div class="line">       memset( sx, 0, 160 );</div><div class="line">       <span class="keywordflow">for</span>( j = 0; j &lt; len; j++ ) {</div><div class="line">         <a class="code" href="libakrypt_8h.html#abb8a94ec74dcd719f5e85ecbae89cb68">ak_uint8</a> byte;</div><div class="line">         generator.<a name="a9"></a><a class="code" href="structrandom.html#a34c4359c2f54cc37cdf9ad5acecf115f">random</a>( &amp;generator, &amp;byte, 1 );</div><div class="line">         sx[j] = digits[byte&amp;0xF];</div><div class="line">       }</div><div class="line">       <span class="keywordflow">if</span>( <a name="a10"></a><a class="code" href="ak__mpzn_8c.html#a04160a629b0dec73ee90bd12565ed6fc">ak_mpzn_set_hexstr</a>( x, <a class="code" href="ak__mpzn_8h.html#ac9eaaeffead76c3db6fc9e7e6bbc93cf">ak_mpzn256_size</a>, sx ) != <a name="a11"></a><a class="code" href="libakrypt_8h.html#aa6db0eccf8222376f61f2f033a1bbe4c">ak_error_ok</a> ) cntstr++;</div><div class="line">       <span class="keywordflow">if</span>( <a name="a12"></a><a class="code" href="ak__mpzn_8c.html#a7edb96bb34c413d2575fac1a85187050">ak_mpzn_to_hexstr_static</a>( x, <a class="code" href="ak__mpzn_8h.html#ac9eaaeffead76c3db6fc9e7e6bbc93cf">ak_mpzn256_size</a>, sy, 160 ) != <a class="code" href="libakrypt_8h.html#aa6db0eccf8222376f61f2f033a1bbe4c">ak_error_ok</a> ) cntrev++;</div><div class="line">       <span class="keywordflow">if</span>( !strncmp( sx, sy+64-len, 160 )) cntmpz++;</div><div class="line">    }</div><div class="line"></div><div class="line">    printf(<span class="stringliteral">&quot; len: %2lu [correct: %lu, errors: %lu, %lu]\n&quot;</span>, len, cntmpz, cntstr, cntrev );</div><div class="line">    cntmpz = cntstr = cntrev = 0;</div><div class="line">  }</div><div class="line"></div><div class="line">  <a name="a13"></a><a class="code" href="ak__random_8c.html#a6a4676e2f5acb44c1023dc640f271448">ak_random_destroy</a>( &amp;generator );</div><div class="line">  <a name="a14"></a><a class="code" href="ak__libakrypt_8c.html#a7b2010bf04cdfa2e9575dbe570de71cb">ak_libakrypt_destroy</a>();</div><div class="line"></div><div class="line"> <span class="keywordflow">return</span> 0;</div><div class="line">}</div></div><!-- fragment --> </div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="footer">Документация по libakrypt. Последние изменения: Вс 23 Сен 2018 21:13:41. Создано системой
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.11 </li>
+  </ul>
+</div>
+</body>
+</html>

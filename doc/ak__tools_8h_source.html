@@ -1,0 +1,129 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.11"/>
+<title>libakrypt: Исходный файл ak_tools.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+  $(document).ready(initResizable);
+  $(window).load(resizeHeight);
+</script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { init_search(); });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">libakrypt
+   &#160;<span id="projectnumber">Версия 0.6.7</span>
+   </div>
+   <div id="projectbrief">Модуль, реализующий криптографические преобразования для проекта OpenSKZI</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.8.11 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Поиск');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Титульная&#160;страница</span></a></li>
+      <li><a href="pages.html"><span>Описания</span></a></li>
+      <li><a href="annotated.html"><span>Структуры&#160;данных</span></a></li>
+      <li class="current"><a href="files.html"><span>Файлы</span></a></li>
+      <li><a href="examples.html"><span>Примеры</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Поиск" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>Файлы</span></a></li>
+      <li><a href="globals.html"><span>Список&#160;членов&#160;всех&#160;файлов</span></a></li>
+    </ul>
+  </div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(document).ready(function(){initNavTree('ak__tools_8h_source.html','');});
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="headertitle">
+<div class="title">ak_tools.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="ak__tools_8h.html">См. документацию.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/* ----------------------------------------------------------------------------------------------- */</span></div><div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment">/*   Copyright (c) 2014 - 2018 by Axel Kenzo, axelkenzo@mail.ru                                    */</span></div><div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment">/*   All rights reserved.                                                                          */</span></div><div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment">/*                                                                                                 */</span></div><div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment">/*  Разрешается повторное распространение и использование как в виде исходного кода, так и         */</span></div><div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment">/*  в двоичной форме, с изменениями или без, при соблюдении следующих условий:                     */</span></div><div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment">/*                                                                                                 */</span></div><div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="comment">/*   1. При повторном распространении исходного кода должно оставаться указанное выше уведомление  */</span></div><div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="comment">/*      об авторском праве, этот список условий и последующий отказ от гарантий.                   */</span></div><div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="comment">/*   2. При повторном распространении двоичного кода должна сохраняться указанная выше информация  */</span></div><div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="comment">/*      об авторском праве, этот список условий и последующий отказ от гарантий в документации     */</span></div><div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="comment">/*      и/или в других материалах, поставляемых при распространении.                               */</span></div><div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="comment">/*   3. Ни имя владельца авторских прав, ни имена его соратников не могут быть использованы в      */</span></div><div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="comment">/*      качестве рекламы или средства продвижения продуктов, основанных на этом ПО без             */</span></div><div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="comment">/*      предварительного письменного разрешения.                                                   */</span></div><div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="comment">/*                                                                                                 */</span></div><div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="comment">/*  ЭТА ПРОГРАММА ПРЕДОСТАВЛЕНА ВЛАДЕЛЬЦАМИ АВТОРСКИХ ПРАВ И/ИЛИ ДРУГИМИ СТОРОНАМИ &quot;КАК ОНА ЕСТЬ&quot;  */</span></div><div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="comment">/*  БЕЗ КАКОГО-ЛИБО ВИДА ГАРАНТИЙ, ВЫРАЖЕННЫХ ЯВНО ИЛИ ПОДРАЗУМЕВАЕМЫХ, ВКЛЮЧАЯ, НО НЕ             */</span></div><div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="comment">/*  ОГРАНИЧИВАЯСЬ ИМИ, ПОДРАЗУМЕВАЕМЫЕ ГАРАНТИИ КОММЕРЧЕСКОЙ ЦЕННОСТИ И ПРИГОДНОСТИ ДЛЯ КОНКРЕТНОЙ */</span></div><div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="comment">/*  ЦЕЛИ. НИ В КОЕМ СЛУЧАЕ НИ ОДИН ВЛАДЕЛЕЦ АВТОРСКИХ ПРАВ И НИ ОДНО ДРУГОЕ ЛИЦО, КОТОРОЕ МОЖЕТ    */</span></div><div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="comment">/*  ИЗМЕНЯТЬ И/ИЛИ ПОВТОРНО РАСПРОСТРАНЯТЬ ПРОГРАММУ, КАК БЫЛО СКАЗАНО ВЫШЕ, НЕ НЕСЁТ              */</span></div><div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="comment">/*  ОТВЕТСТВЕННОСТИ, ВКЛЮЧАЯ ЛЮБЫЕ ОБЩИЕ, СЛУЧАЙНЫЕ, СПЕЦИАЛЬНЫЕ ИЛИ ПОСЛЕДОВАВШИЕ УБЫТКИ,         */</span></div><div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="comment">/*  ВСЛЕДСТВИЕ ИСПОЛЬЗОВАНИЯ ИЛИ НЕВОЗМОЖНОСТИ ИСПОЛЬЗОВАНИЯ ПРОГРАММЫ (ВКЛЮЧАЯ, НО НЕ             */</span></div><div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="comment">/*  ОГРАНИЧИВАЯСЬ ПОТЕРЕЙ ДАННЫХ, ИЛИ ДАННЫМИ, СТАВШИМИ НЕПРАВИЛЬНЫМИ, ИЛИ ПОТЕРЯМИ ПРИНЕСЕННЫМИ   */</span></div><div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="comment">/*  ИЗ-ЗА ВАС ИЛИ ТРЕТЬИХ ЛИЦ, ИЛИ ОТКАЗОМ ПРОГРАММЫ РАБОТАТЬ СОВМЕСТНО С ДРУГИМИ ПРОГРАММАМИ),    */</span></div><div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="comment">/*  ДАЖЕ ЕСЛИ ТАКОЙ ВЛАДЕЛЕЦ ИЛИ ДРУГОЕ ЛИЦО БЫЛИ ИЗВЕЩЕНЫ О ВОЗМОЖНОСТИ ТАКИХ УБЫТКОВ.            */</span></div><div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="comment">/*                                                                                                 */</span></div><div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="comment">/*   ak_tools.h                                                                                    */</span></div><div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="comment">/* ----------------------------------------------------------------------------------------------- */</span></div><div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="comment">/*   Файл содержит описания служебных функций и переменных, не экспортруемых за пределы библиотеки */</span></div><div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="comment">/* ----------------------------------------------------------------------------------------------- */</span></div><div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="preprocessor"> #ifndef    __AK_TOOLS_H__</span></div><div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="preprocessor"> #define    __AK_TOOLS_H__</span></div><div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;</div><div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="comment">/* ----------------------------------------------------------------------------------------------- */</span></div><div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="preprocessor"> #include &lt;<a class="code" href="libakrypt_8h.html">libakrypt.h</a>&gt;</span></div><div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;</div><div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="comment">/* ----------------------------------------------------------------------------------------------- */</span></div><div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160; <span class="keywordtype">int</span> <a class="code" href="ak__tools_8h.html#a009bbe9e86bc61a3f21d3791ea286462">ak_log_set_level</a>( <span class="keywordtype">int</span> );</div><div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;</div><div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160; <span class="keywordtype">int</span> <a class="code" href="ak__tools_8h.html#ad9174c40e264f45afbd13bd04c366ae9">ak_libakrypt_set_option</a>( <span class="keyword">const</span> <span class="keywordtype">char</span> *name, <span class="keyword">const</span> ak_int32 value );</div><div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160; <span class="keywordtype">int</span> <a class="code" href="ak__tools_8h.html#aa28dc050648cd3ffb9108574844e831a">ak_libakrypt_get_option</a>( <span class="keyword">const</span> <span class="keywordtype">char</span> *name );</div><div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;</div><div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;<span class="preprocessor"> #endif</span></div><div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;<span class="comment">/* ----------------------------------------------------------------------------------------------- */</span></div><div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;<span class="comment">/*                                                                                 ak_libakrypt.h  */</span></div><div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;<span class="comment">/* ----------------------------------------------------------------------------------------------- */</span></div><div class="ttc" id="ak__tools_8h_html_a009bbe9e86bc61a3f21d3791ea286462"><div class="ttname"><a href="ak__tools_8h.html#a009bbe9e86bc61a3f21d3791ea286462">ak_log_set_level</a></div><div class="ttdeci">int ak_log_set_level(int)</div><div class="ttdoc">Неэкспортируемая функция установления уровня аудита. </div><div class="ttdef"><b>Definition:</b> <a href="ak__libakrypt_8c_source.html#l00372">ak_libakrypt.c:372</a></div></div>
+<div class="ttc" id="ak__tools_8h_html_ad9174c40e264f45afbd13bd04c366ae9"><div class="ttname"><a href="ak__tools_8h.html#ad9174c40e264f45afbd13bd04c366ae9">ak_libakrypt_set_option</a></div><div class="ttdeci">int ak_libakrypt_set_option(const char *name, const ak_int32 value)</div><div class="ttdoc">Функция устанавливает значение опции с заданным именем. </div><div class="ttdef"><b>Definition:</b> <a href="ak__libakrypt_8c_source.html#l00118">ak_libakrypt.c:118</a></div></div>
+<div class="ttc" id="libakrypt_8h_html"><div class="ttname"><a href="libakrypt_8h.html">libakrypt.h</a></div></div>
+<div class="ttc" id="ak__tools_8h_html_aa28dc050648cd3ffb9108574844e831a"><div class="ttname"><a href="ak__tools_8h.html#aa28dc050648cd3ffb9108574844e831a">ak_libakrypt_get_option</a></div><div class="ttdeci">int ak_libakrypt_get_option(const char *name)</div><div class="ttdoc">Функция возвращает значение опции с заданным именем. </div><div class="ttdef"><b>Definition:</b> <a href="ak__libakrypt_8c_source.html#l00097">ak_libakrypt.c:97</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_43e0a1f539e00dcfa1a6bc4d4fee4fc2.html">home</a></li><li class="navelem"><a class="el" href="dir_32078dd46064dc5448d39191ac5534d6.html">eugene</a></li><li class="navelem"><a class="el" href="dir_90a44860457c395fae569358f05fdb49.html">Documents</a></li><li class="navelem"><a class="el" href="dir_ef0df63b0c88ed24c4c79f67668669bc.html">VKR</a></li><li class="navelem"><a class="el" href="dir_6ec071d27851548a42323e2c424bf74a.html">libakrypt-0.x</a></li><li class="navelem"><a class="el" href="dir_cc55869b84ab2b7a1ee582dd1158c3dc.html">source</a></li><li class="navelem"><a class="el" href="ak__tools_8h.html">ak_tools.h</a></li>
+    <li class="footer">Документация по libakrypt. Последние изменения: Вс 23 Сен 2018 21:13:41. Создано системой
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.11 </li>
+  </ul>
+</div>
+</body>
+</html>

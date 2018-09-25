@@ -1,0 +1,822 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.11"/>
+<title>libakrypt: Файл ak_buffer.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+  $(document).ready(initResizable);
+  $(window).load(resizeHeight);
+</script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { init_search(); });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">libakrypt
+   &#160;<span id="projectnumber">Версия 0.6.7</span>
+   </div>
+   <div id="projectbrief">Модуль, реализующий криптографические преобразования для проекта OpenSKZI</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.8.11 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Поиск');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Титульная&#160;страница</span></a></li>
+      <li><a href="pages.html"><span>Описания</span></a></li>
+      <li><a href="annotated.html"><span>Структуры&#160;данных</span></a></li>
+      <li class="current"><a href="files.html"><span>Файлы</span></a></li>
+      <li><a href="examples.html"><span>Примеры</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Поиск" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>Файлы</span></a></li>
+      <li><a href="globals.html"><span>Список&#160;членов&#160;всех&#160;файлов</span></a></li>
+    </ul>
+  </div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(document).ready(function(){initNavTree('ak__buffer_8h.html','');});
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#nested-classes">Структуры данных</a> &#124;
+<a href="#func-members">Функции</a>  </div>
+  <div class="headertitle">
+<div class="title">Файл ak_buffer.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><code>#include &lt;<a class="el" href="ak__random_8h_source.html">ak_random.h</a>&gt;</code><br />
+</div><div class="textblock"><div class="dynheader">
+Граф включаемых заголовочных файлов для ak_buffer.h:</div>
+<div class="dyncontent">
+<div class="center"><img src="ak__buffer_8h__incl.png" border="0" usemap="#ak__buffer_8h" alt=""/></div>
+<!-- MAP 0 -->
+</div>
+</div><div class="textblock"><div class="dynheader">
+Граф файлов, в которые включается этот файл:</div>
+<div class="dyncontent">
+<div class="center"><img src="ak__buffer_8h__dep__incl.png" border="0" usemap="#ak__buffer_8hdep" alt=""/></div>
+<!-- MAP 1 -->
+</div>
+</div>
+<p><a href="ak__buffer_8h_source.html">См. исходные тексты.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
+Структуры данных</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structbuffer.html">buffer</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Класс для хранения двоичных данных  <a href="structbuffer.html#details">Подробнее...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+Функции</h2></td></tr>
+<tr class="memitem:a3f8fe4e6b88d3460ed57500abfdcb323"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ak__buffer_8h.html#a3f8fe4e6b88d3460ed57500abfdcb323">ak_buffer_alloc</a> (<a class="el" href="libakrypt_8h.html#a8618b346405887c26c4cda4b7e19a158">ak_buffer</a>, const size_t)</td></tr>
+<tr class="memdesc:a3f8fe4e6b88d3460ed57500abfdcb323"><td class="mdescLeft">&#160;</td><td class="mdescRight">Функция выделяет память под данные, хранимые в буффере.  <a href="#a3f8fe4e6b88d3460ed57500abfdcb323">Подробнее...</a><br /></td></tr>
+<tr class="separator:a3f8fe4e6b88d3460ed57500abfdcb323"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a84358be6b23f08525caa8276040c7447"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ak__buffer_8h.html#a84358be6b23f08525caa8276040c7447">ak_buffer_create</a> (<a class="el" href="libakrypt_8h.html#a8618b346405887c26c4cda4b7e19a158">ak_buffer</a>)</td></tr>
+<tr class="memdesc:a84358be6b23f08525caa8276040c7447"><td class="mdescLeft">&#160;</td><td class="mdescRight">Инициализация буффера.  <a href="#a84358be6b23f08525caa8276040c7447">Подробнее...</a><br /></td></tr>
+<tr class="separator:a84358be6b23f08525caa8276040c7447"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aed625a91942f5833e0dc980f930bea1a"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ak__buffer_8h.html#aed625a91942f5833e0dc980f930bea1a">ak_buffer_create_function_size</a> (<a class="el" href="libakrypt_8h.html#a8618b346405887c26c4cda4b7e19a158">ak_buffer</a>, <a class="el" href="libakrypt_8h.html#a7bab2f9a48d0aedeb3fb289d9c416815">ak_function_alloc</a> *, <a class="el" href="libakrypt_8h.html#a2d34a5a00ae829234843e3082e719776">ak_function_free</a> *, const size_t)</td></tr>
+<tr class="memdesc:aed625a91942f5833e0dc980f930bea1a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Инициализация буффера с заданными обработчиками выделения и освобождения памяти.  <a href="#aed625a91942f5833e0dc980f930bea1a">Подробнее...</a><br /></td></tr>
+<tr class="separator:aed625a91942f5833e0dc980f930bea1a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a83b4acff7a870541944b51c841ba3e14"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ak__buffer_8h.html#a83b4acff7a870541944b51c841ba3e14">ak_buffer_create_size</a> (<a class="el" href="libakrypt_8h.html#a8618b346405887c26c4cda4b7e19a158">ak_buffer</a>, const size_t)</td></tr>
+<tr class="memdesc:a83b4acff7a870541944b51c841ba3e14"><td class="mdescLeft">&#160;</td><td class="mdescRight">Инициализация буффера и выделение памяти фиксированной длины.  <a href="#a83b4acff7a870541944b51c841ba3e14">Подробнее...</a><br /></td></tr>
+<tr class="separator:a83b4acff7a870541944b51c841ba3e14"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae7e213c535c0a2b2dd3538dadcc3ca2e"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ak__buffer_8h.html#ae7e213c535c0a2b2dd3538dadcc3ca2e">ak_buffer_destroy</a> (<a class="el" href="libakrypt_8h.html#a8618b346405887c26c4cda4b7e19a158">ak_buffer</a>)</td></tr>
+<tr class="memdesc:ae7e213c535c0a2b2dd3538dadcc3ca2e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Уничтожение данных, хранящиеся в полях структуры struct buffer.  <a href="#ae7e213c535c0a2b2dd3538dadcc3ca2e">Подробнее...</a><br /></td></tr>
+<tr class="separator:ae7e213c535c0a2b2dd3538dadcc3ca2e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6685a25abbd1c2f4e432219d283f8d26"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ak__buffer_8h.html#a6685a25abbd1c2f4e432219d283f8d26">ak_buffer_free</a> (<a class="el" href="libakrypt_8h.html#a8618b346405887c26c4cda4b7e19a158">ak_buffer</a>)</td></tr>
+<tr class="memdesc:a6685a25abbd1c2f4e432219d283f8d26"><td class="mdescLeft">&#160;</td><td class="mdescRight">Функция освобождает память, выделенную под данные (поле data структуры struct buffer ).  <a href="#a6685a25abbd1c2f4e432219d283f8d26">Подробнее...</a><br /></td></tr>
+<tr class="separator:a6685a25abbd1c2f4e432219d283f8d26"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a45810808057f45cf4da27a1446896713"><td class="memItemLeft" align="right" valign="top"><a class="el" href="libakrypt_8h.html#a8618b346405887c26c4cda4b7e19a158">ak_buffer</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ak__buffer_8h.html#a45810808057f45cf4da27a1446896713">ak_buffer_new</a> (void)</td></tr>
+<tr class="memdesc:a45810808057f45cf4da27a1446896713"><td class="mdescLeft">&#160;</td><td class="mdescRight">Создание буффера.  <a href="#a45810808057f45cf4da27a1446896713">Подробнее...</a><br /></td></tr>
+<tr class="separator:a45810808057f45cf4da27a1446896713"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af5711ed1418af37ce3a94407208b62f3"><td class="memItemLeft" align="right" valign="top"><a class="el" href="libakrypt_8h.html#a8618b346405887c26c4cda4b7e19a158">ak_buffer</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ak__buffer_8h.html#af5711ed1418af37ce3a94407208b62f3">ak_buffer_new_random</a> (<a class="el" href="ak__random_8h.html#a02528de477a7fe808f4d32f41fa265ea">ak_random</a>, const size_t)</td></tr>
+<tr class="memdesc:af5711ed1418af37ce3a94407208b62f3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Функция создает буффер заданный длины со случайными значениями.  <a href="#af5711ed1418af37ce3a94407208b62f3">Подробнее...</a><br /></td></tr>
+<tr class="separator:af5711ed1418af37ce3a94407208b62f3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af48070e30993ea30ae3202930b6c6b20"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ak__buffer_8h.html#af48070e30993ea30ae3202930b6c6b20">ak_buffer_set_random</a> (<a class="el" href="libakrypt_8h.html#a8618b346405887c26c4cda4b7e19a158">ak_buffer</a>, <a class="el" href="ak__random_8h.html#a02528de477a7fe808f4d32f41fa265ea">ak_random</a>)</td></tr>
+<tr class="memdesc:af48070e30993ea30ae3202930b6c6b20"><td class="mdescLeft">&#160;</td><td class="mdescRight">Заполнение буффера случайными данными.  <a href="#af48070e30993ea30ae3202930b6c6b20">Подробнее...</a><br /></td></tr>
+<tr class="separator:af48070e30993ea30ae3202930b6c6b20"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac22f622c4102c51e289f58bb008606dc"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ak__buffer_8h.html#ac22f622c4102c51e289f58bb008606dc">ak_buffer_wipe</a> (<a class="el" href="libakrypt_8h.html#a8618b346405887c26c4cda4b7e19a158">ak_buffer</a>, <a class="el" href="ak__random_8h.html#a02528de477a7fe808f4d32f41fa265ea">ak_random</a>)</td></tr>
+<tr class="memdesc:ac22f622c4102c51e289f58bb008606dc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Зачистка данных, хранящихся в буффере.  <a href="#ac22f622c4102c51e289f58bb008606dc">Подробнее...</a><br /></td></tr>
+<tr class="separator:ac22f622c4102c51e289f58bb008606dc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab42b833b1b6e14cfe8b5f7344da9a568"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ak__buffer_8h.html#ab42b833b1b6e14cfe8b5f7344da9a568">ak_ptr_wipe</a> (<a class="el" href="libakrypt_8h.html#a59817f4698b8d80ec2f6ef2af4111190">ak_pointer</a>, size_t, <a class="el" href="ak__random_8h.html#a02528de477a7fe808f4d32f41fa265ea">ak_random</a>)</td></tr>
+<tr class="memdesc:ab42b833b1b6e14cfe8b5f7344da9a568"><td class="mdescLeft">&#160;</td><td class="mdescRight">Зачистка данных, на которые указывает заданный указатель.  <a href="#ab42b833b1b6e14cfe8b5f7344da9a568">Подробнее...</a><br /></td></tr>
+<tr class="separator:ab42b833b1b6e14cfe8b5f7344da9a568"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">Функции</h2>
+<a class="anchor" id="a3f8fe4e6b88d3460ed57500abfdcb323"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int ak_buffer_alloc </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="libakrypt_8h.html#a8618b346405887c26c4cda4b7e19a158">ak_buffer</a>&#160;</td>
+          <td class="paramname"><em>buff</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const size_t&#160;</td>
+          <td class="paramname"><em>size</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Функция выделяет память под данные, хранимые в буффере. </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">buff</td><td>указатель на структуру struct buffer, в которой выделяется память </td></tr>
+    <tr><td class="paramname">size</td><td>размер выделяемой памяти в байтах </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd>В случае успеха возвращается ak_error_ok (ноль). В случае возникновения ошибки возвращается ее код. </dd></dl>
+
+<p>См. определение в файле <a class="el" href="ak__buffer_8c_source.html">ak_buffer.c</a> строка <a class="el" href="ak__buffer_8c_source.html#l00265">265</a></p>
+<div class="fragment"><div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160;{</div><div class="line"><a name="l00267"></a><span class="lineno">  267</span>&#160;  <a class="code" href="libakrypt_8h.html#abb8a94ec74dcd719f5e85ecbae89cb68">ak_uint8</a> *ptr = NULL;</div><div class="line"><a name="l00268"></a><span class="lineno">  268</span>&#160;  <span class="keywordtype">int</span> error = <a class="code" href="libakrypt_8h.html#aa6db0eccf8222376f61f2f033a1bbe4c">ak_error_ok</a>;</div><div class="line"><a name="l00269"></a><span class="lineno">  269</span>&#160;</div><div class="line"><a name="l00270"></a><span class="lineno">  270</span>&#160; <span class="comment">/* сли новый размер равен нулю, то просто очищаем память */</span></div><div class="line"><a name="l00271"></a><span class="lineno">  271</span>&#160;  <span class="keywordflow">if</span>( size == 0 ) {</div><div class="line"><a name="l00272"></a><span class="lineno">  272</span>&#160;    <span class="keywordflow">if</span>(( error = <a class="code" href="ak__buffer_8c.html#a243d38ade78feebf7816cbd5d775310a">ak_buffer_free</a>( buff )) != <a class="code" href="libakrypt_8h.html#aa6db0eccf8222376f61f2f033a1bbe4c">ak_error_ok</a> )</div><div class="line"><a name="l00273"></a><span class="lineno">  273</span>&#160;      <a class="code" href="ak__log_8c.html#a80a4822cbd184b3cbcc43096126eb52b">ak_error_message</a>( error, __func__, <span class="stringliteral">&quot;incorrect buffer memory destroying&quot;</span>);</div><div class="line"><a name="l00274"></a><span class="lineno">  274</span>&#160;    <span class="keywordflow">return</span> error;</div><div class="line"><a name="l00275"></a><span class="lineno">  275</span>&#160;  }</div><div class="line"><a name="l00276"></a><span class="lineno">  276</span>&#160; <span class="comment">/* если буфер не владеет памятью или ее недостаточно, то выделяем новую память */</span></div><div class="line"><a name="l00277"></a><span class="lineno">  277</span>&#160;  <span class="keywordflow">if</span>(( buff-&gt;<a class="code" href="structbuffer.html#a821b3af00b683f25cf62978b933a551c">flag</a> == <a class="code" href="libakrypt_8h.html#a8d5ecbffb7fc8e1aa60754ae866eb486a872df325c5f9fac16ef66c17c1666908">ak_false</a>) || ( size &gt; buff-&gt;<a class="code" href="structbuffer.html#a854352f53b148adc24983a58a1866d66">size</a> )) {</div><div class="line"><a name="l00278"></a><span class="lineno">  278</span>&#160;</div><div class="line"><a name="l00279"></a><span class="lineno">  279</span>&#160;    <span class="keywordflow">if</span>(( ptr = buff-&gt;<a class="code" href="structbuffer.html#a818f5267c323fb93d1a0d50f6cf11eea">alloc</a>( size )) == NULL )</div><div class="line"><a name="l00280"></a><span class="lineno">  280</span>&#160;      <span class="keywordflow">return</span> <a class="code" href="ak__log_8c.html#a80a4822cbd184b3cbcc43096126eb52b">ak_error_message</a>( <a class="code" href="libakrypt_8h.html#a3e8d10d4f38d2d8032c60cdca1f59db2">ak_error_out_of_memory</a>, __func__, <span class="stringliteral">&quot;incorrect memory allocation&quot;</span> );</div><div class="line"><a name="l00281"></a><span class="lineno">  281</span>&#160;    memset( ptr, 0, size );</div><div class="line"><a name="l00282"></a><span class="lineno">  282</span>&#160;    <span class="keywordflow">if</span>(( error = <a class="code" href="ak__buffer_8c.html#a243d38ade78feebf7816cbd5d775310a">ak_buffer_free</a>( buff )) != <a class="code" href="libakrypt_8h.html#aa6db0eccf8222376f61f2f033a1bbe4c">ak_error_ok</a> ) {</div><div class="line"><a name="l00283"></a><span class="lineno">  283</span>&#160;      <a class="code" href="ak__log_8c.html#a80a4822cbd184b3cbcc43096126eb52b">ak_error_message</a>( error, __func__, <span class="stringliteral">&quot;incorrect buffer memory destroying&quot;</span>);</div><div class="line"><a name="l00284"></a><span class="lineno">  284</span>&#160;      free( ptr );</div><div class="line"><a name="l00285"></a><span class="lineno">  285</span>&#160;      <span class="keywordflow">return</span> error;</div><div class="line"><a name="l00286"></a><span class="lineno">  286</span>&#160;    }</div><div class="line"><a name="l00287"></a><span class="lineno">  287</span>&#160;    buff-&gt;<a class="code" href="structbuffer.html#a0d9dd0697d4bd775e4f48135a8d9dad8">data</a> = ptr;</div><div class="line"><a name="l00288"></a><span class="lineno">  288</span>&#160;    buff-&gt;<a class="code" href="structbuffer.html#a821b3af00b683f25cf62978b933a551c">flag</a> = <a class="code" href="libakrypt_8h.html#a8d5ecbffb7fc8e1aa60754ae866eb486a76821fa33e47cc8cbc32aecf832da9c0">ak_true</a>;</div><div class="line"><a name="l00289"></a><span class="lineno">  289</span>&#160;    buff-&gt;<a class="code" href="structbuffer.html#a854352f53b148adc24983a58a1866d66">size</a> = size;</div><div class="line"><a name="l00290"></a><span class="lineno">  290</span>&#160;  } <span class="keywordflow">else</span> memset( buff-&gt;<a class="code" href="structbuffer.html#a0d9dd0697d4bd775e4f48135a8d9dad8">data</a>, 0, buff-&gt;<a class="code" href="structbuffer.html#a854352f53b148adc24983a58a1866d66">size</a> );</div><div class="line"><a name="l00291"></a><span class="lineno">  291</span>&#160; <span class="keywordflow">return</span> <a class="code" href="libakrypt_8h.html#aa6db0eccf8222376f61f2f033a1bbe4c">ak_error_ok</a>;</div><div class="line"><a name="l00292"></a><span class="lineno">  292</span>&#160;</div><div class="line"><a name="l00293"></a><span class="lineno">  293</span>&#160; <span class="comment">/*</span></div><div class="line"><a name="l00294"></a><span class="lineno">  294</span>&#160;<span class="comment">  if( size &gt; 0 ) {</span></div><div class="line"><a name="l00295"></a><span class="lineno">  295</span>&#160;<span class="comment">    if(( ptr = buff-&gt;alloc( size )) == NULL ) {</span></div><div class="line"><a name="l00296"></a><span class="lineno">  296</span>&#160;<span class="comment">     ak_error_message( ak_error_out_of_memory, __func__, &quot;incorrect memory allocation&quot; );</span></div><div class="line"><a name="l00297"></a><span class="lineno">  297</span>&#160;<span class="comment">     return ak_error_out_of_memory;</span></div><div class="line"><a name="l00298"></a><span class="lineno">  298</span>&#160;<span class="comment">    }</span></div><div class="line"><a name="l00299"></a><span class="lineno">  299</span>&#160;<span class="comment">    memset( ptr, 0, size );</span></div><div class="line"><a name="l00300"></a><span class="lineno">  300</span>&#160;<span class="comment">  }</span></div><div class="line"><a name="l00301"></a><span class="lineno">  301</span>&#160;<span class="comment">  if( ak_buffer_free( buff ) != ak_error_ok ) {</span></div><div class="line"><a name="l00302"></a><span class="lineno">  302</span>&#160;<span class="comment">    int local_error = ak_error_get_value();</span></div><div class="line"><a name="l00303"></a><span class="lineno">  303</span>&#160;<span class="comment">    ak_error_message( local_error, __func__, &quot;incorrect memory cleaning&quot; );</span></div><div class="line"><a name="l00304"></a><span class="lineno">  304</span>&#160;<span class="comment">    return local_error;</span></div><div class="line"><a name="l00305"></a><span class="lineno">  305</span>&#160;<span class="comment">  }</span></div><div class="line"><a name="l00306"></a><span class="lineno">  306</span>&#160;<span class="comment">  buff-&gt;data = ptr;</span></div><div class="line"><a name="l00307"></a><span class="lineno">  307</span>&#160;<span class="comment">  buff-&gt;flag = ak_true;</span></div><div class="line"><a name="l00308"></a><span class="lineno">  308</span>&#160;<span class="comment">  if( size &gt; 0 ) buff-&gt;size = size;</span></div><div class="line"><a name="l00309"></a><span class="lineno">  309</span>&#160;<span class="comment">    else buff-&gt;size = 0;</span></div><div class="line"><a name="l00310"></a><span class="lineno">  310</span>&#160;<span class="comment">  return ak_error_ok;</span></div><div class="line"><a name="l00311"></a><span class="lineno">  311</span>&#160;<span class="comment"> */</span></div><div class="line"><a name="l00312"></a><span class="lineno">  312</span>&#160;}</div><div class="ttc" id="structbuffer_html_a854352f53b148adc24983a58a1866d66"><div class="ttname"><a href="structbuffer.html#a854352f53b148adc24983a58a1866d66">buffer::size</a></div><div class="ttdeci">size_t size</div><div class="ttdoc">размер данных (в байтах) </div><div class="ttdef"><b>Definition:</b> <a href="ak__buffer_8h_source.html#l00044">ak_buffer.h:44</a></div></div>
+<div class="ttc" id="libakrypt_8h_html_a8d5ecbffb7fc8e1aa60754ae866eb486a872df325c5f9fac16ef66c17c1666908"><div class="ttname"><a href="libakrypt_8h.html#a8d5ecbffb7fc8e1aa60754ae866eb486a872df325c5f9fac16ef66c17c1666908">ak_false</a></div><div class="ttdef"><b>Definition:</b> <a href="libakrypt_8h_source.html#l00125">libakrypt.h:125</a></div></div>
+<div class="ttc" id="structbuffer_html_a0d9dd0697d4bd775e4f48135a8d9dad8"><div class="ttname"><a href="structbuffer.html#a0d9dd0697d4bd775e4f48135a8d9dad8">buffer::data</a></div><div class="ttdeci">ak_pointer data</div><div class="ttdoc">указатель на данные </div><div class="ttdef"><b>Definition:</b> <a href="ak__buffer_8h_source.html#l00046">ak_buffer.h:46</a></div></div>
+<div class="ttc" id="libakrypt_8h_html_abb8a94ec74dcd719f5e85ecbae89cb68"><div class="ttname"><a href="libakrypt_8h.html#abb8a94ec74dcd719f5e85ecbae89cb68">ak_uint8</a></div><div class="ttdeci">unsigned char ak_uint8</div><div class="ttdef"><b>Definition:</b> <a href="libakrypt_8h_source.html#l00113">libakrypt.h:113</a></div></div>
+<div class="ttc" id="ak__buffer_8c_html_a243d38ade78feebf7816cbd5d775310a"><div class="ttname"><a href="ak__buffer_8c.html#a243d38ade78feebf7816cbd5d775310a">ak_buffer_free</a></div><div class="ttdeci">int ak_buffer_free(ak_buffer buff)</div><div class="ttdoc">Функция освобождает память, выделенную под данные (поле data структуры struct buffer )...</div><div class="ttdef"><b>Definition:</b> <a href="ak__buffer_8c_source.html#l00245">ak_buffer.c:245</a></div></div>
+<div class="ttc" id="libakrypt_8h_html_aa6db0eccf8222376f61f2f033a1bbe4c"><div class="ttname"><a href="libakrypt_8h.html#aa6db0eccf8222376f61f2f033a1bbe4c">ak_error_ok</a></div><div class="ttdeci">#define ak_error_ok</div><div class="ttdoc">Результат, говорящий об отсутствии ошибки. </div><div class="ttdef"><b>Definition:</b> <a href="libakrypt_8h_source.html#l00145">libakrypt.h:145</a></div></div>
+<div class="ttc" id="structbuffer_html_a821b3af00b683f25cf62978b933a551c"><div class="ttname"><a href="structbuffer.html#a821b3af00b683f25cf62978b933a551c">buffer::flag</a></div><div class="ttdeci">ak_bool flag</div><div class="ttdoc">флаг выделения памяти/владения данными </div><div class="ttdef"><b>Definition:</b> <a href="ak__buffer_8h_source.html#l00048">ak_buffer.h:48</a></div></div>
+<div class="ttc" id="libakrypt_8h_html_a8d5ecbffb7fc8e1aa60754ae866eb486a76821fa33e47cc8cbc32aecf832da9c0"><div class="ttname"><a href="libakrypt_8h.html#a8d5ecbffb7fc8e1aa60754ae866eb486a76821fa33e47cc8cbc32aecf832da9c0">ak_true</a></div><div class="ttdef"><b>Definition:</b> <a href="libakrypt_8h_source.html#l00125">libakrypt.h:125</a></div></div>
+<div class="ttc" id="ak__log_8c_html_a80a4822cbd184b3cbcc43096126eb52b"><div class="ttname"><a href="ak__log_8c.html#a80a4822cbd184b3cbcc43096126eb52b">ak_error_message</a></div><div class="ttdeci">int ak_error_message(const int code, const char *function, const char *message)</div><div class="ttdoc">Вывод сообщений о возникшей в процессе выполнения ошибке. </div><div class="ttdef"><b>Definition:</b> <a href="ak__log_8c_source.html#l00186">ak_log.c:186</a></div></div>
+<div class="ttc" id="libakrypt_8h_html_a3e8d10d4f38d2d8032c60cdca1f59db2"><div class="ttname"><a href="libakrypt_8h.html#a3e8d10d4f38d2d8032c60cdca1f59db2">ak_error_out_of_memory</a></div><div class="ttdeci">#define ak_error_out_of_memory</div><div class="ttdoc">Ошибка выделения оперативной памяти. </div><div class="ttdef"><b>Definition:</b> <a href="libakrypt_8h_source.html#l00147">libakrypt.h:147</a></div></div>
+<div class="ttc" id="structbuffer_html_a818f5267c323fb93d1a0d50f6cf11eea"><div class="ttname"><a href="structbuffer.html#a818f5267c323fb93d1a0d50f6cf11eea">buffer::alloc</a></div><div class="ttdeci">ak_function_alloc * alloc</div><div class="ttdoc">указатель на функцию выделения памяти под данные </div><div class="ttdef"><b>Definition:</b> <a href="ak__buffer_8h_source.html#l00050">ak_buffer.h:50</a></div></div>
+</div><!-- fragment -->
+<p><div class="dynheader">
+Граф вызовов:</div>
+<div class="dyncontent">
+<div class="center"><img src="ak__buffer_8h_a3f8fe4e6b88d3460ed57500abfdcb323_cgraph.png" border="0" usemap="#ak__buffer_8h_a3f8fe4e6b88d3460ed57500abfdcb323_cgraph" alt=""/></div>
+<!-- MAP 2 -->
+</div>
+</p>
+
+<p><div class="dynheader">
+Граф вызова функции:</div>
+<div class="dyncontent">
+<div class="center"><img src="ak__buffer_8h_a3f8fe4e6b88d3460ed57500abfdcb323_icgraph.png" border="0" usemap="#ak__buffer_8h_a3f8fe4e6b88d3460ed57500abfdcb323_icgraph" alt=""/></div>
+<!-- MAP 3 -->
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a84358be6b23f08525caa8276040c7447"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int ak_buffer_create </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="libakrypt_8h.html#a8618b346405887c26c4cda4b7e19a158">ak_buffer</a>&#160;</td>
+          <td class="paramname"><em>buff</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Инициализация буффера. </p>
+<p>Функция устанавливает значение полей структуры struct buffer в значения по-умолчанию.</p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">buff</td><td>указатель на структуру struct buffer </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd>В случае успеха возвращается ak_error_ok (ноль). В случае возникновения ошибки возвращается ее код. </dd></dl>
+
+<p>См. определение в файле <a class="el" href="ak__buffer_8c_source.html">ak_buffer.c</a> строка <a class="el" href="ak__buffer_8c_source.html#l00039">39</a></p>
+<div class="fragment"><div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;{</div><div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;  <span class="keywordflow">if</span>( buff == NULL ) {</div><div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    <a class="code" href="ak__log_8c.html#a80a4822cbd184b3cbcc43096126eb52b">ak_error_message</a>( <a class="code" href="libakrypt_8h.html#ab44706b2e13bc40499b30fb371ad7f9e">ak_error_null_pointer</a>, __func__, <span class="stringliteral">&quot;using a null pointer to a buffer&quot;</span> );</div><div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="libakrypt_8h.html#ab44706b2e13bc40499b30fb371ad7f9e">ak_error_null_pointer</a>;</div><div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;  }</div><div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;  buff-&gt;<a class="code" href="structbuffer.html#a0d9dd0697d4bd775e4f48135a8d9dad8">data</a> = NULL; buff-&gt;<a class="code" href="structbuffer.html#a854352f53b148adc24983a58a1866d66">size</a> = 0; buff-&gt;<a class="code" href="structbuffer.html#a821b3af00b683f25cf62978b933a551c">flag</a> = <a class="code" href="libakrypt_8h.html#a8d5ecbffb7fc8e1aa60754ae866eb486a872df325c5f9fac16ef66c17c1666908">ak_false</a>;</div><div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;  buff-&gt;<a class="code" href="structbuffer.html#a818f5267c323fb93d1a0d50f6cf11eea">alloc</a> = malloc; <span class="comment">/* по-умолчанию, используются обычные функции */</span></div><div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;  buff-&gt;<a class="code" href="structbuffer.html#a14f825140829d551e8812a93e4a3d0a8">free</a> = free;    <span class="comment">/* выделения/освобождения памяти */</span></div><div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160; <span class="keywordflow">return</span> <a class="code" href="libakrypt_8h.html#aa6db0eccf8222376f61f2f033a1bbe4c">ak_error_ok</a>;</div><div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;}</div><div class="ttc" id="structbuffer_html_a854352f53b148adc24983a58a1866d66"><div class="ttname"><a href="structbuffer.html#a854352f53b148adc24983a58a1866d66">buffer::size</a></div><div class="ttdeci">size_t size</div><div class="ttdoc">размер данных (в байтах) </div><div class="ttdef"><b>Definition:</b> <a href="ak__buffer_8h_source.html#l00044">ak_buffer.h:44</a></div></div>
+<div class="ttc" id="structbuffer_html_a14f825140829d551e8812a93e4a3d0a8"><div class="ttname"><a href="structbuffer.html#a14f825140829d551e8812a93e4a3d0a8">buffer::free</a></div><div class="ttdeci">ak_function_free * free</div><div class="ttdoc">указатель на функцию освобождения данных </div><div class="ttdef"><b>Definition:</b> <a href="ak__buffer_8h_source.html#l00052">ak_buffer.h:52</a></div></div>
+<div class="ttc" id="libakrypt_8h_html_a8d5ecbffb7fc8e1aa60754ae866eb486a872df325c5f9fac16ef66c17c1666908"><div class="ttname"><a href="libakrypt_8h.html#a8d5ecbffb7fc8e1aa60754ae866eb486a872df325c5f9fac16ef66c17c1666908">ak_false</a></div><div class="ttdef"><b>Definition:</b> <a href="libakrypt_8h_source.html#l00125">libakrypt.h:125</a></div></div>
+<div class="ttc" id="structbuffer_html_a0d9dd0697d4bd775e4f48135a8d9dad8"><div class="ttname"><a href="structbuffer.html#a0d9dd0697d4bd775e4f48135a8d9dad8">buffer::data</a></div><div class="ttdeci">ak_pointer data</div><div class="ttdoc">указатель на данные </div><div class="ttdef"><b>Definition:</b> <a href="ak__buffer_8h_source.html#l00046">ak_buffer.h:46</a></div></div>
+<div class="ttc" id="libakrypt_8h_html_ab44706b2e13bc40499b30fb371ad7f9e"><div class="ttname"><a href="libakrypt_8h.html#ab44706b2e13bc40499b30fb371ad7f9e">ak_error_null_pointer</a></div><div class="ttdeci">#define ak_error_null_pointer</div><div class="ttdoc">Ошибка, возникающая при доступе или передаче в качестве аргумента функции null указателя. </div><div class="ttdef"><b>Definition:</b> <a href="libakrypt_8h_source.html#l00149">libakrypt.h:149</a></div></div>
+<div class="ttc" id="libakrypt_8h_html_aa6db0eccf8222376f61f2f033a1bbe4c"><div class="ttname"><a href="libakrypt_8h.html#aa6db0eccf8222376f61f2f033a1bbe4c">ak_error_ok</a></div><div class="ttdeci">#define ak_error_ok</div><div class="ttdoc">Результат, говорящий об отсутствии ошибки. </div><div class="ttdef"><b>Definition:</b> <a href="libakrypt_8h_source.html#l00145">libakrypt.h:145</a></div></div>
+<div class="ttc" id="structbuffer_html_a821b3af00b683f25cf62978b933a551c"><div class="ttname"><a href="structbuffer.html#a821b3af00b683f25cf62978b933a551c">buffer::flag</a></div><div class="ttdeci">ak_bool flag</div><div class="ttdoc">флаг выделения памяти/владения данными </div><div class="ttdef"><b>Definition:</b> <a href="ak__buffer_8h_source.html#l00048">ak_buffer.h:48</a></div></div>
+<div class="ttc" id="ak__log_8c_html_a80a4822cbd184b3cbcc43096126eb52b"><div class="ttname"><a href="ak__log_8c.html#a80a4822cbd184b3cbcc43096126eb52b">ak_error_message</a></div><div class="ttdeci">int ak_error_message(const int code, const char *function, const char *message)</div><div class="ttdoc">Вывод сообщений о возникшей в процессе выполнения ошибке. </div><div class="ttdef"><b>Definition:</b> <a href="ak__log_8c_source.html#l00186">ak_log.c:186</a></div></div>
+<div class="ttc" id="structbuffer_html_a818f5267c323fb93d1a0d50f6cf11eea"><div class="ttname"><a href="structbuffer.html#a818f5267c323fb93d1a0d50f6cf11eea">buffer::alloc</a></div><div class="ttdeci">ak_function_alloc * alloc</div><div class="ttdoc">указатель на функцию выделения памяти под данные </div><div class="ttdef"><b>Definition:</b> <a href="ak__buffer_8h_source.html#l00050">ak_buffer.h:50</a></div></div>
+</div><!-- fragment -->
+<p><div class="dynheader">
+Граф вызовов:</div>
+<div class="dyncontent">
+<div class="center"><img src="ak__buffer_8h_a84358be6b23f08525caa8276040c7447_cgraph.png" border="0" usemap="#ak__buffer_8h_a84358be6b23f08525caa8276040c7447_cgraph" alt=""/></div>
+<!-- MAP 4 -->
+</div>
+</p>
+
+<p><div class="dynheader">
+Граф вызова функции:</div>
+<div class="dyncontent">
+<div class="center"><img src="ak__buffer_8h_a84358be6b23f08525caa8276040c7447_icgraph.png" border="0" usemap="#ak__buffer_8h_a84358be6b23f08525caa8276040c7447_icgraph" alt=""/></div>
+<!-- MAP 5 -->
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="aed625a91942f5833e0dc980f930bea1a"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int ak_buffer_create_function_size </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="libakrypt_8h.html#a8618b346405887c26c4cda4b7e19a158">ak_buffer</a>&#160;</td>
+          <td class="paramname"><em>buff</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="libakrypt_8h.html#a7bab2f9a48d0aedeb3fb289d9c416815">ak_function_alloc</a> *&#160;</td>
+          <td class="paramname"><em>falloc</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="libakrypt_8h.html#a2d34a5a00ae829234843e3082e719776">ak_function_free</a> *&#160;</td>
+          <td class="paramname"><em>ffree</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const size_t&#160;</td>
+          <td class="paramname"><em>size</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Инициализация буффера с заданными обработчиками выделения и освобождения памяти. </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">buff</td><td>указатель на структуру struct buffer </td></tr>
+    <tr><td class="paramname">falloc</td><td>указатель на функцию выделения памяти </td></tr>
+    <tr><td class="paramname">ffree</td><td>указатель на функцию освобождения памяти </td></tr>
+    <tr><td class="paramname">size</td><td>размер выделяемой под буффер памяти (в байтах) </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd>Функция возвращает указатель на созданный буффер. Если произошла ошибка, то возвращается NULL </dd></dl>
+
+<p>См. определение в файле <a class="el" href="ak__buffer_8c_source.html">ak_buffer.c</a> строка <a class="el" href="ak__buffer_8c_source.html#l00082">82</a></p>
+<div class="fragment"><div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;{</div><div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;  <span class="keywordtype">int</span> error = <a class="code" href="libakrypt_8h.html#aa6db0eccf8222376f61f2f033a1bbe4c">ak_error_ok</a>;</div><div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160; <span class="comment">/* создаем буффер со значениями по умолчанию */</span></div><div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;  <span class="keywordflow">if</span>(( error = <a class="code" href="ak__buffer_8c.html#a03c2366ad917d99ec79b402c8088e19f">ak_buffer_create</a>( buff )) != <a class="code" href="libakrypt_8h.html#aa6db0eccf8222376f61f2f033a1bbe4c">ak_error_ok</a> ) {</div><div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    <a class="code" href="ak__log_8c.html#a80a4822cbd184b3cbcc43096126eb52b">ak_error_message</a>( error, __func__, <span class="stringliteral">&quot;wrong buffer context creation&quot;</span> );</div><div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;    <span class="keywordflow">return</span> error;</div><div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;  }</div><div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160; <span class="comment">/* меняем указатели на функции выделения и очистки памяти */</span></div><div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;  buff-&gt;<a class="code" href="structbuffer.html#a14f825140829d551e8812a93e4a3d0a8">free</a> = ffree; buff-&gt;<a class="code" href="structbuffer.html#a818f5267c323fb93d1a0d50f6cf11eea">alloc</a> = falloc;</div><div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160; <span class="comment">/* только теперь реально выделяем память под данные */</span></div><div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;  <span class="keywordflow">if</span>(( error = <a class="code" href="ak__buffer_8c.html#a5e401c353e45f805c19ac520d9fcdae7">ak_buffer_alloc</a>( buff, size )) != <a class="code" href="libakrypt_8h.html#aa6db0eccf8222376f61f2f033a1bbe4c">ak_error_ok</a> ) {</div><div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;    <a class="code" href="ak__log_8c.html#a80a4822cbd184b3cbcc43096126eb52b">ak_error_message</a>( error, __func__, <span class="stringliteral">&quot;wrong memory allocation for buffer context&quot;</span> );</div><div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;    <a class="code" href="ak__buffer_8c.html#a25ac100ac189695aeafbf8f81db91bf7">ak_buffer_destroy</a>( buff );</div><div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;    <span class="keywordflow">return</span> error;</div><div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;  }</div><div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160; <span class="keywordflow">return</span> <a class="code" href="libakrypt_8h.html#aa6db0eccf8222376f61f2f033a1bbe4c">ak_error_ok</a>;</div><div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;}</div><div class="ttc" id="structbuffer_html_a14f825140829d551e8812a93e4a3d0a8"><div class="ttname"><a href="structbuffer.html#a14f825140829d551e8812a93e4a3d0a8">buffer::free</a></div><div class="ttdeci">ak_function_free * free</div><div class="ttdoc">указатель на функцию освобождения данных </div><div class="ttdef"><b>Definition:</b> <a href="ak__buffer_8h_source.html#l00052">ak_buffer.h:52</a></div></div>
+<div class="ttc" id="ak__buffer_8c_html_a25ac100ac189695aeafbf8f81db91bf7"><div class="ttname"><a href="ak__buffer_8c.html#a25ac100ac189695aeafbf8f81db91bf7">ak_buffer_destroy</a></div><div class="ttdeci">int ak_buffer_destroy(ak_buffer buff)</div><div class="ttdoc">Уничтожение данных, хранящиеся в полях структуры struct buffer. </div><div class="ttdef"><b>Definition:</b> <a href="ak__buffer_8c_source.html#l00319">ak_buffer.c:319</a></div></div>
+<div class="ttc" id="libakrypt_8h_html_aa6db0eccf8222376f61f2f033a1bbe4c"><div class="ttname"><a href="libakrypt_8h.html#aa6db0eccf8222376f61f2f033a1bbe4c">ak_error_ok</a></div><div class="ttdeci">#define ak_error_ok</div><div class="ttdoc">Результат, говорящий об отсутствии ошибки. </div><div class="ttdef"><b>Definition:</b> <a href="libakrypt_8h_source.html#l00145">libakrypt.h:145</a></div></div>
+<div class="ttc" id="ak__buffer_8c_html_a5e401c353e45f805c19ac520d9fcdae7"><div class="ttname"><a href="ak__buffer_8c.html#a5e401c353e45f805c19ac520d9fcdae7">ak_buffer_alloc</a></div><div class="ttdeci">int ak_buffer_alloc(ak_buffer buff, const size_t size)</div><div class="ttdoc">Функция выделяет память под данные, хранимые в буффере. </div><div class="ttdef"><b>Definition:</b> <a href="ak__buffer_8c_source.html#l00265">ak_buffer.c:265</a></div></div>
+<div class="ttc" id="ak__log_8c_html_a80a4822cbd184b3cbcc43096126eb52b"><div class="ttname"><a href="ak__log_8c.html#a80a4822cbd184b3cbcc43096126eb52b">ak_error_message</a></div><div class="ttdeci">int ak_error_message(const int code, const char *function, const char *message)</div><div class="ttdoc">Вывод сообщений о возникшей в процессе выполнения ошибке. </div><div class="ttdef"><b>Definition:</b> <a href="ak__log_8c_source.html#l00186">ak_log.c:186</a></div></div>
+<div class="ttc" id="ak__buffer_8c_html_a03c2366ad917d99ec79b402c8088e19f"><div class="ttname"><a href="ak__buffer_8c.html#a03c2366ad917d99ec79b402c8088e19f">ak_buffer_create</a></div><div class="ttdeci">int ak_buffer_create(ak_buffer buff)</div><div class="ttdoc">Инициализация буффера. </div><div class="ttdef"><b>Definition:</b> <a href="ak__buffer_8c_source.html#l00039">ak_buffer.c:39</a></div></div>
+<div class="ttc" id="structbuffer_html_a818f5267c323fb93d1a0d50f6cf11eea"><div class="ttname"><a href="structbuffer.html#a818f5267c323fb93d1a0d50f6cf11eea">buffer::alloc</a></div><div class="ttdeci">ak_function_alloc * alloc</div><div class="ttdoc">указатель на функцию выделения памяти под данные </div><div class="ttdef"><b>Definition:</b> <a href="ak__buffer_8h_source.html#l00050">ak_buffer.h:50</a></div></div>
+</div><!-- fragment -->
+<p><div class="dynheader">
+Граф вызовов:</div>
+<div class="dyncontent">
+<div class="center"><img src="ak__buffer_8h_aed625a91942f5833e0dc980f930bea1a_cgraph.png" border="0" usemap="#ak__buffer_8h_aed625a91942f5833e0dc980f930bea1a_cgraph" alt=""/></div>
+<!-- MAP 6 -->
+</div>
+</p>
+
+<p><div class="dynheader">
+Граф вызова функции:</div>
+<div class="dyncontent">
+<div class="center"><img src="ak__buffer_8h_aed625a91942f5833e0dc980f930bea1a_icgraph.png" border="0" usemap="#ak__buffer_8h_aed625a91942f5833e0dc980f930bea1a_icgraph" alt=""/></div>
+<!-- MAP 7 -->
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a83b4acff7a870541944b51c841ba3e14"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int ak_buffer_create_size </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="libakrypt_8h.html#a8618b346405887c26c4cda4b7e19a158">ak_buffer</a>&#160;</td>
+          <td class="paramname"><em>buff</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const size_t&#160;</td>
+          <td class="paramname"><em>size</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Инициализация буффера и выделение памяти фиксированной длины. </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">buff</td><td>указатель на структуру struct buffer </td></tr>
+    <tr><td class="paramname">size</td><td>размер инициализируемого буффера в байтах</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd>В случае успеха возвращается ak_error_ok (ноль). В случае возникновения ошибки возвращается ее код. </dd></dl>
+
+<p>См. определение в файле <a class="el" href="ak__buffer_8c_source.html">ak_buffer.c</a> строка <a class="el" href="ak__buffer_8c_source.html#l00058">58</a></p>
+<div class="fragment"><div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;{</div><div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;  <span class="keywordtype">int</span> error = <a class="code" href="libakrypt_8h.html#aa6db0eccf8222376f61f2f033a1bbe4c">ak_error_ok</a>;</div><div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;  <span class="keywordflow">if</span>(( error = <a class="code" href="ak__buffer_8c.html#a03c2366ad917d99ec79b402c8088e19f">ak_buffer_create</a>( buff )) != <a class="code" href="libakrypt_8h.html#aa6db0eccf8222376f61f2f033a1bbe4c">ak_error_ok</a> ) {</div><div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    <a class="code" href="ak__log_8c.html#a80a4822cbd184b3cbcc43096126eb52b">ak_error_message</a>( error, __func__, <span class="stringliteral">&quot;wrong buffer context creation&quot;</span> );</div><div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    <span class="keywordflow">return</span> error;</div><div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;  }</div><div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;  <span class="keywordflow">if</span>(( error = <a class="code" href="ak__buffer_8c.html#a5e401c353e45f805c19ac520d9fcdae7">ak_buffer_alloc</a>( buff, size )) != <a class="code" href="libakrypt_8h.html#aa6db0eccf8222376f61f2f033a1bbe4c">ak_error_ok</a> ) {</div><div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    <a class="code" href="ak__log_8c.html#a80a4822cbd184b3cbcc43096126eb52b">ak_error_message</a>( error, __func__, <span class="stringliteral">&quot;wrong memory allocation for buffer context&quot;</span> );</div><div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    <a class="code" href="ak__buffer_8c.html#a25ac100ac189695aeafbf8f81db91bf7">ak_buffer_destroy</a>( buff );</div><div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    <span class="keywordflow">return</span> error;</div><div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;  }</div><div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;</div><div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160; <span class="keywordflow">return</span> <a class="code" href="libakrypt_8h.html#aa6db0eccf8222376f61f2f033a1bbe4c">ak_error_ok</a>;</div><div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;}</div><div class="ttc" id="ak__buffer_8c_html_a25ac100ac189695aeafbf8f81db91bf7"><div class="ttname"><a href="ak__buffer_8c.html#a25ac100ac189695aeafbf8f81db91bf7">ak_buffer_destroy</a></div><div class="ttdeci">int ak_buffer_destroy(ak_buffer buff)</div><div class="ttdoc">Уничтожение данных, хранящиеся в полях структуры struct buffer. </div><div class="ttdef"><b>Definition:</b> <a href="ak__buffer_8c_source.html#l00319">ak_buffer.c:319</a></div></div>
+<div class="ttc" id="libakrypt_8h_html_aa6db0eccf8222376f61f2f033a1bbe4c"><div class="ttname"><a href="libakrypt_8h.html#aa6db0eccf8222376f61f2f033a1bbe4c">ak_error_ok</a></div><div class="ttdeci">#define ak_error_ok</div><div class="ttdoc">Результат, говорящий об отсутствии ошибки. </div><div class="ttdef"><b>Definition:</b> <a href="libakrypt_8h_source.html#l00145">libakrypt.h:145</a></div></div>
+<div class="ttc" id="ak__buffer_8c_html_a5e401c353e45f805c19ac520d9fcdae7"><div class="ttname"><a href="ak__buffer_8c.html#a5e401c353e45f805c19ac520d9fcdae7">ak_buffer_alloc</a></div><div class="ttdeci">int ak_buffer_alloc(ak_buffer buff, const size_t size)</div><div class="ttdoc">Функция выделяет память под данные, хранимые в буффере. </div><div class="ttdef"><b>Definition:</b> <a href="ak__buffer_8c_source.html#l00265">ak_buffer.c:265</a></div></div>
+<div class="ttc" id="ak__log_8c_html_a80a4822cbd184b3cbcc43096126eb52b"><div class="ttname"><a href="ak__log_8c.html#a80a4822cbd184b3cbcc43096126eb52b">ak_error_message</a></div><div class="ttdeci">int ak_error_message(const int code, const char *function, const char *message)</div><div class="ttdoc">Вывод сообщений о возникшей в процессе выполнения ошибке. </div><div class="ttdef"><b>Definition:</b> <a href="ak__log_8c_source.html#l00186">ak_log.c:186</a></div></div>
+<div class="ttc" id="ak__buffer_8c_html_a03c2366ad917d99ec79b402c8088e19f"><div class="ttname"><a href="ak__buffer_8c.html#a03c2366ad917d99ec79b402c8088e19f">ak_buffer_create</a></div><div class="ttdeci">int ak_buffer_create(ak_buffer buff)</div><div class="ttdoc">Инициализация буффера. </div><div class="ttdef"><b>Definition:</b> <a href="ak__buffer_8c_source.html#l00039">ak_buffer.c:39</a></div></div>
+</div><!-- fragment -->
+<p><div class="dynheader">
+Граф вызовов:</div>
+<div class="dyncontent">
+<div class="center"><img src="ak__buffer_8h_a83b4acff7a870541944b51c841ba3e14_cgraph.png" border="0" usemap="#ak__buffer_8h_a83b4acff7a870541944b51c841ba3e14_cgraph" alt=""/></div>
+<!-- MAP 8 -->
+</div>
+</p>
+
+<p><div class="dynheader">
+Граф вызова функции:</div>
+<div class="dyncontent">
+<div class="center"><img src="ak__buffer_8h_a83b4acff7a870541944b51c841ba3e14_icgraph.png" border="0" usemap="#ak__buffer_8h_a83b4acff7a870541944b51c841ba3e14_icgraph" alt=""/></div>
+<!-- MAP 9 -->
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="ae7e213c535c0a2b2dd3538dadcc3ca2e"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int ak_buffer_destroy </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="libakrypt_8h.html#a8618b346405887c26c4cda4b7e19a158">ak_buffer</a>&#160;</td>
+          <td class="paramname"><em>buff</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Уничтожение данных, хранящиеся в полях структуры struct buffer. </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">buff</td><td>указатель на структуру struct buffer </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd>В случае успеха возвращается ak_error_ok (ноль). В случае возникновения ошибки возвращается ее код. </dd></dl>
+
+<p>См. определение в файле <a class="el" href="ak__buffer_8c_source.html">ak_buffer.c</a> строка <a class="el" href="ak__buffer_8c_source.html#l00319">319</a></p>
+<div class="fragment"><div class="line"><a name="l00320"></a><span class="lineno">  320</span>&#160;{</div><div class="line"><a name="l00321"></a><span class="lineno">  321</span>&#160;  <span class="keywordflow">if</span>( buff == NULL ) {</div><div class="line"><a name="l00322"></a><span class="lineno">  322</span>&#160;   <a class="code" href="ak__log_8c.html#a80a4822cbd184b3cbcc43096126eb52b">ak_error_message</a>( <a class="code" href="libakrypt_8h.html#ab44706b2e13bc40499b30fb371ad7f9e">ak_error_null_pointer</a>, __func__, <span class="stringliteral">&quot;use a null pointer to a buffer&quot;</span> );</div><div class="line"><a name="l00323"></a><span class="lineno">  323</span>&#160;   <span class="keywordflow">return</span> <a class="code" href="libakrypt_8h.html#ab44706b2e13bc40499b30fb371ad7f9e">ak_error_null_pointer</a>;</div><div class="line"><a name="l00324"></a><span class="lineno">  324</span>&#160;  }</div><div class="line"><a name="l00325"></a><span class="lineno">  325</span>&#160;  <a class="code" href="ak__buffer_8c.html#a243d38ade78feebf7816cbd5d775310a">ak_buffer_free</a>( buff );</div><div class="line"><a name="l00326"></a><span class="lineno">  326</span>&#160;  buff-&gt;<a class="code" href="structbuffer.html#a818f5267c323fb93d1a0d50f6cf11eea">alloc</a> = NULL; buff-&gt;<a class="code" href="structbuffer.html#a14f825140829d551e8812a93e4a3d0a8">free</a> = NULL;</div><div class="line"><a name="l00327"></a><span class="lineno">  327</span>&#160; <span class="keywordflow">return</span> <a class="code" href="libakrypt_8h.html#aa6db0eccf8222376f61f2f033a1bbe4c">ak_error_ok</a>;</div><div class="line"><a name="l00328"></a><span class="lineno">  328</span>&#160;}</div><div class="ttc" id="structbuffer_html_a14f825140829d551e8812a93e4a3d0a8"><div class="ttname"><a href="structbuffer.html#a14f825140829d551e8812a93e4a3d0a8">buffer::free</a></div><div class="ttdeci">ak_function_free * free</div><div class="ttdoc">указатель на функцию освобождения данных </div><div class="ttdef"><b>Definition:</b> <a href="ak__buffer_8h_source.html#l00052">ak_buffer.h:52</a></div></div>
+<div class="ttc" id="ak__buffer_8c_html_a243d38ade78feebf7816cbd5d775310a"><div class="ttname"><a href="ak__buffer_8c.html#a243d38ade78feebf7816cbd5d775310a">ak_buffer_free</a></div><div class="ttdeci">int ak_buffer_free(ak_buffer buff)</div><div class="ttdoc">Функция освобождает память, выделенную под данные (поле data структуры struct buffer )...</div><div class="ttdef"><b>Definition:</b> <a href="ak__buffer_8c_source.html#l00245">ak_buffer.c:245</a></div></div>
+<div class="ttc" id="libakrypt_8h_html_ab44706b2e13bc40499b30fb371ad7f9e"><div class="ttname"><a href="libakrypt_8h.html#ab44706b2e13bc40499b30fb371ad7f9e">ak_error_null_pointer</a></div><div class="ttdeci">#define ak_error_null_pointer</div><div class="ttdoc">Ошибка, возникающая при доступе или передаче в качестве аргумента функции null указателя. </div><div class="ttdef"><b>Definition:</b> <a href="libakrypt_8h_source.html#l00149">libakrypt.h:149</a></div></div>
+<div class="ttc" id="libakrypt_8h_html_aa6db0eccf8222376f61f2f033a1bbe4c"><div class="ttname"><a href="libakrypt_8h.html#aa6db0eccf8222376f61f2f033a1bbe4c">ak_error_ok</a></div><div class="ttdeci">#define ak_error_ok</div><div class="ttdoc">Результат, говорящий об отсутствии ошибки. </div><div class="ttdef"><b>Definition:</b> <a href="libakrypt_8h_source.html#l00145">libakrypt.h:145</a></div></div>
+<div class="ttc" id="ak__log_8c_html_a80a4822cbd184b3cbcc43096126eb52b"><div class="ttname"><a href="ak__log_8c.html#a80a4822cbd184b3cbcc43096126eb52b">ak_error_message</a></div><div class="ttdeci">int ak_error_message(const int code, const char *function, const char *message)</div><div class="ttdoc">Вывод сообщений о возникшей в процессе выполнения ошибке. </div><div class="ttdef"><b>Definition:</b> <a href="ak__log_8c_source.html#l00186">ak_log.c:186</a></div></div>
+<div class="ttc" id="structbuffer_html_a818f5267c323fb93d1a0d50f6cf11eea"><div class="ttname"><a href="structbuffer.html#a818f5267c323fb93d1a0d50f6cf11eea">buffer::alloc</a></div><div class="ttdeci">ak_function_alloc * alloc</div><div class="ttdoc">указатель на функцию выделения памяти под данные </div><div class="ttdef"><b>Definition:</b> <a href="ak__buffer_8h_source.html#l00050">ak_buffer.h:50</a></div></div>
+</div><!-- fragment -->
+<p><div class="dynheader">
+Граф вызовов:</div>
+<div class="dyncontent">
+<div class="center"><img src="ak__buffer_8h_ae7e213c535c0a2b2dd3538dadcc3ca2e_cgraph.png" border="0" usemap="#ak__buffer_8h_ae7e213c535c0a2b2dd3538dadcc3ca2e_cgraph" alt=""/></div>
+<!-- MAP 10 -->
+</div>
+</p>
+
+<p><div class="dynheader">
+Граф вызова функции:</div>
+<div class="dyncontent">
+<div class="center"><img src="ak__buffer_8h_ae7e213c535c0a2b2dd3538dadcc3ca2e_icgraph.png" border="0" usemap="#ak__buffer_8h_ae7e213c535c0a2b2dd3538dadcc3ca2e_icgraph" alt=""/></div>
+<!-- MAP 11 -->
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a6685a25abbd1c2f4e432219d283f8d26"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int ak_buffer_free </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="libakrypt_8h.html#a8618b346405887c26c4cda4b7e19a158">ak_buffer</a>&#160;</td>
+          <td class="paramname"><em>buff</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Функция освобождает память, выделенную под данные (поле data структуры struct buffer ). </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">buff</td><td>указатель на структуру struct buffer для которого освобождается память. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd>В случае успеха возвращается ak_error_ok (ноль). В случае возникновения ошибки возвращается ее код. </dd></dl>
+
+<p>См. определение в файле <a class="el" href="ak__buffer_8c_source.html">ak_buffer.c</a> строка <a class="el" href="ak__buffer_8c_source.html#l00245">245</a></p>
+<div class="fragment"><div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160;{</div><div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160;  <span class="keywordflow">if</span>( buff == NULL ) {</div><div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160;   <a class="code" href="ak__log_8c.html#a80a4822cbd184b3cbcc43096126eb52b">ak_error_message</a>( <a class="code" href="libakrypt_8h.html#ab44706b2e13bc40499b30fb371ad7f9e">ak_error_null_pointer</a>, __func__, <span class="stringliteral">&quot;use a null pointer to a buffer&quot;</span> );</div><div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160;   <span class="keywordflow">return</span> <a class="code" href="libakrypt_8h.html#ab44706b2e13bc40499b30fb371ad7f9e">ak_error_null_pointer</a>;</div><div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160;  }</div><div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160;  <span class="keywordflow">if</span>( buff-&gt;<a class="code" href="structbuffer.html#a821b3af00b683f25cf62978b933a551c">flag</a> == <a class="code" href="libakrypt_8h.html#a8d5ecbffb7fc8e1aa60754ae866eb486a76821fa33e47cc8cbc32aecf832da9c0">ak_true</a> ) {</div><div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160;    memset( buff-&gt;<a class="code" href="structbuffer.html#a0d9dd0697d4bd775e4f48135a8d9dad8">data</a>, 0, buff-&gt;<a class="code" href="structbuffer.html#a854352f53b148adc24983a58a1866d66">size</a> );</div><div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160;    buff-&gt;<a class="code" href="structbuffer.html#a14f825140829d551e8812a93e4a3d0a8">free</a>( buff-&gt;<a class="code" href="structbuffer.html#a0d9dd0697d4bd775e4f48135a8d9dad8">data</a> );</div><div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160;  }</div><div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160;  buff-&gt;<a class="code" href="structbuffer.html#a0d9dd0697d4bd775e4f48135a8d9dad8">data</a> = NULL; buff-&gt;<a class="code" href="structbuffer.html#a854352f53b148adc24983a58a1866d66">size</a> = 0; buff-&gt;<a class="code" href="structbuffer.html#a821b3af00b683f25cf62978b933a551c">flag</a> = <a class="code" href="libakrypt_8h.html#a8d5ecbffb7fc8e1aa60754ae866eb486a872df325c5f9fac16ef66c17c1666908">ak_false</a>;</div><div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160;  <span class="keywordflow">return</span> <a class="code" href="libakrypt_8h.html#aa6db0eccf8222376f61f2f033a1bbe4c">ak_error_ok</a>;</div><div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160;}</div><div class="ttc" id="structbuffer_html_a854352f53b148adc24983a58a1866d66"><div class="ttname"><a href="structbuffer.html#a854352f53b148adc24983a58a1866d66">buffer::size</a></div><div class="ttdeci">size_t size</div><div class="ttdoc">размер данных (в байтах) </div><div class="ttdef"><b>Definition:</b> <a href="ak__buffer_8h_source.html#l00044">ak_buffer.h:44</a></div></div>
+<div class="ttc" id="structbuffer_html_a14f825140829d551e8812a93e4a3d0a8"><div class="ttname"><a href="structbuffer.html#a14f825140829d551e8812a93e4a3d0a8">buffer::free</a></div><div class="ttdeci">ak_function_free * free</div><div class="ttdoc">указатель на функцию освобождения данных </div><div class="ttdef"><b>Definition:</b> <a href="ak__buffer_8h_source.html#l00052">ak_buffer.h:52</a></div></div>
+<div class="ttc" id="libakrypt_8h_html_a8d5ecbffb7fc8e1aa60754ae866eb486a872df325c5f9fac16ef66c17c1666908"><div class="ttname"><a href="libakrypt_8h.html#a8d5ecbffb7fc8e1aa60754ae866eb486a872df325c5f9fac16ef66c17c1666908">ak_false</a></div><div class="ttdef"><b>Definition:</b> <a href="libakrypt_8h_source.html#l00125">libakrypt.h:125</a></div></div>
+<div class="ttc" id="structbuffer_html_a0d9dd0697d4bd775e4f48135a8d9dad8"><div class="ttname"><a href="structbuffer.html#a0d9dd0697d4bd775e4f48135a8d9dad8">buffer::data</a></div><div class="ttdeci">ak_pointer data</div><div class="ttdoc">указатель на данные </div><div class="ttdef"><b>Definition:</b> <a href="ak__buffer_8h_source.html#l00046">ak_buffer.h:46</a></div></div>
+<div class="ttc" id="libakrypt_8h_html_ab44706b2e13bc40499b30fb371ad7f9e"><div class="ttname"><a href="libakrypt_8h.html#ab44706b2e13bc40499b30fb371ad7f9e">ak_error_null_pointer</a></div><div class="ttdeci">#define ak_error_null_pointer</div><div class="ttdoc">Ошибка, возникающая при доступе или передаче в качестве аргумента функции null указателя. </div><div class="ttdef"><b>Definition:</b> <a href="libakrypt_8h_source.html#l00149">libakrypt.h:149</a></div></div>
+<div class="ttc" id="libakrypt_8h_html_aa6db0eccf8222376f61f2f033a1bbe4c"><div class="ttname"><a href="libakrypt_8h.html#aa6db0eccf8222376f61f2f033a1bbe4c">ak_error_ok</a></div><div class="ttdeci">#define ak_error_ok</div><div class="ttdoc">Результат, говорящий об отсутствии ошибки. </div><div class="ttdef"><b>Definition:</b> <a href="libakrypt_8h_source.html#l00145">libakrypt.h:145</a></div></div>
+<div class="ttc" id="structbuffer_html_a821b3af00b683f25cf62978b933a551c"><div class="ttname"><a href="structbuffer.html#a821b3af00b683f25cf62978b933a551c">buffer::flag</a></div><div class="ttdeci">ak_bool flag</div><div class="ttdoc">флаг выделения памяти/владения данными </div><div class="ttdef"><b>Definition:</b> <a href="ak__buffer_8h_source.html#l00048">ak_buffer.h:48</a></div></div>
+<div class="ttc" id="libakrypt_8h_html_a8d5ecbffb7fc8e1aa60754ae866eb486a76821fa33e47cc8cbc32aecf832da9c0"><div class="ttname"><a href="libakrypt_8h.html#a8d5ecbffb7fc8e1aa60754ae866eb486a76821fa33e47cc8cbc32aecf832da9c0">ak_true</a></div><div class="ttdef"><b>Definition:</b> <a href="libakrypt_8h_source.html#l00125">libakrypt.h:125</a></div></div>
+<div class="ttc" id="ak__log_8c_html_a80a4822cbd184b3cbcc43096126eb52b"><div class="ttname"><a href="ak__log_8c.html#a80a4822cbd184b3cbcc43096126eb52b">ak_error_message</a></div><div class="ttdeci">int ak_error_message(const int code, const char *function, const char *message)</div><div class="ttdoc">Вывод сообщений о возникшей в процессе выполнения ошибке. </div><div class="ttdef"><b>Definition:</b> <a href="ak__log_8c_source.html#l00186">ak_log.c:186</a></div></div>
+</div><!-- fragment -->
+<p><div class="dynheader">
+Граф вызовов:</div>
+<div class="dyncontent">
+<div class="center"><img src="ak__buffer_8h_a6685a25abbd1c2f4e432219d283f8d26_cgraph.png" border="0" usemap="#ak__buffer_8h_a6685a25abbd1c2f4e432219d283f8d26_cgraph" alt=""/></div>
+<!-- MAP 12 -->
+</div>
+</p>
+
+<p><div class="dynheader">
+Граф вызова функции:</div>
+<div class="dyncontent">
+<div class="center"><img src="ak__buffer_8h_a6685a25abbd1c2f4e432219d283f8d26_icgraph.png" border="0" usemap="#ak__buffer_8h_a6685a25abbd1c2f4e432219d283f8d26_icgraph" alt=""/></div>
+<!-- MAP 13 -->
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a45810808057f45cf4da27a1446896713"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="libakrypt_8h.html#a8618b346405887c26c4cda4b7e19a158">ak_buffer</a> ak_buffer_new </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Создание буффера. </p>
+<p>Функция создает указатель на структуру struct buffer, устанавливает поля этой структуры в значения по-умолчанию и возвращает указатель на созданную структуру. </p><dl class="section return"><dt>Возвращает</dt><dd>Если указатель успешно создан, то он и возвращается. В случае возникновения ошибки возвращается NULL. </dd></dl>
+
+<p>См. определение в файле <a class="el" href="ak__buffer_8c_source.html">ak_buffer.c</a> строка <a class="el" href="ak__buffer_8c_source.html#l00108">108</a></p>
+<div class="fragment"><div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;{</div><div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;  <a class="code" href="structbuffer.html">ak_buffer</a> buff = ( <a class="code" href="libakrypt_8h.html#a8618b346405887c26c4cda4b7e19a158">ak_buffer</a> ) malloc( <span class="keyword">sizeof</span>( <span class="keyword">struct</span> <a class="code" href="structbuffer.html">buffer</a> ));</div><div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;  <span class="keywordflow">if</span>( buff != NULL ) <a class="code" href="ak__buffer_8c.html#a03c2366ad917d99ec79b402c8088e19f">ak_buffer_create</a>( buff );</div><div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;   <span class="keywordflow">else</span> <a class="code" href="ak__log_8c.html#a80a4822cbd184b3cbcc43096126eb52b">ak_error_message</a>( <a class="code" href="libakrypt_8h.html#a3e8d10d4f38d2d8032c60cdca1f59db2">ak_error_out_of_memory</a>, __func__, <span class="stringliteral">&quot;incorrect memory allocation&quot;</span> );</div><div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;  <span class="keywordflow">return</span> buff;</div><div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;}</div><div class="ttc" id="libakrypt_8h_html_a8618b346405887c26c4cda4b7e19a158"><div class="ttname"><a href="libakrypt_8h.html#a8618b346405887c26c4cda4b7e19a158">ak_buffer</a></div><div class="ttdeci">struct buffer * ak_buffer</div><div class="ttdoc">Контекст буффера. </div><div class="ttdef"><b>Definition:</b> <a href="libakrypt_8h_source.html#l00315">libakrypt.h:315</a></div></div>
+<div class="ttc" id="ak__log_8c_html_a80a4822cbd184b3cbcc43096126eb52b"><div class="ttname"><a href="ak__log_8c.html#a80a4822cbd184b3cbcc43096126eb52b">ak_error_message</a></div><div class="ttdeci">int ak_error_message(const int code, const char *function, const char *message)</div><div class="ttdoc">Вывод сообщений о возникшей в процессе выполнения ошибке. </div><div class="ttdef"><b>Definition:</b> <a href="ak__log_8c_source.html#l00186">ak_log.c:186</a></div></div>
+<div class="ttc" id="libakrypt_8h_html_a3e8d10d4f38d2d8032c60cdca1f59db2"><div class="ttname"><a href="libakrypt_8h.html#a3e8d10d4f38d2d8032c60cdca1f59db2">ak_error_out_of_memory</a></div><div class="ttdeci">#define ak_error_out_of_memory</div><div class="ttdoc">Ошибка выделения оперативной памяти. </div><div class="ttdef"><b>Definition:</b> <a href="libakrypt_8h_source.html#l00147">libakrypt.h:147</a></div></div>
+<div class="ttc" id="structbuffer_html"><div class="ttname"><a href="structbuffer.html">buffer</a></div><div class="ttdoc">Класс для хранения двоичных данных </div><div class="ttdef"><b>Definition:</b> <a href="ak__buffer_8h_source.html#l00042">ak_buffer.h:42</a></div></div>
+<div class="ttc" id="ak__buffer_8c_html_a03c2366ad917d99ec79b402c8088e19f"><div class="ttname"><a href="ak__buffer_8c.html#a03c2366ad917d99ec79b402c8088e19f">ak_buffer_create</a></div><div class="ttdeci">int ak_buffer_create(ak_buffer buff)</div><div class="ttdoc">Инициализация буффера. </div><div class="ttdef"><b>Definition:</b> <a href="ak__buffer_8c_source.html#l00039">ak_buffer.c:39</a></div></div>
+</div><!-- fragment -->
+<p><div class="dynheader">
+Граф вызовов:</div>
+<div class="dyncontent">
+<div class="center"><img src="ak__buffer_8h_a45810808057f45cf4da27a1446896713_cgraph.png" border="0" usemap="#ak__buffer_8h_a45810808057f45cf4da27a1446896713_cgraph" alt=""/></div>
+<!-- MAP 14 -->
+</div>
+</p>
+
+<p><div class="dynheader">
+Граф вызова функции:</div>
+<div class="dyncontent">
+<div class="center"><img src="ak__buffer_8h_a45810808057f45cf4da27a1446896713_icgraph.png" border="0" usemap="#ak__buffer_8h_a45810808057f45cf4da27a1446896713_icgraph" alt=""/></div>
+<!-- MAP 15 -->
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="af5711ed1418af37ce3a94407208b62f3"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="libakrypt_8h.html#a8618b346405887c26c4cda4b7e19a158">ak_buffer</a> ak_buffer_new_random </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="ak__random_8h.html#a02528de477a7fe808f4d32f41fa265ea">ak_random</a>&#160;</td>
+          <td class="paramname"><em>generator</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const size_t&#160;</td>
+          <td class="paramname"><em>size</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Функция создает буффер заданный длины со случайными значениями. </p>
+<p>Функция создает новый буффер заданного размера size и заполняет его псевдо-случайными значениями, выработанными с помощью заданного генератора generator.</p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">generator</td><td>Генератор псевдослучайных чисел, используемый для выработки случайного заполнения буффера </td></tr>
+    <tr><td class="paramname">size</td><td>Размер создаваемого буффера в байтах.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd>Функция возвращает указатель на созданный буффер. В случае возникновения ошибки возвращается NULL. Код ошибки может быть получен с помощью вызова <a class="el" href="ak__log_8c.html#aa0cdd429c558ca0448ce3a8e9529e920" title="Функция возвращает код последней ошибки выполнения программы. ">ak_error_get_value()</a>. </dd></dl>
+
+<p>См. определение в файле <a class="el" href="ak__buffer_8c_source.html">ak_buffer.c</a> строка <a class="el" href="ak__buffer_8c_source.html#l00660">660</a></p>
+<div class="fragment"><div class="line"><a name="l00661"></a><span class="lineno">  661</span>&#160;{</div><div class="line"><a name="l00662"></a><span class="lineno">  662</span>&#160;  <a class="code" href="structbuffer.html">ak_buffer</a> buff = NULL;</div><div class="line"><a name="l00663"></a><span class="lineno">  663</span>&#160;  <span class="keywordflow">if</span>( generator == NULL ) { <span class="comment">/* использование NULL-генератора */</span></div><div class="line"><a name="l00664"></a><span class="lineno">  664</span>&#160;    <a class="code" href="ak__log_8c.html#a80a4822cbd184b3cbcc43096126eb52b">ak_error_message</a>( <a class="code" href="libakrypt_8h.html#ab44706b2e13bc40499b30fb371ad7f9e">ak_error_null_pointer</a>, __func__, <span class="stringliteral">&quot;using a null pointer to random generator&quot;</span> );</div><div class="line"><a name="l00665"></a><span class="lineno">  665</span>&#160;    <span class="keywordflow">return</span> NULL;</div><div class="line"><a name="l00666"></a><span class="lineno">  666</span>&#160;  }</div><div class="line"><a name="l00667"></a><span class="lineno">  667</span>&#160;  <span class="keywordflow">if</span>( size &lt;= 0 ) { <span class="comment">/* присвоение данных неопределенной длины */</span></div><div class="line"><a name="l00668"></a><span class="lineno">  668</span>&#160;    <a class="code" href="ak__log_8c.html#a80a4822cbd184b3cbcc43096126eb52b">ak_error_message</a>( <a class="code" href="libakrypt_8h.html#a214549d6702a7ef1acacfb4b93147750">ak_error_zero_length</a>, __func__, <span class="stringliteral">&quot;using a data with non positive length&quot;</span> );</div><div class="line"><a name="l00669"></a><span class="lineno">  669</span>&#160;    <span class="keywordflow">return</span> NULL;</div><div class="line"><a name="l00670"></a><span class="lineno">  670</span>&#160;  }</div><div class="line"><a name="l00671"></a><span class="lineno">  671</span>&#160;</div><div class="line"><a name="l00672"></a><span class="lineno">  672</span>&#160;  <span class="comment">/* создаем буффер */</span></div><div class="line"><a name="l00673"></a><span class="lineno">  673</span>&#160;  <span class="keywordflow">if</span>(( buff = <a class="code" href="ak__buffer_8c.html#a8bae1683972ab208217ec3e9abb78200">ak_buffer_new_size</a>( size )) == NULL ) {</div><div class="line"><a name="l00674"></a><span class="lineno">  674</span>&#160;    <a class="code" href="ak__log_8c.html#a80a4822cbd184b3cbcc43096126eb52b">ak_error_message</a>( <a class="code" href="libakrypt_8h.html#a3e8d10d4f38d2d8032c60cdca1f59db2">ak_error_out_of_memory</a>, __func__, <span class="stringliteral">&quot;incorrect memory allocation&quot;</span> );</div><div class="line"><a name="l00675"></a><span class="lineno">  675</span>&#160;    <span class="keywordflow">return</span> NULL;</div><div class="line"><a name="l00676"></a><span class="lineno">  676</span>&#160;  }</div><div class="line"><a name="l00677"></a><span class="lineno">  677</span>&#160;  <span class="keywordflow">if</span>( generator-&gt;<a class="code" href="structrandom.html#a34c4359c2f54cc37cdf9ad5acecf115f">random</a>( generator, buff-&gt;<a class="code" href="structbuffer.html#a0d9dd0697d4bd775e4f48135a8d9dad8">data</a>, buff-&gt;<a class="code" href="structbuffer.html#a854352f53b148adc24983a58a1866d66">size</a> ) != <a class="code" href="libakrypt_8h.html#aa6db0eccf8222376f61f2f033a1bbe4c">ak_error_ok</a> ) {</div><div class="line"><a name="l00678"></a><span class="lineno">  678</span>&#160;    <a class="code" href="ak__log_8c.html#a80a4822cbd184b3cbcc43096126eb52b">ak_error_message</a>( <a class="code" href="ak__log_8c.html#aa0cdd429c558ca0448ce3a8e9529e920">ak_error_get_value</a>(), __func__, <span class="stringliteral">&quot;incorrect random data generation&quot;</span> );</div><div class="line"><a name="l00679"></a><span class="lineno">  679</span>&#160;    <span class="keywordflow">return</span> ( buff = <a class="code" href="ak__buffer_8c.html#a8211931355126eeb16e6b8d6ed7ba187">ak_buffer_delete</a>( buff ));</div><div class="line"><a name="l00680"></a><span class="lineno">  680</span>&#160;  }</div><div class="line"><a name="l00681"></a><span class="lineno">  681</span>&#160; <span class="keywordflow">return</span> buff;</div><div class="line"><a name="l00682"></a><span class="lineno">  682</span>&#160;}</div><div class="ttc" id="structbuffer_html_a854352f53b148adc24983a58a1866d66"><div class="ttname"><a href="structbuffer.html#a854352f53b148adc24983a58a1866d66">buffer::size</a></div><div class="ttdeci">size_t size</div><div class="ttdoc">размер данных (в байтах) </div><div class="ttdef"><b>Definition:</b> <a href="ak__buffer_8h_source.html#l00044">ak_buffer.h:44</a></div></div>
+<div class="ttc" id="structrandom_html_a34c4359c2f54cc37cdf9ad5acecf115f"><div class="ttname"><a href="structrandom.html#a34c4359c2f54cc37cdf9ad5acecf115f">random::random</a></div><div class="ttdeci">ak_function_random_ptr_const * random</div><div class="ttdoc">указатель на функцию выработки последователности псевдо-случайных байт </div><div class="ttdef"><b>Definition:</b> <a href="ak__random_8h_source.html#l00060">ak_random.h:60</a></div></div>
+<div class="ttc" id="structbuffer_html_a0d9dd0697d4bd775e4f48135a8d9dad8"><div class="ttname"><a href="structbuffer.html#a0d9dd0697d4bd775e4f48135a8d9dad8">buffer::data</a></div><div class="ttdeci">ak_pointer data</div><div class="ttdoc">указатель на данные </div><div class="ttdef"><b>Definition:</b> <a href="ak__buffer_8h_source.html#l00046">ak_buffer.h:46</a></div></div>
+<div class="ttc" id="ak__log_8c_html_aa0cdd429c558ca0448ce3a8e9529e920"><div class="ttname"><a href="ak__log_8c.html#aa0cdd429c558ca0448ce3a8e9529e920">ak_error_get_value</a></div><div class="ttdeci">int ak_error_get_value(void)</div><div class="ttdoc">Функция возвращает код последней ошибки выполнения программы. </div><div class="ttdef"><b>Definition:</b> <a href="ak__log_8c_source.html#l00067">ak_log.c:67</a></div></div>
+<div class="ttc" id="ak__buffer_8c_html_a8211931355126eeb16e6b8d6ed7ba187"><div class="ttname"><a href="ak__buffer_8c.html#a8211931355126eeb16e6b8d6ed7ba187">ak_buffer_delete</a></div><div class="ttdeci">ak_pointer ak_buffer_delete(ak_pointer buff)</div><div class="ttdoc">Уничтожение буффера. </div><div class="ttdef"><b>Definition:</b> <a href="ak__buffer_8c_source.html#l00338">ak_buffer.c:338</a></div></div>
+<div class="ttc" id="libakrypt_8h_html_ab44706b2e13bc40499b30fb371ad7f9e"><div class="ttname"><a href="libakrypt_8h.html#ab44706b2e13bc40499b30fb371ad7f9e">ak_error_null_pointer</a></div><div class="ttdeci">#define ak_error_null_pointer</div><div class="ttdoc">Ошибка, возникающая при доступе или передаче в качестве аргумента функции null указателя. </div><div class="ttdef"><b>Definition:</b> <a href="libakrypt_8h_source.html#l00149">libakrypt.h:149</a></div></div>
+<div class="ttc" id="libakrypt_8h_html_aa6db0eccf8222376f61f2f033a1bbe4c"><div class="ttname"><a href="libakrypt_8h.html#aa6db0eccf8222376f61f2f033a1bbe4c">ak_error_ok</a></div><div class="ttdeci">#define ak_error_ok</div><div class="ttdoc">Результат, говорящий об отсутствии ошибки. </div><div class="ttdef"><b>Definition:</b> <a href="libakrypt_8h_source.html#l00145">libakrypt.h:145</a></div></div>
+<div class="ttc" id="ak__log_8c_html_a80a4822cbd184b3cbcc43096126eb52b"><div class="ttname"><a href="ak__log_8c.html#a80a4822cbd184b3cbcc43096126eb52b">ak_error_message</a></div><div class="ttdeci">int ak_error_message(const int code, const char *function, const char *message)</div><div class="ttdoc">Вывод сообщений о возникшей в процессе выполнения ошибке. </div><div class="ttdef"><b>Definition:</b> <a href="ak__log_8c_source.html#l00186">ak_log.c:186</a></div></div>
+<div class="ttc" id="libakrypt_8h_html_a3e8d10d4f38d2d8032c60cdca1f59db2"><div class="ttname"><a href="libakrypt_8h.html#a3e8d10d4f38d2d8032c60cdca1f59db2">ak_error_out_of_memory</a></div><div class="ttdeci">#define ak_error_out_of_memory</div><div class="ttdoc">Ошибка выделения оперативной памяти. </div><div class="ttdef"><b>Definition:</b> <a href="libakrypt_8h_source.html#l00147">libakrypt.h:147</a></div></div>
+<div class="ttc" id="ak__buffer_8c_html_a8bae1683972ab208217ec3e9abb78200"><div class="ttname"><a href="ak__buffer_8c.html#a8bae1683972ab208217ec3e9abb78200">ak_buffer_new_size</a></div><div class="ttdeci">ak_buffer ak_buffer_new_size(const size_t size)</div><div class="ttdoc">Создание буффера заданного размера. </div><div class="ttdef"><b>Definition:</b> <a href="ak__buffer_8c_source.html#l00221">ak_buffer.c:221</a></div></div>
+<div class="ttc" id="structbuffer_html"><div class="ttname"><a href="structbuffer.html">buffer</a></div><div class="ttdoc">Класс для хранения двоичных данных </div><div class="ttdef"><b>Definition:</b> <a href="ak__buffer_8h_source.html#l00042">ak_buffer.h:42</a></div></div>
+<div class="ttc" id="libakrypt_8h_html_a214549d6702a7ef1acacfb4b93147750"><div class="ttname"><a href="libakrypt_8h.html#a214549d6702a7ef1acacfb4b93147750">ak_error_zero_length</a></div><div class="ttdeci">#define ak_error_zero_length</div><div class="ttdoc">Ошибка, возникащая при передаче аргументов функции или выделении памяти нулевой длины. </div><div class="ttdef"><b>Definition:</b> <a href="libakrypt_8h_source.html#l00151">libakrypt.h:151</a></div></div>
+</div><!-- fragment -->
+<p><div class="dynheader">
+Граф вызовов:</div>
+<div class="dyncontent">
+<div class="center"><img src="ak__buffer_8h_af5711ed1418af37ce3a94407208b62f3_cgraph.png" border="0" usemap="#ak__buffer_8h_af5711ed1418af37ce3a94407208b62f3_cgraph" alt=""/></div>
+<!-- MAP 16 -->
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="af48070e30993ea30ae3202930b6c6b20"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int ak_buffer_set_random </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="libakrypt_8h.html#a8618b346405887c26c4cda4b7e19a158">ak_buffer</a>&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="ak__random_8h.html#a02528de477a7fe808f4d32f41fa265ea">ak_random</a>&#160;</td>
+          <td class="paramname">&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Заполнение буффера случайными данными. </p>
+
+<p>См. определение в файле <a class="el" href="ak__buffer_8c_source.html">ak_buffer.c</a> строка <a class="el" href="ak__buffer_8c_source.html#l00404">404</a></p>
+<div class="fragment"><div class="line"><a name="l00405"></a><span class="lineno">  405</span>&#160;{</div><div class="line"><a name="l00406"></a><span class="lineno">  406</span>&#160;  <span class="keywordtype">int</span> result = <a class="code" href="libakrypt_8h.html#aa6db0eccf8222376f61f2f033a1bbe4c">ak_error_ok</a>;</div><div class="line"><a name="l00407"></a><span class="lineno">  407</span>&#160;</div><div class="line"><a name="l00408"></a><span class="lineno">  408</span>&#160;  <span class="keywordflow">if</span>( buff == NULL ) {</div><div class="line"><a name="l00409"></a><span class="lineno">  409</span>&#160;    <a class="code" href="ak__log_8c.html#a80a4822cbd184b3cbcc43096126eb52b">ak_error_message</a>( <a class="code" href="libakrypt_8h.html#ab44706b2e13bc40499b30fb371ad7f9e">ak_error_null_pointer</a>, __func__, <span class="stringliteral">&quot;using null pointer to buffer context&quot;</span> );</div><div class="line"><a name="l00410"></a><span class="lineno">  410</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="libakrypt_8h.html#ab44706b2e13bc40499b30fb371ad7f9e">ak_error_null_pointer</a>;</div><div class="line"><a name="l00411"></a><span class="lineno">  411</span>&#160;  }</div><div class="line"><a name="l00412"></a><span class="lineno">  412</span>&#160;  <span class="keywordflow">if</span>( generator == NULL ) {</div><div class="line"><a name="l00413"></a><span class="lineno">  413</span>&#160;    <a class="code" href="ak__log_8c.html#a80a4822cbd184b3cbcc43096126eb52b">ak_error_message</a>( <a class="code" href="libakrypt_8h.html#ab44706b2e13bc40499b30fb371ad7f9e">ak_error_null_pointer</a>, __func__, <span class="stringliteral">&quot;using null pointer to a random generator&quot;</span> );</div><div class="line"><a name="l00414"></a><span class="lineno">  414</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="libakrypt_8h.html#ab44706b2e13bc40499b30fb371ad7f9e">ak_error_null_pointer</a>;</div><div class="line"><a name="l00415"></a><span class="lineno">  415</span>&#160;  }</div><div class="line"><a name="l00416"></a><span class="lineno">  416</span>&#160;  <span class="keywordflow">if</span>( buff-&gt;data == NULL ) {</div><div class="line"><a name="l00417"></a><span class="lineno">  417</span>&#160;    <a class="code" href="ak__log_8c.html#a80a4822cbd184b3cbcc43096126eb52b">ak_error_message</a>( <a class="code" href="libakrypt_8h.html#ab44706b2e13bc40499b30fb371ad7f9e">ak_error_null_pointer</a>, __func__, <span class="stringliteral">&quot;using null pointer to internal buffer&quot;</span> );</div><div class="line"><a name="l00418"></a><span class="lineno">  418</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="libakrypt_8h.html#ab44706b2e13bc40499b30fb371ad7f9e">ak_error_null_pointer</a>;</div><div class="line"><a name="l00419"></a><span class="lineno">  419</span>&#160;  }</div><div class="line"><a name="l00420"></a><span class="lineno">  420</span>&#160;  <span class="keywordflow">if</span>( generator-&gt;random( generator, buff-&gt;data, buff-&gt;size ) != <a class="code" href="libakrypt_8h.html#aa6db0eccf8222376f61f2f033a1bbe4c">ak_error_ok</a> ) {</div><div class="line"><a name="l00421"></a><span class="lineno">  421</span>&#160;    <a class="code" href="ak__log_8c.html#a80a4822cbd184b3cbcc43096126eb52b">ak_error_message</a>( <a class="code" href="libakrypt_8h.html#a3ad87fc394dd5e8e885e1c6677a5d14b">ak_error_write_data</a>, __func__, <span class="stringliteral">&quot;incorrect randomizing internal buffer&quot;</span> );</div><div class="line"><a name="l00422"></a><span class="lineno">  422</span>&#160;    memset( buff-&gt;data, 0, buff-&gt;size );</div><div class="line"><a name="l00423"></a><span class="lineno">  423</span>&#160;    result = <a class="code" href="libakrypt_8h.html#a3ad87fc394dd5e8e885e1c6677a5d14b">ak_error_write_data</a>;</div><div class="line"><a name="l00424"></a><span class="lineno">  424</span>&#160;  }</div><div class="line"><a name="l00425"></a><span class="lineno">  425</span>&#160; <span class="keywordflow">return</span> result;</div><div class="line"><a name="l00426"></a><span class="lineno">  426</span>&#160;}</div><div class="ttc" id="libakrypt_8h_html_ab44706b2e13bc40499b30fb371ad7f9e"><div class="ttname"><a href="libakrypt_8h.html#ab44706b2e13bc40499b30fb371ad7f9e">ak_error_null_pointer</a></div><div class="ttdeci">#define ak_error_null_pointer</div><div class="ttdoc">Ошибка, возникающая при доступе или передаче в качестве аргумента функции null указателя. </div><div class="ttdef"><b>Definition:</b> <a href="libakrypt_8h_source.html#l00149">libakrypt.h:149</a></div></div>
+<div class="ttc" id="libakrypt_8h_html_aa6db0eccf8222376f61f2f033a1bbe4c"><div class="ttname"><a href="libakrypt_8h.html#aa6db0eccf8222376f61f2f033a1bbe4c">ak_error_ok</a></div><div class="ttdeci">#define ak_error_ok</div><div class="ttdoc">Результат, говорящий об отсутствии ошибки. </div><div class="ttdef"><b>Definition:</b> <a href="libakrypt_8h_source.html#l00145">libakrypt.h:145</a></div></div>
+<div class="ttc" id="ak__log_8c_html_a80a4822cbd184b3cbcc43096126eb52b"><div class="ttname"><a href="ak__log_8c.html#a80a4822cbd184b3cbcc43096126eb52b">ak_error_message</a></div><div class="ttdeci">int ak_error_message(const int code, const char *function, const char *message)</div><div class="ttdoc">Вывод сообщений о возникшей в процессе выполнения ошибке. </div><div class="ttdef"><b>Definition:</b> <a href="ak__log_8c_source.html#l00186">ak_log.c:186</a></div></div>
+<div class="ttc" id="libakrypt_8h_html_a3ad87fc394dd5e8e885e1c6677a5d14b"><div class="ttname"><a href="libakrypt_8h.html#a3ad87fc394dd5e8e885e1c6677a5d14b">ak_error_write_data</a></div><div class="ttdeci">#define ak_error_write_data</div><div class="ttdoc">Ошибка записи в файл (устройство). </div><div class="ttdef"><b>Definition:</b> <a href="libakrypt_8h_source.html#l00173">libakrypt.h:173</a></div></div>
+</div><!-- fragment -->
+<p><div class="dynheader">
+Граф вызовов:</div>
+<div class="dyncontent">
+<div class="center"><img src="ak__buffer_8h_af48070e30993ea30ae3202930b6c6b20_cgraph.png" border="0" usemap="#ak__buffer_8h_af48070e30993ea30ae3202930b6c6b20_cgraph" alt=""/></div>
+<!-- MAP 17 -->
+</div>
+</p>
+
+<p><div class="dynheader">
+Граф вызова функции:</div>
+<div class="dyncontent">
+<div class="center"><img src="ak__buffer_8h_af48070e30993ea30ae3202930b6c6b20_icgraph.png" border="0" usemap="#ak__buffer_8h_af48070e30993ea30ae3202930b6c6b20_icgraph" alt=""/></div>
+<!-- MAP 18 -->
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="ac22f622c4102c51e289f58bb008606dc"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int ak_buffer_wipe </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="libakrypt_8h.html#a8618b346405887c26c4cda4b7e19a158">ak_buffer</a>&#160;</td>
+          <td class="paramname"><em>buff</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="ak__random_8h.html#a02528de477a7fe808f4d32f41fa265ea">ak_random</a>&#160;</td>
+          <td class="paramname"><em>generator</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Зачистка данных, хранящихся в буффере. </p>
+<p>Функция заполняет буффер случайными данными, выработанными заданным генератором псевдослучайных чисел. При этом, новые (случайные) данные не уничтожаются.</p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">buff</td><td>Буффер, данные которого уничтожаются </td></tr>
+    <tr><td class="paramname">generator</td><td>Генератор псевдо-случайных чисел, используемый для генерации случайного мусора. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd>Функция возвращает ak_error_ok в случае успешного уничтожения данных. В противном случае возвращается код ошибки. </dd></dl>
+
+<p>См. определение в файле <a class="el" href="ak__buffer_8c_source.html">ak_buffer.c</a> строка <a class="el" href="ak__buffer_8c_source.html#l00608">608</a></p>
+<div class="fragment"><div class="line"><a name="l00609"></a><span class="lineno">  609</span>&#160;{</div><div class="line"><a name="l00610"></a><span class="lineno">  610</span>&#160;  <span class="keywordflow">if</span>( buff == NULL ) <span class="keywordflow">return</span> <a class="code" href="ak__log_8c.html#a80a4822cbd184b3cbcc43096126eb52b">ak_error_message</a>( <a class="code" href="libakrypt_8h.html#ab44706b2e13bc40499b30fb371ad7f9e">ak_error_null_pointer</a>,</div><div class="line"><a name="l00611"></a><span class="lineno">  611</span>&#160;                                                   __func__, <span class="stringliteral">&quot;use a null pointer to a buffer&quot;</span> );</div><div class="line"><a name="l00612"></a><span class="lineno">  612</span>&#160; <span class="comment">/* мы изменяем только ту память, что нам принадлежит */</span></div><div class="line"><a name="l00613"></a><span class="lineno">  613</span>&#160;  <span class="keywordflow">if</span>( buff-&gt;<a class="code" href="structbuffer.html#a821b3af00b683f25cf62978b933a551c">flag</a> ) <span class="keywordflow">return</span> <a class="code" href="ak__buffer_8c.html#ab29532ed049cf9ce6000367740c31748">ak_ptr_wipe</a>( buff-&gt;<a class="code" href="structbuffer.html#a0d9dd0697d4bd775e4f48135a8d9dad8">data</a>, buff-&gt;<a class="code" href="structbuffer.html#a854352f53b148adc24983a58a1866d66">size</a>, generator );</div><div class="line"><a name="l00614"></a><span class="lineno">  614</span>&#160;   <span class="keywordflow">return</span> <a class="code" href="libakrypt_8h.html#aa6db0eccf8222376f61f2f033a1bbe4c">ak_error_ok</a>;</div><div class="line"><a name="l00615"></a><span class="lineno">  615</span>&#160;}</div><div class="ttc" id="structbuffer_html_a854352f53b148adc24983a58a1866d66"><div class="ttname"><a href="structbuffer.html#a854352f53b148adc24983a58a1866d66">buffer::size</a></div><div class="ttdeci">size_t size</div><div class="ttdoc">размер данных (в байтах) </div><div class="ttdef"><b>Definition:</b> <a href="ak__buffer_8h_source.html#l00044">ak_buffer.h:44</a></div></div>
+<div class="ttc" id="structbuffer_html_a0d9dd0697d4bd775e4f48135a8d9dad8"><div class="ttname"><a href="structbuffer.html#a0d9dd0697d4bd775e4f48135a8d9dad8">buffer::data</a></div><div class="ttdeci">ak_pointer data</div><div class="ttdoc">указатель на данные </div><div class="ttdef"><b>Definition:</b> <a href="ak__buffer_8h_source.html#l00046">ak_buffer.h:46</a></div></div>
+<div class="ttc" id="libakrypt_8h_html_ab44706b2e13bc40499b30fb371ad7f9e"><div class="ttname"><a href="libakrypt_8h.html#ab44706b2e13bc40499b30fb371ad7f9e">ak_error_null_pointer</a></div><div class="ttdeci">#define ak_error_null_pointer</div><div class="ttdoc">Ошибка, возникающая при доступе или передаче в качестве аргумента функции null указателя. </div><div class="ttdef"><b>Definition:</b> <a href="libakrypt_8h_source.html#l00149">libakrypt.h:149</a></div></div>
+<div class="ttc" id="libakrypt_8h_html_aa6db0eccf8222376f61f2f033a1bbe4c"><div class="ttname"><a href="libakrypt_8h.html#aa6db0eccf8222376f61f2f033a1bbe4c">ak_error_ok</a></div><div class="ttdeci">#define ak_error_ok</div><div class="ttdoc">Результат, говорящий об отсутствии ошибки. </div><div class="ttdef"><b>Definition:</b> <a href="libakrypt_8h_source.html#l00145">libakrypt.h:145</a></div></div>
+<div class="ttc" id="structbuffer_html_a821b3af00b683f25cf62978b933a551c"><div class="ttname"><a href="structbuffer.html#a821b3af00b683f25cf62978b933a551c">buffer::flag</a></div><div class="ttdeci">ak_bool flag</div><div class="ttdoc">флаг выделения памяти/владения данными </div><div class="ttdef"><b>Definition:</b> <a href="ak__buffer_8h_source.html#l00048">ak_buffer.h:48</a></div></div>
+<div class="ttc" id="ak__log_8c_html_a80a4822cbd184b3cbcc43096126eb52b"><div class="ttname"><a href="ak__log_8c.html#a80a4822cbd184b3cbcc43096126eb52b">ak_error_message</a></div><div class="ttdeci">int ak_error_message(const int code, const char *function, const char *message)</div><div class="ttdoc">Вывод сообщений о возникшей в процессе выполнения ошибке. </div><div class="ttdef"><b>Definition:</b> <a href="ak__log_8c_source.html#l00186">ak_log.c:186</a></div></div>
+<div class="ttc" id="ak__buffer_8c_html_ab29532ed049cf9ce6000367740c31748"><div class="ttname"><a href="ak__buffer_8c.html#ab29532ed049cf9ce6000367740c31748">ak_ptr_wipe</a></div><div class="ttdeci">int ak_ptr_wipe(ak_pointer ptr, size_t size, ak_random generator)</div><div class="ttdoc">Зачистка данных, на которые указывает заданный указатель. </div><div class="ttdef"><b>Definition:</b> <a href="ak__buffer_8c_source.html#l00627">ak_buffer.c:627</a></div></div>
+</div><!-- fragment -->
+<p><div class="dynheader">
+Граф вызовов:</div>
+<div class="dyncontent">
+<div class="center"><img src="ak__buffer_8h_ac22f622c4102c51e289f58bb008606dc_cgraph.png" border="0" usemap="#ak__buffer_8h_ac22f622c4102c51e289f58bb008606dc_cgraph" alt=""/></div>
+<!-- MAP 19 -->
+</div>
+</p>
+
+<p><div class="dynheader">
+Граф вызова функции:</div>
+<div class="dyncontent">
+<div class="center"><img src="ak__buffer_8h_ac22f622c4102c51e289f58bb008606dc_icgraph.png" border="0" usemap="#ak__buffer_8h_ac22f622c4102c51e289f58bb008606dc_icgraph" alt=""/></div>
+<!-- MAP 20 -->
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="ab42b833b1b6e14cfe8b5f7344da9a568"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int ak_ptr_wipe </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="libakrypt_8h.html#a59817f4698b8d80ec2f6ef2af4111190">ak_pointer</a>&#160;</td>
+          <td class="paramname"><em>ptr</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>size</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="ak__random_8h.html#a02528de477a7fe808f4d32f41fa265ea">ak_random</a>&#160;</td>
+          <td class="paramname"><em>generator</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Зачистка данных, на которые указывает заданный указатель. </p>
+<p>Функция заполняет заданную область памяти случайными данными, выработанными заданным генератором псевдослучайных чисел.</p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">ptr</td><td>Область данных, которая заполняется случайным мусором. </td></tr>
+    <tr><td class="paramname">size</td><td>Размер заполняемой области в байтах. </td></tr>
+    <tr><td class="paramname">generator</td><td>Генератор псевдо-случайных чисел, используемый для генерации случайного мусора. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd>Функция возвращает ak_error_ok в случае успешного уничтожения данных. В противном случае возвращается код ошибки. </dd></dl>
+
+<p>См. определение в файле <a class="el" href="ak__buffer_8c_source.html">ak_buffer.c</a> строка <a class="el" href="ak__buffer_8c_source.html#l00627">627</a></p>
+<div class="fragment"><div class="line"><a name="l00628"></a><span class="lineno">  628</span>&#160;{</div><div class="line"><a name="l00629"></a><span class="lineno">  629</span>&#160;  <span class="keywordtype">size_t</span> idx = 0;</div><div class="line"><a name="l00630"></a><span class="lineno">  630</span>&#160;  <span class="keywordtype">int</span> result = <a class="code" href="libakrypt_8h.html#aa6db0eccf8222376f61f2f033a1bbe4c">ak_error_ok</a>;</div><div class="line"><a name="l00631"></a><span class="lineno">  631</span>&#160;</div><div class="line"><a name="l00632"></a><span class="lineno">  632</span>&#160;  <span class="keywordflow">if</span>( ptr == NULL ) <span class="keywordflow">return</span> <a class="code" href="ak__log_8c.html#a80a4822cbd184b3cbcc43096126eb52b">ak_error_message</a>( <a class="code" href="libakrypt_8h.html#ab44706b2e13bc40499b30fb371ad7f9e">ak_error_null_pointer</a>,</div><div class="line"><a name="l00633"></a><span class="lineno">  633</span>&#160;                                                __func__, <span class="stringliteral">&quot;using null pointer to wipe memory&quot;</span> );</div><div class="line"><a name="l00634"></a><span class="lineno">  634</span>&#160;  <span class="keywordflow">if</span>( size == 0 ) <span class="keywordflow">return</span> <a class="code" href="ak__log_8c.html#a80a4822cbd184b3cbcc43096126eb52b">ak_error_message</a>( <a class="code" href="libakrypt_8h.html#a214549d6702a7ef1acacfb4b93147750">ak_error_zero_length</a>,</div><div class="line"><a name="l00635"></a><span class="lineno">  635</span>&#160;                                                  __func__ , <span class="stringliteral">&quot;wiping memory with zero length&quot;</span> );</div><div class="line"><a name="l00636"></a><span class="lineno">  636</span>&#160;  <span class="keywordflow">if</span>( generator == NULL ) <span class="keywordflow">return</span> <a class="code" href="ak__log_8c.html#a80a4822cbd184b3cbcc43096126eb52b">ak_error_message</a>( <a class="code" href="libakrypt_8h.html#ab44706b2e13bc40499b30fb371ad7f9e">ak_error_null_pointer</a>, __func__,</div><div class="line"><a name="l00637"></a><span class="lineno">  637</span>&#160;                                                   <span class="stringliteral">&quot;use a null pointer to a random generator&quot;</span> );</div><div class="line"><a name="l00638"></a><span class="lineno">  638</span>&#160;</div><div class="line"><a name="l00639"></a><span class="lineno">  639</span>&#160;  <span class="keywordflow">if</span>( generator-&gt;<a class="code" href="structrandom.html#a34c4359c2f54cc37cdf9ad5acecf115f">random</a>( generator, ptr, size ) != <a class="code" href="libakrypt_8h.html#aa6db0eccf8222376f61f2f033a1bbe4c">ak_error_ok</a> ) {</div><div class="line"><a name="l00640"></a><span class="lineno">  640</span>&#160;    <a class="code" href="ak__log_8c.html#a80a4822cbd184b3cbcc43096126eb52b">ak_error_message</a>( <a class="code" href="libakrypt_8h.html#a3ad87fc394dd5e8e885e1c6677a5d14b">ak_error_write_data</a>, __func__, <span class="stringliteral">&quot;incorrect memory wiping&quot;</span> );</div><div class="line"><a name="l00641"></a><span class="lineno">  641</span>&#160;    memset( ptr, 0, size );</div><div class="line"><a name="l00642"></a><span class="lineno">  642</span>&#160;    result = <a class="code" href="libakrypt_8h.html#a3ad87fc394dd5e8e885e1c6677a5d14b">ak_error_write_data</a>;</div><div class="line"><a name="l00643"></a><span class="lineno">  643</span>&#160;  }</div><div class="line"><a name="l00644"></a><span class="lineno">  644</span>&#160;  <span class="comment">/* запись в память при чтении =&gt; необходим вызов функции чтения данных из ptr */</span></div><div class="line"><a name="l00645"></a><span class="lineno">  645</span>&#160;  <span class="keywordflow">for</span>( idx = 0; idx &lt; size; idx++ ) ((<a class="code" href="libakrypt_8h.html#abb8a94ec74dcd719f5e85ecbae89cb68">ak_uint8</a> *)ptr)[idx] += ((<a class="code" href="libakrypt_8h.html#abb8a94ec74dcd719f5e85ecbae89cb68">ak_uint8</a> *)ptr)[size - 1 - idx];</div><div class="line"><a name="l00646"></a><span class="lineno">  646</span>&#160;  <span class="keywordflow">return</span> result;</div><div class="line"><a name="l00647"></a><span class="lineno">  647</span>&#160;}</div><div class="ttc" id="structrandom_html_a34c4359c2f54cc37cdf9ad5acecf115f"><div class="ttname"><a href="structrandom.html#a34c4359c2f54cc37cdf9ad5acecf115f">random::random</a></div><div class="ttdeci">ak_function_random_ptr_const * random</div><div class="ttdoc">указатель на функцию выработки последователности псевдо-случайных байт </div><div class="ttdef"><b>Definition:</b> <a href="ak__random_8h_source.html#l00060">ak_random.h:60</a></div></div>
+<div class="ttc" id="libakrypt_8h_html_abb8a94ec74dcd719f5e85ecbae89cb68"><div class="ttname"><a href="libakrypt_8h.html#abb8a94ec74dcd719f5e85ecbae89cb68">ak_uint8</a></div><div class="ttdeci">unsigned char ak_uint8</div><div class="ttdef"><b>Definition:</b> <a href="libakrypt_8h_source.html#l00113">libakrypt.h:113</a></div></div>
+<div class="ttc" id="libakrypt_8h_html_ab44706b2e13bc40499b30fb371ad7f9e"><div class="ttname"><a href="libakrypt_8h.html#ab44706b2e13bc40499b30fb371ad7f9e">ak_error_null_pointer</a></div><div class="ttdeci">#define ak_error_null_pointer</div><div class="ttdoc">Ошибка, возникающая при доступе или передаче в качестве аргумента функции null указателя. </div><div class="ttdef"><b>Definition:</b> <a href="libakrypt_8h_source.html#l00149">libakrypt.h:149</a></div></div>
+<div class="ttc" id="libakrypt_8h_html_aa6db0eccf8222376f61f2f033a1bbe4c"><div class="ttname"><a href="libakrypt_8h.html#aa6db0eccf8222376f61f2f033a1bbe4c">ak_error_ok</a></div><div class="ttdeci">#define ak_error_ok</div><div class="ttdoc">Результат, говорящий об отсутствии ошибки. </div><div class="ttdef"><b>Definition:</b> <a href="libakrypt_8h_source.html#l00145">libakrypt.h:145</a></div></div>
+<div class="ttc" id="ak__log_8c_html_a80a4822cbd184b3cbcc43096126eb52b"><div class="ttname"><a href="ak__log_8c.html#a80a4822cbd184b3cbcc43096126eb52b">ak_error_message</a></div><div class="ttdeci">int ak_error_message(const int code, const char *function, const char *message)</div><div class="ttdoc">Вывод сообщений о возникшей в процессе выполнения ошибке. </div><div class="ttdef"><b>Definition:</b> <a href="ak__log_8c_source.html#l00186">ak_log.c:186</a></div></div>
+<div class="ttc" id="libakrypt_8h_html_a3ad87fc394dd5e8e885e1c6677a5d14b"><div class="ttname"><a href="libakrypt_8h.html#a3ad87fc394dd5e8e885e1c6677a5d14b">ak_error_write_data</a></div><div class="ttdeci">#define ak_error_write_data</div><div class="ttdoc">Ошибка записи в файл (устройство). </div><div class="ttdef"><b>Definition:</b> <a href="libakrypt_8h_source.html#l00173">libakrypt.h:173</a></div></div>
+<div class="ttc" id="libakrypt_8h_html_a214549d6702a7ef1acacfb4b93147750"><div class="ttname"><a href="libakrypt_8h.html#a214549d6702a7ef1acacfb4b93147750">ak_error_zero_length</a></div><div class="ttdeci">#define ak_error_zero_length</div><div class="ttdoc">Ошибка, возникащая при передаче аргументов функции или выделении памяти нулевой длины. </div><div class="ttdef"><b>Definition:</b> <a href="libakrypt_8h_source.html#l00151">libakrypt.h:151</a></div></div>
+</div><!-- fragment -->
+<p><div class="dynheader">
+Граф вызовов:</div>
+<div class="dyncontent">
+<div class="center"><img src="ak__buffer_8h_ab42b833b1b6e14cfe8b5f7344da9a568_cgraph.png" border="0" usemap="#ak__buffer_8h_ab42b833b1b6e14cfe8b5f7344da9a568_cgraph" alt=""/></div>
+<!-- MAP 21 -->
+</div>
+</p>
+
+<p><div class="dynheader">
+Граф вызова функции:</div>
+<div class="dyncontent">
+<div class="center"><img src="ak__buffer_8h_ab42b833b1b6e14cfe8b5f7344da9a568_icgraph.png" border="0" usemap="#ak__buffer_8h_ab42b833b1b6e14cfe8b5f7344da9a568_icgraph" alt=""/></div>
+<!-- MAP 22 -->
+</div>
+</p>
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_43e0a1f539e00dcfa1a6bc4d4fee4fc2.html">home</a></li><li class="navelem"><a class="el" href="dir_32078dd46064dc5448d39191ac5534d6.html">eugene</a></li><li class="navelem"><a class="el" href="dir_90a44860457c395fae569358f05fdb49.html">Documents</a></li><li class="navelem"><a class="el" href="dir_ef0df63b0c88ed24c4c79f67668669bc.html">VKR</a></li><li class="navelem"><a class="el" href="dir_6ec071d27851548a42323e2c424bf74a.html">libakrypt-0.x</a></li><li class="navelem"><a class="el" href="dir_cc55869b84ab2b7a1ee582dd1158c3dc.html">source</a></li><li class="navelem"><a class="el" href="ak__buffer_8h.html">ak_buffer.h</a></li>
+    <li class="footer">Документация по libakrypt. Последние изменения: Вс 23 Сен 2018 21:13:41. Создано системой
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.11 </li>
+  </ul>
+</div>
+</body>
+</html>

@@ -1,0 +1,32 @@
+digraph "ak_sign.h"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="ak_sign.h",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+  Node1 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="ak_mac.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$ak__mac_8h.html"];
+  Node2 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="ak_aead.c",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$ak__aead_8c.html"];
+  Node2 -> Node4 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node4 [label="ak_bckey.c",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$ak__bckey_8c.html"];
+  Node2 -> Node5 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node5 [label="ak_compress.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$ak__compress_8h.html"];
+  Node5 -> Node6 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node6 [label="ak_compress.c",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$ak__compress_8c.html"];
+  Node5 -> Node7 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node7 [label="ak_hash.c",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$ak__hash_8c.html"];
+  Node5 -> Node8 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node8 [label="ak_hmac.c",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$ak__hmac_8c.html"];
+  Node5 -> Node9 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node9 [label="ak_mac.c",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$ak__mac_8c.html"];
+  Node5 -> Node10 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node10 [label="ak_magma.c",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$ak__magma_8c.html"];
+  Node5 -> Node11 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node11 [label="ak_skey.c",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$ak__skey_8c.html"];
+  Node2 -> Node12 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node12 [label="ak_libakrypt.c",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$ak__libakrypt_8c.html"];
+  Node2 -> Node13 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node13 [label="ak_oid.c",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$ak__oid_8c.html"];
+  Node1 -> Node14 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node14 [label="ak_sign.c",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$ak__sign_8c.html"];
+}
