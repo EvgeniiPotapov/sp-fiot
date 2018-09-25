@@ -1,0 +1,232 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.11"/>
+<title>libakrypt: Сборка и установка библиотеки</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+  $(document).ready(initResizable);
+  $(window).load(resizeHeight);
+</script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { init_search(); });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">libakrypt
+   &#160;<span id="projectnumber">Версия 0.6.7</span>
+   </div>
+   <div id="projectbrief">Модуль, реализующий криптографические преобразования для проекта OpenSKZI</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.8.11 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Поиск');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Титульная&#160;страница</span></a></li>
+      <li class="current"><a href="pages.html"><span>Описания</span></a></li>
+      <li><a href="annotated.html"><span>Структуры&#160;данных</span></a></li>
+      <li><a href="files.html"><span>Файлы</span></a></li>
+      <li><a href="examples.html"><span>Примеры</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Поиск" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(document).ready(function(){initNavTree('compile.html','');});
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="headertitle">
+<div class="title">Сборка и установка библиотеки </div>  </div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><h1><a class="anchor" id="compile_source_codes"></a>
+Получение исходных текстов библиотеки</h1>
+<p>Последняя версия исходных текстов библиотеки может быть получена из git-репозитория на сайте github.com. Для клонирования репозитория необходимо выполнить из комндной строки следующую команду.</p>
+<div class="fragment"><div class="line">git clone https:<span class="comment">//github.com/axelkenzo/libakrypt-0.x</span></div></div><!-- fragment --><p>Необходимая документация и описание процедуры установки распределенной системы управления версиями git может быть найдено <a href="http://git-scm.com">здесь</a>.</p>
+<h1><a class="anchor" id="compile_cmake"></a>
+Система сборки</h1>
+<p>Основной системой сборки для библиотеки <code>libakrypt</code> является <a href="https://cmake.org">cmake</a>. Необходимый набор программ и утилит может быть скачан с официального сайта программы.</p>
+<h1><a class="anchor" id="compile_dependence"></a>
+Зависимости библиотеки</h1>
+<p>Библиотека <code>libakrypt</code> использует многопоточное выполнение некоторых криптографических преобразований, поэтому ей необходим базовый набор функций для работы с потоками. Библиотека использует стандартный набор функций, определяемый <code>POSIX Threads</code>.</p>
+<p>В операционных системах семейства <code>Linux</code>, а также в <code>FreeBSD</code>, эта функциональность входит в состав библиотеки <code>libc</code> и не требует дополнительных действий при установке.</p>
+<p>В операционной системе <code>Windows</code> многопоточность может быть реализована различными способами, при этом способ реализации определяется используемым для сборки библиотеки компилятором.</p>
+<p>В случае, если для сборки библиотеки используется компилятор <code>gcc</code>, входящий в состав набора библиотек и программ <code>MinGW</code>, то доступ к многопоточной функциональности предоставляется средствами <code>MinGW</code>.</p>
+<p>В случае, если для сборки библиотеки используется компилятор <code>Microsoft Visual C</code> (или любой другой, поставляемый без библиотек, реализующих многопоточную функциональность), то необходимо использование разделяемой библиотеки <code>pthreads-w32</code> (POSIX Threads Library for Win32). Перед сборкой библиотеки <code>libakrypt</code> Вам необходимо вручную установить заголовочные и библиотечные файлы (<code>pthreadVC.lib</code> и <code>pthreadVC.dll</code>, а также заголовочные файлы <code>pthread.h</code>, <code>semaphore.h</code> и <code>sched.h</code>). Подробное описание установки <code>pthreads-w32</code> может быть найдено в документации по <a href="http://sources.redhat.com/pthreads-win32">pthreads-w32</a>.</p>
+<h1><a class="anchor" id="compile_make_unix"></a>
+Сборка в Unix</h1>
+<p>Основной средой разработки библиотеки <code>libakrypt</code> является Linux, поэтому процесс сборки под Unix-like операционными системами является максимально простой процедурой.</p>
+<h2><a class="anchor" id="compile_make_unix1"></a>
+Сборка статической версии библиотеки</h2>
+<p>Процесс получения исходных кодов описан в разделе <a class="el" href="compile.html#compile_source_codes">Получение исходных текстов библиотеки</a>. После получения исходных кодов для сборки библиотеки выполните в консоли следующую последовательность команд.</p>
+<div class="fragment"><div class="line">mkdir build</div><div class="line">cd build</div><div class="line">cmake ../libakrypt-0.x</div><div class="line">make</div></div><!-- fragment --><p>В результате сборки, по-умолчанию, будет собрана статическая версия библиотеки &mdash; <code>libakrypt-static.a</code>, а также ряд тестовых примеров, использованные нами в разделах <a class="el" href="libex.html">Инструкция по встраиванию</a> и <a class="el" href="guide.html">Принципы реализации</a>.</p>
+<h2><a class="anchor" id="compile_make_unix2"></a>
+Сборка динамической версии библиотеки</h2>
+<p>Для сборки динамической версии библиотеки &mdash; <code>libakrypt-shared.so</code>, необходимо выполнить команду <code>cmake</code> с дополнительным параметром, указывающим факт сборки динамически исполняемой версии библиотеки.</p>
+<div class="fragment"><div class="line">cmake -D LIBAKRYPT_SHARED_LIB=ON ../libakrypt-0.x</div></div><!-- fragment --><p>Таким образом последовательность команд для сборки принимает вид</p>
+<div class="fragment"><div class="line">mkdir build</div><div class="line">cd build</div><div class="line">cmake -D LIBAKRYPT_SHARED_LIB=ON ../libakrypt-0.x</div><div class="line">make</div></div><!-- fragment --><h2><a class="anchor" id="compile_make_compilers"></a>
+Сборка различными компиляторами</h2>
+<p>Приведенная нами выше последовательность команд использует для сборки библиотеки найденный <code>cmake</code> компилятор по-умолчанию &ndash; в Linux это компилятор <code>gcc</code>, во FreeBSD и MacOS это <code>clang</code>. Если Вы хотите использовать другой компилятор, то Вам необходимо задать при вызове <code>cmake</code> опцию <code>CMAKE_C_COMPILER</code>, в явном виде определяющую имя компилятора.</p>
+<p>Так, следующий вызов позволит произвести сборку библиотеки с помощью компилятора <code>clang</code>. </p><div class="fragment"><div class="line">cmake -D CMAKE_C_COMPILER=clang ../libakrypt-0.x</div></div><!-- fragment --><p>Аналогично, следующий вызов позволит произвести сборку библиотеки с помощью компилятора <code>tcc</code> (Tiny C Compiler) </p><div class="fragment"><div class="line">cmake -D CMAKE_C_COMPILER=tcc ../libakrypt-0.x</div></div><!-- fragment --><p>Отметим, что через опцию <code>CMAKE_C_COMPILER</code> можно указывать только те компиляторы, которые поддерживаются <code>cmake</code>. Перечень поддерживаемых компиляторов можно найти в документации по <code>cmake</code> (см. раздел cmake-compile-features, supported compilers).</p>
+<h2><a class="anchor" id="compile_make_ellcc"></a>
+Сборка для исполнения под другими платформами</h2>
+<p>Помимо традиционной сборки, когда библиотека компилируется и выполняется на одной и той же аппаратной платформе, можно реализовать процесс сборки, при которой эти платформы различаются.</p>
+<p>Мы рассмотрим случай в котором платформой сборки (host system) является Linux, а платформой выполнения (target system) &mdash; любая другая операционная система, например, Windows или Linux на ARM Cortex. Для такой сборки наиболее удобным является компилятор <code>clang</code>, или более точно, его сборка из проекта <a href="http://ellcc.org">ellcc</a>. В данном проекте компилятору <code>clang</code> присвоено имя <code>ecc</code>.</p>
+<p>Обязательным параметром, который должен передаваться компилятору <code>ecc</code> является платформа (target system), на которой будет выполняться компилируемая программа. Например, для сборки библиотеки под 64-x битную версию Windows (на архитектуре x64), можно выполнить следующую команду.</p>
+<div class="fragment"><div class="line">cmake -D CMAKE_C_COMPILER=ecc -D CMAKE_C_FLAGS=<span class="stringliteral">&quot;-target x86_64-w64-mingw32&quot;</span> -D LIBAKRYPT_EXT=<span class="stringliteral">&quot;.exe&quot;</span> -D LIBAKRYPT_CONF=<span class="stringliteral">&quot;C:/Users/Default/AppData/Roaming/libakrypt&quot;</span> ../../libakrypt-0.x</div></div><!-- fragment --><p>Прокомментируем приведенные выше параметры команды <code>cmake</code>.</p>
+<ul>
+<li>Как и ранее, имя компилятора передается через переменную <code>CMAKE_C_COMPILER</code> (в нашем примере это <code>ecc</code>); </li>
+<li>Платформа сборки передается в <code>cmake</code> через переменную <code>CMAKE_C_FLAGS</code> (-target x86_64-w64-mingw32); </li>
+<li>Параметр <code>LIBAKRYPT_EXT</code> (.exe) указывает расширение для исполняемых файлов (это актуально только для Windows); </li>
+<li>Параметр <code>LIBAKRYPT_CONF</code> - каталог, в котором будет находиться файл с техническими характеристиками библиотеки <code>libakrypt</code> (более подробная информация о содержимом файла с техническими характеристиками находится в разделе construction_options).</li>
+</ul>
+<h1><a class="anchor" id="compile_make_windows"></a>
+Сборка в Windows</h1>
+<p>Выше в разделе <a class="el" href="compile.html#compile_make_ellcc">Сборка для исполнения под другими платформами</a> мы описали способ сборки библиотеки с использованием компилятора <code>clang</code> из проекта <code>ellcc</code> (см. раздел <a class="el" href="compile.html#compile_make_ellcc">Сборка для исполнения под другими платформами</a>). Этот способ позволяет собирать только статическую версию библиотеки. Вместе с тем, как динамическая, так и статическая версии библиотеки могут быть успешно собраны под операционными системами семейства <code>Windows</code>.</p>
+<h2><a class="anchor" id="compile_make_windows_msvc"></a>
+Сборка с использованием компилятора Miscrosoft Visual C</h2>
+<p>На настоящий момент протестирована успешная сборка библиотеки с помощью компилятора MSVC версий 10 и старше.</p>
+<p>Для сборки библиотеки и тестовых примеров необходимо запустить командную строку <code>Visual Studio</code> и создать каталог для сборки, например, выполнив команду </p><div class="fragment"><div class="line">mkdir build-msvc</div></div><!-- fragment --><p>Далее, необходимо перейти в созданный каталог и запустить <code>cmake</code> для конфигурации сборки.</p>
+<div class="fragment"><div class="line">cmake -G <span class="stringliteral">&quot;NMake Makefiles&quot;</span> path</div></div><!-- fragment --><p> где <code>path</code> это путь к каталогу, в котором находятся исходные коды библиотеки, например, <code>../libakrypt-0.x</code>. Далее сборка библиотеки и тестовых примеров выполняется следующей командой </p><div class="fragment"><div class="line">nmake</div></div><!-- fragment --><p>Указанный выше пример позволит создать статическую (.lib) библиотеку и тестовые примеры. Для сборки динамической (.dll) версии библиотеки необходимо дополнительно указать соответствующий флаг при вызове <code>cmake</code>.</p>
+<div class="fragment"><div class="line">cmake -G <span class="stringliteral">&quot;NMake Makefiles&quot;</span> -D LIBAKRYPT_SHARED_LIB=ON path</div></div><!-- fragment --><p>Для запуска тестовых примеров, собранных с поддержкой динамических библиотек, необходимо, чтобы созданном Вами каталоге <code>build</code> находился файл <code>pthreadVC2.dll</code>.</p>
+<h2><a class="anchor" id="compile_make_windows_mingw"></a>
+Сборка с использованием компилятора GCC</h2>
+<p>Для сборки компилятором <code>gcc</code> Вам необходимо установить набор программ из проекта <code>MinGW</code>. Далее, в командной строке выполнить следующую последовательность команд.</p>
+<div class="fragment"><div class="line">mkdir build</div><div class="line">cd build</div><div class="line">cmake -G <span class="stringliteral">&quot;MinGW Makefiles&quot;</span> ../libakrypt-0.x</div><div class="line">mingw32-make.exe</div></div><!-- fragment --><p>Аналогично сказанному выше, для сборки динамической библиотеки и тестовых примеров, соранных с поддержкой динамических библиотек, необходимо выполнить следующую последовательность команд.</p>
+<div class="fragment"><div class="line">mkdir build</div><div class="line">cd build</div><div class="line">cmake -G <span class="stringliteral">&quot;MinGW Makefiles&quot;</span> -D LIBAKRYPT_SHARED_LIB=ON ../libakrypt-0.x</div><div class="line">mingw32-make.exe</div></div><!-- fragment --><h1><a class="anchor" id="compile_flags"></a>
+Полные перечни флагов для сборки библиотеки</h1>
+<h2><a class="anchor" id="compile_flags_cmake"></a>
+Флаги cmake</h2>
+<p>Приведем перечень флагов, которые могут передаваться в <code>cmake</code> для настройки и уточнения значений параметров сборки.</p>
+<ul>
+<li><code>LIBAKRYPT_CONF = path</code> (устанавливает каталог поиска файла <code>libakrypt.conf</code>, содержащего точные значения технических характеристик библиотеки)</li>
+</ul>
+<ul>
+<li><code>LIBAKRYPT_EXT = extension</code> (устанавливает расширение для скомпилированных контрольных примеров, используется, как правило, для установки расширения <code>.exe</code> в операционной системе <code>Windows</code>)</li>
+</ul>
+<ul>
+<li><code>LIBAKRYPT_GMP_TESTS = { ON, OFF }</code> (устанавливает надо или нет собирать тестовые примеры, использующие вызовы функций библиотеки <code>libgmp</code>; данная функциональность нужна только для тестирования корректности реализации арифметических операций с вычетами кольца больших целых чисел)</li>
+</ul>
+<ul>
+<li><code>LIBAKRYPT_SHARED_LIB = { ON, OFF }</code> (устанавливает надо или нет собирать динамическую версию библиотеки, по умолчанию, флаг равен <code>OFF</code>)</li>
+</ul>
+<ul>
+<li><code>LIBAKRYPT_STATIC_LIB = { ON, OFF }</code> (устанавливает надо или нет собирать статическую версию библиотеки, по умолчанию, флаг равен <code>ON</code>)</li>
+</ul>
+<ul>
+<li><code>LIBAKRYPT_BIG_ENDIAN = { ON, OFF }</code> (в случае, когда флаг равен <code>ON</code>, используются фрагметны исходного кода для выполнения на big-endian архитектуре; по умолчанию, флаг равен <code>OFF</code>)</li>
+</ul>
+<h2><a class="anchor" id="compile_flags_source"></a>
+Флаги исходных кодов</h2>
+<p>Приведем полный перечень флагов компиляции, передаваемых при сборке исходных кодов библиотеки и примеров с помощью директивы <code>-D</code>. В штатном режиме сборки поиск файлов и установка указанных флагов выполняется программой <code>cmake</code>.</p>
+<ul>
+<li><code>LIBAKRYPT_OPTIONS_PATH = path</code> (устанавливает каталог для поиска файла <code>libakrypt.conf</code>, содержащего точные значения технических характеристик библиотеки) </li>
+<li><code>LIBAKRYPT_VERSION = version</code> (устанавливает номер библиотеки)</li>
+</ul>
+<ul>
+<li><code>LIBAKRYPT_HAVE_SYSLOG_H</code> (указывает на то, что при компиляции необходимо использовать заголовочный файл <code>syslog.h</code>) </li>
+<li><code>LIBAKRYPT_HAVE_UNISTD_H</code> (указывает на то, что при компиляции необходимо использовать заголовочный файл <code>unistd.h</code>) </li>
+<li><code>LIBAKRYPT_HAVE_FCNTL_H</code> (указывает на то, что при компиляции необходимо использовать заголовочный файл <code>fcntl.h</code>) </li>
+<li><code>LIBAKRYPT_HAVE_LIMITS_H</code> (указывает на то, что при компиляции необходимо использовать заголовочный файл <code>limits.h</code>) </li>
+<li><code>LIBAKRYPT_HAVE_GETOPT_H</code> (указывает на то, что при компиляции необходимо использовать заголовочный файл <code>getopt.h</code>) </li>
+<li><code>LIBAKRYPT_HAVE_SYSMMAN_H</code> (указывает на то, что при компиляции необходимо использовать заголовочный файл <code>sys/mman.h</code>) </li>
+<li><code>LIBAKRYPT_HAVE_SYSSTAT_H</code> (указывает на то, что при компиляции необходимо использовать заголовочный файл <code>sys/stat.h</code>) </li>
+<li><code>LIBAKRYPT_HAVE_TERMIOS_H</code> (указывает на то, что при компиляции необходимо использовать заголовочный файл <code>termios.h</code>)</li>
+</ul>
+<ul>
+<li><code>LIBAKRYPT_BIG_ENDIAN</code> (указывает на то, что при компиляции необходимо использовать фрагменты кода для выполнения на big-endian архитектуре)</li>
+</ul>
+<h1><a class="anchor" id="compile_install"></a>
+Инсталляция библиотеки</h1>
+<p>В текущей версии библиотеки поддерживается процесс инсталляции библиотеки только под Unix-like операционными системами.</p>
+<h2><a class="anchor" id="compile_install_unix"></a>
+Инсталляция в Unix</h2>
+<p>По умолчанию предполагается, что библиотека будет установлена в каталог <code>/usr/local</code>. Для изменения этого каталога можно передать в <code>cmake</code> путь установки в явном виде. Например, следующий вызов позволяет установить библиотеку в католог <code>/usr</code>. </p><div class="fragment"><div class="line">cmake -DCMAKE_INSTALL_PREFIX=/usr ../libakrypt-0.x</div></div><!-- fragment --><p>Для инсталляции библиотеки достаточно выполнить команду</p>
+<div class="fragment"><div class="line">make install</div></div><!-- fragment --><p><b>Внимание</b>. Команда инсталляции библиотеки должна выполняться с правами суперпользователя.</p>
+<h1><a class="anchor" id="compile_doc_linux"></a>
+Сборка документации</h1>
+<p>Для сборки документациии необходимо установить программу <a href="http://www.doxygen.org/index.html">Doxygen</a>. Данная программа позволяет создавать документацию в формате <code>html</code>. Сборка документации может быть выполнена следующей простой командой.</p>
+<div class="fragment"><div class="line">make doc</div></div><!-- fragment --><p>Если у Вас установлена система подготовки документации LaTex, то указанный вызов также создаст документацию в формате <code>pdf</code>.</p>
+<p>Команда <code>make doc</code> должна выполняться в том же каталоге, в котором происходила сборка библиотеки. После выполнения команды, в каталоге сборки должны появиться</p>
+<ul>
+<li>файл <code>libakrypt-doc-0.x.pdf</code>, содержащий документацию в формате PDF (файл формируется с помощью системы подготовки документации LaTeX), </li>
+<li>файл <code>libakrypt-0.x.qch</code>, содержащий документацию в формате QCH (удобно интегрируется в среду разработки QtCreator), </li>
+<li>архив <code>libakrypt-html-0.x.tar.bz2</code>, содержащий в архивированном виде документацию к библиотеке в формате HTML. </li>
+</ul>
+</div></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="footer">Документация по libakrypt. Последние изменения: Вс 23 Сен 2018 21:13:42. Создано системой
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.11 </li>
+  </ul>
+</div>
+</body>
+</html>

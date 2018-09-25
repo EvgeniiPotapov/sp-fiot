@@ -1,0 +1,17 @@
+digraph "ak_random_create_file"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node1 [label="ak_random_create_file",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+  Node1 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="ak_context_manager\l_create",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$ak__context__manager_8h.html#a1187fca85b6693ff84ab0499941eff67",tooltip="Инициализация структуры управления контекстами. "];
+  Node2 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="ak_libakrypt_create\l_context_manager",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$ak__context__manager_8h.html#a7bc6cf171d52f863eb95005247cc2f37",tooltip="Инициализация глобальной структуры управления контекстами. "];
+  Node3 -> Node4 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node4 [label="ak_libakrypt_create",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$libakrypt_8h.html#a3f840f1a40839f867ba729aa1c5d67b8",tooltip="Функция инициализации и тестирования криптографических механизмов библиотеки. "];
+  Node1 -> Node1 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node1 -> Node5 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node5 [label="ak_random_new_file",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$libakrypt_8h.html#a30e586cc4c2b6b90b06722ae8c4e5508",tooltip="Создание дескриптора генератора, предоставляющего доступ к заданному файлу с данными. "];
+  Node5 -> Node5 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+}

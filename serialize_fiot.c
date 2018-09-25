@@ -72,15 +72,15 @@ void serClientHelloMessage(OctetString *clienthello, ClientHelloMessage *clientm
     serEllipticCurvePoint(&serpoint, &(clientmessage->point));
     LengthOctet pointlen = strlen(clientmessage->point.x) * 2 + sizeof(Octet);
     OctetString ikeyid = malloc(sizeof(Octet));
-    serPreSharedKeyID(&ikeyid, &(clientmessage->iPSK));
+    serPreSharedKeyID(&ikeyid, &(clientmessage->idipsk));
     LengthOctet iPSKlen = sizeof(Octet);
-    if (clientmessage->iPSK.present == isPresent)
-        iPSKlen = iPSKlen * 2 + clientmessage->iPSK.length;
+    if (clientmessage->idipsk.present == isPresent)
+        iPSKlen = iPSKlen * 2 + clientmessage->idipsk.length;
     OctetString ekeyid = malloc(sizeof(Octet));
-    serPreSharedKeyID(&ekeyid, &(clientmessage->ePSK));
+    serPreSharedKeyID(&ekeyid, &(clientmessage->idepsk));
     LengthOctet ePSKlen = sizeof(Octet);
-    if (clientmessage->ePSK.present == isPresent)
-        ePSKlen = ePSKlen * 2 + clientmessage->ePSK.length;
+    if (clientmessage->idepsk.present == isPresent)
+        ePSKlen = ePSKlen * 2 + clientmessage->idepsk.length;
     *clienthello = realloc(*clienthello, sizeof(Octet) * (35 + pointlen + iPSKlen + ePSKlen));
     memcpy(*clienthello, algorithm, 2 * sizeof(Octet));
     memcpy(*clienthello +2, &(clientmessage->random), 32 * sizeof(Octet));

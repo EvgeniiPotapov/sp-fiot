@@ -1,0 +1,28 @@
+digraph "ak_mac_context_set_random"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node1 [label="ak_mac_context_set\l_random",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+  Node1 -> Node2 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="ak_error_message",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$ak__log_8c.html#a80a4822cbd184b3cbcc43096126eb52b",tooltip="Вывод сообщений о возникшей в процессе выполнения ошибке. "];
+  Node2 -> Node3 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="ak_snprintf",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$ak__log_8c.html#a129225cc1640b6773cf0a7d629f0dca6",tooltip="Обобщенная реализация функции snprintf для различных компиляторов. "];
+  Node2 -> Node4 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node4 [label="ak_log_set_message",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$ak__log_8c.html#a25eff854c3f398d72791d04662d0978a",tooltip="Прямой вывод сообщения аудита. "];
+  Node4 -> Node5 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node5 [label="ak_error_set_value",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$ak__log_8c.html#a700e68d9e88d81489869ba269af25c7b",tooltip="Функция устанавливает значение переменной, хранящей ошибку выполнения программы. "];
+  Node4 -> Node2 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 -> Node5 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node1 -> Node6 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node6 [label="ak_mac_context_get\l_secret_key",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$ak__mac_8c.html#ae617b37fd89e0b8f7e19c07a9654c659",tooltip="Функция возвращает указатель на секретный ключ алгоритма выработки имитовставки. "];
+  Node6 -> Node2 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node1 -> Node7 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node7 [label="ak_skey_set_random",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$ak__skey_8c.html#a5068cd77e4b1d516a200bc09212798f0",tooltip="Присвоение секретному ключу случайного значения. "];
+  Node7 -> Node2 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node7 -> Node8 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node8 [label="ak_buffer_set_random",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$ak__buffer_8c.html#a810607fa1035dd39483a81e0c5f4712c",tooltip="Заполнение буффера случайными данными. "];
+  Node8 -> Node2 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node8 -> Node9 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node9 [label="random::random",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$structrandom.html#a34c4359c2f54cc37cdf9ad5acecf115f",tooltip="указатель на функцию выработки последователности псевдо-случайных байт "];
+}

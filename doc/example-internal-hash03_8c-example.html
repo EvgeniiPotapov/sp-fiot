@@ -1,0 +1,118 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.11"/>
+<title>libakrypt: example-internal-hash03.c</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+  $(document).ready(initResizable);
+  $(window).load(resizeHeight);
+</script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { init_search(); });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">libakrypt
+   &#160;<span id="projectnumber">Версия 0.6.7</span>
+   </div>
+   <div id="projectbrief">Модуль, реализующий криптографические преобразования для проекта OpenSKZI</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.8.11 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Поиск');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Титульная&#160;страница</span></a></li>
+      <li><a href="pages.html"><span>Описания</span></a></li>
+      <li><a href="annotated.html"><span>Структуры&#160;данных</span></a></li>
+      <li><a href="files.html"><span>Файлы</span></a></li>
+      <li><a href="examples.html"><span>Примеры</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Поиск" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(document).ready(function(){initNavTree('example-internal-hash03_8c-example.html','');});
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="headertitle">
+<div class="title">example-internal-hash03.c</div>  </div>
+</div><!--header-->
+<div class="contents">
+<div class="fragment"><div class="line"><span class="comment">/* ----------------------------------------------------------------------------------------------- *</span></div><div class="line"><span class="comment">   Пример, иллюстрирующий разные методы вычисления хешкода от заданного файла.</span></div><div class="line"><span class="comment">   Внимание: используются неэкспортируемые функции библиотеки</span></div><div class="line"><span class="comment"></span></div><div class="line"><span class="comment"> * ----------------------------------------------------------------------------------------------- */</span></div><div class="line"><span class="preprocessor"> #include &lt;stdio.h&gt;</span></div><div class="line"><span class="preprocessor"> #include &lt;stdlib.h&gt;</span></div><div class="line"><span class="preprocessor"> #include &lt;<a class="code" href="libakrypt_8h.html">libakrypt.h</a>&gt;</span></div><div class="line"><span class="preprocessor"> #include &lt;<a class="code" href="ak__compress_8h.html">ak_compress.h</a>&gt;</span></div><div class="line"><span class="preprocessor"> #include &lt;<a class="code" href="ak__random_8h.html">ak_random.h</a>&gt;</span></div><div class="line"></div><div class="line"><span class="comment">/* ----------------------------------------------------------------------------------------------- */</span></div><div class="line"><span class="preprocessor">#ifdef LIBAKRYPT_HAVE_SYSMMAN_H</span></div><div class="line"><span class="preprocessor"> #include &lt;sys/stat.h&gt;</span></div><div class="line"><span class="preprocessor"> #include &lt;unistd.h&gt;</span></div><div class="line"><span class="preprocessor"> #include &lt;fcntl.h&gt;</span></div><div class="line"><span class="preprocessor"> #include &lt;sys/mman.h&gt;</span></div><div class="line"><span class="preprocessor">#endif</span></div><div class="line"></div><div class="line"><span class="comment">/* ----------------------------------------------------------------------------------------------- */</span></div><div class="line"> <span class="keywordtype">int</span> main( <span class="keywordtype">void</span> )</div><div class="line">{</div><div class="line">  <span class="keywordtype">size_t</span> i = 0;</div><div class="line">  FILE *fp = NULL;</div><div class="line">  <a class="code" href="libakrypt_8h.html#abb8a94ec74dcd719f5e85ecbae89cb68">ak_uint8</a> <a name="_a0"></a><a class="code" href="structbuffer.html">buffer</a>[1024];</div><div class="line">  <span class="keyword">struct </span><a name="_a1"></a><a class="code" href="structhash.html">hash</a> ctx;</div><div class="line">  <span class="keyword">struct </span><a name="_a2"></a><a class="code" href="structcompress.html">compress</a> comp;</div><div class="line">  <a class="code" href="libakrypt_8h.html#abb8a94ec74dcd719f5e85ecbae89cb68">ak_uint8</a> out[32];</div><div class="line">  <span class="keywordtype">size_t</span> tail = 0;</div><div class="line">  <span class="keyword">struct </span><a name="_a3"></a><a class="code" href="structrandom.html">random</a> generator;</div><div class="line"></div><div class="line"> <span class="comment">/* 1. создаем файл, который в последствии будем хешировать */</span></div><div class="line">  printf(<span class="stringliteral">&quot;creation of data file ... &quot;</span>); fflush( stdout );</div><div class="line">  memset( buffer, 1, 1024 ); <span class="comment">/* инициализируем буффер и многократно сохраняем его */</span></div><div class="line">  buffer[0] = <span class="charliteral">&#39;k&#39;</span>; buffer[1023] = <span class="charliteral">&#39;a&#39;</span>;</div><div class="line">   <span class="keywordflow">if</span>(( fp = fopen(<span class="stringliteral">&quot;data64.dat&quot;</span>, <span class="stringliteral">&quot;wb&quot;</span> )) == NULL ) <span class="keywordflow">return</span> EXIT_FAILURE;</div><div class="line">  <span class="keywordflow">for</span>( i = 0; i &lt; 64*1024; i++ ) fwrite( buffer, 1024, 1, fp );</div><div class="line">  fclose(fp);</div><div class="line">  printf(<span class="stringliteral">&quot;Ok\n\n&quot;</span>);</div><div class="line"></div><div class="line"> <span class="comment">/* 2. инициализируем библиотеку */</span></div><div class="line">  <span class="keywordflow">if</span>( <a name="a4"></a><a class="code" href="ak__libakrypt_8c.html#abd613394f9e581b93407381a15751200">ak_libakrypt_create</a>( NULL ) != <a name="a5"></a><a class="code" href="libakrypt_8h.html#a8d5ecbffb7fc8e1aa60754ae866eb486a76821fa33e47cc8cbc32aecf832da9c0">ak_true</a> ) <span class="keywordflow">return</span> <a name="a6"></a><a class="code" href="ak__libakrypt_8c.html#a7b2010bf04cdfa2e9575dbe570de71cb">ak_libakrypt_destroy</a>();</div><div class="line"></div><div class="line"> <span class="comment">/* 3. хешируем файл как единый фрагмент данных */</span></div><div class="line"><span class="preprocessor">#ifdef LIBAKRYPT_HAVE_SYSMMAN_H</span></div><div class="line"> {</div><div class="line">   <span class="keywordtype">int</span> fd = 0;</div><div class="line">   <span class="keywordflow">if</span>(( fd = open( <span class="stringliteral">&quot;data64.dat&quot;</span>, O_RDONLY | <a name="a7"></a><a class="code" href="libakrypt_8h.html#a36fa9b2e726512bc17a7a6d3e39002be">O_BINARY</a> )) &lt; 0 ) <span class="keywordflow">return</span> <a class="code" href="ak__libakrypt_8c.html#a7b2010bf04cdfa2e9575dbe570de71cb">ak_libakrypt_destroy</a>();</div><div class="line">   <span class="keyword">struct </span>stat st;</div><div class="line">   fstat( fd, &amp;st );</div><div class="line">   <a class="code" href="libakrypt_8h.html#abb8a94ec74dcd719f5e85ecbae89cb68">ak_uint8</a> *data = mmap( NULL, st.st_size, PROT_READ, MAP_SHARED, fd, 0 );</div><div class="line"></div><div class="line">  <span class="comment">/* создаем контекст и, в случае успеха, сразу вычисляем значение кода целостности */</span></div><div class="line">   <span class="keywordflow">if</span>( <a name="a8"></a><a class="code" href="ak__hash_8h.html#a4577946909e39956e2d41fcc408a53b5">ak_hash_create_streebog256</a>( &amp;ctx ) == <a name="a9"></a><a class="code" href="libakrypt_8h.html#aa6db0eccf8222376f61f2f033a1bbe4c">ak_error_ok</a> ) {</div><div class="line">     <a name="a10"></a><a class="code" href="ak__hash_8c.html#ac75d2cff768ede84507e4e809f0b6cf7">ak_hash_context_ptr</a>( &amp;ctx, data, st.st_size, out );</div><div class="line"></div><div class="line">    <span class="comment">/* уничтожаем контекст функции хеширования */</span></div><div class="line">     <a name="a11"></a><a class="code" href="ak__hash_8c.html#aea4a84bb72d71f441657796db70a0d99">ak_hash_destroy</a>( &amp;ctx );</div><div class="line">    <span class="comment">/* выводим полученное значение */</span></div><div class="line">     <a name="a12"></a><a class="code" href="ak__tools_8c.html#a20fa595a38b20425248b6fe4d6faa069">ak_ptr_to_hexstr_static</a>( out, 32, buffer, 1024, <a name="a13"></a><a class="code" href="libakrypt_8h.html#a8d5ecbffb7fc8e1aa60754ae866eb486a872df325c5f9fac16ef66c17c1666908">ak_false</a> );</div><div class="line">     printf(<span class="stringliteral">&quot;mmap() + ak_hash_context_ptr()\nhash: %s\n\n&quot;</span>, buffer );</div><div class="line">   }</div><div class="line"></div><div class="line">   tail = st.st_size; <span class="comment">/* значение хвоста для следующего жксперимента */</span></div><div class="line">   munmap( data, st.st_size );</div><div class="line">   close(fd);</div><div class="line"> }</div><div class="line"><span class="preprocessor">#endif</span></div><div class="line"></div><div class="line"> <span class="comment">/* 4. хешируем, используя функции класса hash */</span></div><div class="line">   memset( out, 0, 32 );</div><div class="line">   <a class="code" href="ak__hash_8h.html#a4577946909e39956e2d41fcc408a53b5">ak_hash_create_streebog256</a>( &amp;ctx );</div><div class="line">  <span class="comment">/* хешируем вызовов одной функции */</span></div><div class="line">   <a name="a14"></a><a class="code" href="ak__hash_8c.html#a1075b28b341a31642639697771a244dd">ak_hash_context_file</a>( &amp;ctx, <span class="stringliteral">&quot;data64.dat&quot;</span>, out );</div><div class="line">   <a class="code" href="ak__hash_8c.html#aea4a84bb72d71f441657796db70a0d99">ak_hash_destroy</a>( &amp;ctx );</div><div class="line">  <span class="comment">/* выводим полученное значение */</span></div><div class="line">   <a class="code" href="ak__tools_8c.html#a20fa595a38b20425248b6fe4d6faa069">ak_ptr_to_hexstr_static</a>( out, 32, buffer, 1024, <a class="code" href="libakrypt_8h.html#a8d5ecbffb7fc8e1aa60754ae866eb486a872df325c5f9fac16ef66c17c1666908">ak_false</a> );</div><div class="line">   printf(<span class="stringliteral">&quot;ak_hash_context_file()\nhash: %s\n\n&quot;</span>, buffer );</div><div class="line"></div><div class="line"> <span class="comment">/* 5. хешируем, используя функцию класса compress (итеративного сжимающего отображения) */</span></div><div class="line">   <a class="code" href="ak__hash_8h.html#a4577946909e39956e2d41fcc408a53b5">ak_hash_create_streebog256</a>( &amp;ctx );</div><div class="line">   <a name="a15"></a><a class="code" href="ak__compress_8c.html#a2c8157efba25b0066270c3cd0b6e7822">ak_compress_create_hash</a>( &amp;comp, &amp;ctx ); <span class="comment">/* создаем объект, связанный с функцией хеширования */</span></div><div class="line">  <span class="comment">/* хешируем данные */</span></div><div class="line">   <a name="a16"></a><a class="code" href="ak__compress_8c.html#a0df8c8386ae7c493a2f5985f52dcebba">ak_compress_file</a>( &amp;comp, <span class="stringliteral">&quot;data64.dat&quot;</span>, out );</div><div class="line">   <a name="a17"></a><a class="code" href="ak__compress_8c.html#a1a2220fdaff8ccc3661a9e5d067cc02f">ak_compress_destroy</a>( &amp;comp );</div><div class="line">   <a class="code" href="ak__hash_8c.html#aea4a84bb72d71f441657796db70a0d99">ak_hash_destroy</a>( &amp;ctx );</div><div class="line">  <span class="comment">/* выводим полученное значение */</span></div><div class="line">   <a class="code" href="ak__tools_8c.html#a20fa595a38b20425248b6fe4d6faa069">ak_ptr_to_hexstr_static</a>( out, 32, buffer, 1024, <a class="code" href="libakrypt_8h.html#a8d5ecbffb7fc8e1aa60754ae866eb486a872df325c5f9fac16ef66c17c1666908">ak_false</a> );</div><div class="line">   printf(<span class="stringliteral">&quot;ak_compress_file()\nhash: %s\n\n&quot;</span>, buffer );</div><div class="line"></div><div class="line"> <span class="comment">/* 6. хешируем, используя фрагменты случайной длины, меньшей чем длина обрабатываемого блока */</span></div><div class="line">   <a name="a18"></a><a class="code" href="ak__random_8c.html#a7591cdc413cb73da8b1eb463aebc2530">ak_random_create_lcg</a>( &amp;generator );     <span class="comment">/* создаем генератор псевдослучайных чисел */</span></div><div class="line">   <a class="code" href="ak__hash_8h.html#a4577946909e39956e2d41fcc408a53b5">ak_hash_create_streebog256</a>( &amp;ctx );     <span class="comment">/* создаем контекст функции хеширования */</span></div><div class="line">   <a class="code" href="ak__compress_8c.html#a2c8157efba25b0066270c3cd0b6e7822">ak_compress_create_hash</a>( &amp;comp, &amp;ctx ); <span class="comment">/* создаем контекст сжимающего отображения */</span></div><div class="line">   fp = fopen( <span class="stringliteral">&quot;data64.dat&quot;</span>, <span class="stringliteral">&quot;rb&quot;</span> );</div><div class="line"></div><div class="line">   memset( out, 0, 32 ); <span class="comment">/* очищаем вектор для хранения результата */</span></div><div class="line">   <a name="a19"></a><a class="code" href="ak__compress_8c.html#a4ccfd6acdaf53703e38dfb059eb66447">ak_compress_clean</a>( &amp;comp ); <span class="comment">/* очищаем контекст структуры сжатия данных */</span></div><div class="line"></div><div class="line">   <span class="keywordflow">while</span>( tail &gt; ctx.<a name="a20"></a><a class="code" href="structhash.html#a2cbae7e4bd552155acfe6bd81683e50f">bsize</a> ) {</div><div class="line">     <span class="keywordtype">size_t</span> value;</div><div class="line">     generator.<a name="a21"></a><a class="code" href="structrandom.html#a34c4359c2f54cc37cdf9ad5acecf115f">random</a>( &amp;generator, &amp;value, <span class="keyword">sizeof</span>( <span class="keywordtype">size_t</span> ));</div><div class="line">     value %= ctx.<a class="code" href="structhash.html#a2cbae7e4bd552155acfe6bd81683e50f">bsize</a>;</div><div class="line"></div><div class="line">     fread( buffer, 1, value, fp );</div><div class="line">     <a name="a22"></a><a class="code" href="ak__compress_8c.html#af4e2eb8ba9cbcce1314b55811f442634">ak_compress_update</a>( &amp;comp, buffer, value );</div><div class="line">     tail -= value;</div><div class="line">   }</div><div class="line">   fread( buffer, 1, tail, fp );</div><div class="line">   <a name="a23"></a><a class="code" href="ak__compress_8c.html#ae83443579230980fed2cfc3c2bec0488">ak_compress_finalize</a>( &amp;comp, buffer, tail, out );</div><div class="line">   fclose(fp);</div><div class="line">   <a name="a24"></a><a class="code" href="ak__random_8c.html#a6a4676e2f5acb44c1023dc640f271448">ak_random_destroy</a>( &amp;generator );</div><div class="line">   <a class="code" href="ak__compress_8c.html#a1a2220fdaff8ccc3661a9e5d067cc02f">ak_compress_destroy</a>( &amp;comp );</div><div class="line">   <a class="code" href="ak__hash_8c.html#aea4a84bb72d71f441657796db70a0d99">ak_hash_destroy</a>( &amp;ctx );</div><div class="line">  <span class="comment">/* выводим полученное значение */</span></div><div class="line">   <a class="code" href="ak__tools_8c.html#a20fa595a38b20425248b6fe4d6faa069">ak_ptr_to_hexstr_static</a>( out, 32, buffer, 1024, <a class="code" href="libakrypt_8h.html#a8d5ecbffb7fc8e1aa60754ae866eb486a872df325c5f9fac16ef66c17c1666908">ak_false</a> );</div><div class="line">   printf(<span class="stringliteral">&quot;fragments of small random length + ak_compress_update()\nhash: %s\n\n&quot;</span>, buffer );</div><div class="line"></div><div class="line"> <span class="keywordflow">return</span> <a class="code" href="ak__libakrypt_8c.html#a7b2010bf04cdfa2e9575dbe570de71cb">ak_libakrypt_destroy</a>(); <span class="comment">/* останавливаем библиотеку и выходим */</span></div><div class="line">}</div></div><!-- fragment --> </div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="footer">Документация по libakrypt. Последние изменения: Вс 23 Сен 2018 21:13:41. Создано системой
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.11 </li>
+  </ul>
+</div>
+</body>
+</html>

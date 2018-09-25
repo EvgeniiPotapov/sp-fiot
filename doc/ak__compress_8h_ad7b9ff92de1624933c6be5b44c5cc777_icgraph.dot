@@ -1,0 +1,15 @@
+digraph "ak_compress_create_hash"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node1 [label="ak_compress_create_hash",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+  Node1 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="ak_hash_context_file",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$ak__hash_8h.html#ae5f9c5aa8feb2b25e7e5e938c2ccc8ee",tooltip="Хеширование заданного файла. "];
+  Node2 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="ak_hash_file",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$libakrypt_8h.html#a947f1032e81c23f725b96290154c093b",tooltip="Хеширование заданного файла. "];
+  Node2 -> Node4 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node4 [label="ak_signkey_context\l_sign_file",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$ak__sign_8h.html#a9f193708b3158911311b858cb4aa37be",tooltip="Выработка электронной подписи для заданного файла. "];
+  Node2 -> Node5 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node5 [label="ak_verifykey_context\l_verify_file",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$ak__sign_8h.html#a2fddbc6eacb3d6efdd262ebeda8b5d5e",tooltip="Проверка электронной подписи для заданного файла. "];
+}

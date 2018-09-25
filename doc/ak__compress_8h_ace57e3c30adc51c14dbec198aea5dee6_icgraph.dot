@@ -1,0 +1,35 @@
+digraph "ak_compress_finalize"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node1 [label="ak_compress_finalize",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+  Node1 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="ak_compress_file",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$ak__compress_8h.html#a1dc99716a32375349b2aef8996d55278",tooltip="Применение сжимающего отображения к заданному файлу. "];
+  Node2 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="ak_hash_context_file",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$ak__hash_8h.html#ae5f9c5aa8feb2b25e7e5e938c2ccc8ee",tooltip="Хеширование заданного файла. "];
+  Node3 -> Node4 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node4 [label="ak_hash_file",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$libakrypt_8h.html#a947f1032e81c23f725b96290154c093b",tooltip="Хеширование заданного файла. "];
+  Node3 -> Node5 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node5 [label="ak_signkey_context\l_sign_file",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$ak__sign_8h.html#a9f193708b3158911311b858cb4aa37be",tooltip="Выработка электронной подписи для заданного файла. "];
+  Node3 -> Node6 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node6 [label="ak_verifykey_context\l_verify_file",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$ak__sign_8h.html#a2fddbc6eacb3d6efdd262ebeda8b5d5e",tooltip="Проверка электронной подписи для заданного файла. "];
+  Node2 -> Node7 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node7 [label="ak_mac_context_file",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$ak__mac_8h.html#ada707f0aadf0c5ff444282e6ec3bb119",tooltip="Вычисление имитовставки для заданного файла. "];
+  Node1 -> Node8 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node8 [label="ak_hmac_pbkdf2_streebog512",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$ak__mac_8h.html#a3620123e05a306ef7b6082fb9d26addb",tooltip="Развертка ключевого вектора из пароля (согласно Р 50.1.111-2016, раздел 4) "];
+  Node8 -> Node9 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node9 [label="ak_hmac_test_pbkdf2",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$ak__mac_8h.html#afd16a5884331c3223c9f9cb0b61c8a4f",tooltip="Тестирование алгоритма PBKDF2, регламентируемого Р 50.1.113-2016. "];
+  Node9 -> Node10 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node10 [label="ak_libakrypt_test_mac\l_functions",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$ak__libakrypt_8c.html#a84835e08912ca25d9ab280099ef0e00c",tooltip="Функция проверяет корректность реализации алгоритмов выработки имитовставки "];
+  Node10 -> Node11 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node11 [label="ak_libakrypt_create",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$libakrypt_8h.html#a3f840f1a40839f867ba729aa1c5d67b8",tooltip="Функция инициализации и тестирования криптографических механизмов библиотеки. "];
+  Node8 -> Node12 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node12 [label="ak_skey_set_password",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$ak__skey_8h.html#a85f95aca3e0442a1a739610b8770ae1a",tooltip="Присвоение секретному ключу значения, выработанного из пароля "];
+  Node12 -> Node13 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node13 [label="ak_bckey_context_set\l_password",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$ak__bckey_8h.html#a83be28c0c80a77b874d8559c497ee413",tooltip="Присвоение контексту ключа алгоритма блочного шифрования значения, выработанного из пароля..."];
+  Node12 -> Node14 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node14 [label="ak_mac_context_set\l_password",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$ak__mac_8h.html#aaa8bd2ebae847aba4941f1fe603c56c7",tooltip="Присвоение контексту ключа алгоритма выработки имитовставки значения, выработанного из пароля..."];
+  Node12 -> Node15 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node15 [label="ak_signkey_context\l_set_key_password",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$ak__sign_8h.html#a07524ceb4e3c3f10ab791317462a7637",tooltip="Присвоение секретному ключу электронной подписи значения, выработанного из пароля. "];
+}

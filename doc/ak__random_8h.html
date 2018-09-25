@@ -1,0 +1,576 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.11"/>
+<title>libakrypt: Файл ak_random.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+  $(document).ready(initResizable);
+  $(window).load(resizeHeight);
+</script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { init_search(); });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">libakrypt
+   &#160;<span id="projectnumber">Версия 0.6.7</span>
+   </div>
+   <div id="projectbrief">Модуль, реализующий криптографические преобразования для проекта OpenSKZI</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.8.11 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Поиск');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Титульная&#160;страница</span></a></li>
+      <li><a href="pages.html"><span>Описания</span></a></li>
+      <li><a href="annotated.html"><span>Структуры&#160;данных</span></a></li>
+      <li class="current"><a href="files.html"><span>Файлы</span></a></li>
+      <li><a href="examples.html"><span>Примеры</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Поиск" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>Файлы</span></a></li>
+      <li><a href="globals.html"><span>Список&#160;членов&#160;всех&#160;файлов</span></a></li>
+    </ul>
+  </div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(document).ready(function(){initNavTree('ak__random_8h.html','');});
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#nested-classes">Структуры данных</a> &#124;
+<a href="#typedef-members">Определения типов</a> &#124;
+<a href="#func-members">Функции</a>  </div>
+  <div class="headertitle">
+<div class="title">Файл ak_random.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><code>#include &lt;<a class="el" href="libakrypt_8h_source.html">libakrypt.h</a>&gt;</code><br />
+</div><div class="textblock"><div class="dynheader">
+Граф включаемых заголовочных файлов для ak_random.h:</div>
+<div class="dyncontent">
+<div class="center"><img src="ak__random_8h__incl.png" border="0" usemap="#ak__random_8h" alt=""/></div>
+<!-- MAP 0 -->
+</div>
+</div><div class="textblock"><div class="dynheader">
+Граф файлов, в которые включается этот файл:</div>
+<div class="dyncontent">
+<div class="center"><img src="ak__random_8h__dep__incl.png" border="0" usemap="#ak__random_8hdep" alt=""/></div>
+<!-- MAP 1 -->
+</div>
+</div>
+<p><a href="ak__random_8h_source.html">См. исходные тексты.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
+Структуры данных</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structrandom.html">random</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Класс, реализующий произвольный генератор псевдо-случайных чисел.  <a href="structrandom.html#details">Подробнее...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
+Определения типов</h2></td></tr>
+<tr class="memitem:abff2e5b8dffdf9ddc9b3eb7821e72de0"><td class="memItemLeft" align="right" valign="top">typedef int(&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ak__random_8h.html#abff2e5b8dffdf9ddc9b3eb7821e72de0">ak_function_random</a>) (<a class="el" href="ak__random_8h.html#a02528de477a7fe808f4d32f41fa265ea">ak_random</a>)</td></tr>
+<tr class="separator:abff2e5b8dffdf9ddc9b3eb7821e72de0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a59acc7bf07fdb7203cda8f1ebc5906eb"><td class="memItemLeft" align="right" valign="top">typedef int(&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ak__random_8h.html#a59acc7bf07fdb7203cda8f1ebc5906eb">ak_function_random_create</a>) (<a class="el" href="ak__random_8h.html#a02528de477a7fe808f4d32f41fa265ea">ak_random</a>)</td></tr>
+<tr class="memdesc:a59acc7bf07fdb7203cda8f1ebc5906eb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Функция создания контекста генератора псевдо случайных последовательностей.  <a href="#a59acc7bf07fdb7203cda8f1ebc5906eb">Подробнее...</a><br /></td></tr>
+<tr class="separator:a59acc7bf07fdb7203cda8f1ebc5906eb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abf82f8a3c14e92af8cd6c51908170142"><td class="memItemLeft" align="right" valign="top">typedef <a class="el" href="libakrypt_8h.html#a44748ab5acc3b5e0d78b2cb1436a0aae">ak_handle</a>(&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ak__random_8h.html#abf82f8a3c14e92af8cd6c51908170142">ak_function_random_new</a>) (void)</td></tr>
+<tr class="separator:abf82f8a3c14e92af8cd6c51908170142"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a20140953d215dc774e719efba2579eb4"><td class="memItemLeft" align="right" valign="top">typedef int(&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ak__random_8h.html#a20140953d215dc774e719efba2579eb4">ak_function_random_ptr_const</a>) (<a class="el" href="ak__random_8h.html#a02528de477a7fe808f4d32f41fa265ea">ak_random</a>, const <a class="el" href="libakrypt_8h.html#a59817f4698b8d80ec2f6ef2af4111190">ak_pointer</a>, const size_t)</td></tr>
+<tr class="separator:a20140953d215dc774e719efba2579eb4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a02528de477a7fe808f4d32f41fa265ea"><td class="memItemLeft" align="right" valign="top">typedef struct <a class="el" href="structrandom.html">random</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ak__random_8h.html#a02528de477a7fe808f4d32f41fa265ea">ak_random</a></td></tr>
+<tr class="memdesc:a02528de477a7fe808f4d32f41fa265ea"><td class="mdescLeft">&#160;</td><td class="mdescRight">Указатель на класс генератора псевдо-случайных чисел.  <a href="#a02528de477a7fe808f4d32f41fa265ea">Подробнее...</a><br /></td></tr>
+<tr class="separator:a02528de477a7fe808f4d32f41fa265ea"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+Функции</h2></td></tr>
+<tr class="memitem:a27d1032744a1eec58077a2ba6353c1d7"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ak__random_8h.html#a27d1032744a1eec58077a2ba6353c1d7">ak_random_create</a> (<a class="el" href="ak__random_8h.html#a02528de477a7fe808f4d32f41fa265ea">ak_random</a>)</td></tr>
+<tr class="memdesc:a27d1032744a1eec58077a2ba6353c1d7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Инициализация генератора псевдо-случайных чисел.  <a href="#a27d1032744a1eec58077a2ba6353c1d7">Подробнее...</a><br /></td></tr>
+<tr class="separator:a27d1032744a1eec58077a2ba6353c1d7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aad33dd3fa9b16ae7fa859de3015e9fb9"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ak__random_8h.html#aad33dd3fa9b16ae7fa859de3015e9fb9">ak_random_create_file</a> (<a class="el" href="ak__random_8h.html#a02528de477a7fe808f4d32f41fa265ea">ak_random</a>, const char *)</td></tr>
+<tr class="memdesc:aad33dd3fa9b16ae7fa859de3015e9fb9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Cоздание генератора, считывающего случайные значения из заданного файла.  <a href="#aad33dd3fa9b16ae7fa859de3015e9fb9">Подробнее...</a><br /></td></tr>
+<tr class="separator:aad33dd3fa9b16ae7fa859de3015e9fb9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5e29c496db3dd799265baa4255c6b469"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ak__random_8h.html#a5e29c496db3dd799265baa4255c6b469">ak_random_create_lcg</a> (<a class="el" href="ak__random_8h.html#a02528de477a7fe808f4d32f41fa265ea">ak_random</a>)</td></tr>
+<tr class="memdesc:a5e29c496db3dd799265baa4255c6b469"><td class="mdescLeft">&#160;</td><td class="mdescRight">Создание линейного конгруэнтного генератора псевдо-случайных чисел.  <a href="#a5e29c496db3dd799265baa4255c6b469">Подробнее...</a><br /></td></tr>
+<tr class="separator:a5e29c496db3dd799265baa4255c6b469"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9f8a71da4c79f62f00103558adf96fcd"><td class="memItemLeft" align="right" valign="top"><a class="el" href="libakrypt_8h.html#a59817f4698b8d80ec2f6ef2af4111190">ak_pointer</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ak__random_8h.html#a9f8a71da4c79f62f00103558adf96fcd">ak_random_delete</a> (<a class="el" href="libakrypt_8h.html#a59817f4698b8d80ec2f6ef2af4111190">ak_pointer</a>)</td></tr>
+<tr class="memdesc:a9f8a71da4c79f62f00103558adf96fcd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Уничтожение генератора псевдо-случайных чисел.  <a href="#a9f8a71da4c79f62f00103558adf96fcd">Подробнее...</a><br /></td></tr>
+<tr class="separator:a9f8a71da4c79f62f00103558adf96fcd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a59852b1cd49f5ee1f4ea9e869eb19347"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ak__random_8h.html#a59852b1cd49f5ee1f4ea9e869eb19347">ak_random_destroy</a> (<a class="el" href="ak__random_8h.html#a02528de477a7fe808f4d32f41fa265ea">ak_random</a>)</td></tr>
+<tr class="memdesc:a59852b1cd49f5ee1f4ea9e869eb19347"><td class="mdescLeft">&#160;</td><td class="mdescRight">Уничтожение данных, хранящихся в полях структуры struct random.  <a href="#a59852b1cd49f5ee1f4ea9e869eb19347">Подробнее...</a><br /></td></tr>
+<tr class="separator:a59852b1cd49f5ee1f4ea9e869eb19347"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6ad52435c50125b974f4535968d8d41b"><td class="memItemLeft" align="right" valign="top">ak_uint64&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ak__random_8h.html#a6ad52435c50125b974f4535968d8d41b">ak_random_value</a> (void)</td></tr>
+<tr class="memdesc:a6ad52435c50125b974f4535968d8d41b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Функция генерации случайного 64-х битного целого числа.  <a href="#a6ad52435c50125b974f4535968d8d41b">Подробнее...</a><br /></td></tr>
+<tr class="separator:a6ad52435c50125b974f4535968d8d41b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">Типы</h2>
+<a class="anchor" id="abff2e5b8dffdf9ddc9b3eb7821e72de0"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef int( ak_function_random) (<a class="el" href="ak__random_8h.html#a02528de477a7fe808f4d32f41fa265ea">ak_random</a>)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>См. определение в файле <a class="el" href="ak__random_8h_source.html">ak_random.h</a> строка <a class="el" href="ak__random_8h_source.html#l00042">42</a></p>
+
+</div>
+</div>
+<a class="anchor" id="a59acc7bf07fdb7203cda8f1ebc5906eb"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef int( ak_function_random_create) (<a class="el" href="ak__random_8h.html#a02528de477a7fe808f4d32f41fa265ea">ak_random</a>)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Функция создания контекста генератора псевдо случайных последовательностей. </p>
+
+<p>См. определение в файле <a class="el" href="ak__random_8h_source.html">ak_random.h</a> строка <a class="el" href="ak__random_8h_source.html#l00046">46</a></p>
+
+</div>
+</div>
+<a class="anchor" id="abf82f8a3c14e92af8cd6c51908170142"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef <a class="el" href="libakrypt_8h.html#a44748ab5acc3b5e0d78b2cb1436a0aae">ak_handle</a>( ak_function_random_new) (void)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>См. определение в файле <a class="el" href="ak__random_8h_source.html">ak_random.h</a> строка <a class="el" href="ak__random_8h_source.html#l00044">44</a></p>
+
+</div>
+</div>
+<a class="anchor" id="a20140953d215dc774e719efba2579eb4"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef int( ak_function_random_ptr_const) (<a class="el" href="ak__random_8h.html#a02528de477a7fe808f4d32f41fa265ea">ak_random</a>, const <a class="el" href="libakrypt_8h.html#a59817f4698b8d80ec2f6ef2af4111190">ak_pointer</a>, const size_t)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>См. определение в файле <a class="el" href="ak__random_8h_source.html">ak_random.h</a> строка <a class="el" href="ak__random_8h_source.html#l00043">43</a></p>
+
+</div>
+</div>
+<a class="anchor" id="a02528de477a7fe808f4d32f41fa265ea"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef struct <a class="el" href="structrandom.html">random</a>* <a class="el" href="ak__random_8h.html#a02528de477a7fe808f4d32f41fa265ea">ak_random</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Указатель на класс генератора псевдо-случайных чисел. </p>
+
+<p>См. определение в файле <a class="el" href="ak__random_8h_source.html">ak_random.h</a> строка <a class="el" href="ak__random_8h_source.html#l00039">39</a></p>
+
+</div>
+</div>
+<h2 class="groupheader">Функции</h2>
+<a class="anchor" id="a27d1032744a1eec58077a2ba6353c1d7"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int ak_random_create </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="ak__random_8h.html#a02528de477a7fe808f4d32f41fa265ea">ak_random</a>&#160;</td>
+          <td class="paramname"><em>rnd</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Инициализация генератора псевдо-случайных чисел. </p>
+<p>Функция устанавливает значение полей структуры struct random в значения по-умолчанию.</p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">rnd</td><td>указатель на структуру struct random </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd>В случае успеха возвращается ak_error_ok (ноль). В случае возникновения ошибки возвращается ее код. </dd></dl>
+
+<p>См. определение в файле <a class="el" href="ak__random_8c_source.html">ak_random.c</a> строка <a class="el" href="ak__random_8c_source.html#l00048">48</a></p>
+<div class="fragment"><div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;{</div><div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;  <span class="keywordflow">if</span>( rnd == NULL ) {</div><div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    <a class="code" href="ak__log_8c.html#a80a4822cbd184b3cbcc43096126eb52b">ak_error_message</a>( <a class="code" href="libakrypt_8h.html#ab44706b2e13bc40499b30fb371ad7f9e">ak_error_null_pointer</a>, __func__ , <span class="stringliteral">&quot;use a null pointer to a random generator&quot;</span> );</div><div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="libakrypt_8h.html#ab44706b2e13bc40499b30fb371ad7f9e">ak_error_null_pointer</a>;</div><div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;  }</div><div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;  rnd-&gt;<a class="code" href="structrandom.html#a0d9dd0697d4bd775e4f48135a8d9dad8">data</a> = NULL;</div><div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;  rnd-&gt;<a class="code" href="structrandom.html#a2f72c87e3d45846b5149d3182664004d">next</a> = NULL;</div><div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;  rnd-&gt;<a class="code" href="structrandom.html#aba1c1cd5b0e7126d6006c4fe3f8b058b">randomize_ptr</a> = NULL;</div><div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;  rnd-&gt;<a class="code" href="structrandom.html#a34c4359c2f54cc37cdf9ad5acecf115f">random</a> = NULL;</div><div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;  rnd-&gt;<a class="code" href="structrandom.html#a14f825140829d551e8812a93e4a3d0a8">free</a> = free;</div><div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160; <span class="keywordflow">return</span> <a class="code" href="libakrypt_8h.html#aa6db0eccf8222376f61f2f033a1bbe4c">ak_error_ok</a>;</div><div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;}</div><div class="ttc" id="structrandom_html_a34c4359c2f54cc37cdf9ad5acecf115f"><div class="ttname"><a href="structrandom.html#a34c4359c2f54cc37cdf9ad5acecf115f">random::random</a></div><div class="ttdeci">ak_function_random_ptr_const * random</div><div class="ttdoc">указатель на функцию выработки последователности псевдо-случайных байт </div><div class="ttdef"><b>Definition:</b> <a href="ak__random_8h_source.html#l00060">ak_random.h:60</a></div></div>
+<div class="ttc" id="structrandom_html_aba1c1cd5b0e7126d6006c4fe3f8b058b"><div class="ttname"><a href="structrandom.html#aba1c1cd5b0e7126d6006c4fe3f8b058b">random::randomize_ptr</a></div><div class="ttdeci">ak_function_random_ptr_const * randomize_ptr</div><div class="ttdoc">указатель на функцию инициализации генератора заданным массивом значений </div><div class="ttdef"><b>Definition:</b> <a href="ak__random_8h_source.html#l00058">ak_random.h:58</a></div></div>
+<div class="ttc" id="structrandom_html_a2f72c87e3d45846b5149d3182664004d"><div class="ttname"><a href="structrandom.html#a2f72c87e3d45846b5149d3182664004d">random::next</a></div><div class="ttdeci">ak_function_random * next</div><div class="ttdoc">указатель на функцию выработки следующего внутреннего состояния </div><div class="ttdef"><b>Definition:</b> <a href="ak__random_8h_source.html#l00056">ak_random.h:56</a></div></div>
+<div class="ttc" id="libakrypt_8h_html_ab44706b2e13bc40499b30fb371ad7f9e"><div class="ttname"><a href="libakrypt_8h.html#ab44706b2e13bc40499b30fb371ad7f9e">ak_error_null_pointer</a></div><div class="ttdeci">#define ak_error_null_pointer</div><div class="ttdoc">Ошибка, возникающая при доступе или передаче в качестве аргумента функции null указателя. </div><div class="ttdef"><b>Definition:</b> <a href="libakrypt_8h_source.html#l00149">libakrypt.h:149</a></div></div>
+<div class="ttc" id="structrandom_html_a14f825140829d551e8812a93e4a3d0a8"><div class="ttname"><a href="structrandom.html#a14f825140829d551e8812a93e4a3d0a8">random::free</a></div><div class="ttdeci">ak_function_free * free</div><div class="ttdoc">указатель на функцию освобождения памяти внутренней структуры данных </div><div class="ttdef"><b>Definition:</b> <a href="ak__random_8h_source.html#l00062">ak_random.h:62</a></div></div>
+<div class="ttc" id="libakrypt_8h_html_aa6db0eccf8222376f61f2f033a1bbe4c"><div class="ttname"><a href="libakrypt_8h.html#aa6db0eccf8222376f61f2f033a1bbe4c">ak_error_ok</a></div><div class="ttdeci">#define ak_error_ok</div><div class="ttdoc">Результат, говорящий об отсутствии ошибки. </div><div class="ttdef"><b>Definition:</b> <a href="libakrypt_8h_source.html#l00145">libakrypt.h:145</a></div></div>
+<div class="ttc" id="ak__log_8c_html_a80a4822cbd184b3cbcc43096126eb52b"><div class="ttname"><a href="ak__log_8c.html#a80a4822cbd184b3cbcc43096126eb52b">ak_error_message</a></div><div class="ttdeci">int ak_error_message(const int code, const char *function, const char *message)</div><div class="ttdoc">Вывод сообщений о возникшей в процессе выполнения ошибке. </div><div class="ttdef"><b>Definition:</b> <a href="ak__log_8c_source.html#l00186">ak_log.c:186</a></div></div>
+<div class="ttc" id="structrandom_html_a0d9dd0697d4bd775e4f48135a8d9dad8"><div class="ttname"><a href="structrandom.html#a0d9dd0697d4bd775e4f48135a8d9dad8">random::data</a></div><div class="ttdeci">ak_pointer data</div><div class="ttdoc">указатель на внутренние структуры данных </div><div class="ttdef"><b>Definition:</b> <a href="ak__random_8h_source.html#l00053">ak_random.h:53</a></div></div>
+</div><!-- fragment -->
+<p><div class="dynheader">
+Граф вызовов:</div>
+<div class="dyncontent">
+<div class="center"><img src="ak__random_8h_a27d1032744a1eec58077a2ba6353c1d7_cgraph.png" border="0" usemap="#ak__random_8h_a27d1032744a1eec58077a2ba6353c1d7_cgraph" alt=""/></div>
+<!-- MAP 2 -->
+</div>
+</p>
+
+<p><div class="dynheader">
+Граф вызова функции:</div>
+<div class="dyncontent">
+<div class="center"><img src="ak__random_8h_a27d1032744a1eec58077a2ba6353c1d7_icgraph.png" border="0" usemap="#ak__random_8h_a27d1032744a1eec58077a2ba6353c1d7_icgraph" alt=""/></div>
+<!-- MAP 3 -->
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="aad33dd3fa9b16ae7fa859de3015e9fb9"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int ak_random_create_file </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="ak__random_8h.html#a02528de477a7fe808f4d32f41fa265ea">ak_random</a>&#160;</td>
+          <td class="paramname"><em>generator</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>filename</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Cоздание генератора, считывающего случайные значения из заданного файла. </p>
+<p>Данный генератор связывается с заданным файлом и возвращает содержащиеся в нем значения в качестве случайных чисел. Если данные в файле заканчиваются, то считывание начинается с начала файла.</p>
+<p>Основное назначение данного генератора - считывание данных из файловых устройств, таких как /dev/randon или /dev/urandom.</p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">generator</td><td>Контекст создаваемого генератора. </td></tr>
+    <tr><td class="paramname">filename</td><td>Имя файла. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd>В случае успеха, функция возвращает <a class="el" href="libakrypt_8h.html#aa6db0eccf8222376f61f2f033a1bbe4c">ak_error_ok</a>. В противном случае возвращается код ошибки. </dd></dl>
+
+<p>См. определение в файле <a class="el" href="ak__random_8c_source.html">ak_random.c</a> строка <a class="el" href="ak__random_8c_source.html#l00323">323</a></p>
+<div class="fragment"><div class="line"><a name="l00324"></a><span class="lineno">  324</span>&#160;{</div><div class="line"><a name="l00325"></a><span class="lineno">  325</span>&#160;  <span class="keywordtype">int</span> error = <a class="code" href="libakrypt_8h.html#aa6db0eccf8222376f61f2f033a1bbe4c">ak_error_ok</a>;</div><div class="line"><a name="l00326"></a><span class="lineno">  326</span>&#160;  <span class="keywordflow">if</span>(( error = <a class="code" href="ak__random_8c.html#a3b122dc28795ec890ad9442726de8e70">ak_random_create</a>( generator )) != <a class="code" href="libakrypt_8h.html#aa6db0eccf8222376f61f2f033a1bbe4c">ak_error_ok</a> )</div><div class="line"><a name="l00327"></a><span class="lineno">  327</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="ak__log_8c.html#a80a4822cbd184b3cbcc43096126eb52b">ak_error_message</a>( error, __func__ , <span class="stringliteral">&quot;wrong initialization of random generator&quot;</span> );</div><div class="line"><a name="l00328"></a><span class="lineno">  328</span>&#160;</div><div class="line"><a name="l00329"></a><span class="lineno">  329</span>&#160;  <span class="keywordflow">if</span>(( generator-&gt;<a class="code" href="structrandom.html#a0d9dd0697d4bd775e4f48135a8d9dad8">data</a> = malloc( <span class="keyword">sizeof</span>( <span class="keyword">struct</span> <a class="code" href="structrandom__file.html">random_file</a> ))) == NULL )</div><div class="line"><a name="l00330"></a><span class="lineno">  330</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="ak__log_8c.html#a80a4822cbd184b3cbcc43096126eb52b">ak_error_message</a>( <a class="code" href="libakrypt_8h.html#a3e8d10d4f38d2d8032c60cdca1f59db2">ak_error_out_of_memory</a>, __func__ ,</div><div class="line"><a name="l00331"></a><span class="lineno">  331</span>&#160;           <span class="stringliteral">&quot;incorrect memory allocation for an internal variables of random generator&quot;</span> );</div><div class="line"><a name="l00332"></a><span class="lineno">  332</span>&#160;</div><div class="line"><a name="l00333"></a><span class="lineno">  333</span>&#160; <span class="comment">/* теперь мы открываем заданный пользователем файл */</span></div><div class="line"><a name="l00334"></a><span class="lineno">  334</span>&#160;  <span class="keywordflow">if</span>( ((( <a class="code" href="structrandom__file.html">ak_random_file</a> ) ( generator-&gt;<a class="code" href="structrandom.html#a0d9dd0697d4bd775e4f48135a8d9dad8">data</a> ))-&gt;fd = open( filename, O_RDONLY | <a class="code" href="libakrypt_8h.html#a36fa9b2e726512bc17a7a6d3e39002be">O_BINARY</a> )) == -1 ) {</div><div class="line"><a name="l00335"></a><span class="lineno">  335</span>&#160;    <a class="code" href="ak__log_8c.html#af1a0b4eeceb5a222a840dcec204cb547">ak_error_message_fmt</a>( <a class="code" href="libakrypt_8h.html#a24f4e317102c366a09fbe7fe97d737b0">ak_error_open_file</a>, __func__ ,</div><div class="line"><a name="l00336"></a><span class="lineno">  336</span>&#160;                                  <span class="stringliteral">&quot;wrong opening a file \&quot;%s\&quot; with random data&quot;</span>, filename );</div><div class="line"><a name="l00337"></a><span class="lineno">  337</span>&#160;    <span class="comment">//generator = ak_random_delete( generator );</span></div><div class="line"><a name="l00338"></a><span class="lineno">  338</span>&#160;    <a class="code" href="ak__random_8c.html#a6a4676e2f5acb44c1023dc640f271448">ak_random_destroy</a>( generator );</div><div class="line"><a name="l00339"></a><span class="lineno">  339</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="libakrypt_8h.html#a24f4e317102c366a09fbe7fe97d737b0">ak_error_open_file</a>;</div><div class="line"><a name="l00340"></a><span class="lineno">  340</span>&#160;  }</div><div class="line"><a name="l00341"></a><span class="lineno">  341</span>&#160;</div><div class="line"><a name="l00342"></a><span class="lineno">  342</span>&#160;  generator-&gt;<a class="code" href="structrandom.html#a2f72c87e3d45846b5149d3182664004d">next</a> = NULL;</div><div class="line"><a name="l00343"></a><span class="lineno">  343</span>&#160;  generator-&gt;<a class="code" href="structrandom.html#aba1c1cd5b0e7126d6006c4fe3f8b058b">randomize_ptr</a> = NULL;</div><div class="line"><a name="l00344"></a><span class="lineno">  344</span>&#160;  generator-&gt;<a class="code" href="structrandom.html#a34c4359c2f54cc37cdf9ad5acecf115f">random</a> = <a class="code" href="ak__random_8c.html#a687a37c1fe2c4892085977a9d07c68a0">ak_random_file_random</a>;</div><div class="line"><a name="l00345"></a><span class="lineno">  345</span>&#160;  generator-&gt;<a class="code" href="structrandom.html#a14f825140829d551e8812a93e4a3d0a8">free</a> = <a class="code" href="ak__random_8c.html#ab1544fccabc725c91c030e0dd1c64692">ak_random_file_free</a>; <span class="comment">/* эта функция должна закрыть открытый ранее файл */</span></div><div class="line"><a name="l00346"></a><span class="lineno">  346</span>&#160;</div><div class="line"><a name="l00347"></a><span class="lineno">  347</span>&#160; <span class="keywordflow">return</span> error;</div><div class="line"><a name="l00348"></a><span class="lineno">  348</span>&#160;}</div><div class="ttc" id="ak__random_8c_html_a6a4676e2f5acb44c1023dc640f271448"><div class="ttname"><a href="ak__random_8c.html#a6a4676e2f5acb44c1023dc640f271448">ak_random_destroy</a></div><div class="ttdeci">int ak_random_destroy(ak_random rnd)</div><div class="ttdoc">Уничтожение данных, хранящихся в полях структуры struct random. </div><div class="ttdef"><b>Definition:</b> <a href="ak__random_8c_source.html#l00067">ak_random.c:67</a></div></div>
+<div class="ttc" id="structrandom_html_a34c4359c2f54cc37cdf9ad5acecf115f"><div class="ttname"><a href="structrandom.html#a34c4359c2f54cc37cdf9ad5acecf115f">random::random</a></div><div class="ttdeci">ak_function_random_ptr_const * random</div><div class="ttdoc">указатель на функцию выработки последователности псевдо-случайных байт </div><div class="ttdef"><b>Definition:</b> <a href="ak__random_8h_source.html#l00060">ak_random.h:60</a></div></div>
+<div class="ttc" id="structrandom_html_aba1c1cd5b0e7126d6006c4fe3f8b058b"><div class="ttname"><a href="structrandom.html#aba1c1cd5b0e7126d6006c4fe3f8b058b">random::randomize_ptr</a></div><div class="ttdeci">ak_function_random_ptr_const * randomize_ptr</div><div class="ttdoc">указатель на функцию инициализации генератора заданным массивом значений </div><div class="ttdef"><b>Definition:</b> <a href="ak__random_8h_source.html#l00058">ak_random.h:58</a></div></div>
+<div class="ttc" id="structrandom__file_html"><div class="ttname"><a href="structrandom__file.html">random_file</a></div><div class="ttdoc">Класс для хранения внутренних состояний генератора-файла </div><div class="ttdef"><b>Definition:</b> <a href="ak__random_8c_source.html#l00246">ak_random.c:246</a></div></div>
+<div class="ttc" id="ak__random_8c_html_ab1544fccabc725c91c030e0dd1c64692"><div class="ttname"><a href="ak__random_8c.html#ab1544fccabc725c91c030e0dd1c64692">ak_random_file_free</a></div><div class="ttdeci">static void ak_random_file_free(ak_pointer ptr)</div><div class="ttdef"><b>Definition:</b> <a href="ak__random_8c_source.html#l00253">ak_random.c:253</a></div></div>
+<div class="ttc" id="structrandom_html_a2f72c87e3d45846b5149d3182664004d"><div class="ttname"><a href="structrandom.html#a2f72c87e3d45846b5149d3182664004d">random::next</a></div><div class="ttdeci">ak_function_random * next</div><div class="ttdoc">указатель на функцию выработки следующего внутреннего состояния </div><div class="ttdef"><b>Definition:</b> <a href="ak__random_8h_source.html#l00056">ak_random.h:56</a></div></div>
+<div class="ttc" id="ak__random_8c_html_a687a37c1fe2c4892085977a9d07c68a0"><div class="ttname"><a href="ak__random_8c.html#a687a37c1fe2c4892085977a9d07c68a0">ak_random_file_random</a></div><div class="ttdeci">static int ak_random_file_random(ak_random rnd, const ak_pointer ptr, const size_t size)</div><div class="ttdef"><b>Definition:</b> <a href="ak__random_8c_source.html#l00265">ak_random.c:265</a></div></div>
+<div class="ttc" id="libakrypt_8h_html_a36fa9b2e726512bc17a7a6d3e39002be"><div class="ttname"><a href="libakrypt_8h.html#a36fa9b2e726512bc17a7a6d3e39002be">O_BINARY</a></div><div class="ttdeci">#define O_BINARY</div><div class="ttdef"><b>Definition:</b> <a href="libakrypt_8h_source.html#l00506">libakrypt.h:506</a></div></div>
+<div class="ttc" id="libakrypt_8h_html_a24f4e317102c366a09fbe7fe97d737b0"><div class="ttname"><a href="libakrypt_8h.html#a24f4e317102c366a09fbe7fe97d737b0">ak_error_open_file</a></div><div class="ttdeci">#define ak_error_open_file</div><div class="ttdoc">Ошибка открытия файла (устройства). </div><div class="ttdef"><b>Definition:</b> <a href="libakrypt_8h_source.html#l00167">libakrypt.h:167</a></div></div>
+<div class="ttc" id="ak__log_8c_html_af1a0b4eeceb5a222a840dcec204cb547"><div class="ttname"><a href="ak__log_8c.html#af1a0b4eeceb5a222a840dcec204cb547">ak_error_message_fmt</a></div><div class="ttdeci">int ak_error_message_fmt(const int code, const char *function, const char *format,...)</div><div class="ttdoc">Вывод сообщений о возникшей в процессе выполнения ошибке. </div><div class="ttdef"><b>Definition:</b> <a href="ak__log_8c_source.html#l00212">ak_log.c:212</a></div></div>
+<div class="ttc" id="structrandom_html_a14f825140829d551e8812a93e4a3d0a8"><div class="ttname"><a href="structrandom.html#a14f825140829d551e8812a93e4a3d0a8">random::free</a></div><div class="ttdeci">ak_function_free * free</div><div class="ttdoc">указатель на функцию освобождения памяти внутренней структуры данных </div><div class="ttdef"><b>Definition:</b> <a href="ak__random_8h_source.html#l00062">ak_random.h:62</a></div></div>
+<div class="ttc" id="libakrypt_8h_html_aa6db0eccf8222376f61f2f033a1bbe4c"><div class="ttname"><a href="libakrypt_8h.html#aa6db0eccf8222376f61f2f033a1bbe4c">ak_error_ok</a></div><div class="ttdeci">#define ak_error_ok</div><div class="ttdoc">Результат, говорящий об отсутствии ошибки. </div><div class="ttdef"><b>Definition:</b> <a href="libakrypt_8h_source.html#l00145">libakrypt.h:145</a></div></div>
+<div class="ttc" id="ak__log_8c_html_a80a4822cbd184b3cbcc43096126eb52b"><div class="ttname"><a href="ak__log_8c.html#a80a4822cbd184b3cbcc43096126eb52b">ak_error_message</a></div><div class="ttdeci">int ak_error_message(const int code, const char *function, const char *message)</div><div class="ttdoc">Вывод сообщений о возникшей в процессе выполнения ошибке. </div><div class="ttdef"><b>Definition:</b> <a href="ak__log_8c_source.html#l00186">ak_log.c:186</a></div></div>
+<div class="ttc" id="ak__random_8c_html_a3b122dc28795ec890ad9442726de8e70"><div class="ttname"><a href="ak__random_8c.html#a3b122dc28795ec890ad9442726de8e70">ak_random_create</a></div><div class="ttdeci">int ak_random_create(ak_random rnd)</div><div class="ttdoc">Инициализация генератора псевдо-случайных чисел. </div><div class="ttdef"><b>Definition:</b> <a href="ak__random_8c_source.html#l00048">ak_random.c:48</a></div></div>
+<div class="ttc" id="libakrypt_8h_html_a3e8d10d4f38d2d8032c60cdca1f59db2"><div class="ttname"><a href="libakrypt_8h.html#a3e8d10d4f38d2d8032c60cdca1f59db2">ak_error_out_of_memory</a></div><div class="ttdeci">#define ak_error_out_of_memory</div><div class="ttdoc">Ошибка выделения оперативной памяти. </div><div class="ttdef"><b>Definition:</b> <a href="libakrypt_8h_source.html#l00147">libakrypt.h:147</a></div></div>
+<div class="ttc" id="structrandom_html_a0d9dd0697d4bd775e4f48135a8d9dad8"><div class="ttname"><a href="structrandom.html#a0d9dd0697d4bd775e4f48135a8d9dad8">random::data</a></div><div class="ttdeci">ak_pointer data</div><div class="ttdoc">указатель на внутренние структуры данных </div><div class="ttdef"><b>Definition:</b> <a href="ak__random_8h_source.html#l00053">ak_random.h:53</a></div></div>
+</div><!-- fragment -->
+<p><div class="dynheader">
+Граф вызовов:</div>
+<div class="dyncontent">
+<div class="center"><img src="ak__random_8h_aad33dd3fa9b16ae7fa859de3015e9fb9_cgraph.png" border="0" usemap="#ak__random_8h_aad33dd3fa9b16ae7fa859de3015e9fb9_cgraph" alt=""/></div>
+<!-- MAP 4 -->
+</div>
+</p>
+
+<p><div class="dynheader">
+Граф вызова функции:</div>
+<div class="dyncontent">
+<div class="center"><img src="ak__random_8h_aad33dd3fa9b16ae7fa859de3015e9fb9_icgraph.png" border="0" usemap="#ak__random_8h_aad33dd3fa9b16ae7fa859de3015e9fb9_icgraph" alt=""/></div>
+<!-- MAP 5 -->
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a5e29c496db3dd799265baa4255c6b469"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int ak_random_create_lcg </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="ak__random_8h.html#a02528de477a7fe808f4d32f41fa265ea">ak_random</a>&#160;</td>
+          <td class="paramname"><em>generator</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Создание линейного конгруэнтного генератора псевдо-случайных чисел. </p>
+<p>Данный генератор вырабатывает последовательность внутренних состояний, удовлетворяющую линейному сравнению <img class="formulaInl" alt="$ x_{n+1} \equiv a\cdot x_n + c \pmod{2^{64}}, $" src="form_88.png"/> в котором константы a и c удовлетворяют равенствам <img class="formulaInl" alt="$ a = 125643267795740073 $" src="form_89.png"/> и <img class="formulaInl" alt="$ b = 506098983240188723. $" src="form_90.png"/></p>
+<p>Далее, последовательность внутренних состояний преобразуется в последовательность байт по следующему правилу <img class="formulaInl" alt="$ \gamma_n = \displaystyle\frac{x_n - \hat x_n}{2^{24}} \pmod{256}, $" src="form_91.png"/> где <img class="formulaInl" alt="$\hat x_n \equiv x_n \pmod{2^{24}}. $" src="form_92.png"/></p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">generator</td><td>Контекст создаваемого генератора. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd>В случае успеха, функция возвращает <a class="el" href="libakrypt_8h.html#aa6db0eccf8222376f61f2f033a1bbe4c">ak_error_ok</a>. В противном случае возвращается код ошибки. </dd></dl>
+
+<p>См. определение в файле <a class="el" href="ak__random_8c_source.html">ak_random.c</a> строка <a class="el" href="ak__random_8c_source.html#l00220">220</a></p>
+<div class="fragment"><div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;{</div><div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;  <span class="keywordtype">int</span> error = <a class="code" href="libakrypt_8h.html#aa6db0eccf8222376f61f2f033a1bbe4c">ak_error_ok</a>;</div><div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;  ak_uint64 qword = <a class="code" href="ak__random_8c.html#a6ad52435c50125b974f4535968d8d41b">ak_random_value</a>(); <span class="comment">/* вырабатываем случайное число */</span></div><div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;</div><div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;  <span class="keywordflow">if</span>(( error = <a class="code" href="ak__random_8c.html#a3b122dc28795ec890ad9442726de8e70">ak_random_create</a>( generator )) != <a class="code" href="libakrypt_8h.html#aa6db0eccf8222376f61f2f033a1bbe4c">ak_error_ok</a> )</div><div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="ak__log_8c.html#a80a4822cbd184b3cbcc43096126eb52b">ak_error_message</a>( error, __func__ , <span class="stringliteral">&quot;wrong initialization of random generator&quot;</span> );</div><div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;</div><div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;  <span class="keywordflow">if</span>(( generator-&gt;<a class="code" href="structrandom.html#a0d9dd0697d4bd775e4f48135a8d9dad8">data</a> = malloc( <span class="keyword">sizeof</span>( <span class="keyword">struct</span> <a class="code" href="structrandom__lcg.html">random_lcg</a> ))) == NULL )</div><div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="ak__log_8c.html#a80a4822cbd184b3cbcc43096126eb52b">ak_error_message</a>( <a class="code" href="libakrypt_8h.html#a3e8d10d4f38d2d8032c60cdca1f59db2">ak_error_out_of_memory</a>, __func__ ,</div><div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;              <span class="stringliteral">&quot;incorrect memory allocation for an internal variables of random generator&quot;</span> );</div><div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160;</div><div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;  generator-&gt;<a class="code" href="structrandom.html#a2f72c87e3d45846b5149d3182664004d">next</a> = <a class="code" href="ak__random_8c.html#aa504b6be7da72486ebd32dbce90060cf">ak_random_lcg_next</a>;</div><div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;  generator-&gt;<a class="code" href="structrandom.html#aba1c1cd5b0e7126d6006c4fe3f8b058b">randomize_ptr</a> = <a class="code" href="ak__random_8c.html#adfb9be9a2ce6710bb7cf8884fc5ba8a2">ak_random_lcg_randomize_ptr</a>;</div><div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160;  generator-&gt;<a class="code" href="structrandom.html#a34c4359c2f54cc37cdf9ad5acecf115f">random</a> = <a class="code" href="ak__random_8c.html#a4e608ef967a86ed167367e2120afcc38">ak_random_lcg_random</a>;</div><div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160; <span class="comment">/* функция generator-&gt;free уже установлена при вызове ak_random_create */</span></div><div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160;</div><div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160; <span class="comment">/* для корректной работы присваиваем какое-то случайное начальное значение */</span></div><div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160;  <a class="code" href="ak__random_8c.html#adfb9be9a2ce6710bb7cf8884fc5ba8a2">ak_random_lcg_randomize_ptr</a>( generator, &amp;qword, <span class="keyword">sizeof</span>( ak_uint64 ));</div><div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160; <span class="keywordflow">return</span> error;</div><div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160;}</div><div class="ttc" id="structrandom_html_a34c4359c2f54cc37cdf9ad5acecf115f"><div class="ttname"><a href="structrandom.html#a34c4359c2f54cc37cdf9ad5acecf115f">random::random</a></div><div class="ttdeci">ak_function_random_ptr_const * random</div><div class="ttdoc">указатель на функцию выработки последователности псевдо-случайных байт </div><div class="ttdef"><b>Definition:</b> <a href="ak__random_8h_source.html#l00060">ak_random.h:60</a></div></div>
+<div class="ttc" id="structrandom_html_aba1c1cd5b0e7126d6006c4fe3f8b058b"><div class="ttname"><a href="structrandom.html#aba1c1cd5b0e7126d6006c4fe3f8b058b">random::randomize_ptr</a></div><div class="ttdeci">ak_function_random_ptr_const * randomize_ptr</div><div class="ttdoc">указатель на функцию инициализации генератора заданным массивом значений </div><div class="ttdef"><b>Definition:</b> <a href="ak__random_8h_source.html#l00058">ak_random.h:58</a></div></div>
+<div class="ttc" id="ak__random_8c_html_aa504b6be7da72486ebd32dbce90060cf"><div class="ttname"><a href="ak__random_8c.html#aa504b6be7da72486ebd32dbce90060cf">ak_random_lcg_next</a></div><div class="ttdeci">static int ak_random_lcg_next(ak_random rnd)</div><div class="ttdef"><b>Definition:</b> <a href="ak__random_8c_source.html#l00141">ak_random.c:141</a></div></div>
+<div class="ttc" id="structrandom_html_a2f72c87e3d45846b5149d3182664004d"><div class="ttname"><a href="structrandom.html#a2f72c87e3d45846b5149d3182664004d">random::next</a></div><div class="ttdeci">ak_function_random * next</div><div class="ttdoc">указатель на функцию выработки следующего внутреннего состояния </div><div class="ttdef"><b>Definition:</b> <a href="ak__random_8h_source.html#l00056">ak_random.h:56</a></div></div>
+<div class="ttc" id="ak__random_8c_html_adfb9be9a2ce6710bb7cf8884fc5ba8a2"><div class="ttname"><a href="ak__random_8c.html#adfb9be9a2ce6710bb7cf8884fc5ba8a2">ak_random_lcg_randomize_ptr</a></div><div class="ttdeci">static int ak_random_lcg_randomize_ptr(ak_random rnd, const ak_pointer ptr, const size_t size)</div><div class="ttdef"><b>Definition:</b> <a href="ak__random_8c_source.html#l00153">ak_random.c:153</a></div></div>
+<div class="ttc" id="libakrypt_8h_html_aa6db0eccf8222376f61f2f033a1bbe4c"><div class="ttname"><a href="libakrypt_8h.html#aa6db0eccf8222376f61f2f033a1bbe4c">ak_error_ok</a></div><div class="ttdeci">#define ak_error_ok</div><div class="ttdoc">Результат, говорящий об отсутствии ошибки. </div><div class="ttdef"><b>Definition:</b> <a href="libakrypt_8h_source.html#l00145">libakrypt.h:145</a></div></div>
+<div class="ttc" id="structrandom__lcg_html"><div class="ttname"><a href="structrandom__lcg.html">random_lcg</a></div><div class="ttdoc">Класс для хранения внутренних состояний линейного конгруэнтного генератора </div><div class="ttdef"><b>Definition:</b> <a href="ak__random_8c_source.html#l00134">ak_random.c:134</a></div></div>
+<div class="ttc" id="ak__random_8c_html_a6ad52435c50125b974f4535968d8d41b"><div class="ttname"><a href="ak__random_8c.html#a6ad52435c50125b974f4535968d8d41b">ak_random_value</a></div><div class="ttdeci">ak_uint64 ak_random_value(void)</div><div class="ttdoc">Функция генерации случайного 64-х битного целого числа. </div><div class="ttdef"><b>Definition:</b> <a href="ak__random_8c_source.html#l00114">ak_random.c:114</a></div></div>
+<div class="ttc" id="ak__log_8c_html_a80a4822cbd184b3cbcc43096126eb52b"><div class="ttname"><a href="ak__log_8c.html#a80a4822cbd184b3cbcc43096126eb52b">ak_error_message</a></div><div class="ttdeci">int ak_error_message(const int code, const char *function, const char *message)</div><div class="ttdoc">Вывод сообщений о возникшей в процессе выполнения ошибке. </div><div class="ttdef"><b>Definition:</b> <a href="ak__log_8c_source.html#l00186">ak_log.c:186</a></div></div>
+<div class="ttc" id="ak__random_8c_html_a3b122dc28795ec890ad9442726de8e70"><div class="ttname"><a href="ak__random_8c.html#a3b122dc28795ec890ad9442726de8e70">ak_random_create</a></div><div class="ttdeci">int ak_random_create(ak_random rnd)</div><div class="ttdoc">Инициализация генератора псевдо-случайных чисел. </div><div class="ttdef"><b>Definition:</b> <a href="ak__random_8c_source.html#l00048">ak_random.c:48</a></div></div>
+<div class="ttc" id="libakrypt_8h_html_a3e8d10d4f38d2d8032c60cdca1f59db2"><div class="ttname"><a href="libakrypt_8h.html#a3e8d10d4f38d2d8032c60cdca1f59db2">ak_error_out_of_memory</a></div><div class="ttdeci">#define ak_error_out_of_memory</div><div class="ttdoc">Ошибка выделения оперативной памяти. </div><div class="ttdef"><b>Definition:</b> <a href="libakrypt_8h_source.html#l00147">libakrypt.h:147</a></div></div>
+<div class="ttc" id="structrandom_html_a0d9dd0697d4bd775e4f48135a8d9dad8"><div class="ttname"><a href="structrandom.html#a0d9dd0697d4bd775e4f48135a8d9dad8">random::data</a></div><div class="ttdeci">ak_pointer data</div><div class="ttdoc">указатель на внутренние структуры данных </div><div class="ttdef"><b>Definition:</b> <a href="ak__random_8h_source.html#l00053">ak_random.h:53</a></div></div>
+<div class="ttc" id="ak__random_8c_html_a4e608ef967a86ed167367e2120afcc38"><div class="ttname"><a href="ak__random_8c.html#a4e608ef967a86ed167367e2120afcc38">ak_random_lcg_random</a></div><div class="ttdeci">static int ak_random_lcg_random(ak_random rnd, const ak_pointer ptr, const size_t size)</div><div class="ttdef"><b>Definition:</b> <a href="ak__random_8c_source.html#l00180">ak_random.c:180</a></div></div>
+</div><!-- fragment -->
+<p><div class="dynheader">
+Граф вызовов:</div>
+<div class="dyncontent">
+<div class="center"><img src="ak__random_8h_a5e29c496db3dd799265baa4255c6b469_cgraph.png" border="0" usemap="#ak__random_8h_a5e29c496db3dd799265baa4255c6b469_cgraph" alt=""/></div>
+<!-- MAP 6 -->
+</div>
+</p>
+
+<p><div class="dynheader">
+Граф вызова функции:</div>
+<div class="dyncontent">
+<div class="center"><img src="ak__random_8h_a5e29c496db3dd799265baa4255c6b469_icgraph.png" border="0" usemap="#ak__random_8h_a5e29c496db3dd799265baa4255c6b469_icgraph" alt=""/></div>
+<!-- MAP 7 -->
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a9f8a71da4c79f62f00103558adf96fcd"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="libakrypt_8h.html#a59817f4698b8d80ec2f6ef2af4111190">ak_pointer</a> ak_random_delete </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="libakrypt_8h.html#a59817f4698b8d80ec2f6ef2af4111190">ak_pointer</a>&#160;</td>
+          <td class="paramname"><em>rnd</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Уничтожение генератора псевдо-случайных чисел. </p>
+<p>Функция очищает все внутренние поля, уничтожает генератор псевдо-случайных чисел (структуру struct random) и присваивает указателю значение NULL.</p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">rnd</td><td>указатель на структуру struct random. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd>В случае успеха возвращается ak_error_ok (ноль). В случае возникновения ошибки возвращается ее код. </dd></dl>
+
+<p>См. определение в файле <a class="el" href="ak__random_8c_source.html">ak_random.c</a> строка <a class="el" href="ak__random_8c_source.html#l00089">89</a></p>
+<div class="fragment"><div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;{</div><div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;  <span class="keywordflow">if</span>( rnd != NULL ) {</div><div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;   <a class="code" href="ak__random_8c.html#a6a4676e2f5acb44c1023dc640f271448">ak_random_destroy</a>(( <a class="code" href="structrandom.html">ak_random</a> ) rnd );</div><div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;   free( rnd );</div><div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;  } <span class="keywordflow">else</span> <a class="code" href="ak__log_8c.html#a80a4822cbd184b3cbcc43096126eb52b">ak_error_message</a>( <a class="code" href="libakrypt_8h.html#ab44706b2e13bc40499b30fb371ad7f9e">ak_error_null_pointer</a>, __func__ ,</div><div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;                                            <span class="stringliteral">&quot;use a null pointer to a random generator&quot;</span> );</div><div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;  <span class="keywordflow">return</span> NULL;</div><div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;}</div><div class="ttc" id="ak__random_8c_html_a6a4676e2f5acb44c1023dc640f271448"><div class="ttname"><a href="ak__random_8c.html#a6a4676e2f5acb44c1023dc640f271448">ak_random_destroy</a></div><div class="ttdeci">int ak_random_destroy(ak_random rnd)</div><div class="ttdoc">Уничтожение данных, хранящихся в полях структуры struct random. </div><div class="ttdef"><b>Definition:</b> <a href="ak__random_8c_source.html#l00067">ak_random.c:67</a></div></div>
+<div class="ttc" id="libakrypt_8h_html_ab44706b2e13bc40499b30fb371ad7f9e"><div class="ttname"><a href="libakrypt_8h.html#ab44706b2e13bc40499b30fb371ad7f9e">ak_error_null_pointer</a></div><div class="ttdeci">#define ak_error_null_pointer</div><div class="ttdoc">Ошибка, возникающая при доступе или передаче в качестве аргумента функции null указателя. </div><div class="ttdef"><b>Definition:</b> <a href="libakrypt_8h_source.html#l00149">libakrypt.h:149</a></div></div>
+<div class="ttc" id="ak__log_8c_html_a80a4822cbd184b3cbcc43096126eb52b"><div class="ttname"><a href="ak__log_8c.html#a80a4822cbd184b3cbcc43096126eb52b">ak_error_message</a></div><div class="ttdeci">int ak_error_message(const int code, const char *function, const char *message)</div><div class="ttdoc">Вывод сообщений о возникшей в процессе выполнения ошибке. </div><div class="ttdef"><b>Definition:</b> <a href="ak__log_8c_source.html#l00186">ak_log.c:186</a></div></div>
+<div class="ttc" id="structrandom_html"><div class="ttname"><a href="structrandom.html">random</a></div><div class="ttdoc">Класс, реализующий произвольный генератор псевдо-случайных чисел. </div><div class="ttdef"><b>Definition:</b> <a href="ak__random_8h_source.html#l00051">ak_random.h:51</a></div></div>
+</div><!-- fragment -->
+<p><div class="dynheader">
+Граф вызовов:</div>
+<div class="dyncontent">
+<div class="center"><img src="ak__random_8h_a9f8a71da4c79f62f00103558adf96fcd_cgraph.png" border="0" usemap="#ak__random_8h_a9f8a71da4c79f62f00103558adf96fcd_cgraph" alt=""/></div>
+<!-- MAP 8 -->
+</div>
+</p>
+
+<p><div class="dynheader">
+Граф вызова функции:</div>
+<div class="dyncontent">
+<div class="center"><img src="ak__random_8h_a9f8a71da4c79f62f00103558adf96fcd_icgraph.png" border="0" usemap="#ak__random_8h_a9f8a71da4c79f62f00103558adf96fcd_icgraph" alt=""/></div>
+<!-- MAP 9 -->
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a59852b1cd49f5ee1f4ea9e869eb19347"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int ak_random_destroy </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="ak__random_8h.html#a02528de477a7fe808f4d32f41fa265ea">ak_random</a>&#160;</td>
+          <td class="paramname"><em>rnd</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Уничтожение данных, хранящихся в полях структуры struct random. </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">rnd</td><td>указатель на структуру struct random </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd>В случае успеха возвращается ak_error_ok (ноль). В случае возникновения ошибки возвращается ее код. </dd></dl>
+
+<p>См. определение в файле <a class="el" href="ak__random_8c_source.html">ak_random.c</a> строка <a class="el" href="ak__random_8c_source.html#l00067">67</a></p>
+<div class="fragment"><div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;{</div><div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;  <span class="keywordflow">if</span>( rnd == NULL ) {</div><div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;   <a class="code" href="ak__log_8c.html#a80a4822cbd184b3cbcc43096126eb52b">ak_error_message</a>( <a class="code" href="libakrypt_8h.html#ab44706b2e13bc40499b30fb371ad7f9e">ak_error_null_pointer</a>, __func__ ,<span class="stringliteral">&quot;use a null pointer to a random generator&quot;</span> );</div><div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;  <span class="keywordflow">return</span> <a class="code" href="libakrypt_8h.html#ab44706b2e13bc40499b30fb371ad7f9e">ak_error_null_pointer</a>;</div><div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;  }</div><div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;  <span class="keywordflow">if</span>( rnd-&gt;<a class="code" href="structrandom.html#a0d9dd0697d4bd775e4f48135a8d9dad8">data</a> != NULL ) rnd-&gt;<a class="code" href="structrandom.html#a14f825140829d551e8812a93e4a3d0a8">free</a>( rnd-&gt;<a class="code" href="structrandom.html#a0d9dd0697d4bd775e4f48135a8d9dad8">data</a> );</div><div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;  rnd-&gt;<a class="code" href="structrandom.html#a2f72c87e3d45846b5149d3182664004d">next</a> = NULL;</div><div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;  rnd-&gt;<a class="code" href="structrandom.html#aba1c1cd5b0e7126d6006c4fe3f8b058b">randomize_ptr</a> = NULL;</div><div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;  rnd-&gt;<a class="code" href="structrandom.html#a34c4359c2f54cc37cdf9ad5acecf115f">random</a> = NULL;</div><div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;  rnd-&gt;<a class="code" href="structrandom.html#a14f825140829d551e8812a93e4a3d0a8">free</a> = NULL;</div><div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160; <span class="keywordflow">return</span> <a class="code" href="libakrypt_8h.html#aa6db0eccf8222376f61f2f033a1bbe4c">ak_error_ok</a>;</div><div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;}</div><div class="ttc" id="structrandom_html_a34c4359c2f54cc37cdf9ad5acecf115f"><div class="ttname"><a href="structrandom.html#a34c4359c2f54cc37cdf9ad5acecf115f">random::random</a></div><div class="ttdeci">ak_function_random_ptr_const * random</div><div class="ttdoc">указатель на функцию выработки последователности псевдо-случайных байт </div><div class="ttdef"><b>Definition:</b> <a href="ak__random_8h_source.html#l00060">ak_random.h:60</a></div></div>
+<div class="ttc" id="structrandom_html_aba1c1cd5b0e7126d6006c4fe3f8b058b"><div class="ttname"><a href="structrandom.html#aba1c1cd5b0e7126d6006c4fe3f8b058b">random::randomize_ptr</a></div><div class="ttdeci">ak_function_random_ptr_const * randomize_ptr</div><div class="ttdoc">указатель на функцию инициализации генератора заданным массивом значений </div><div class="ttdef"><b>Definition:</b> <a href="ak__random_8h_source.html#l00058">ak_random.h:58</a></div></div>
+<div class="ttc" id="structrandom_html_a2f72c87e3d45846b5149d3182664004d"><div class="ttname"><a href="structrandom.html#a2f72c87e3d45846b5149d3182664004d">random::next</a></div><div class="ttdeci">ak_function_random * next</div><div class="ttdoc">указатель на функцию выработки следующего внутреннего состояния </div><div class="ttdef"><b>Definition:</b> <a href="ak__random_8h_source.html#l00056">ak_random.h:56</a></div></div>
+<div class="ttc" id="libakrypt_8h_html_ab44706b2e13bc40499b30fb371ad7f9e"><div class="ttname"><a href="libakrypt_8h.html#ab44706b2e13bc40499b30fb371ad7f9e">ak_error_null_pointer</a></div><div class="ttdeci">#define ak_error_null_pointer</div><div class="ttdoc">Ошибка, возникающая при доступе или передаче в качестве аргумента функции null указателя. </div><div class="ttdef"><b>Definition:</b> <a href="libakrypt_8h_source.html#l00149">libakrypt.h:149</a></div></div>
+<div class="ttc" id="structrandom_html_a14f825140829d551e8812a93e4a3d0a8"><div class="ttname"><a href="structrandom.html#a14f825140829d551e8812a93e4a3d0a8">random::free</a></div><div class="ttdeci">ak_function_free * free</div><div class="ttdoc">указатель на функцию освобождения памяти внутренней структуры данных </div><div class="ttdef"><b>Definition:</b> <a href="ak__random_8h_source.html#l00062">ak_random.h:62</a></div></div>
+<div class="ttc" id="libakrypt_8h_html_aa6db0eccf8222376f61f2f033a1bbe4c"><div class="ttname"><a href="libakrypt_8h.html#aa6db0eccf8222376f61f2f033a1bbe4c">ak_error_ok</a></div><div class="ttdeci">#define ak_error_ok</div><div class="ttdoc">Результат, говорящий об отсутствии ошибки. </div><div class="ttdef"><b>Definition:</b> <a href="libakrypt_8h_source.html#l00145">libakrypt.h:145</a></div></div>
+<div class="ttc" id="ak__log_8c_html_a80a4822cbd184b3cbcc43096126eb52b"><div class="ttname"><a href="ak__log_8c.html#a80a4822cbd184b3cbcc43096126eb52b">ak_error_message</a></div><div class="ttdeci">int ak_error_message(const int code, const char *function, const char *message)</div><div class="ttdoc">Вывод сообщений о возникшей в процессе выполнения ошибке. </div><div class="ttdef"><b>Definition:</b> <a href="ak__log_8c_source.html#l00186">ak_log.c:186</a></div></div>
+<div class="ttc" id="structrandom_html_a0d9dd0697d4bd775e4f48135a8d9dad8"><div class="ttname"><a href="structrandom.html#a0d9dd0697d4bd775e4f48135a8d9dad8">random::data</a></div><div class="ttdeci">ak_pointer data</div><div class="ttdoc">указатель на внутренние структуры данных </div><div class="ttdef"><b>Definition:</b> <a href="ak__random_8h_source.html#l00053">ak_random.h:53</a></div></div>
+</div><!-- fragment -->
+<p><div class="dynheader">
+Граф вызовов:</div>
+<div class="dyncontent">
+<div class="center"><img src="ak__random_8h_a59852b1cd49f5ee1f4ea9e869eb19347_cgraph.png" border="0" usemap="#ak__random_8h_a59852b1cd49f5ee1f4ea9e869eb19347_cgraph" alt=""/></div>
+<!-- MAP 10 -->
+</div>
+</p>
+
+<p><div class="dynheader">
+Граф вызова функции:</div>
+<div class="dyncontent">
+<div class="center"><img src="ak__random_8h_a59852b1cd49f5ee1f4ea9e869eb19347_icgraph.png" border="0" usemap="#ak__random_8h_a59852b1cd49f5ee1f4ea9e869eb19347_icgraph" alt=""/></div>
+<!-- MAP 11 -->
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a6ad52435c50125b974f4535968d8d41b"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">ak_uint64 ak_random_value </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Функция генерации случайного 64-х битного целого числа. </p>
+<p>Функция использует для генерации случайного значения текущее время и прочие параметры. Несмотря на случайность вырабатываемого значения, функция не должна использоваться для генерации значений, для которых требуется криптографическая случайность. Это связано с достаточно прогнозируемым изменением значений функции при многократных повторных вызовах.</p>
+<p>Основная задача данной функции - инициализаци программного генератора каким-либо знаением, в случае, когда пользователь не инициализирует программный генератор самостоятельно.</p>
+<dl class="section return"><dt>Возвращает</dt><dd>Функция возвращает случайное число размером 8 байт (64 бита). </dd></dl>
+
+<p>См. определение в файле <a class="el" href="ak__random_8c_source.html">ak_random.c</a> строка <a class="el" href="ak__random_8c_source.html#l00114">114</a></p>
+<div class="fragment"><div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;{</div><div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;  ak_uint64 vtme = time( NULL );</div><div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;  ak_uint64 clk = clock();</div><div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;<span class="preprocessor">#ifndef _WIN32</span></div><div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;  ak_uint64 pval = getpid();</div><div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;  ak_uint64 uval = getuid();</div><div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;<span class="preprocessor">#else</span></div><div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;  ak_uint64 pval = _getpid();</div><div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;  ak_uint64 uval = 67;</div><div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;<span class="preprocessor">#endif</span></div><div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;  ak_uint64 value = ( <a class="code" href="ak__random_8c.html#ad0589b5ba78a2f27eea7049e74470f45">shift_value</a> += 11 )*125643267795740073LL + pval;</div><div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;            value = ( value * 506098983240188723LL ) + 71331*uval + vtme;</div><div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;  <span class="keywordflow">return</span> value ^ clk;</div><div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;}</div><div class="ttc" id="ak__random_8c_html_ad0589b5ba78a2f27eea7049e74470f45"><div class="ttname"><a href="ak__random_8c.html#ad0589b5ba78a2f27eea7049e74470f45">shift_value</a></div><div class="ttdeci">static ak_uint64 shift_value</div><div class="ttdef"><b>Definition:</b> <a href="ak__random_8c_source.html#l00100">ak_random.c:100</a></div></div>
+</div><!-- fragment -->
+<p><div class="dynheader">
+Граф вызова функции:</div>
+<div class="dyncontent">
+<div class="center"><img src="ak__random_8h_a6ad52435c50125b974f4535968d8d41b_icgraph.png" border="0" usemap="#ak__random_8h_a6ad52435c50125b974f4535968d8d41b_icgraph" alt=""/></div>
+<!-- MAP 12 -->
+</div>
+</p>
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_43e0a1f539e00dcfa1a6bc4d4fee4fc2.html">home</a></li><li class="navelem"><a class="el" href="dir_32078dd46064dc5448d39191ac5534d6.html">eugene</a></li><li class="navelem"><a class="el" href="dir_90a44860457c395fae569358f05fdb49.html">Documents</a></li><li class="navelem"><a class="el" href="dir_ef0df63b0c88ed24c4c79f67668669bc.html">VKR</a></li><li class="navelem"><a class="el" href="dir_6ec071d27851548a42323e2c424bf74a.html">libakrypt-0.x</a></li><li class="navelem"><a class="el" href="dir_cc55869b84ab2b7a1ee582dd1158c3dc.html">source</a></li><li class="navelem"><a class="el" href="ak__random_8h.html">ak_random.h</a></li>
+    <li class="footer">Документация по libakrypt. Последние изменения: Вс 23 Сен 2018 21:13:42. Создано системой
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.11 </li>
+  </ul>
+</div>
+</body>
+</html>

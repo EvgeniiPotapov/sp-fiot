@@ -1,0 +1,9 @@
+digraph "ak_magma_decrypt_with_mask"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node1 [label="ak_magma_decrypt_with_mask",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+  Node1 -> Node2 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="ak_magma_gostf",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$ak__magma_8c.html#aa02e0a0e72a6854d43d296f97de3eee0",tooltip="Функция реализует один такт шифрующего преобразования ГОСТ 34.12-2015 (Mагма). "];
+}

@@ -1,0 +1,626 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.11"/>
+<title>libakrypt: Файл ak_log.c</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+  $(document).ready(initResizable);
+  $(window).load(resizeHeight);
+</script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { init_search(); });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">libakrypt
+   &#160;<span id="projectnumber">Версия 0.6.7</span>
+   </div>
+   <div id="projectbrief">Модуль, реализующий криптографические преобразования для проекта OpenSKZI</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.8.11 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Поиск');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Титульная&#160;страница</span></a></li>
+      <li><a href="pages.html"><span>Описания</span></a></li>
+      <li><a href="annotated.html"><span>Структуры&#160;данных</span></a></li>
+      <li class="current"><a href="files.html"><span>Файлы</span></a></li>
+      <li><a href="examples.html"><span>Примеры</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Поиск" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>Файлы</span></a></li>
+      <li><a href="globals.html"><span>Список&#160;членов&#160;всех&#160;файлов</span></a></li>
+    </ul>
+  </div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(document).ready(function(){initNavTree('ak__log_8c.html','');});
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#func-members">Функции</a> &#124;
+<a href="#var-members">Переменные</a>  </div>
+  <div class="headertitle">
+<div class="title">Файл ak_log.c</div>  </div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><code>#include &lt;stdarg.h&gt;</code><br />
+<code>#include &lt;<a class="el" href="libakrypt_8h_source.html">libakrypt.h</a>&gt;</code><br />
+</div><div class="textblock"><div class="dynheader">
+Граф включаемых заголовочных файлов для ak_log.c:</div>
+<div class="dyncontent">
+<div class="center"><img src="ak__log_8c__incl.png" border="0" usemap="#ak__log_8c" alt=""/></div>
+<!-- MAP 0 -->
+</div>
+</div>
+<p><a href="ak__log_8c_source.html">См. исходные тексты.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+Функции</h2></td></tr>
+<tr class="memitem:aa0cdd429c558ca0448ce3a8e9529e920"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ak__log_8c.html#aa0cdd429c558ca0448ce3a8e9529e920">ak_error_get_value</a> (void)</td></tr>
+<tr class="memdesc:aa0cdd429c558ca0448ce3a8e9529e920"><td class="mdescLeft">&#160;</td><td class="mdescRight">Функция возвращает код последней ошибки выполнения программы.  <a href="#aa0cdd429c558ca0448ce3a8e9529e920">Подробнее...</a><br /></td></tr>
+<tr class="separator:aa0cdd429c558ca0448ce3a8e9529e920"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a80a4822cbd184b3cbcc43096126eb52b"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ak__log_8c.html#a80a4822cbd184b3cbcc43096126eb52b">ak_error_message</a> (const int code, const char *function, const char *message)</td></tr>
+<tr class="memdesc:a80a4822cbd184b3cbcc43096126eb52b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Вывод сообщений о возникшей в процессе выполнения ошибке.  <a href="#a80a4822cbd184b3cbcc43096126eb52b">Подробнее...</a><br /></td></tr>
+<tr class="separator:a80a4822cbd184b3cbcc43096126eb52b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af1a0b4eeceb5a222a840dcec204cb547"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ak__log_8c.html#af1a0b4eeceb5a222a840dcec204cb547">ak_error_message_fmt</a> (const int code, const char *function, const char *format,...)</td></tr>
+<tr class="memdesc:af1a0b4eeceb5a222a840dcec204cb547"><td class="mdescLeft">&#160;</td><td class="mdescRight">Вывод сообщений о возникшей в процессе выполнения ошибке.  <a href="#af1a0b4eeceb5a222a840dcec204cb547">Подробнее...</a><br /></td></tr>
+<tr class="separator:af1a0b4eeceb5a222a840dcec204cb547"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a700e68d9e88d81489869ba269af25c7b"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ak__log_8c.html#a700e68d9e88d81489869ba269af25c7b">ak_error_set_value</a> (const int value)</td></tr>
+<tr class="memdesc:a700e68d9e88d81489869ba269af25c7b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Функция устанавливает значение переменной, хранящей ошибку выполнения программы.  <a href="#a700e68d9e88d81489869ba269af25c7b">Подробнее...</a><br /></td></tr>
+<tr class="separator:a700e68d9e88d81489869ba269af25c7b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6b9332de8025dac9ac816bf2f303d39c"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ak__log_8c.html#a6b9332de8025dac9ac816bf2f303d39c">ak_function_log_stderr</a> (const char *message)</td></tr>
+<tr class="memdesc:a6b9332de8025dac9ac816bf2f303d39c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Функция вывода сообщения об ошибке в стандартный канал вывода ошибок.  <a href="#a6b9332de8025dac9ac816bf2f303d39c">Подробнее...</a><br /></td></tr>
+<tr class="separator:a6b9332de8025dac9ac816bf2f303d39c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad15c1f166130811688ee21be67aeae99"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ak__log_8c.html#ad15c1f166130811688ee21be67aeae99">ak_log_set_function</a> (<a class="el" href="libakrypt_8h.html#aea308946e99a905baa047336b4e14a8d">ak_function_log</a> *function)</td></tr>
+<tr class="memdesc:ad15c1f166130811688ee21be67aeae99"><td class="mdescLeft">&#160;</td><td class="mdescRight">Явное задание функции аудита.  <a href="#ad15c1f166130811688ee21be67aeae99">Подробнее...</a><br /></td></tr>
+<tr class="separator:ad15c1f166130811688ee21be67aeae99"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a25eff854c3f398d72791d04662d0978a"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ak__log_8c.html#a25eff854c3f398d72791d04662d0978a">ak_log_set_message</a> (const char *message)</td></tr>
+<tr class="memdesc:a25eff854c3f398d72791d04662d0978a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Прямой вывод сообщения аудита.  <a href="#a25eff854c3f398d72791d04662d0978a">Подробнее...</a><br /></td></tr>
+<tr class="separator:a25eff854c3f398d72791d04662d0978a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a129225cc1640b6773cf0a7d629f0dca6"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ak__log_8c.html#a129225cc1640b6773cf0a7d629f0dca6">ak_snprintf</a> (char *str, size_t size, const char *format,...)</td></tr>
+<tr class="memdesc:a129225cc1640b6773cf0a7d629f0dca6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Обобщенная реализация функции snprintf для различных компиляторов.  <a href="#a129225cc1640b6773cf0a7d629f0dca6">Подробнее...</a><br /></td></tr>
+<tr class="separator:a129225cc1640b6773cf0a7d629f0dca6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
+Переменные</h2></td></tr>
+<tr class="memitem:a2412317176f53ab37879c772ea4c7fd4"><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ak__log_8c.html#a2412317176f53ab37879c772ea4c7fd4">ak_errno</a> = <a class="el" href="libakrypt_8h.html#aa6db0eccf8222376f61f2f033a1bbe4c">ak_error_ok</a></td></tr>
+<tr class="separator:a2412317176f53ab37879c772ea4c7fd4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6c9e75fba32750c562c70a501b2d2b32"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="libakrypt_8h.html#aea308946e99a905baa047336b4e14a8d">ak_function_log</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ak__log_8c.html#a6c9e75fba32750c562c70a501b2d2b32">ak_function_log_default</a> = NULL</td></tr>
+<tr class="separator:a6c9e75fba32750c562c70a501b2d2b32"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a242efd01b15053f862f425a3ab7ba81c"><td class="memItemLeft" align="right" valign="top">static pthread_mutex_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ak__log_8c.html#a242efd01b15053f862f425a3ab7ba81c">ak_function_log_default_mutex</a> = PTHREAD_MUTEX_INITIALIZER</td></tr>
+<tr class="separator:a242efd01b15053f862f425a3ab7ba81c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">Функции</h2>
+<a class="anchor" id="aa0cdd429c558ca0448ce3a8e9529e920"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int ak_error_get_value </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Функция возвращает код последней ошибки выполнения программы. </p>
+<dl class="section return"><dt>Возвращает</dt><dd>Функция возвращает текущее значение кода ошибки. Данное значение не является защищенным от возможности изменения различными потоками выполнения программы. </dd></dl>
+<dl><dt><b>Примеры: </b></dt><dd><a class="el" href="example-hash_8c-example.html#a8">example-hash.c</a> и <a class="el" href="example-internal-hash01_8c-example.html#a9">example-internal-hash01.c</a>.</dd>
+</dl>
+<p>См. определение в файле <a class="el" href="ak__log_8c_source.html">ak_log.c</a> строка <a class="el" href="ak__log_8c_source.html#l00067">67</a></p>
+<div class="fragment"><div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;{</div><div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;  <span class="keywordflow">return</span> <a class="code" href="ak__log_8c.html#a2412317176f53ab37879c772ea4c7fd4">ak_errno</a>;</div><div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;}</div><div class="ttc" id="ak__log_8c_html_a2412317176f53ab37879c772ea4c7fd4"><div class="ttname"><a href="ak__log_8c.html#a2412317176f53ab37879c772ea4c7fd4">ak_errno</a></div><div class="ttdeci">static int ak_errno</div><div class="ttdef"><b>Definition:</b> <a href="ak__log_8c_source.html#l00046">ak_log.c:46</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a class="anchor" id="a80a4822cbd184b3cbcc43096126eb52b"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int ak_error_message </td>
+          <td>(</td>
+          <td class="paramtype">const int&#160;</td>
+          <td class="paramname"><em>code</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>function</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>message</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Вывод сообщений о возникшей в процессе выполнения ошибке. </p>
+<p>Функция устанавливает текущее значение кода ошибки, формирует строку специального вида и выводит сформированную строку в логгер с помомощью функции <a class="el" href="ak__log_8c.html#a25eff854c3f398d72791d04662d0978a" title="Прямой вывод сообщения аудита. ">ak_log_set_message()</a>.</p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">code</td><td>Код ошибки </td></tr>
+    <tr><td class="paramname">message</td><td>Читаемое (понятное для пользователя) сообщение </td></tr>
+    <tr><td class="paramname">function</td><td>Имя функции, вызвавшей ошибку</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd>Функция возвращает установленный код ошибки. </dd></dl>
+<dl><dt><b>Примеры: </b></dt><dd><a class="el" href="example-hash_8c-example.html#a7">example-hash.c</a>.</dd>
+</dl>
+<p>См. определение в файле <a class="el" href="ak__log_8c_source.html">ak_log.c</a> строка <a class="el" href="ak__log_8c_source.html#l00186">186</a></p>
+<div class="fragment"><div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;{</div><div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160; <span class="comment">/* здесь мы выводим в логгер строку вида [pid] function: message (code: n)                        */</span></div><div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;  <span class="keywordtype">char</span> error_event_string[1024];</div><div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;  memset( error_event_string, 0, 1024 );</div><div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;</div><div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;<span class="preprocessor">#ifdef LIBAKRYPT_HAVE_UNISTD_H</span></div><div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;  <a class="code" href="ak__log_8c.html#a129225cc1640b6773cf0a7d629f0dca6">ak_snprintf</a>( error_event_string, 1023, <span class="stringliteral">&quot;[%d] %s(): %s (code: %d)&quot;</span>,</div><div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;                                                             getpid(), <span class="keyword">function</span>, message, code );</div><div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;<span class="preprocessor">#else</span></div><div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;<span class="preprocessor"> #ifdef _MSC_VER</span></div><div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;  <a class="code" href="ak__log_8c.html#a129225cc1640b6773cf0a7d629f0dca6">ak_snprintf</a>( error_event_string, 1023, <span class="stringliteral">&quot;[%d] %s(): %s (code: %d)&quot;</span>,</div><div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;                                                GetCurrentProcessId(), <span class="keyword">function</span>, message, code );</div><div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;<span class="preprocessor"> #else</span></div><div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;<span class="preprocessor">   #error Unsupported path to compile, sorry ...</span></div><div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;<span class="preprocessor"> #endif</span></div><div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;<span class="preprocessor">#endif</span></div><div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;  <a class="code" href="ak__log_8c.html#a25eff854c3f398d72791d04662d0978a">ak_log_set_message</a>( error_event_string );</div><div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160; <span class="keywordflow">return</span> <a class="code" href="ak__log_8c.html#a700e68d9e88d81489869ba269af25c7b">ak_error_set_value</a>( code );</div><div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;}</div><div class="ttc" id="ak__log_8c_html_a129225cc1640b6773cf0a7d629f0dca6"><div class="ttname"><a href="ak__log_8c.html#a129225cc1640b6773cf0a7d629f0dca6">ak_snprintf</a></div><div class="ttdeci">int ak_snprintf(char *str, size_t size, const char *format,...)</div><div class="ttdoc">Обобщенная реализация функции snprintf для различных компиляторов. </div><div class="ttdef"><b>Definition:</b> <a href="ak__log_8c_source.html#l00157">ak_log.c:157</a></div></div>
+<div class="ttc" id="ak__log_8c_html_a25eff854c3f398d72791d04662d0978a"><div class="ttname"><a href="ak__log_8c.html#a25eff854c3f398d72791d04662d0978a">ak_log_set_message</a></div><div class="ttdeci">int ak_log_set_message(const char *message)</div><div class="ttdoc">Прямой вывод сообщения аудита. </div><div class="ttdef"><b>Definition:</b> <a href="ak__log_8c_source.html#l00134">ak_log.c:134</a></div></div>
+<div class="ttc" id="ak__log_8c_html_a700e68d9e88d81489869ba269af25c7b"><div class="ttname"><a href="ak__log_8c.html#a700e68d9e88d81489869ba269af25c7b">ak_error_set_value</a></div><div class="ttdeci">int ak_error_set_value(const int value)</div><div class="ttdoc">Функция устанавливает значение переменной, хранящей ошибку выполнения программы. </div><div class="ttdef"><b>Definition:</b> <a href="ak__log_8c_source.html#l00058">ak_log.c:58</a></div></div>
+</div><!-- fragment -->
+<p><div class="dynheader">
+Граф вызовов:</div>
+<div class="dyncontent">
+<div class="center"><img src="ak__log_8c_a80a4822cbd184b3cbcc43096126eb52b_cgraph.png" border="0" usemap="#ak__log_8c_a80a4822cbd184b3cbcc43096126eb52b_cgraph" alt=""/></div>
+<!-- MAP 1 -->
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="af1a0b4eeceb5a222a840dcec204cb547"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int ak_error_message_fmt </td>
+          <td>(</td>
+          <td class="paramtype">const int&#160;</td>
+          <td class="paramname"><em>code</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>function</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>format</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>...</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Вывод сообщений о возникшей в процессе выполнения ошибке. </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">code</td><td>Код ошибки </td></tr>
+    <tr><td class="paramname">function</td><td>Имя функции, вызвавшей ошибку </td></tr>
+    <tr><td class="paramname">format</td><td>Форматная строка, в соответствии с которой формируется сообщение </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>См. определение в файле <a class="el" href="ak__log_8c_source.html">ak_log.c</a> строка <a class="el" href="ak__log_8c_source.html#l00212">212</a></p>
+<div class="fragment"><div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;{</div><div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160;  <span class="keywordtype">char</span> message[256];</div><div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160;  va_list args;</div><div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160;  va_start( args, format );</div><div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160;  memset( message, 0, 256 );</div><div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160;</div><div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160;<span class="preprocessor"> #ifdef _MSC_VER</span></div><div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;<span class="preprocessor">  #if _MSC_VER &gt; 1310</span></div><div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;    _vsnprintf_s( message, 256, 256, format, args );</div><div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;<span class="preprocessor">  #else</span></div><div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;    _vsnprintf( message, 256, format, args );</div><div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;<span class="preprocessor">  #endif</span></div><div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;<span class="preprocessor"> #else</span></div><div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;   vsnprintf( message, 256, format, args );</div><div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;<span class="preprocessor"> #endif</span></div><div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;   va_end( args );</div><div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160; <span class="keywordflow">return</span> <a class="code" href="ak__log_8c.html#a80a4822cbd184b3cbcc43096126eb52b">ak_error_message</a>( code, <span class="keyword">function</span>, message );</div><div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;}</div><div class="ttc" id="ak__log_8c_html_a80a4822cbd184b3cbcc43096126eb52b"><div class="ttname"><a href="ak__log_8c.html#a80a4822cbd184b3cbcc43096126eb52b">ak_error_message</a></div><div class="ttdeci">int ak_error_message(const int code, const char *function, const char *message)</div><div class="ttdoc">Вывод сообщений о возникшей в процессе выполнения ошибке. </div><div class="ttdef"><b>Definition:</b> <a href="ak__log_8c_source.html#l00186">ak_log.c:186</a></div></div>
+</div><!-- fragment -->
+<p><div class="dynheader">
+Граф вызовов:</div>
+<div class="dyncontent">
+<div class="center"><img src="ak__log_8c_af1a0b4eeceb5a222a840dcec204cb547_cgraph.png" border="0" usemap="#ak__log_8c_af1a0b4eeceb5a222a840dcec204cb547_cgraph" alt=""/></div>
+<!-- MAP 2 -->
+</div>
+</p>
+
+<p><div class="dynheader">
+Граф вызова функции:</div>
+<div class="dyncontent">
+<div class="center"><img src="ak__log_8c_af1a0b4eeceb5a222a840dcec204cb547_icgraph.png" border="0" usemap="#ak__log_8c_af1a0b4eeceb5a222a840dcec204cb547_icgraph" alt=""/></div>
+<!-- MAP 3 -->
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a700e68d9e88d81489869ba269af25c7b"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int ak_error_set_value </td>
+          <td>(</td>
+          <td class="paramtype">const int&#160;</td>
+          <td class="paramname"><em>value</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Функция устанавливает значение переменной, хранящей ошибку выполнения программы. </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">value</td><td>Код ошибки, который будет установлен. В случае, если значение value положительно, то код ошибки полагается равным величине <a class="el" href="libakrypt_8h.html#aa6db0eccf8222376f61f2f033a1bbe4c">ak_error_ok</a> (ноль). </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd>Функция возвращает устанавливаемое значение. </dd></dl>
+<dl><dt><b>Примеры: </b></dt><dd><a class="el" href="example-context-manager_8c-example.html#a13">example-context-manager.c</a>.</dd>
+</dl>
+<p>См. определение в файле <a class="el" href="ak__log_8c_source.html">ak_log.c</a> строка <a class="el" href="ak__log_8c_source.html#l00058">58</a></p>
+<div class="fragment"><div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;{</div><div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;  <span class="keywordflow">return</span> ( <a class="code" href="ak__log_8c.html#a2412317176f53ab37879c772ea4c7fd4">ak_errno</a> = value );</div><div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;}</div><div class="ttc" id="ak__log_8c_html_a2412317176f53ab37879c772ea4c7fd4"><div class="ttname"><a href="ak__log_8c.html#a2412317176f53ab37879c772ea4c7fd4">ak_errno</a></div><div class="ttdeci">static int ak_errno</div><div class="ttdef"><b>Definition:</b> <a href="ak__log_8c_source.html#l00046">ak_log.c:46</a></div></div>
+</div><!-- fragment -->
+<p><div class="dynheader">
+Граф вызова функции:</div>
+<div class="dyncontent">
+<div class="center"><img src="ak__log_8c_a700e68d9e88d81489869ba269af25c7b_icgraph.png" border="0" usemap="#ak__log_8c_a700e68d9e88d81489869ba269af25c7b_icgraph" alt=""/></div>
+<!-- MAP 4 -->
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a6b9332de8025dac9ac816bf2f303d39c"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int ak_function_log_stderr </td>
+          <td>(</td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>message</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Функция вывода сообщения об ошибке в стандартный канал вывода ошибок. </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">message</td><td>Выводимое сообщение </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd>В случае успеха, возвращается ak_error_ok (ноль). В случае возникновения ошибки, возвращается ее код. </dd></dl>
+<dl><dt><b>Примеры: </b></dt><dd><a class="el" href="example-bckey-internal_8c-example.html#a4">example-bckey-internal.c</a>, <a class="el" href="example-context-manager-node_8c-example.html#a2">example-context-manager-node.c</a>, <a class="el" href="example-context-manager_8c-example.html#a4">example-context-manager.c</a>, <a class="el" href="example-hash-oids_8c-example.html#a2">example-hash-oids.c</a>, <a class="el" href="example-hash_8c-example.html#a3">example-hash.c</a>, <a class="el" href="example-internal-hash02_8c-example.html#a5">example-internal-hash02.c</a>, <a class="el" href="example-log_8c-example.html#a4">example-log.c</a>, <a class="el" href="example-mpzn-convert_8c-example.html#a3">example-mpzn-convert.c</a>, <a class="el" href="example-mpzn-montgomery_8c-example.html#a14">example-mpzn-montgomery.c</a>, <a class="el" href="example-mpzn-rem_8c-example.html#a13">example-mpzn-rem.c</a>, <a class="el" href="example-oid_8c-example.html#a2">example-oid.c</a>, <a class="el" href="example-random-system_8c-example.html#a2">example-random-system.c</a>, <a class="el" href="example-random_8c-example.html#a2">example-random.c</a> и <a class="el" href="example-randomize_8c-example.html#a1">example-randomize.c</a>.</dd>
+</dl>
+<p>См. определение в файле <a class="el" href="ak__log_8c_source.html">ak_log.c</a> строка <a class="el" href="ak__log_8c_source.html#l00095">95</a></p>
+<div class="fragment"><div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;{</div><div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;  <span class="keywordflow">if</span>( message != NULL ) fprintf( stderr, <span class="stringliteral">&quot;%s\n&quot;</span>, message );</div><div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160; <span class="keywordflow">return</span> <a class="code" href="libakrypt_8h.html#aa6db0eccf8222376f61f2f033a1bbe4c">ak_error_ok</a>;</div><div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;}</div><div class="ttc" id="libakrypt_8h_html_aa6db0eccf8222376f61f2f033a1bbe4c"><div class="ttname"><a href="libakrypt_8h.html#aa6db0eccf8222376f61f2f033a1bbe4c">ak_error_ok</a></div><div class="ttdeci">#define ak_error_ok</div><div class="ttdoc">Результат, говорящий об отсутствии ошибки. </div><div class="ttdef"><b>Definition:</b> <a href="libakrypt_8h_source.html#l00145">libakrypt.h:145</a></div></div>
+</div><!-- fragment -->
+<p><div class="dynheader">
+Граф вызова функции:</div>
+<div class="dyncontent">
+<div class="center"><img src="ak__log_8c_a6b9332de8025dac9ac816bf2f303d39c_icgraph.png" border="0" usemap="#ak__log_8c_a6b9332de8025dac9ac816bf2f303d39c_icgraph" alt=""/></div>
+<!-- MAP 5 -->
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="ad15c1f166130811688ee21be67aeae99"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int ak_log_set_function </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="libakrypt_8h.html#aea308946e99a905baa047336b4e14a8d">ak_function_log</a> *&#160;</td>
+          <td class="paramname"><em>function</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Явное задание функции аудита. </p>
+<p>Функция устанавливает в качестве основного обработчика вывода сообщений функцию, задаваемую указателем function. Если аргумент function равен NULL, то используется функция по-умолчанию. Выбор того, какая именно функция будет установлена по-умолчанию, не фискирован. В текущей версии библиотеки он зависит от используемой операционной системы, например, под ОС Linux это вывод с использованием демона syslogd.</p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">function</td><td>Указатель на функцию вывода сообщений. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd>Функция всегда возвращает ak_error_ok (ноль). </dd></dl>
+<dl><dt><b>Примеры: </b></dt><dd><a class="el" href="example-log_8c-example.html#a8">example-log.c</a>.</dd>
+</dl>
+<p>См. определение в файле <a class="el" href="ak__log_8c_source.html">ak_log.c</a> строка <a class="el" href="ak__log_8c_source.html#l00112">112</a></p>
+<div class="fragment"><div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;{</div><div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;  pthread_mutex_lock( &amp;<a class="code" href="ak__log_8c.html#a242efd01b15053f862f425a3ab7ba81c">ak_function_log_default_mutex</a> );</div><div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;  <span class="keywordflow">if</span>( <span class="keyword">function</span> != NULL ) <a class="code" href="ak__log_8c.html#a6c9e75fba32750c562c70a501b2d2b32">ak_function_log_default</a> = <span class="keyword">function</span>;</div><div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;   <span class="keywordflow">else</span> {</div><div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;<span class="preprocessor">    #ifdef LIBAKRYPT_HAVE_SYSLOG_H</span></div><div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;      <a class="code" href="ak__log_8c.html#a6c9e75fba32750c562c70a501b2d2b32">ak_function_log_default</a> = ak_function_log_syslog;</div><div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;<span class="preprocessor">    #else</span></div><div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;      <a class="code" href="ak__log_8c.html#a6c9e75fba32750c562c70a501b2d2b32">ak_function_log_default</a> = <a class="code" href="ak__log_8c.html#a6b9332de8025dac9ac816bf2f303d39c">ak_function_log_stderr</a>;</div><div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;<span class="preprocessor">    #endif</span></div><div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;   }</div><div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;  pthread_mutex_unlock( &amp;<a class="code" href="ak__log_8c.html#a242efd01b15053f862f425a3ab7ba81c">ak_function_log_default_mutex</a> );</div><div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;  <span class="keywordflow">return</span> <a class="code" href="libakrypt_8h.html#aa6db0eccf8222376f61f2f033a1bbe4c">ak_error_ok</a>;</div><div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;}</div><div class="ttc" id="ak__log_8c_html_a242efd01b15053f862f425a3ab7ba81c"><div class="ttname"><a href="ak__log_8c.html#a242efd01b15053f862f425a3ab7ba81c">ak_function_log_default_mutex</a></div><div class="ttdeci">static pthread_mutex_t ak_function_log_default_mutex</div><div class="ttdef"><b>Definition:</b> <a href="ak__log_8c_source.html#l00051">ak_log.c:51</a></div></div>
+<div class="ttc" id="ak__log_8c_html_a6c9e75fba32750c562c70a501b2d2b32"><div class="ttname"><a href="ak__log_8c.html#a6c9e75fba32750c562c70a501b2d2b32">ak_function_log_default</a></div><div class="ttdeci">static ak_function_log * ak_function_log_default</div><div class="ttdef"><b>Definition:</b> <a href="ak__log_8c_source.html#l00050">ak_log.c:50</a></div></div>
+<div class="ttc" id="ak__log_8c_html_a6b9332de8025dac9ac816bf2f303d39c"><div class="ttname"><a href="ak__log_8c.html#a6b9332de8025dac9ac816bf2f303d39c">ak_function_log_stderr</a></div><div class="ttdeci">int ak_function_log_stderr(const char *message)</div><div class="ttdoc">Функция вывода сообщения об ошибке в стандартный канал вывода ошибок. </div><div class="ttdef"><b>Definition:</b> <a href="ak__log_8c_source.html#l00095">ak_log.c:95</a></div></div>
+<div class="ttc" id="libakrypt_8h_html_aa6db0eccf8222376f61f2f033a1bbe4c"><div class="ttname"><a href="libakrypt_8h.html#aa6db0eccf8222376f61f2f033a1bbe4c">ak_error_ok</a></div><div class="ttdeci">#define ak_error_ok</div><div class="ttdoc">Результат, говорящий об отсутствии ошибки. </div><div class="ttdef"><b>Definition:</b> <a href="libakrypt_8h_source.html#l00145">libakrypt.h:145</a></div></div>
+</div><!-- fragment -->
+<p><div class="dynheader">
+Граф вызовов:</div>
+<div class="dyncontent">
+<div class="center"><img src="ak__log_8c_ad15c1f166130811688ee21be67aeae99_cgraph.png" border="0" usemap="#ak__log_8c_ad15c1f166130811688ee21be67aeae99_cgraph" alt=""/></div>
+<!-- MAP 6 -->
+</div>
+</p>
+
+<p><div class="dynheader">
+Граф вызова функции:</div>
+<div class="dyncontent">
+<div class="center"><img src="ak__log_8c_ad15c1f166130811688ee21be67aeae99_icgraph.png" border="0" usemap="#ak__log_8c_ad15c1f166130811688ee21be67aeae99_icgraph" alt=""/></div>
+<!-- MAP 7 -->
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a25eff854c3f398d72791d04662d0978a"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int ak_log_set_message </td>
+          <td>(</td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>message</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Прямой вывод сообщения аудита. </p>
+<p>Функция использует установленную ранее функцию-обработчик сообщений. Если сообщение, или обработчик не определены (равны NULL) возвращается код ошибки. </p><dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">message</td><td>выводимое сообщение </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd>в случае успеха, возвращается ak_error_ok (ноль). В случае возникновения ошибки, возвращается ее код. </dd></dl>
+<dl><dt><b>Примеры: </b></dt><dd><a class="el" href="example-log_8c-example.html#a7">example-log.c</a>.</dd>
+</dl>
+<p>См. определение в файле <a class="el" href="ak__log_8c_source.html">ak_log.c</a> строка <a class="el" href="ak__log_8c_source.html#l00134">134</a></p>
+<div class="fragment"><div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;{</div><div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;  <span class="keywordtype">int</span> result = 0;</div><div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;  <span class="keywordflow">if</span>( <a class="code" href="ak__log_8c.html#a6c9e75fba32750c562c70a501b2d2b32">ak_function_log_default</a> == NULL ) <span class="keywordflow">return</span> <a class="code" href="ak__log_8c.html#a700e68d9e88d81489869ba269af25c7b">ak_error_set_value</a>( <a class="code" href="libakrypt_8h.html#a327220ab8ab5f10fcc2f1b52d4cf8c52">ak_error_undefined_function</a> );</div><div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;  <span class="keywordflow">if</span>( message == NULL ) {</div><div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="ak__log_8c.html#a80a4822cbd184b3cbcc43096126eb52b">ak_error_message</a>( <a class="code" href="libakrypt_8h.html#ab44706b2e13bc40499b30fb371ad7f9e">ak_error_null_pointer</a>, __func__ , <span class="stringliteral">&quot;using a NULL string for message&quot;</span> );</div><div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;  } <span class="keywordflow">else</span> {</div><div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;       pthread_mutex_lock( &amp;<a class="code" href="ak__log_8c.html#a242efd01b15053f862f425a3ab7ba81c">ak_function_log_default_mutex</a> );</div><div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;       result = <a class="code" href="ak__log_8c.html#a6c9e75fba32750c562c70a501b2d2b32">ak_function_log_default</a>( message );</div><div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;       pthread_mutex_unlock( &amp;<a class="code" href="ak__log_8c.html#a242efd01b15053f862f425a3ab7ba81c">ak_function_log_default_mutex</a> );</div><div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;      <span class="keywordflow">return</span> result;</div><div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;    }</div><div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160; <span class="keywordflow">return</span> <a class="code" href="libakrypt_8h.html#aa6db0eccf8222376f61f2f033a1bbe4c">ak_error_ok</a>;</div><div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;}</div><div class="ttc" id="ak__log_8c_html_a242efd01b15053f862f425a3ab7ba81c"><div class="ttname"><a href="ak__log_8c.html#a242efd01b15053f862f425a3ab7ba81c">ak_function_log_default_mutex</a></div><div class="ttdeci">static pthread_mutex_t ak_function_log_default_mutex</div><div class="ttdef"><b>Definition:</b> <a href="ak__log_8c_source.html#l00051">ak_log.c:51</a></div></div>
+<div class="ttc" id="ak__log_8c_html_a6c9e75fba32750c562c70a501b2d2b32"><div class="ttname"><a href="ak__log_8c.html#a6c9e75fba32750c562c70a501b2d2b32">ak_function_log_default</a></div><div class="ttdeci">static ak_function_log * ak_function_log_default</div><div class="ttdef"><b>Definition:</b> <a href="ak__log_8c_source.html#l00050">ak_log.c:50</a></div></div>
+<div class="ttc" id="libakrypt_8h_html_ab44706b2e13bc40499b30fb371ad7f9e"><div class="ttname"><a href="libakrypt_8h.html#ab44706b2e13bc40499b30fb371ad7f9e">ak_error_null_pointer</a></div><div class="ttdeci">#define ak_error_null_pointer</div><div class="ttdoc">Ошибка, возникающая при доступе или передаче в качестве аргумента функции null указателя. </div><div class="ttdef"><b>Definition:</b> <a href="libakrypt_8h_source.html#l00149">libakrypt.h:149</a></div></div>
+<div class="ttc" id="libakrypt_8h_html_aa6db0eccf8222376f61f2f033a1bbe4c"><div class="ttname"><a href="libakrypt_8h.html#aa6db0eccf8222376f61f2f033a1bbe4c">ak_error_ok</a></div><div class="ttdeci">#define ak_error_ok</div><div class="ttdoc">Результат, говорящий об отсутствии ошибки. </div><div class="ttdef"><b>Definition:</b> <a href="libakrypt_8h_source.html#l00145">libakrypt.h:145</a></div></div>
+<div class="ttc" id="ak__log_8c_html_a80a4822cbd184b3cbcc43096126eb52b"><div class="ttname"><a href="ak__log_8c.html#a80a4822cbd184b3cbcc43096126eb52b">ak_error_message</a></div><div class="ttdeci">int ak_error_message(const int code, const char *function, const char *message)</div><div class="ttdoc">Вывод сообщений о возникшей в процессе выполнения ошибке. </div><div class="ttdef"><b>Definition:</b> <a href="ak__log_8c_source.html#l00186">ak_log.c:186</a></div></div>
+<div class="ttc" id="ak__log_8c_html_a700e68d9e88d81489869ba269af25c7b"><div class="ttname"><a href="ak__log_8c.html#a700e68d9e88d81489869ba269af25c7b">ak_error_set_value</a></div><div class="ttdeci">int ak_error_set_value(const int value)</div><div class="ttdoc">Функция устанавливает значение переменной, хранящей ошибку выполнения программы. </div><div class="ttdef"><b>Definition:</b> <a href="ak__log_8c_source.html#l00058">ak_log.c:58</a></div></div>
+<div class="ttc" id="libakrypt_8h_html_a327220ab8ab5f10fcc2f1b52d4cf8c52"><div class="ttname"><a href="libakrypt_8h.html#a327220ab8ab5f10fcc2f1b52d4cf8c52">ak_error_undefined_function</a></div><div class="ttdeci">#define ak_error_undefined_function</div><div class="ttdoc">Использование неопределенного указателя на функцию (вызов null указателя). </div><div class="ttdef"><b>Definition:</b> <a href="libakrypt_8h_source.html#l00157">libakrypt.h:157</a></div></div>
+</div><!-- fragment -->
+<p><div class="dynheader">
+Граф вызовов:</div>
+<div class="dyncontent">
+<div class="center"><img src="ak__log_8c_a25eff854c3f398d72791d04662d0978a_cgraph.png" border="0" usemap="#ak__log_8c_a25eff854c3f398d72791d04662d0978a_cgraph" alt=""/></div>
+<!-- MAP 8 -->
+</div>
+</p>
+
+<p><div class="dynheader">
+Граф вызова функции:</div>
+<div class="dyncontent">
+<div class="center"><img src="ak__log_8c_a25eff854c3f398d72791d04662d0978a_icgraph.png" border="0" usemap="#ak__log_8c_a25eff854c3f398d72791d04662d0978a_icgraph" alt=""/></div>
+<!-- MAP 9 -->
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a129225cc1640b6773cf0a7d629f0dca6"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int ak_snprintf </td>
+          <td>(</td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>str</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>size</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>format</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>...</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Обобщенная реализация функции snprintf для различных компиляторов. </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">str</td><td>Строка, в которую помещается результат (сообщение) </td></tr>
+    <tr><td class="paramname">size</td><td>Максимальный размер помещаемого в строку str сообщения </td></tr>
+    <tr><td class="paramname">format</td><td>Форматная строка, в соответствии с которой формируется сообщение</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd>Функция возвращает значение, которое вернул вызов системной (библиотечной) функции форматирования строки. </dd></dl>
+
+<p>См. определение в файле <a class="el" href="ak__log_8c_source.html">ak_log.c</a> строка <a class="el" href="ak__log_8c_source.html#l00157">157</a></p>
+<div class="fragment"><div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;{</div><div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;  <span class="keywordtype">int</span> result = 0;</div><div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;  va_list args;</div><div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;  va_start( args, format );</div><div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;</div><div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;<span class="preprocessor"> #ifdef _MSC_VER</span></div><div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;<span class="preprocessor">  #if _MSC_VER &gt; 1310</span></div><div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;    result = _vsnprintf_s( str, size, size, format, args );</div><div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;<span class="preprocessor">  #else</span></div><div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;    result = _vsnprintf( str, size, format, args );</div><div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;<span class="preprocessor">  #endif</span></div><div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;<span class="preprocessor"> #else</span></div><div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;  result = vsnprintf( str, size, format, args );</div><div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;<span class="preprocessor"> #endif</span></div><div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;  va_end( args );</div><div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160; <span class="keywordflow">return</span> result;</div><div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;}</div></div><!-- fragment -->
+<p><div class="dynheader">
+Граф вызова функции:</div>
+<div class="dyncontent">
+<div class="center"><img src="ak__log_8c_a129225cc1640b6773cf0a7d629f0dca6_icgraph.png" border="0" usemap="#ak__log_8c_a129225cc1640b6773cf0a7d629f0dca6_icgraph" alt=""/></div>
+<!-- MAP 10 -->
+</div>
+</p>
+
+</div>
+</div>
+<h2 class="groupheader">Переменные</h2>
+<a class="anchor" id="a2412317176f53ab37879c772ea4c7fd4"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int ak_errno = <a class="el" href="libakrypt_8h.html#aa6db0eccf8222376f61f2f033a1bbe4c">ak_error_ok</a></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Переменная, содержащая в себе код последней ошибки </p>
+
+<p>См. определение в файле <a class="el" href="ak__log_8c_source.html">ak_log.c</a> строка <a class="el" href="ak__log_8c_source.html#l00046">46</a></p>
+
+</div>
+</div>
+<a class="anchor" id="a6c9e75fba32750c562c70a501b2d2b32"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="libakrypt_8h.html#aea308946e99a905baa047336b4e14a8d">ak_function_log</a>* ak_function_log_default = NULL</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Внутренний указатель на функцию аудита </p>
+
+<p>См. определение в файле <a class="el" href="ak__log_8c_source.html">ak_log.c</a> строка <a class="el" href="ak__log_8c_source.html#l00050">50</a></p>
+
+</div>
+</div>
+<a class="anchor" id="a242efd01b15053f862f425a3ab7ba81c"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">pthread_mutex_t ak_function_log_default_mutex = PTHREAD_MUTEX_INITIALIZER</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>См. определение в файле <a class="el" href="ak__log_8c_source.html">ak_log.c</a> строка <a class="el" href="ak__log_8c_source.html#l00051">51</a></p>
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_43e0a1f539e00dcfa1a6bc4d4fee4fc2.html">home</a></li><li class="navelem"><a class="el" href="dir_32078dd46064dc5448d39191ac5534d6.html">eugene</a></li><li class="navelem"><a class="el" href="dir_90a44860457c395fae569358f05fdb49.html">Documents</a></li><li class="navelem"><a class="el" href="dir_ef0df63b0c88ed24c4c79f67668669bc.html">VKR</a></li><li class="navelem"><a class="el" href="dir_6ec071d27851548a42323e2c424bf74a.html">libakrypt-0.x</a></li><li class="navelem"><a class="el" href="dir_cc55869b84ab2b7a1ee582dd1158c3dc.html">source</a></li><li class="navelem"><a class="el" href="ak__log_8c.html">ak_log.c</a></li>
+    <li class="footer">Документация по libakrypt. Последние изменения: Вс 23 Сен 2018 21:13:41. Создано системой
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.11 </li>
+  </ul>
+</div>
+</body>
+</html>

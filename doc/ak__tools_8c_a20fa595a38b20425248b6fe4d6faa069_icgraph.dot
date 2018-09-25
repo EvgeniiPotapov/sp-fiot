@@ -1,0 +1,25 @@
+digraph "ak_ptr_to_hexstr_static"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node1 [label="ak_ptr_to_hexstr_static",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+  Node1 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="ak_gf64_multiplication_test",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$ak__aead_8c.html#aacfd08962985207630092d96a5c98de8",tooltip="Тестирование операции умножения в поле . "];
+  Node2 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="ak_gfn_multiplication_test",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$ak__aead_8h.html#a2bceac70866a8c9f6f52f9f7ce039259",tooltip="Тестирование арифметических операций в конечных полях характеристики 2. "];
+  Node3 -> Node4 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node4 [label="ak_libakrypt_create",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$libakrypt_8h.html#a3f840f1a40839f867ba729aa1c5d67b8",tooltip="Функция инициализации и тестирования криптографических механизмов библиотеки. "];
+  Node1 -> Node5 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node5 [label="ak_gf128_multiplication_test",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$ak__aead_8c.html#aed0e800561bf50c557d5a06b4d96edd1",tooltip="Тестирование операции умножения в поле . "];
+  Node5 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node1 -> Node6 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node6 [label="ak_wcurve_to_log",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$ak__curves_8c.html#a1832405c09e2dd3a3b35d11cd70bdd64",tooltip="Функция выводит в файл аудита значения параметров эллиптической кривой "];
+  Node6 -> Node7 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node7 [label="ak_wcurve_test",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$ak__curves_8h.html#a7367a068f49b25629f4d7ec1f342659a",tooltip="Функция тестирует все определяемые библиотекой параметры эллиптических кривых, заданных в короткой фо..."];
+  Node7 -> Node8 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node8 [label="ak_libakrypt_test_asymmetric\l_functions",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$ak__libakrypt_8c.html#a9a4c991b0095021bdc6078c97e7be8ba",tooltip="Функция проверяет корректность реализации асимметричных криптографических алгоритмов ..."];
+  Node8 -> Node4 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node1 -> Node9 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node9 [label="ak_mpzn_to_hexstr_static",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$ak__mpzn_8h.html#a5ca29d5c87ac8597ee71f5a7aec8794e",tooltip="Преобразование вычета в строку шестнадцатеричных символов. "];
+}

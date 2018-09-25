@@ -1,0 +1,25 @@
+digraph "ak_skey_icode_additive_sum"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node1 [label="ak_skey_icode_additive_sum",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+  Node1 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="ak_skey_set_icode_additive",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$ak__magma_8c.html#a55397b6d2b4f70de81e02abf9d982c0c",tooltip="Вычисление значения контрольной суммы ключа. "];
+  Node2 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="ak_bckey_create_magma",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$ak__magma_8c.html#a465f319be97a8d65a1892a55771b5621",tooltip="Инициализация контекста секретного ключа алгоритма блочного шифрования Магма. "];
+  Node3 -> Node4 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node4 [label="ak_bckey_test_mgm",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$ak__aead_8h.html#a6447348dcbe26bf5823c1493d761816f",tooltip="Тестирование корректной работы режима блочного шифрования с одновременной выработкой имитовставки..."];
+  Node4 -> Node5 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node5 [label="ak_libakrypt_test_block\l_ciphers",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$ak__libakrypt_8c.html#abf5c8b06ef1f02d3311cebe8625fa68d",tooltip="Функция проверяет корректность реализации блочных шифрова и режимов их использования. "];
+  Node5 -> Node6 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node6 [label="ak_libakrypt_create",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$libakrypt_8h.html#a3f840f1a40839f867ba729aa1c5d67b8",tooltip="Функция инициализации и тестирования криптографических механизмов библиотеки. "];
+  Node3 -> Node7 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node7 [label="ak_mac_create_gost3413\l_magma",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$ak__mac_8h.html#aac8cd9a2afde99720a5262c988d8d07c",tooltip="Инициализация ключа алгоритма выработки имитовставки ГОСТ Р 34.13-2015 с использованием блочного шифр..."];
+  Node3 -> Node8 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node8 [label="ak_bckey_test_magma",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$ak__magma_8c.html#a3383cdf45668361958960d79d30cc644",tooltip="Тестирование корректной работы алгоритма блочного шифрования Магма. "];
+  Node8 -> Node5 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node1 -> Node9 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node9 [label="ak_skey_check_icode\l_additive",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$ak__magma_8c.html#ae80faf6464f0ab617d0314750b7edfc2",tooltip="Проверка значения контрольной суммы ключа. "];
+  Node9 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+}

@@ -1,0 +1,46 @@
+digraph "ak_random_create_file"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node1 [label="ak_random_create_file",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+  Node1 -> Node2 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="ak_random_create",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$ak__random_8c.html#a3b122dc28795ec890ad9442726de8e70",tooltip="Инициализация генератора псевдо-случайных чисел. "];
+  Node2 -> Node3 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="ak_error_message",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$ak__log_8c.html#a80a4822cbd184b3cbcc43096126eb52b",tooltip="Вывод сообщений о возникшей в процессе выполнения ошибке. "];
+  Node3 -> Node4 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node4 [label="ak_snprintf",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$ak__log_8c.html#a129225cc1640b6773cf0a7d629f0dca6",tooltip="Обобщенная реализация функции snprintf для различных компиляторов. "];
+  Node3 -> Node5 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node5 [label="ak_log_set_message",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$ak__log_8c.html#a25eff854c3f398d72791d04662d0978a",tooltip="Прямой вывод сообщения аудита. "];
+  Node5 -> Node6 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node6 [label="ak_error_set_value",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$ak__log_8c.html#a700e68d9e88d81489869ba269af25c7b",tooltip="Функция устанавливает значение переменной, хранящей ошибку выполнения программы. "];
+  Node5 -> Node3 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 -> Node6 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 -> Node7 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node7 [label="random::random",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$structrandom.html#a34c4359c2f54cc37cdf9ad5acecf115f",tooltip="указатель на функцию выработки последователности псевдо-случайных байт "];
+  Node1 -> Node3 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node1 -> Node8 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node8 [label="ak_error_message_fmt",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$ak__log_8c.html#af1a0b4eeceb5a222a840dcec204cb547",tooltip="Вывод сообщений о возникшей в процессе выполнения ошибке. "];
+  Node8 -> Node3 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node1 -> Node9 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node9 [label="ak_random_destroy",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$ak__random_8c.html#a6a4676e2f5acb44c1023dc640f271448",tooltip="Уничтожение данных, хранящихся в полях структуры struct random. "];
+  Node9 -> Node3 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node9 -> Node7 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node1 -> Node7 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node1 -> Node10 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node10 [label="ak_random_file_random",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$ak__random_8c.html#a687a37c1fe2c4892085977a9d07c68a0"];
+  Node10 -> Node3 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node1 -> Node11 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node11 [label="ak_random_file_free",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$ak__random_8c.html#ab1544fccabc725c91c030e0dd1c64692"];
+  Node11 -> Node3 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node1 -> Node12 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node12 [label="ak_random_create_file",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$ak__random_8c.html#ab20fdaf575e64464a99eb15b7cb65da6",tooltip="Cоздание генератора, считывающего случайные значения из заданного файла. "];
+  Node12 -> Node2 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node12 -> Node3 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node12 -> Node8 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node12 -> Node9 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node12 -> Node7 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node12 -> Node10 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node12 -> Node11 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node12 -> Node12 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+}

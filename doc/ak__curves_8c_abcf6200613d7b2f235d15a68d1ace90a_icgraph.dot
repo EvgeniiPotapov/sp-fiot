@@ -1,0 +1,38 @@
+digraph "ak_wpoint_pow"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node1 [label="ak_wpoint_pow",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+  Node1 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="ak_wpoint_check_order",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$ak__curves_8h.html#a0f77216f6c3d41af3ae89254cb618183",tooltip="Проверка порядка заданной точки. "];
+  Node2 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="ak_wcurve_is_ok",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$ak__curves_8h.html#a13b5a369b394a034e6b586dd28b6d7c3",tooltip="Проверка набора параметров эллиптической кривой, заданной в форме Вейерштрасса. "];
+  Node3 -> Node4 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node4 [label="ak_wcurve_test",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$ak__curves_8h.html#a7367a068f49b25629f4d7ec1f342659a",tooltip="Функция тестирует все определяемые библиотекой параметры эллиптических кривых, заданных в короткой фо..."];
+  Node4 -> Node5 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node5 [label="ak_libakrypt_test_asymmetric\l_functions",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$ak__libakrypt_8c.html#a9a4c991b0095021bdc6078c97e7be8ba",tooltip="Функция проверяет корректность реализации асимметричных криптографических алгоритмов ..."];
+  Node5 -> Node6 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node6 [label="ak_libakrypt_create",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$libakrypt_8h.html#a3f840f1a40839f867ba729aa1c5d67b8",tooltip="Функция инициализации и тестирования криптографических механизмов библиотеки. "];
+  Node1 -> Node7 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node7 [label="ak_signkey_context\l_sign_values",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$ak__sign_8h.html#a45d1b9221a5f1cab66a78a77f5df5a5f",tooltip="Выработка электронной подписи для фиксированного значения случайного числа и вычисленного заранее зна..."];
+  Node7 -> Node8 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node8 [label="ak_signkey_context\l_sign_hash",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$ak__sign_8h.html#a084d8e8f975fe11706ddd74582961588",tooltip="Выработка электронной подписи для вычисленного заранее значения хеш-функции. "];
+  Node8 -> Node9 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node9 [label="ak_signkey_context\l_sign_ptr",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$ak__sign_8h.html#a6cf3030135b040542dc429e2816972bf",tooltip="Выработка электронной подписи для заданной области памяти. "];
+  Node8 -> Node10 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node10 [label="ak_signkey_context\l_sign_file",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$ak__sign_8h.html#a9f193708b3158911311b858cb4aa37be",tooltip="Выработка электронной подписи для заданного файла. "];
+  Node7 -> Node11 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node11 [label="ak_signkey_test",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$ak__sign_8h.html#aa2df8858fc6d7214483e3c4a9e497c22",tooltip="Выполнение тестовых примеров для алгоритмов выработки и проверки электронной подписи ..."];
+  Node11 -> Node5 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node1 -> Node12 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node12 [label="ak_verifykey_create\l_signkey",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$ak__sign_8h.html#ae71656a77d8b118529e79fa1f1485170",tooltip="Инициализация контекста открытого ключа алгоритма ГОСТ Р 34.10-2012. "];
+  Node12 -> Node11 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node1 -> Node13 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node13 [label="ak_verifykey_context\l_verify_hash",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$ak__sign_8h.html#af5fb0674884be4953846361316b18f5a",tooltip="Проверка электронной подписи для вычисленного заранее значения хеш-функции. "];
+  Node13 -> Node14 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node14 [label="ak_verifykey_context\l_verify_ptr",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$ak__sign_8h.html#a9adacc833d56419319920a04bd0004ec",tooltip="Проверка электронной подписи для заданной области памяти. "];
+  Node13 -> Node15 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node15 [label="ak_verifykey_context\l_verify_file",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$ak__sign_8h.html#a2fddbc6eacb3d6efdd262ebeda8b5d5e",tooltip="Проверка электронной подписи для заданного файла. "];
+  Node13 -> Node11 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+}

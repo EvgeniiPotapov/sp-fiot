@@ -1,0 +1,15 @@
+digraph "ak_hexstr_to_ptr"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node1 [label="ak_hexstr_to_ptr",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+  Node1 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="ak_buffer_new_hexstr_size",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$libakrypt_8h.html#a140df6cc6fc9c3e1f7ef4fb18967da73",tooltip="Создание буффера заданной длины с данными, записанными в шестнадцатеричном виде. "];
+  Node1 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="ak_buffer_set_hexstr",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$libakrypt_8h.html#a1232fab34d9ea37ba3ae34e57b2ad0bf",tooltip="Пощемение в буффер данных, заданных строкой в шестнадцатеричном представлении. "];
+  Node3 -> Node4 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node4 [label="ak_buffer_new_hexstr",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$libakrypt_8h.html#a89bf7a596eca686c7e94e05c990e6770",tooltip="Создание буффера с данными, записанными в шестнадцатеричном виде. "];
+  Node1 -> Node5 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node5 [label="ak_mpzn_set_hexstr",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$ak__mpzn_8h.html#a8fecb9b0a219c40d2a981d6b1c85f611",tooltip="Присвоение вычету значения, записанного строкой шестнадцатеричных символов. "];
+}

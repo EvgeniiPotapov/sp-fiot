@@ -1,0 +1,268 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.11"/>
+<title>libakrypt: Структура bckey</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+  $(document).ready(initResizable);
+  $(window).load(resizeHeight);
+</script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { init_search(); });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">libakrypt
+   &#160;<span id="projectnumber">Версия 0.6.7</span>
+   </div>
+   <div id="projectbrief">Модуль, реализующий криптографические преобразования для проекта OpenSKZI</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.8.11 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Поиск');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Титульная&#160;страница</span></a></li>
+      <li><a href="pages.html"><span>Описания</span></a></li>
+      <li class="current"><a href="annotated.html"><span>Структуры&#160;данных</span></a></li>
+      <li><a href="files.html"><span>Файлы</span></a></li>
+      <li><a href="examples.html"><span>Примеры</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Поиск" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="annotated.html"><span>Структуры&#160;данных</span></a></li>
+      <li><a href="classes.html"><span>Алфавитный&#160;указатель&#160;структур&#160;данных</span></a></li>
+      <li><a href="functions.html"><span>Поля&#160;структур</span></a></li>
+    </ul>
+  </div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(document).ready(function(){initNavTree('structbckey.html','');});
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#pub-attribs">Поля данных</a>  </div>
+  <div class="headertitle">
+<div class="title">Структура bckey</div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p>Секретный ключ блочного алгоритма шифрования.  
+ <a href="structbckey.html#details">Подробнее...</a></p>
+
+<p><code>#include &lt;<a class="el" href="ak__bckey_8h_source.html">ak_bckey.h</a>&gt;</code></p>
+<div class="dynheader">
+Граф связей класса bckey:</div>
+<div class="dyncontent">
+<div class="center"><img src="structbckey__coll__graph.png" border="0" usemap="#bckey_coll__map" alt="Collaboration graph"/></div>
+<!-- MAP 0 -->
+<center><span class="legend">[<a target="top" href="graph_legend.html">см. легенду</a>]</span></center></div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
+Поля данных</h2></td></tr>
+<tr class="memitem:a292f6aca425717a311db827dbadc325a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="ak__bckey_8h.html#a44ba2fec9233bd891ea3e22c5a0aaa37">ak_function_bckey</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structbckey.html#a292f6aca425717a311db827dbadc325a">decrypt</a></td></tr>
+<tr class="memdesc:a292f6aca425717a311db827dbadc325a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Функция расширования одного блока информации  <a href="#a292f6aca425717a311db827dbadc325a">Подробнее...</a><br /></td></tr>
+<tr class="separator:a292f6aca425717a311db827dbadc325a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab6565f13c825bd7a3d2ccc64ef00eeba"><td class="memItemLeft" align="right" valign="top"><a class="el" href="ak__skey_8h.html#a69ce2e07ada21d45faa18f1c3c4fe3f1">ak_function_skey</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structbckey.html#ab6565f13c825bd7a3d2ccc64ef00eeba">delete_keys</a></td></tr>
+<tr class="memdesc:ab6565f13c825bd7a3d2ccc64ef00eeba"><td class="mdescLeft">&#160;</td><td class="mdescRight">Функция уничтожения развернутых ключей  <a href="#ab6565f13c825bd7a3d2ccc64ef00eeba">Подробнее...</a><br /></td></tr>
+<tr class="separator:ab6565f13c825bd7a3d2ccc64ef00eeba"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a44444036f3b22710628a2f6781a7cd81"><td class="memItemLeft" align="right" valign="top"><a class="el" href="ak__bckey_8h.html#a44ba2fec9233bd891ea3e22c5a0aaa37">ak_function_bckey</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structbckey.html#a44444036f3b22710628a2f6781a7cd81">encrypt</a></td></tr>
+<tr class="memdesc:a44444036f3b22710628a2f6781a7cd81"><td class="mdescLeft">&#160;</td><td class="mdescRight">Функция заширования одного блока информации  <a href="#a44444036f3b22710628a2f6781a7cd81">Подробнее...</a><br /></td></tr>
+<tr class="separator:a44444036f3b22710628a2f6781a7cd81"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad01e5b7f0a1788df83d8f4251ea51968"><td class="memItemLeft" align="right" valign="top">struct <a class="el" href="structbuffer.html">buffer</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structbckey.html#ad01e5b7f0a1788df83d8f4251ea51968">ivector</a></td></tr>
+<tr class="memdesc:ad01e5b7f0a1788df83d8f4251ea51968"><td class="mdescLeft">&#160;</td><td class="mdescRight">Буффер, для хранения синхропосылки. Длина буффера совпадает с длиной блока  <a href="#ad01e5b7f0a1788df83d8f4251ea51968">Подробнее...</a><br /></td></tr>
+<tr class="separator:ad01e5b7f0a1788df83d8f4251ea51968"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9e22c44bb49f5dd918d72c13f5d20b13"><td class="memItemLeft" align="right" valign="top">struct <a class="el" href="structskey.html">skey</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structbckey.html#a9e22c44bb49f5dd918d72c13f5d20b13">key</a></td></tr>
+<tr class="memdesc:a9e22c44bb49f5dd918d72c13f5d20b13"><td class="mdescLeft">&#160;</td><td class="mdescRight">Указатель на секретный ключ  <a href="#a9e22c44bb49f5dd918d72c13f5d20b13">Подробнее...</a><br /></td></tr>
+<tr class="separator:a9e22c44bb49f5dd918d72c13f5d20b13"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a50956073db6f0cea528206be5b082b9b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="ak__skey_8h.html#a69ce2e07ada21d45faa18f1c3c4fe3f1">ak_function_skey</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structbckey.html#a50956073db6f0cea528206be5b082b9b">schedule_keys</a></td></tr>
+<tr class="memdesc:a50956073db6f0cea528206be5b082b9b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Функция развертки ключа  <a href="#a50956073db6f0cea528206be5b082b9b">Подробнее...</a><br /></td></tr>
+<tr class="separator:a50956073db6f0cea528206be5b082b9b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Подробное описание</h2>
+<div class="textblock"><p>Секретный ключ блочного алгоритма шифрования. </p>
+<dl><dt><b>Примеры: </b></dt><dd><a class="el" href="example-bckey-internal_8c-example.html#_a0">example-bckey-internal.c</a>.</dd>
+</dl>
+<p>См. определение в файле <a class="el" href="ak__bckey_8h_source.html">ak_bckey.h</a> строка <a class="el" href="ak__bckey_8h_source.html#l00051">51</a></p>
+</div><h2 class="groupheader">Поля</h2>
+<a class="anchor" id="a292f6aca425717a311db827dbadc325a"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="ak__bckey_8h.html#a44ba2fec9233bd891ea3e22c5a0aaa37">ak_function_bckey</a>* decrypt</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Функция расширования одного блока информации </p>
+
+<p>См. определение в файле <a class="el" href="ak__bckey_8h_source.html">ak_bckey.h</a> строка <a class="el" href="ak__bckey_8h_source.html#l00059">59</a></p>
+
+</div>
+</div>
+<a class="anchor" id="ab6565f13c825bd7a3d2ccc64ef00eeba"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="ak__skey_8h.html#a69ce2e07ada21d45faa18f1c3c4fe3f1">ak_function_skey</a>* delete_keys</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Функция уничтожения развернутых ключей </p>
+
+<p>См. определение в файле <a class="el" href="ak__bckey_8h_source.html">ak_bckey.h</a> строка <a class="el" href="ak__bckey_8h_source.html#l00063">63</a></p>
+
+</div>
+</div>
+<a class="anchor" id="a44444036f3b22710628a2f6781a7cd81"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="ak__bckey_8h.html#a44ba2fec9233bd891ea3e22c5a0aaa37">ak_function_bckey</a>* encrypt</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Функция заширования одного блока информации </p>
+
+<p>См. определение в файле <a class="el" href="ak__bckey_8h_source.html">ak_bckey.h</a> строка <a class="el" href="ak__bckey_8h_source.html#l00057">57</a></p>
+
+</div>
+</div>
+<a class="anchor" id="ad01e5b7f0a1788df83d8f4251ea51968"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">struct <a class="el" href="structbuffer.html">buffer</a> ivector</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Буффер, для хранения синхропосылки. Длина буффера совпадает с длиной блока </p>
+<dl><dt><b>Примеры: </b></dt><dd><a class="el" href="example-bckey-internal_8c-example.html#a33">example-bckey-internal.c</a>.</dd>
+</dl>
+<p>См. определение в файле <a class="el" href="ak__bckey_8h_source.html">ak_bckey.h</a> строка <a class="el" href="ak__bckey_8h_source.html#l00055">55</a></p>
+
+</div>
+</div>
+<a class="anchor" id="a9e22c44bb49f5dd918d72c13f5d20b13"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">struct <a class="el" href="structskey.html">skey</a> key</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Указатель на секретный ключ </p>
+<dl><dt><b>Примеры: </b></dt><dd><a class="el" href="example-bckey-internal_8c-example.html#a19">example-bckey-internal.c</a>.</dd>
+</dl>
+<p>См. определение в файле <a class="el" href="ak__bckey_8h_source.html">ak_bckey.h</a> строка <a class="el" href="ak__bckey_8h_source.html#l00053">53</a></p>
+
+</div>
+</div>
+<a class="anchor" id="a50956073db6f0cea528206be5b082b9b"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="ak__skey_8h.html#a69ce2e07ada21d45faa18f1c3c4fe3f1">ak_function_skey</a>* schedule_keys</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Функция развертки ключа </p>
+
+<p>См. определение в файле <a class="el" href="ak__bckey_8h_source.html">ak_bckey.h</a> строка <a class="el" href="ak__bckey_8h_source.html#l00061">61</a></p>
+
+</div>
+</div>
+<hr/>Объявления и описания членов структуры находятся в файле:<ul>
+<li><a class="el" href="ak__bckey_8h_source.html">ak_bckey.h</a></li>
+</ul>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="structbckey.html">bckey</a></li>
+    <li class="footer">Документация по libakrypt. Последние изменения: Вс 23 Сен 2018 21:13:42. Создано системой
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.11 </li>
+  </ul>
+</div>
+</body>
+</html>

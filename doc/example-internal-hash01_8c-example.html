@@ -1,0 +1,118 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.11"/>
+<title>libakrypt: example-internal-hash01.c</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+  $(document).ready(initResizable);
+  $(window).load(resizeHeight);
+</script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { init_search(); });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">libakrypt
+   &#160;<span id="projectnumber">Версия 0.6.7</span>
+   </div>
+   <div id="projectbrief">Модуль, реализующий криптографические преобразования для проекта OpenSKZI</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.8.11 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Поиск');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Титульная&#160;страница</span></a></li>
+      <li><a href="pages.html"><span>Описания</span></a></li>
+      <li><a href="annotated.html"><span>Структуры&#160;данных</span></a></li>
+      <li><a href="files.html"><span>Файлы</span></a></li>
+      <li><a href="examples.html"><span>Примеры</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Поиск" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(document).ready(function(){initNavTree('example-internal-hash01_8c-example.html','');});
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="headertitle">
+<div class="title">example-internal-hash01.c</div>  </div>
+</div><!--header-->
+<div class="contents">
+<div class="fragment"><div class="line"><span class="comment">/* ----------------------------------------------------------------------------------------------- *</span></div><div class="line"><span class="comment">   Пример, иллюстрирующий создание, удаление контекстов функции хеширования,</span></div><div class="line"><span class="comment">   а также вычисление хеш-кода для данных с известной длиной.</span></div><div class="line"><span class="comment"></span></div><div class="line"><span class="comment">   Внимание: используются неэкспортируемые функции библиотеки</span></div><div class="line"><span class="comment"> * ----------------------------------------------------------------------------------------------- */</span></div><div class="line"><span class="preprocessor"> #include &lt;stdio.h&gt;</span></div><div class="line"><span class="preprocessor"> #include &lt;<a class="code" href="ak__hash_8h.html">ak_hash.h</a>&gt;</span></div><div class="line"></div><div class="line"> <span class="keywordtype">int</span> main( <span class="keywordtype">void</span> )</div><div class="line">{</div><div class="line"> <span class="keywordtype">char</span> *str = NULL;</div><div class="line"> <span class="keyword">struct </span><a name="_a0"></a><a class="code" href="structhash.html">hash</a> ctx_one;    <span class="comment">/* объект, размещаемый в статической памяти (стеке) */</span></div><div class="line"> <a class="code" href="structhash.html">ak_hash</a> ctx_two = NULL; <span class="comment">/* объект, размещаемый в динамической памяти (куче) */</span></div><div class="line"> <a name="_a1"></a><a class="code" href="structbuffer.html">ak_buffer</a> result_one = NULL; <span class="comment">/* результат вычислений, помещаемый в кучу */</span></div><div class="line"> <a class="code" href="libakrypt_8h.html#abb8a94ec74dcd719f5e85ecbae89cb68">ak_uint8</a> result_two[64]; <span class="comment">/* результат вычислений, помещаемый в стек */</span></div><div class="line"> <a class="code" href="libakrypt_8h.html#abb8a94ec74dcd719f5e85ecbae89cb68">ak_uint8</a> some_pointer[7] = { 0, 1, 2, 3, 4, 5, 6 }; <span class="comment">/* данные для хеширования */</span></div><div class="line"></div><div class="line"> <span class="comment">/* статический объект уже создан, он требует инициализации</span></div><div class="line"><span class="comment">    создаем объект в динамической памяти */</span></div><div class="line">  ctx_two = malloc( <span class="keyword">sizeof</span>( <span class="keyword">struct</span> <a class="code" href="structhash.html">hash</a> ));</div><div class="line"></div><div class="line"> <span class="comment">/* инициализируем статический объект */</span></div><div class="line">  <a name="a2"></a><a class="code" href="ak__hash_8h.html#a4577946909e39956e2d41fcc408a53b5">ak_hash_create_streebog256</a>( &amp;ctx_one );</div><div class="line"> <span class="comment">/* инициализируем динамический объект */</span></div><div class="line">  <a name="a3"></a><a class="code" href="ak__hash_8h.html#a7ed6e2c852160fb48ef9fac46b91bcd2">ak_hash_create_streebog512</a>( ctx_two );</div><div class="line"></div><div class="line"> <span class="comment">/* вычисляем хеш-код от заданной области памяти */</span></div><div class="line">  result_one =</div><div class="line">    <a name="a4"></a><a class="code" href="ak__hash_8c.html#ac75d2cff768ede84507e4e809f0b6cf7">ak_hash_context_ptr</a>( &amp;ctx_one, some_pointer, <span class="keyword">sizeof</span>( some_pointer ), NULL );</div><div class="line">  printf(<span class="stringliteral">&quot;hash [1]: %s\n&quot;</span>, str = <a name="a5"></a><a class="code" href="ak__buffer_8c.html#a55623f2c794de6339511e9c177327d33">ak_buffer_to_hexstr</a>( result_one, <a name="a6"></a><a class="code" href="libakrypt_8h.html#a8d5ecbffb7fc8e1aa60754ae866eb486a872df325c5f9fac16ef66c17c1666908">ak_false</a> ));</div><div class="line"></div><div class="line"> <span class="comment">/* освобождаем память */</span></div><div class="line">  result_one = <a name="a7"></a><a class="code" href="ak__buffer_8c.html#a8211931355126eeb16e6b8d6ed7ba187">ak_buffer_delete</a>( result_one ); free( str );</div><div class="line"></div><div class="line"> <span class="comment">/* вычисляем хеш-код от заданного файла */</span></div><div class="line">  <a name="a8"></a><a class="code" href="ak__hash_8c.html#a1075b28b341a31642639697771a244dd">ak_hash_context_file</a>( ctx_two, <span class="stringliteral">&quot;some.filename&quot;</span>, result_two );</div><div class="line"> <span class="comment">/* поскольку файл some.filename не существует, будет возбуждена ошибка */</span></div><div class="line">  printf(<span class="stringliteral">&quot;hash [2]: %d\n&quot;</span>, <a name="a9"></a><a class="code" href="ak__log_8c.html#aa0cdd429c558ca0448ce3a8e9529e920">ak_error_get_value</a>());</div><div class="line"></div><div class="line">  <a name="a10"></a><a class="code" href="ak__hash_8c.html#aea4a84bb72d71f441657796db70a0d99">ak_hash_destroy</a>( &amp;ctx_one ); <span class="comment">// уничтожение объекта</span></div><div class="line">  ctx_two  = <a name="a11"></a><a class="code" href="ak__hash_8c.html#aa5a836acf3ccc00be158a4837476cfaf">ak_hash_delete</a>( ctx_two ); <span class="comment">// уничтожение объекта</span></div><div class="line">                                       <span class="comment">// и освобождение выделенной под него памяти</span></div><div class="line"> <span class="keywordflow">return</span> 0;</div><div class="line">}</div><div class="line"></div><div class="line"><span class="comment">/* ----------------------------------------------------------------------------------------------- */</span></div></div><!-- fragment --> </div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="footer">Документация по libakrypt. Последние изменения: Вс 23 Сен 2018 21:13:41. Создано системой
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.11 </li>
+  </ul>
+</div>
+</body>
+</html>

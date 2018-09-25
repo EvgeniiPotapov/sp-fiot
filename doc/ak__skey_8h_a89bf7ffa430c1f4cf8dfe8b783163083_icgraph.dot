@@ -1,0 +1,13 @@
+digraph "ak_skey_set_random"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node1 [label="ak_skey_set_random",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+  Node1 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="ak_bckey_context_set\l_random",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$ak__bckey_8h.html#a711a733f7f7d3315b72ac4ea9852687d",tooltip="Присвоение контексту ключа алгоритма блочного шифрования случайного значения. "];
+  Node1 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="ak_mac_context_set\l_random",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$ak__mac_8h.html#ae0a1af5c9ae4a433798f00ac9da6c966",tooltip="Присвоение контексту ключа алгоритма выработки имитовставки случайного значения. "];
+  Node1 -> Node4 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node4 [label="ak_signkey_context\l_set_key_random",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$ak__sign_8h.html#a82436059970cb6bef849ddef036eeab6",tooltip="Присвоение секретному ключу электронной подписи случайного значения. "];
+}

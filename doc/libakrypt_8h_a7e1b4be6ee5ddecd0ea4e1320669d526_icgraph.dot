@@ -1,0 +1,39 @@
+digraph "ak_buffer_set_str"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node1 [label="ak_buffer_set_str",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+  Node1 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="ak_buffer_new_str",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$libakrypt_8h.html#a63eb470afe260088805268971f843e11",tooltip="Создание буффера, содержащего строку символов, оканчивающуюся нулем. "];
+  Node1 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="ak_context_node_new",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$ak__context__manager_8h.html#a8b9e93e79a73358354464144a34f90c9",tooltip="Создание нового элемента структуры управления контекстами. "];
+  Node3 -> Node4 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node4 [label="ak_context_manager\l_add_node",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$ak__context__manager_8h.html#a0aa33b4d24c303bd909dd6aa44b54ac2",tooltip="Добавление контекста в структуру управления контекстами. "];
+  Node4 -> Node5 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node5 [label="ak_libakrypt_new_handle",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$ak__context__manager_8h.html#aa6464e4f6c2fb1e919c87a0dbbe909e2",tooltip="Помещение созданного объекта в глоюальную структуру управления контекстами. "];
+  Node5 -> Node6 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node6 [label="ak_hash_new_gosthash94",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$libakrypt_8h.html#a9e050b9bdcf3fb28b7722b4509098f3f",tooltip="Создание дескриптора функции хеширования ГОСТ Р 34.11-94 с заданными таблицами замен. "];
+  Node6 -> Node7 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node7 [label="ak_hash_new_gosthash94_csp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$libakrypt_8h.html#ae57de30d80d6a08d239c23d437031e32",tooltip="Создание дескриптора функции хеширования ГОСТ Р 34.11-94 с таблицами замен из CSP. "];
+  Node5 -> Node8 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node8 [label="ak_hash_new_streebog256",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$libakrypt_8h.html#a2c0085accdeb6a01fe58081123a6fd74",tooltip="Создание дескриптора функции хеширования ГОСТ Р 34.11-2012 (Стрибог256). "];
+  Node5 -> Node9 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node9 [label="ak_hash_new_streebog512",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$libakrypt_8h.html#a40107ef7579f4d9b77b2cf13ea3e1da2",tooltip="Создание дескриптора функции хеширования ГОСТ Р 34.11-2012 (Стрибог512). "];
+  Node5 -> Node10 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node10 [label="ak_hash_new_oid",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$libakrypt_8h.html#a91784c86b23cbe8aade153aef5641c8e",tooltip="Создание дескриптора функции хеширования по ее OID. "];
+  Node5 -> Node11 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node11 [label="ak_random_new_lcg",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$libakrypt_8h.html#a2294d2dfd3fb33bbf629fa764a0f7819",tooltip="Создание дескриптора линейного конгруэнтного генератора. "];
+  Node5 -> Node12 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node12 [label="ak_random_new_file",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$libakrypt_8h.html#a30e586cc4c2b6b90b06722ae8c4e5508",tooltip="Создание дескриптора генератора, предоставляющего доступ к заданному файлу с данными. "];
+  Node12 -> Node12 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node5 -> Node13 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node13 [label="ak_random_new_oid",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$libakrypt_8h.html#a183cd99424375cb3a91e98141615a64c",tooltip="Создание дескриптора генератора по его OID. "];
+  Node4 -> Node14 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node14 [label="ak_libakrypt_find_oid\l_by_engine",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$libakrypt_8h.html#a3367c48b0513959fa508d7fd21be75c6",tooltip="Поиск OID по типу криптографического механизма. "];
+  Node4 -> Node15 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node15 [label="ak_libakrypt_find_oid\l_by_name",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$libakrypt_8h.html#aba39c4dc2e3c59a0311351538ce0c6db",tooltip="Поиск OID его имени. "];
+  Node15 -> Node7 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node4 -> Node16 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node16 [label="ak_libakrypt_find_oid\l_by_id",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$libakrypt_8h.html#aa5220f70255c207f787fe0a6b3ea012f",tooltip="Поиск OID по его идентификатору (строке цифр, разделенных точками). "];
+}

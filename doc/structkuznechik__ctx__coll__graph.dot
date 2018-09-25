@@ -1,0 +1,10 @@
+digraph "kuznechik_ctx"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="kuznechik_ctx",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+  Node2 -> Node1 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" decryptmask\ndecryptkey\nencryptmask\nencryptkey" ,fontname="Helvetica"];
+  Node2 [label="kuznechik_expanded_keys",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$structkuznechik__expanded__keys.html",tooltip="Раундовые ключи алгоритма Кузнечик. "];
+  Node3 -> Node2 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" k" ,fontname="Helvetica"];
+  Node3 [label="ak_uint128",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$unionak__uint128.html",tooltip="Структура для обработки 128-ми битных значений. "];
+}
