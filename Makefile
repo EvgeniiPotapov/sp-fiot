@@ -1,13 +1,19 @@
-all: main
+all: server client
 
-main: main.o serialize_fiot.o
-	gcc -g main.o serialize_fiot.o -o main
+server: server.c
+	gcc -o server server.c
 
-main.o: main.c
-	gcc -c main.c -lakrypt-static
+client: client.o gench.o serialize_fiot.o
+	gcc client.o gench.o serialize_fiot.o -L/fiot/krypt_lib -l:libakrypt-static.a -o client
 
-serialize_fiot.o: serialize_fiot.c serialize_fiot.h fiot_types.h
-	gcc -g -c serialize_fiot.c
+client.o: client.c
+	gcc -L/fiot/krypt_lib -l:libakrypt-static.a -c client.c
+
+gench.o : gench.c
+	gcc -L/fiot/krypt_lib -l:libakrypt-static.a -c gench.c
+
+serialize_fiot.o: serialize_fiot.c fiot_include/serialize_fiot.h fiot_include/fiot_types.h
+	gcc -c serialize_fiot.c
 
 clean:
-	rm -rf *.o && rm -rf main
+	rm -rf *.o && rm -rf client server
