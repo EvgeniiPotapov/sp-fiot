@@ -197,7 +197,7 @@ typedef struct _Frame{
     FrameNumber number;
 /* type defines the message type of frame enclosed data */
     MessageType type;
-/* meslen defines the length of the enclosed messasge */
+/* meslen defines the length of the enclosed message */
     LengthShortInt meslen;
 /* message is the data itself */
     OctetString message;
