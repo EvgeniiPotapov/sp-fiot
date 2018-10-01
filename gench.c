@@ -1,4 +1,4 @@
-#include <stdio.h>
+#include <stdio.h> 
 #include <stdlib.h>
 #include <string.h>
 
@@ -63,15 +63,20 @@ OctetString genHelloFrame(OctetString message){
     helloFrame.padding = "1234";
     helloFrame.icode.present = isPresent;
     helloFrame.icode.length = 32;
-    struct mac mctx;
-    ak_mac_create_hmac_streebog256( &mctx );
-    ak_mac_context_set_ptr( &mctx, "Session0CanBeTheOneToMakeAStable", 32);
-    OctetString hmac = malloc(32);
-    ak_mac_context_ptr( &mctx, &helloFrame, 126, hmac);
-    ak_mac_destroy( &mctx );
-    helloFrame.icode.code = hmac;
+    helloFrame.icode.code = "DummyboxDummyboxDummyboxDummybox";
     OctetString serframe = malloc(1);
     serFrame(&serframe, &helloFrame);
+    struct mac mctx;
+    ak_mac_create_hmac_streebog256(&mctx);
+    ak_mac_context_set_ptr(&mctx, "Session0CanBeTheOneToMakeAStable", 32);
+    OctetString hmac = malloc(32);
+    printf("data to hmac\n");
+    for(int i=0;i<126;i++) printf("%.2X", serframe[i]);
+    printf("\n");
+    ak_mac_context_ptr( &mctx, serframe, 126, hmac);
+    ak_mac_destroy( &mctx );
+    memmove(serframe + 128, hmac, 32);
+
     free(hmac);
     return serframe;
 }

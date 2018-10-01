@@ -24,7 +24,7 @@ void main(int argc, char *argv[]){
     fd_set readfds;
     sock = socket(AF_INET, SOCK_STREAM, 0);
     if (sock < 0)
-    {
+    { 
         perror("socket creation error");
         exit(1);
     }
@@ -38,9 +38,14 @@ void main(int argc, char *argv[]){
         perror("socket connect error");
         exit(2);
     }
+    printf("Connected\n");
     OctetString hello = getClient_hello();
+    printf("Hello compiled\n");
     for(i=0;i<160;i++) printf("%.2X", hello[i]);
-
+    printf("\n");
+    send(sock, hello, 160, 0);
+    printf("hello sent\n");
+    exit(0);
 
 
 
