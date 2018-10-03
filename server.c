@@ -19,7 +19,7 @@
 
 void check_chello(char * buf, int len){
     if(len != 160){
-        perror("Incorrect hello len");
+        printf("Incorrect hello len");
         exit(1);
     }
     printf("Hello len Ok\n");
@@ -36,7 +36,7 @@ void check_chello(char * buf, int len){
     for(int i=0;i<32;i++) printf("%.2X", hmac[i]);
     int i = memcmp(&buf[128], hmac, 32);
     if(i != 0){
-        perror("\nIncorrect mac\n");
+        printf("\nIncorrect mac\n");
         exit(2);
     }
     printf("\nMac check: success\n");
@@ -138,7 +138,7 @@ OctetString genSHTS(RandomOctetString k_server, unsigned char buf, OctetString h
     memcpy(R1, q_point.x, 32);
     memcpy(R1 + 32, "Session0CanBeTheOneToMakeAStable", 32);
     OctetString H1 = malloc(211);
-    memcpy(H1, buf, 111);
+    memcpy(H1, buf + 11, 111);
     memcpy(H1 + 111, hello, 100);
     OctetString SHTS = takeSHTS(R1, H1);
     return SHTS;
@@ -146,9 +146,68 @@ OctetString genSHTS(RandomOctetString k_server, unsigned char buf, OctetString h
 
 
 OctetString takeSHTS(OctetString R1, OctetString H1){
-    
+    OctetString bogR1 = malloc(64);
+    OctetString bogH1 = malloc(64);
+    struct hash hctx;
+    ak_hash_create_streebog512(&hctx);
+    ak_hash_context_ptr(&hctx, R1, 64, bogR1);
+    ak_hash_context_ptr(&hctx, H1, 211, bogH1);
+    ak_hash_destroy(&hctx);
+    struct mac mctx;
+    ak_mac_create_hmac_streebog523(&mctx);
+    ak_mac_context_set_ptr( &mctx, bogR1, 64);
+    OctetString SHTS = malloc(64);
+    ak_mac_context_ptr( &mctx, bogH1, 64, SHTS);
+    ak_mac_destroy(&mctx);
+    free(bogR1);
+    free(bogH1);
+    return SHTS;
+
 }
 
+OctetString genVerify(OctetString c_hello, OctetString s_hello){
+    OctetString H2 = malloc(211);
+    memcpy(H2, c_hello + 12, 111);
+    memcpy(H2 + 111, s_hello, 100);
+    OctetString bogH2 = malloc(64);
+    struct hash hctx;
+    ak_hash_create_streebog512(&hctx);
+    ak_hash_context_ptr(&hctx, H2, 211, bogH2);
+    ak_hash_destroy(&hctx);
+    VerifyMessage verify;
+    OctetString cutbogH2 = malloc(16);
+    memcpy(cutbogH2, bogH2, 16);
+    free(bogH2);
+    free(H2);
+    verify.sign.present = notPresent;
+    verify.mac.present = isPresent;
+    verify.mac.length = 16;
+    verify.mac.code = cutbogH2;
+    OctetString serVerify = malloc(1);
+    serVerifyMessage(&serVerify, &verify);
+    return serVerify;
+}
+
+OctetString genVerifyFrame(OctetString verify, unsigned char eSHTK, unsigned char iSHTK){
+    Frame verifyFrame;
+    verifyFrame.tag = encryptedFrame;
+    serLengthShortInt(verifyFrame.length, 60);
+    memset(verifyFrame.number, 0x00, 5);
+    serLengthShortInt(&verifyFrame.number[1], 1);
+    verifyFrame.type = verifyMessage;
+    serLengthShortInt(verifyFrame.meslen, 19);
+    verifyFrame.padding = "335555555533";
+    verifyFrame.message = verify;
+    verifyFrame.icode.present = isPresent;
+    verifyFrame.icode.length = 16;
+    verifyFrame.icode.code = "0DefaultDefault0";
+    OctetString serFrame = malloc(1);
+    serVerifyMessage(&serFrame, &verifyFrame);
+    
+
+
+
+}
 
 void make_vko(int sock){
     ak_libakrypt_create(NULL);
@@ -163,7 +222,18 @@ void make_vko(int sock){
     printf("\nServerHelloFrame:\n");
     for(int i=0;i<160;i++) printf("%.2X", frame[i]);
     printf("\n");
+    send(sock, frame, 160, 0);
+    printf("server hello sent\n");
+
     OctetString SHTS = genSHTS(k_server, buf, hello);
+    unsigned char eSHTK[32];
+    unsigned char iSHTK[32];
+    memcpy(SHTS, eSHTK, 32);
+    memcpy(SHTS + 32, iSHTK, 32);
+
+    OctetString verify = genVerify(buf, hello);
+    OctetString verifyframe = genVerifyFrame(verify, eSHTK, iSHTK);
+
     ak_libakrypt_destroy();
 }
 
@@ -180,7 +250,7 @@ void main(){
     listener = socket(AF_INET, SOCK_STREAM, 0);
     if(listener < 0)
     {
-        perror("socket creation error");
+        printf("socket creation error");
         exit(1);
     }
     
@@ -189,10 +259,10 @@ void main(){
     addr.sin_addr.s_addr = htonl(INADDR_ANY);
 
     if (setsockopt(listener, SOL_SOCKET, SO_REUSEPORT, &enable, sizeof(int)) < 0)
-    perror("setsockopt(SO_REUSEPORT) failed");
+    printf("setsockopt(SO_REUSEPORT) failed");
     if(bind(listener, (struct sockaddr *)&addr, sizeof(addr)) < 0)
     {
-        perror("bind error");
+        printf("bind error");
         exit(2);
     }
     
@@ -203,14 +273,14 @@ void main(){
         sock = accept(listener, NULL, NULL);
         if(sock < 0)
         {
-            perror("accept error");
+            printf("accept error");
             exit(3);
         }
         
         switch(fork())
         {
         case -1:
-            perror("fork error");
+            printf("fork error");
             break;
             
         case 0:

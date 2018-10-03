@@ -39,12 +39,16 @@ void main(int argc, char *argv[]){
         exit(2);
     }
     printf("Connected\n");
+    
     OctetString hello = getClient_hello();
     printf("Hello compiled\n");
     for(i=0;i<160;i++) printf("%.2X", hello[i]);
     printf("\n");
     send(sock, hello, 160, 0);
-    printf("hello sent\n");
+    printf("client hello sent\n");
+    recv(sock, buf, sizeof(buf), 0);
+    printf("server hello recovered\n");
+
     exit(0);
 
 
