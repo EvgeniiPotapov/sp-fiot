@@ -1,9 +1,9 @@
-#include "krypt_include/libakrypt.h"
 #include "krypt_include/ak_random.h"
 #include "krypt_include/ak_buffer.h"
 #include "krypt_include/ak_curves.h"
 #include "krypt_include/ak_parameters.h"
 #include "krypt_include/ak_mac.h"
+#include "krypt_include/ak_bckey.h"
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -87,7 +87,6 @@ OctetString genServerHello(Octet * k_server){
     OctetString serhello = malloc(1);
     serServerHelloMessage(&serhello, &serverhello);
     return serhello;
-
 }
 
 
@@ -116,8 +115,28 @@ OctetString genServerFrame(OctetString hello){
     return serframe;
 }
 
+OctetString takeSHTS(OctetString R1, OctetString H1){
+    OctetString bogR1 = malloc(64);
+    OctetString bogH1 = malloc(64);
+    struct hash hctx;
+    ak_hash_create_streebog512(&hctx);
+    ak_hash_context_ptr(&hctx, R1, 64, bogR1);
+    ak_hash_context_ptr(&hctx, H1, 211, bogH1);
+    ak_hash_destroy(&hctx);
+    struct mac mctx;
+    ak_mac_create_hmac_streebog512(&mctx);
+    ak_mac_context_set_ptr( &mctx, bogR1, 64);
+    OctetString SHTS = malloc(64);
+    ak_mac_context_ptr( &mctx, bogH1, 64, SHTS);
+    ak_mac_destroy(&mctx);
+    free(bogR1);
+    free(bogH1);
+    return SHTS;
 
-OctetString genSHTS(RandomOctetString k_server, unsigned char buf, OctetString hello){
+}
+
+
+OctetString genSHTS(RandomOctetString k_server, unsigned char * buf, OctetString hello){
     struct wpoint client_point;
     struct wpoint q_point;
     char z_coor[32] = {0x01, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
@@ -145,26 +164,6 @@ OctetString genSHTS(RandomOctetString k_server, unsigned char buf, OctetString h
 }
 
 
-OctetString takeSHTS(OctetString R1, OctetString H1){
-    OctetString bogR1 = malloc(64);
-    OctetString bogH1 = malloc(64);
-    struct hash hctx;
-    ak_hash_create_streebog512(&hctx);
-    ak_hash_context_ptr(&hctx, R1, 64, bogR1);
-    ak_hash_context_ptr(&hctx, H1, 211, bogH1);
-    ak_hash_destroy(&hctx);
-    struct mac mctx;
-    ak_mac_create_hmac_streebog523(&mctx);
-    ak_mac_context_set_ptr( &mctx, bogR1, 64);
-    OctetString SHTS = malloc(64);
-    ak_mac_context_ptr( &mctx, bogH1, 64, SHTS);
-    ak_mac_destroy(&mctx);
-    free(bogR1);
-    free(bogH1);
-    return SHTS;
-
-}
-
 OctetString genVerify(OctetString c_hello, OctetString s_hello){
     OctetString H2 = malloc(211);
     memcpy(H2, c_hello + 12, 111);
@@ -188,7 +187,7 @@ OctetString genVerify(OctetString c_hello, OctetString s_hello){
     return serVerify;
 }
 
-OctetString genVerifyFrame(OctetString verify, unsigned char eSHTK, unsigned char iSHTK){
+OctetString genVerifyFrame(OctetString verify, unsigned char * eSHTK, unsigned char * iSHTK){
     Frame verifyFrame;
     verifyFrame.tag = encryptedFrame;
     serLengthShortInt(verifyFrame.length, 60);
@@ -201,16 +200,30 @@ OctetString genVerifyFrame(OctetString verify, unsigned char eSHTK, unsigned cha
     verifyFrame.icode.present = isPresent;
     verifyFrame.icode.length = 16;
     verifyFrame.icode.code = "0DefaultDefault0";
-    OctetString serFrame = malloc(1);
-    serVerifyMessage(&serFrame, &verifyFrame);
-    
+    OctetString serframe = malloc(1);
+    serFrame(&serframe, &verifyFrame);
+    printf("Verify frame pre icode and cipher:\n");
+    for(int i=0;i<60;i++) printf("%.2X", serframe[i]);
+
+
+    ak_bckey_init_kuznechik_tables();
+    struct bckey Key;
+    ak_bckey_create_kuznechik( &Key );
+    ak_bckey_context_set_ptr(&Key, iSHTK, 32, ak_false);
+    ak_bckey_context_mac_gost3413( &Key, serframe, 42, &serframe[44] );
+    printf("\nVerify frame icode and pre cipher:\n");
+    for(int i=0;i<60;i++) printf("%.2X", serframe[i]);
+    ak_bckey_context_set_ptr(&Key, eSHTK, 32, ak_false);
+    ak_bckey_context_xcrypt(&Key, &serframe[8], &serframe[8], 34, serframe, 8);
+    printf("\nVerify frame icode and cipher:\n");
+    for(int i=0;i<60;i++) printf("%.2X", serframe[i]);
 
 
 
 }
 
 void make_vko(int sock){
-    ak_libakrypt_create(NULL);
+    // ak_libakrypt_create(NULL);
     unsigned char buf[1024];
     int bufrv;
     bzero(buf, 1024);
@@ -234,7 +247,7 @@ void make_vko(int sock){
     OctetString verify = genVerify(buf, hello);
     OctetString verifyframe = genVerifyFrame(verify, eSHTK, iSHTK);
 
-    ak_libakrypt_destroy();
+    // ak_libakrypt_destroy();
 }
 
 

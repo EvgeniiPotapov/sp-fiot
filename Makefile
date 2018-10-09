@@ -18,5 +18,7 @@ gench.o: gench.c
 serialize_fiot.o: serialize_fiot.c fiot_include/serialize_fiot.h fiot_include/fiot_types.h
 	gcc -c serialize_fiot.c
 
+mac: example-fiot.c
+	gcc example-fiot.c -lakrypt-static -o mac
 clean:
 	rm -rf *.o && rm -rf client server

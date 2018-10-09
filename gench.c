@@ -74,8 +74,13 @@ OctetString genHelloFrame(OctetString message){
     for(int i=0;i<126;i++) printf("%.2X", serframe[i]);
     printf("\n");
     ak_mac_context_ptr( &mctx, serframe, 126, hmac);
+    printf("hmac:\n");
+
+    for(int i=0;i<32;i++) printf("%.2X", hmac[i]);
+    printf("\n");
+
     ak_mac_destroy( &mctx );
-    memmove(serframe + 128, hmac, 32);
+    memcpy(&serframe[128], hmac, 32);
 
     free(hmac);
     return serframe;
