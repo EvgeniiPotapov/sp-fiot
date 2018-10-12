@@ -40,14 +40,23 @@ void main(int argc, char *argv[]){
     }
     printf("Connected\n");
     
-    OctetString hello = getClient_hello();
+    RandomOctetString k_client;
+    OctetString hello = getClient_hello(k_client);
     printf("Hello compiled\n");
     for(i=0;i<160;i++) printf("%.2X", hello[i]);
     printf("\n");
     send(sock, hello, 160, 0);
     printf("client hello sent\n");
-    recv(sock, buf, sizeof(buf), 0);
-    printf("server hello recovered\n");
+    buf_rv = recv(sock, buf, sizeof(buf), 0);
+    printf("server hello recovered, %d\n", buf_rv);
+    check_server_hello(buf);
+    OctetString SHTS = gen_SHTS(k_client, buf, hello);
+    unsigned char eSHTK[32];
+    unsigned char iSHTK[32];
+    memcpy(SHTS, eSHTK, 32);
+    memcpy(SHTS + 32, iSHTK, 32);
+    buf_rv = recv(sock, buf, sizeof(buf), 0);
+    printf("verify message recovered, %d\n", buf_rv);
 
     exit(0);
 

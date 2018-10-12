@@ -131,6 +131,7 @@ OctetString takeSHTS(OctetString R1, OctetString H1){
     ak_mac_destroy(&mctx);
     free(bogR1);
     free(bogH1);
+
     return SHTS;
 
 }
@@ -139,12 +140,15 @@ OctetString takeSHTS(OctetString R1, OctetString H1){
 OctetString genSHTS(RandomOctetString k_server, unsigned char * buf, OctetString hello){
     struct wpoint client_point;
     struct wpoint q_point;
+    unsigned char x_coor[32];
     char z_coor[32] = {0x01, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
                        0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
                        0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
                        0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00};
-    memcpy(&client_point.x, &buf + 58, 32);
-    memcpy(&client_point.y, &buf + 90, 32);
+    memcpy(&client_point.x, buf + 57, 32);
+
+    printf("\n");
+    memcpy(&client_point.y, buf + 89, 32);
     memcpy(&client_point.z, z_coor, 32);
     ak_wpoint_pow(&q_point,
                   (ak_wpoint) &client_point,
@@ -155,6 +159,7 @@ OctetString genSHTS(RandomOctetString k_server, unsigned char * buf, OctetString
     ak_wpoint_reduce( &q_point, (ak_wcurve) &id_rfc4357_gost3410_2001_paramsetA);
     OctetString R1 = malloc(64);
     memcpy(R1, q_point.x, 32);
+
     memcpy(R1 + 32, "Session0CanBeTheOneToMakeAStable", 32);
     OctetString H1 = malloc(211);
     memcpy(H1, buf + 11, 111);
@@ -202,28 +207,28 @@ OctetString genVerifyFrame(OctetString verify, unsigned char * eSHTK, unsigned c
     verifyFrame.icode.code = "0DefaultDefault0";
     OctetString serframe = malloc(1);
     serFrame(&serframe, &verifyFrame);
-    printf("Verify frame pre icode and cipher:\n");
-    for(int i=0;i<60;i++) printf("%.2X", serframe[i]);
+    // printf("Verify frame pre icode and cipher:\n");
+    // for(int i=0;i<60;i++) printf("%.2X", serframe[i]);
 
 
     ak_bckey_init_kuznechik_tables();
     struct bckey Key;
-    ak_bckey_create_kuznechik( &Key );
+    ak_bckey_create_kuznechik(&Key);
     ak_bckey_context_set_ptr(&Key, iSHTK, 32, ak_false);
     ak_bckey_context_mac_gost3413( &Key, serframe, 42, &serframe[44] );
-    printf("\nVerify frame icode and pre cipher:\n");
-    for(int i=0;i<60;i++) printf("%.2X", serframe[i]);
+    // printf("\nVerify frame icode and pre cipher:\n");
+    // for(int i=0;i<60;i++) printf("%.2X", serframe[i]);
     ak_bckey_context_set_ptr(&Key, eSHTK, 32, ak_false);
     ak_bckey_context_xcrypt(&Key, &serframe[8], &serframe[8], 34, serframe, 8);
-    printf("\nVerify frame icode and cipher:\n");
-    for(int i=0;i<60;i++) printf("%.2X", serframe[i]);
+    // printf("\nVerify frame icode and cipher:\n");
+    // for(int i=0;i<60;i++) printf("%.2X", serframe[i]);
+    return serframe;
 
 
 
 }
 
 void make_vko(int sock){
-    // ak_libakrypt_create(NULL);
     unsigned char buf[1024];
     int bufrv;
     bzero(buf, 1024);
@@ -231,6 +236,9 @@ void make_vko(int sock){
     check_chello(buf, bufrv);
     RandomOctetString k_server;
     OctetString hello = genServerHello(k_server);
+    printf("\nk_server make:\n");
+    for(int i=0;i<32;i++) printf("%.2X", k_server[i]);
+    printf("\n");
     OctetString frame = genServerFrame(hello);
     printf("\nServerHelloFrame:\n");
     for(int i=0;i<160;i++) printf("%.2X", frame[i]);
@@ -246,8 +254,12 @@ void make_vko(int sock){
 
     OctetString verify = genVerify(buf, hello);
     OctetString verifyframe = genVerifyFrame(verify, eSHTK, iSHTK);
+    printf("\nVerifyFrame:\n");
+    for(int i=0;60;i++) printf("%.2X", verifyframe[i]);
+    send(sock, verifyframe, 60, 0);
+    printf("verify frame sent\n");
 
-    // ak_libakrypt_destroy();
+
 }
 
 
