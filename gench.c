@@ -8,6 +8,7 @@
 #include "krypt_include/ak_curves.h"
 #include "krypt_include/ak_parameters.h"
 #include "krypt_include/ak_mac.h"
+#include "krypt_include/ak_bckey.h"
 
 #include "fiot_include/fiot_types.h"
 #include "fiot_include/serialize_fiot.h"
@@ -124,6 +125,9 @@ void check_server_hello(OctetString hello){
 }
 
 OctetString takeSHTS(OctetString R1, OctetString H1){
+    printf("R1:\n");
+    for(int i=0;i<64;i++) printf("%.2X", R1[i]);
+    printf("\n");
     OctetString bogR1 = malloc(64);
     OctetString bogH1 = malloc(64);
     struct hash hctx;
@@ -144,7 +148,7 @@ OctetString takeSHTS(OctetString R1, OctetString H1){
 }
 
 
-OctetString gen_SHTS(RandomOctetString k_client, OctetString server_hello, OctetString client_hello){
+OctetString gen_SHTS(RandomOctetString k_client, OctetString server_hello, OctetString client_hello, OctetString R1){
     struct wpoint client_point;
     struct wpoint q_point;
     char z_coor[32] = {0x01, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
@@ -161,13 +165,122 @@ OctetString gen_SHTS(RandomOctetString k_client, OctetString server_hello, Octet
                   (ak_wcurve) &id_rfc4357_gost3410_2001_paramsetA);
 
     ak_wpoint_reduce( &q_point, (ak_wcurve) &id_rfc4357_gost3410_2001_paramsetA);
-    OctetString R1 = malloc(64);
+    
     memcpy(R1, q_point.x, 32);
     memcpy(R1 + 32, "Session0CanBeTheOneToMakeAStable", 32);
+    printf("R1:\n");
+    for(int i=0;i<64;i++) printf("%.2X", R1[i]);
+    printf("\n");
     
     OctetString H1 = malloc(211);
     memcpy(H1, client_hello + 11, 111);
     memcpy(H1 + 111, server_hello+11, 100);
     OctetString SHTS = takeSHTS(R1, H1);
     return SHTS;
+}
+
+
+OctetString check_verify_frame(OctetString buf, OctetString eSHTK, OctetString iSHTK, OctetString c_hello, OctetString s_hello){
+    ak_bckey_init_kuznechik_tables();
+    struct bckey Key;
+    unsigned char mac[16];
+    ak_bckey_create_kuznechik(&Key);
+    ak_bckey_context_set_ptr(&Key, eSHTK, 32, ak_false);
+    ak_bckey_context_xcrypt(&Key, &buf[8], &buf[8], 34, buf, 8);
+    printf("verify decrypt:\n");
+    for(int i=0;i<60;i++) printf("%.2X", buf[i]);
+    printf("\n");
+    ak_bckey_context_set_ptr(&Key, iSHTK, 32, ak_false);
+    ak_bckey_context_mac_gost3413( &Key, buf, 42, mac );
+    printf("mac:\n");
+    for(int i=0;i<16;i++) printf("%.2X", mac[i]);
+    printf("\n");
+    int i = memcmp(&buf[44], mac, 16);
+    if(i != 0){
+        printf("\nIncorrect mac\n");
+        exit(2);
+    }
+    printf("\nverify message Mac check: success\n");
+    unsigned char code[16];
+    memcpy(code, &buf[13], 16);
+    printf("verify.mac.code:\n");
+    for(int i=0;i<16;i++) printf("%.2X", code[i]);
+    printf("\n");
+    
+    OctetString H2 = malloc(211);
+    memcpy(H2, c_hello + 11, 111);
+    memcpy(H2 + 111, s_hello+11, 100);
+    OctetString bogH2 = malloc(64);
+    struct hash hctx;
+    ak_hash_create_streebog512(&hctx);
+    ak_hash_context_ptr(&hctx, H2, 211, bogH2);
+    ak_hash_destroy(&hctx);
+    i = memcmp(code, bogH2, 16);
+    if(i != 0){
+        printf("\nIncorrect mac.code\n");
+        exit(2);
+    }
+    printf("\nverify message mac.code check: success\n");
+    free(bogH2);
+    return buf;
+}
+
+OctetString gen_CHTS(OctetString verifyframe, OctetString c_hello, OctetString s_hello, OctetString R1, OctetString H3){
+    memcpy(H3, c_hello + 11, 111);
+    memcpy(H3 + 111, s_hello+11, 100);
+    memcpy(H3 + 211, verifyframe + 11, 19);
+    printf("H3:\n");
+    for(int i=0;i<230;i++) printf("%.2X", H3[i]);
+    printf("\n");
+    OctetString CHTS = takeSHTS(R1, H3);
+    return CHTS;
+}
+OctetString genVerifyFrame(OctetString verify, OctetString eSHTK, OctetString iSHTK){
+    Frame verifyFrame;
+    verifyFrame.tag = encryptedFrame;
+    serLengthShortInt(verifyFrame.length, 60);
+    memset(verifyFrame.number, 0x00, 5);
+    serLengthShortInt(&verifyFrame.number[1], 1);
+    verifyFrame.type = verifyMessage;
+    serLengthShortInt(verifyFrame.meslen, 19);
+    verifyFrame.padding = "335555555533";
+    verifyFrame.message = verify;
+    verifyFrame.icode.present = isPresent;
+    verifyFrame.icode.length = 16;
+    verifyFrame.icode.code = "0DefaultDefault0";
+    OctetString serframe = malloc(1);
+    serFrame(&serframe, &verifyFrame);
+    printf("Verify frame pre icode and cipher:\n");
+    for(int i=0;i<60;i++) printf("%.2X", serframe[i]);
+    printf("\n");
+    printf("eSHTK:\n");
+    for(int i=0;i<32;i++) printf("%.2X", eSHTK[i]);
+    printf("\n");
+    ak_bckey_init_kuznechik_tables();
+    struct bckey Key;
+    ak_bckey_create_kuznechik(&Key);
+    ak_bckey_context_set_ptr(&Key, iSHTK, 32, ak_false);
+    ak_bckey_context_mac_gost3413( &Key, serframe, 42, &serframe[44] );
+    ak_bckey_context_set_ptr(&Key, eSHTK, 32, ak_false);
+    ak_bckey_context_xcrypt(&Key, &serframe[8], &serframe[8], 34, serframe, 8);
+    return serframe;
+}
+
+OctetString genVerify(OctetString H4){
+    OctetString bogH4 = malloc(64);
+    struct hash hctx;
+    ak_hash_create_streebog512(&hctx);
+    ak_hash_context_ptr(&hctx, H4, 230, bogH4);
+    ak_hash_destroy(&hctx);
+    VerifyMessage verify;
+    OctetString cutbogH4 = malloc(16);
+    memcpy(cutbogH4, bogH4, 16);
+    free(bogH4);
+    verify.sign.present = notPresent;
+    verify.mac.present = isPresent;
+    verify.mac.length = 16;
+    verify.mac.code = cutbogH4;
+    OctetString serVerify = malloc(1);
+    serVerifyMessage(&serVerify, &verify);
+    return serVerify;
 }
