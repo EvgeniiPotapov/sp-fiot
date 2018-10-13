@@ -17,7 +17,7 @@
 
 
 void main(int argc, char *argv[]){
-    char buf[1024];
+    unsigned char buf[1024];
     int buf_rv = 0;
     int i, sock;
     struct sockaddr_in addr;
@@ -50,13 +50,35 @@ void main(int argc, char *argv[]){
     buf_rv = recv(sock, buf, sizeof(buf), 0);
     printf("server hello recovered, %d\n", buf_rv);
     check_server_hello(buf);
-    OctetString SHTS = gen_SHTS(k_client, buf, hello);
-    unsigned char eSHTK[32];
-    unsigned char iSHTK[32];
-    memcpy(SHTS, eSHTK, 32);
-    memcpy(SHTS + 32, iSHTK, 32);
+    OctetString R1 = malloc(64);
+    OctetString SHTS = gen_SHTS(k_client, buf, hello, R1);
+    printf("\nSHTS:\n");
+    for(int i=0;i<32;i++) printf("%.2X", SHTS[i]);
+    printf("\n");
+    OctetString eSHTK = malloc(32);
+    OctetString iSHTK = malloc(32);
+    memcpy(eSHTK, SHTS,  32);
+    memcpy( iSHTK, SHTS + 32, 32);
+    OctetString s_hello = malloc(160);
+    memcpy(s_hello, buf,  160);
     buf_rv = recv(sock, buf, sizeof(buf), 0);
     printf("verify message recovered, %d\n", buf_rv);
+    OctetString ver_message =  check_verify_frame(buf, eSHTK, iSHTK, hello, s_hello);
+    OctetString H3 = malloc(230);
+    OctetString CHTS = gen_CHTS(ver_message, hello, s_hello, R1, H3);
+    printf("\nCHTS:\n");
+    for(int i=0;i<32;i++) printf("%.2X", CHTS[i]);
+    printf("\n");
+    OctetString eCHTK = malloc(32);
+    OctetString iCHTK = malloc(32);
+    memcpy(eCHTK, CHTS,  32);
+    memcpy(iCHTK, CHTS + 32, 32);
+    OctetString verify = genVerify(H3);
+    OctetString verifyframe = genVerifyFrame(verify, eCHTK, iCHTK);
+    printf("\nVerifyFrame:\n");
+    for(int i=0;i<60;i++) printf("%.2X", verifyframe[i]);
+    send(sock, verifyframe, 60, 0);
+    printf("\nverify frame sent\n");
 
     exit(0);
 

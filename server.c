@@ -171,7 +171,7 @@ OctetString genSHTS(RandomOctetString k_server, unsigned char * buf, OctetString
 
 OctetString genVerify(OctetString c_hello, OctetString s_hello){
     OctetString H2 = malloc(211);
-    memcpy(H2, c_hello + 12, 111);
+    memcpy(H2, c_hello + 11, 111);
     memcpy(H2 + 111, s_hello, 100);
     OctetString bogH2 = malloc(64);
     struct hash hctx;
@@ -207,21 +207,19 @@ OctetString genVerifyFrame(OctetString verify, unsigned char * eSHTK, unsigned c
     verifyFrame.icode.code = "0DefaultDefault0";
     OctetString serframe = malloc(1);
     serFrame(&serframe, &verifyFrame);
-    // printf("Verify frame pre icode and cipher:\n");
-    // for(int i=0;i<60;i++) printf("%.2X", serframe[i]);
-
-
+    printf("Verify frame pre icode and cipher:\n");
+    for(int i=0;i<60;i++) printf("%.2X", serframe[i]);
+    printf("\n");
+    printf("eSHTK:\n");
+    for(int i=0;i<32;i++) printf("%.2X", eSHTK[i]);
+    printf("\n");
     ak_bckey_init_kuznechik_tables();
     struct bckey Key;
     ak_bckey_create_kuznechik(&Key);
     ak_bckey_context_set_ptr(&Key, iSHTK, 32, ak_false);
     ak_bckey_context_mac_gost3413( &Key, serframe, 42, &serframe[44] );
-    // printf("\nVerify frame icode and pre cipher:\n");
-    // for(int i=0;i<60;i++) printf("%.2X", serframe[i]);
     ak_bckey_context_set_ptr(&Key, eSHTK, 32, ak_false);
     ak_bckey_context_xcrypt(&Key, &serframe[8], &serframe[8], 34, serframe, 8);
-    // printf("\nVerify frame icode and cipher:\n");
-    // for(int i=0;i<60;i++) printf("%.2X", serframe[i]);
     return serframe;
 
 
@@ -247,17 +245,20 @@ void make_vko(int sock){
     printf("server hello sent\n");
 
     OctetString SHTS = genSHTS(k_server, buf, hello);
+    printf("\nSHTS:\n");
+    for(int i=0;i<64;i++) printf("%.2X", SHTS[i]);
+    printf("\n");
     unsigned char eSHTK[32];
     unsigned char iSHTK[32];
-    memcpy(SHTS, eSHTK, 32);
-    memcpy(SHTS + 32, iSHTK, 32);
+    memcpy(eSHTK, SHTS,  32);
+    memcpy( iSHTK, SHTS + 32, 32);
 
     OctetString verify = genVerify(buf, hello);
     OctetString verifyframe = genVerifyFrame(verify, eSHTK, iSHTK);
     printf("\nVerifyFrame:\n");
-    for(int i=0;60;i++) printf("%.2X", verifyframe[i]);
+    for(int i=0;i<60;i++) printf("%.2X", verifyframe[i]);
     send(sock, verifyframe, 60, 0);
-    printf("verify frame sent\n");
+    printf("\nverify frame sent\n");
 
 
 }
