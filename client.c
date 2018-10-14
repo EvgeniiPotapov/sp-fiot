@@ -42,9 +42,6 @@ void main(int argc, char *argv[]){
     
     RandomOctetString k_client;
     OctetString hello = getClient_hello(k_client);
-    printf("Hello compiled\n");
-    for(i=0;i<160;i++) printf("%.2X", hello[i]);
-    printf("\n");
     send(sock, hello, 160, 0);
     printf("client hello sent\n");
     buf_rv = recv(sock, buf, sizeof(buf), 0);
@@ -52,9 +49,6 @@ void main(int argc, char *argv[]){
     check_server_hello(buf);
     OctetString R1 = malloc(64);
     OctetString SHTS = gen_SHTS(k_client, buf, hello, R1);
-    printf("\nSHTS:\n");
-    for(int i=0;i<32;i++) printf("%.2X", SHTS[i]);
-    printf("\n");
     OctetString eSHTK = malloc(32);
     OctetString iSHTK = malloc(32);
     memcpy(eSHTK, SHTS,  32);
@@ -66,19 +60,31 @@ void main(int argc, char *argv[]){
     OctetString ver_message =  check_verify_frame(buf, eSHTK, iSHTK, hello, s_hello);
     OctetString H3 = malloc(230);
     OctetString CHTS = gen_CHTS(ver_message, hello, s_hello, R1, H3);
-    printf("\nCHTS:\n");
-    for(int i=0;i<32;i++) printf("%.2X", CHTS[i]);
-    printf("\n");
     OctetString eCHTK = malloc(32);
     OctetString iCHTK = malloc(32);
     memcpy(eCHTK, CHTS,  32);
     memcpy(iCHTK, CHTS + 32, 32);
     OctetString verify = genVerify(H3);
     OctetString verifyframe = genVerifyFrame(verify, eCHTK, iCHTK);
-    printf("\nVerifyFrame:\n");
-    for(int i=0;i<60;i++) printf("%.2X", verifyframe[i]);
     send(sock, verifyframe, 60, 0);
     printf("\nverify frame sent\n");
+
+    OctetString H5 = malloc(249);
+    memcpy(H5, H3, 230);
+    memcpy(H5 + 230, verify, 19);
+    OctetString xQ = malloc(32);
+    memcpy(xQ, R1, 32);
+    OctetString R2 = malloc(40);
+    memcpy(R2, "serverIDSession0CanBeTheOneToMakeAStable", 40);
+    OctetString SATS = malloc(64);
+    OctetString CATS = malloc(64);
+    make_session_keys(xQ, R2, H5, SATS, CATS);
+    printf("\nSATS:\n");
+    for(int i=0;i<64;i++) printf("%.2X", SATS[i]);
+    printf("\n");
+    printf("\nCATS:\n");
+    for(int i=0;i<64;i++) printf("%.2X", CATS[i]);
+    printf("\n");
 
     exit(0);
 

@@ -69,14 +69,7 @@ OctetString genHelloFrame(OctetString message){
     ak_mac_create_hmac_streebog256(&mctx);
     ak_mac_context_set_ptr(&mctx, "Session0CanBeTheOneToMakeAStable", 32);
     OctetString hmac = malloc(32);
-    printf("data to hmac\n");
-    for(int i=0;i<126;i++) printf("%.2X", serframe[i]);
-    printf("\n");
     ak_mac_context_ptr( &mctx, serframe, 126, hmac);
-    printf("hmac:\n");
-
-    for(int i=0;i<32;i++) printf("%.2X", hmac[i]);
-    printf("\n");
 
     ak_mac_destroy( &mctx );
     memcpy(&serframe[128], hmac, 32);
@@ -99,8 +92,6 @@ void check_server_hello(OctetString hello){
     OctetString hmac = malloc(32);
     ak_mac_context_ptr( &mctx, hello, 126, hmac);
     ak_mac_destroy( &mctx );
-    printf("Mac is:\n");
-    for(int i=0;i<32;i++) printf("%.2X", hmac[i]);
     int i = memcmp(&hello[128], hmac, 32);
     if(i != 0){
         printf("\nIncorrect mac\n");
@@ -125,9 +116,6 @@ void check_server_hello(OctetString hello){
 }
 
 OctetString takeSHTS(OctetString R1, OctetString H1){
-    printf("R1:\n");
-    for(int i=0;i<64;i++) printf("%.2X", R1[i]);
-    printf("\n");
     OctetString bogR1 = malloc(64);
     OctetString bogH1 = malloc(64);
     struct hash hctx;
@@ -168,9 +156,6 @@ OctetString gen_SHTS(RandomOctetString k_client, OctetString server_hello, Octet
     
     memcpy(R1, q_point.x, 32);
     memcpy(R1 + 32, "Session0CanBeTheOneToMakeAStable", 32);
-    printf("R1:\n");
-    for(int i=0;i<64;i++) printf("%.2X", R1[i]);
-    printf("\n");
     
     OctetString H1 = malloc(211);
     memcpy(H1, client_hello + 11, 111);
@@ -187,14 +172,8 @@ OctetString check_verify_frame(OctetString buf, OctetString eSHTK, OctetString i
     ak_bckey_create_kuznechik(&Key);
     ak_bckey_context_set_ptr(&Key, eSHTK, 32, ak_false);
     ak_bckey_context_xcrypt(&Key, &buf[8], &buf[8], 34, buf, 8);
-    printf("verify decrypt:\n");
-    for(int i=0;i<60;i++) printf("%.2X", buf[i]);
-    printf("\n");
     ak_bckey_context_set_ptr(&Key, iSHTK, 32, ak_false);
     ak_bckey_context_mac_gost3413( &Key, buf, 42, mac );
-    printf("mac:\n");
-    for(int i=0;i<16;i++) printf("%.2X", mac[i]);
-    printf("\n");
     int i = memcmp(&buf[44], mac, 16);
     if(i != 0){
         printf("\nIncorrect mac\n");
@@ -203,9 +182,6 @@ OctetString check_verify_frame(OctetString buf, OctetString eSHTK, OctetString i
     printf("\nverify message Mac check: success\n");
     unsigned char code[16];
     memcpy(code, &buf[13], 16);
-    printf("verify.mac.code:\n");
-    for(int i=0;i<16;i++) printf("%.2X", code[i]);
-    printf("\n");
     
     OctetString H2 = malloc(211);
     memcpy(H2, c_hello + 11, 111);
@@ -229,9 +205,6 @@ OctetString gen_CHTS(OctetString verifyframe, OctetString c_hello, OctetString s
     memcpy(H3, c_hello + 11, 111);
     memcpy(H3 + 111, s_hello+11, 100);
     memcpy(H3 + 211, verifyframe + 11, 19);
-    printf("H3:\n");
-    for(int i=0;i<230;i++) printf("%.2X", H3[i]);
-    printf("\n");
     OctetString CHTS = takeSHTS(R1, H3);
     return CHTS;
 }
@@ -250,12 +223,6 @@ OctetString genVerifyFrame(OctetString verify, OctetString eSHTK, OctetString iS
     verifyFrame.icode.code = "0DefaultDefault0";
     OctetString serframe = malloc(1);
     serFrame(&serframe, &verifyFrame);
-    printf("Verify frame pre icode and cipher:\n");
-    for(int i=0;i<60;i++) printf("%.2X", serframe[i]);
-    printf("\n");
-    printf("eSHTK:\n");
-    for(int i=0;i<32;i++) printf("%.2X", eSHTK[i]);
-    printf("\n");
     ak_bckey_init_kuznechik_tables();
     struct bckey Key;
     ak_bckey_create_kuznechik(&Key);
@@ -283,4 +250,37 @@ OctetString genVerify(OctetString H4){
     OctetString serVerify = malloc(1);
     serVerifyMessage(&serVerify, &verify);
     return serVerify;
+}
+
+void make_session_keys(OctetString xQ, OctetString R2, OctetString H5, OctetString SATS, OctetString CATS){
+    OctetString T = malloc(64);
+    struct mac mctx;
+    ak_mac_create_hmac_streebog512(&mctx);
+    ak_mac_context_set_ptr( &mctx, xQ, 32);
+    ak_mac_context_ptr( &mctx, R2, 40, T);
+
+    OctetString A0 = malloc(64);
+    struct hash hctx;
+    ak_hash_create_streebog512(&hctx);
+    ak_hash_context_ptr(&hctx, H5, 249, A0);
+    ak_hash_destroy(&hctx);
+
+    OctetString A1 = malloc(64);
+    ak_mac_context_set_ptr( &mctx, T, 64);
+    ak_mac_context_ptr( &mctx, A0, 64, A1);
+
+    OctetString AxA0 = malloc(128);
+    memcpy(AxA0, A1, 64);
+    memcpy(AxA0 + 64, A0, 64);
+    ak_mac_context_ptr( &mctx, AxA0, 64, CATS);
+    OctetString A2 = malloc(64);
+    ak_mac_context_ptr( &mctx, A1, 64, A2);
+    memcpy(AxA0, A2, 64);
+    ak_mac_context_ptr( &mctx, AxA0, 64, SATS);
+    free(T);
+    free(A0);
+    free(A1);
+    free(A2);
+    free(AxA0);
+    ak_mac_destroy(&mctx);  
 }
