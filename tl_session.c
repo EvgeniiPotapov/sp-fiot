@@ -12,7 +12,16 @@ void update_iFK(Octet iFK, Octet K, Octet CTR, unsigned short m){
     ak_bckey_create_kuznechik(&Key);
     ak_bckey_context_set_ptr(&Key, K, 32, ak_false);
     unsigned long number = m * 2;
-    ak_bckey_context_encrypt_ecb(&Key, iFK, iFK, 1 )
+    OctetString p_number = (OctetString) &number;
+    memcpy(CTR+ 15, p_number, 1);
+    memcpy(CTR+ 14, p_number+1, 1);
+    memcpy(CTR+ 13, p_number+2, 1);
+    ak_bckey_context_encrypt_ecb(&Key, CTR, iFK, 16);
+    number = m + 1;
+    memcpy(CTR+ 15, p_number, 1);
+    memcpy(CTR+ 14, p_number+1, 1);
+    memcpy(CTR+ 13, p_number+2, 1);
+    ak_bckey_context_encrypt_ecb(&Key, CTR, iFK + 16, 16);
 }
 
 void init_keys(session_keys *keys, OctetString ATS, OctetString T){
@@ -22,8 +31,8 @@ memcpy(keys->eFK, ATS, 32);
 memcpy(keys->K, ATS+32, 32);
 memset(keys->CTR, 0xff, 8);
 memset(keys->CTR+8, 0x00, 8);
-update_iFK(keys->iFK, keys->K, keys->CTR, keys->m);
 keys->l = 0;
 keys->n = 1;
 keys->m = 0;
+update_iFK(keys->iFK, keys->K, keys->CTR, keys->m);
 }
