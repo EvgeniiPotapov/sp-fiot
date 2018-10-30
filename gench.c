@@ -97,7 +97,6 @@ void check_server_hello(OctetString hello){
         printf("\nIncorrect mac\n");
         exit(2);
     }
-    printf("\nMac check: success\n");
 
     char z_coor[32] = {0x01, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
                        0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
@@ -112,7 +111,6 @@ void check_server_hello(OctetString hello){
         printf("\nIncorrect curve point\n");
         exit(1);
     }
-    printf("\nPoint check: success\n");
 }
 
 OctetString takeSHTS(OctetString R1, OctetString H1){
@@ -179,7 +177,6 @@ OctetString check_verify_frame(OctetString buf, OctetString eSHTK, OctetString i
         printf("\nIncorrect mac\n");
         exit(2);
     }
-    printf("\nverify message Mac check: success\n");
     unsigned char code[16];
     memcpy(code, &buf[13], 16);
     
@@ -196,7 +193,6 @@ OctetString check_verify_frame(OctetString buf, OctetString eSHTK, OctetString i
         printf("\nIncorrect mac.code\n");
         exit(2);
     }
-    printf("\nverify message mac.code check: success\n");
     free(bogH2);
     return buf;
 }
@@ -252,8 +248,7 @@ OctetString genVerify(OctetString H4){
     return serVerify;
 }
 
-void make_session_keys(OctetString xQ, OctetString R2, OctetString H5, OctetString SATS, OctetString CATS){
-    OctetString T = malloc(64);
+void make_session_keys(OctetString xQ, OctetString R2, OctetString H5, OctetString SATS, OctetString CATS, OctetString T){
     struct mac mctx;
     ak_mac_create_hmac_streebog512(&mctx);
     ak_mac_context_set_ptr( &mctx, xQ, 32);
@@ -277,7 +272,6 @@ void make_session_keys(OctetString xQ, OctetString R2, OctetString H5, OctetStri
     ak_mac_context_ptr( &mctx, A1, 64, A2);
     memcpy(AxA0, A2, 64);
     ak_mac_context_ptr( &mctx, AxA0, 64, SATS);
-    free(T);
     free(A0);
     free(A1);
     free(A2);

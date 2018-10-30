@@ -15,3 +15,6 @@ typedef struct _session_keys{
 } session_keys;
 
 void init_keys(session_keys *keys, OctetString ATS, OctetString T);
+OctetString gen_data_frame(Octet * message, int meslen, session_keys* keys, Frame* frame);
+int update_keys(session_keys *keys);
+int decrypt_frame(Octet * frame, int len, session_keys *keys);

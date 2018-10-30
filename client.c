@@ -11,14 +11,15 @@
 #include "fiot_include/fiot_types.h"
 #include "fiot_include/gench.h"
 #include "fiot_include/serialize_fiot.h"
+#include "fiot_include/tl_session.h"
 
 
 
 
 
 void main(int argc, char *argv[]){
-    unsigned char buf[1024];
-    int buf_rv = 0;
+    Octet buf[512];
+    unsigned short buf_rv = 0;
     int i, sock;
     struct sockaddr_in addr;
     fd_set readfds;
@@ -38,14 +39,11 @@ void main(int argc, char *argv[]){
         perror("socket connect error");
         exit(2);
     }
-    printf("Connected\n");
     
     RandomOctetString k_client;
     OctetString hello = getClient_hello(k_client);
     send(sock, hello, 160, 0);
-    printf("client hello sent\n");
     buf_rv = recv(sock, buf, sizeof(buf), 0);
-    printf("server hello recovered, %d\n", buf_rv);
     check_server_hello(buf);
     OctetString R1 = malloc(64);
     OctetString SHTS = gen_SHTS(k_client, buf, hello, R1);
@@ -56,7 +54,6 @@ void main(int argc, char *argv[]){
     OctetString s_hello = malloc(160);
     memcpy(s_hello, buf,  160);
     buf_rv = recv(sock, buf, sizeof(buf), 0);
-    printf("verify message recovered, %d\n", buf_rv);
     OctetString ver_message =  check_verify_frame(buf, eSHTK, iSHTK, hello, s_hello);
     OctetString H3 = malloc(230);
     OctetString CHTS = gen_CHTS(ver_message, hello, s_hello, R1, H3);
@@ -67,7 +64,6 @@ void main(int argc, char *argv[]){
     OctetString verify = genVerify(H3);
     OctetString verifyframe = genVerifyFrame(verify, eCHTK, iCHTK);
     send(sock, verifyframe, 60, 0);
-    printf("\nverify frame sent\n");
 
     OctetString H5 = malloc(249);
     memcpy(H5, H3, 230);
@@ -78,17 +74,25 @@ void main(int argc, char *argv[]){
     memcpy(R2, "serverIDSession0CanBeTheOneToMakeAStable", 40);
     OctetString SATS = malloc(64);
     OctetString CATS = malloc(64);
-    make_session_keys(xQ, R2, H5, SATS, CATS);
-    printf("\nSATS:\n");
+    OctetString T = malloc(64);
+    make_session_keys(xQ, R2, H5, SATS, CATS, T);
     for(int i=0;i<64;i++) printf("%.2X", SATS[i]);
     printf("\n");
-    printf("\nCATS:\n");
     for(int i=0;i<64;i++) printf("%.2X", CATS[i]);
     printf("\n");
-
-    exit(0);
-
-
+    
+    session_keys c_keys;
+    session_keys s_keys;
+    init_keys(&c_keys, CATS, T);
+    init_keys(&s_keys, SATS, T);
+    Frame app_data;
+    app_data.tag = encryptedFrame;
+    serLengthShortInt(app_data.length, 550);
+    app_data.type = applicationData;
+    app_data.icode.present = isPresent;
+    app_data.icode.length = 16;
+    app_data.icode.code = "default0default1";
+    
 
     while(1){
         FD_ZERO(&readfds);
@@ -98,13 +102,17 @@ void main(int argc, char *argv[]){
         
             if (FD_ISSET(0, &readfds)){
                 buf_rv = read(0, buf, sizeof(buf));
+                OctetString data_frame = gen_data_frame(buf, buf_rv-1, &c_keys, &app_data);
                 send(sock, buf, buf_rv, 0);
                 memset(buf, 0, buf_rv);
+                update_keys(&c_keys);
             }
             if (FD_ISSET(sock, &readfds)){
                 buf_rv = recv(sock, buf, sizeof(buf), 0);
-                write(1, buf, buf_rv);
+                int meslen = decrypt_frame(&buf[0], buf_rv, &s_keys);
+                write(1, &buf[11], meslen);
                 memset(buf, 0, buf_rv);
+                update_keys(&s_keys);
             }
         
     }

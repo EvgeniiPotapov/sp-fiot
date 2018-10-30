@@ -11,18 +11,19 @@
 #include <sys/socket.h>
 #include <netinet/in.h> 
 #include <unistd.h>
-#include <sys/time.h> 
+#include <sys/time.h>
+#include <arpa/inet.h>
 
 #include "fiot_include/fiot_types.h"
 #include "fiot_include/serialize_fiot.h"
+#include "fiot_include/tl_session.h"
 
 
 void check_chello(char * buf, int len){
     if(len != 160){
-        printf("Incorrect hello len");
+        printf("Incorrect hello len\n");
         exit(1);
     }
-    printf("Hello len Ok\n");
     struct mac mctx;
     ak_mac_create_hmac_streebog256( &mctx );
     ak_mac_context_set_ptr( &mctx, "Session0CanBeTheOneToMakeAStable", 32);
@@ -34,7 +35,6 @@ void check_chello(char * buf, int len){
         printf("\nIncorrect mac\n");
         exit(2);
     }
-    printf("\nMac check: success\n");
     char z_coor[32] = {0x01, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
                  0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
                  0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
@@ -48,7 +48,6 @@ void check_chello(char * buf, int len){
         printf("\nIncorrect curve point\n");
         exit(1);
     }
-    printf("\nPoint check: success\n");
 }
 
 
@@ -139,7 +138,6 @@ OctetString genSHTS(RandomOctetString k_server, unsigned char * buf, OctetString
                        0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00};
     memcpy(&client_point.x, buf + 57, 32);
 
-    printf("\n");
     memcpy(&client_point.y, buf + 89, 32);
     memcpy(&client_point.z, z_coor, 32);
     ak_wpoint_pow(&q_point,
@@ -231,7 +229,6 @@ OctetString check_verify_frame(OctetString buf, OctetString eSHTK, OctetString i
         printf("\nIncorrect mac\n");
         exit(2);
     }
-    printf("\nverify message Mac check: success\n");
     unsigned char code[16];
     memcpy(code, &buf[13], 16);
     OctetString bogH4 = malloc(64);
@@ -244,14 +241,12 @@ OctetString check_verify_frame(OctetString buf, OctetString eSHTK, OctetString i
         printf("\nIncorrect mac.code\n");
         exit(2);
     }
-    printf("\nverify message mac.code check: success\n");
     free(bogH4);
     return buf;
 }
 
 
-void make_session_keys(OctetString xQ, OctetString R2, OctetString H5, OctetString SATS, OctetString CATS){
-    OctetString T = malloc(64);
+void make_session_keys(OctetString xQ, OctetString R2, OctetString H5, OctetString SATS, OctetString CATS, OctetString T){
     struct mac mctx;
     ak_mac_create_hmac_streebog512(&mctx);
     ak_mac_context_set_ptr( &mctx, xQ, 32);
@@ -275,7 +270,6 @@ void make_session_keys(OctetString xQ, OctetString R2, OctetString H5, OctetStri
     ak_mac_context_ptr( &mctx, A1, 64, A2);
     memcpy(AxA0, A2, 64);
     ak_mac_context_ptr( &mctx, AxA0, 64, SATS);
-    free(T);
     free(A0);
     free(A1);
     free(A2);
@@ -283,7 +277,7 @@ void make_session_keys(OctetString xQ, OctetString R2, OctetString H5, OctetStri
     ak_mac_destroy(&mctx);  
 }
 
-void make_vko(int sock){
+void make_vko(int sock, OctetString SATS, OctetString CATS, OctetString T){
     unsigned char buf[1024];
     int bufrv;
     bzero(buf, 1024);
@@ -293,7 +287,6 @@ void make_vko(int sock){
     OctetString hello = genServerHello(k_server);
     OctetString frame = genServerFrame(hello);
     send(sock, frame, 160, 0);
-    printf("server hello sent\n");
 
     OctetString R1 = malloc(64);
     OctetString SHTS = genSHTS(k_server, buf, hello, R1);
@@ -304,10 +297,7 @@ void make_vko(int sock){
 
     OctetString verify = genVerify(buf, hello);
     OctetString verifyframe = genVerifyFrame(verify, eSHTK, iSHTK);
-    printf("\nVerifyFrame:\n");
-    for(int i=0;i<60;i++) printf("%.2X", verifyframe[i]);
     send(sock, verifyframe, 60, 0);
-    printf("\nverify frame sent\n");
 
     OctetString H3 = malloc(230);
     OctetString CHTS = gen_CHTS(verify, buf, frame, R1, H3);
@@ -318,7 +308,6 @@ void make_vko(int sock){
     OctetString c_hello = malloc(160);
     memcpy(c_hello, buf, 160);
     bufrv = recv(sock, buf, sizeof(buf), 0);
-    printf("verify message recovered, %d\n", bufrv);
     OctetString ver_message =  check_verify_frame(buf, eCHTK, iCHTK, H3);
 
     OctetString H5 = malloc(249);
@@ -328,16 +317,7 @@ void make_vko(int sock){
     memcpy(xQ, R1, 32);
     OctetString R2 = malloc(40);
     memcpy(R2, "serverIDSession0CanBeTheOneToMakeAStable", 40);
-    OctetString SATS = malloc(64);
-    OctetString CATS = malloc(64);
-    make_session_keys(xQ, R2, H5, SATS, CATS);
-    printf("\nSATS:\n");
-    for(int i=0;i<64;i++) printf("%.2X", SATS[i]);
-    printf("\n");
-    printf("\nCATS:\n");
-    for(int i=0;i<64;i++) printf("%.2X", CATS[i]);
-    printf("\n");
-
+    make_session_keys(xQ, R2, H5, SATS, CATS, T);
 }
 
 
@@ -346,7 +326,7 @@ void main(){
     int listener, i,buf_rv, sock;
     int enable = 1;
     struct sockaddr_in addr;
-    char buf[1024];
+    char buf[550];
     int bytes_read;
     fd_set readfds;
 
@@ -387,16 +367,64 @@ void main(){
             break;
             
         case 0:
-            make_vko(sock);
-            exit(0);
+            ;
+            int fd[2];
+            pipe(fd);
+            OctetString SATS = malloc(64);
+            OctetString CATS = malloc(64);
+            OctetString T = malloc(64);
+            make_vko(sock, SATS, CATS, T);
+            session_keys c_keys;
+            session_keys s_keys;
+            Frame app_data;
+            app_data.tag = encryptedFrame;
+            serLengthShortInt(app_data.length, 550);
+            app_data.type = applicationData;
+            app_data.icode.present = isPresent;
+            app_data.icode.length = 16;
+            app_data.icode.code = "default0default1";
+            init_keys(&c_keys, CATS, T);
+            init_keys(&s_keys, SATS, T);
             close(listener);
-            close(0);
-            dup(sock);
-            close(1);
-            dup(sock);
-            close(sock);
-            execl("./sftp-server", "sftp-server");
-            exit(0);
+            switch(fork())
+            {
+            case -1:
+                printf("fork error");
+                break;
+            case 0:
+                close(0);
+                dup(fd[0]);
+                close(1);
+                dup(fd[1]);
+                execl("./sftp-server", "sftp-server");
+                exit(0);
+            default:
+                while(1){
+                    FD_ZERO(&readfds);
+                    FD_SET(fd[0], &readfds);
+                    FD_SET(sock, &readfds);
+                    select(10, &readfds, NULL, NULL, NULL);
+        
+                    if (FD_ISSET(fd[0], &readfds)){
+                        printf("message from server\n");
+                        buf_rv = read(fd[0], buf, sizeof(buf));
+                        OctetString data_frame = gen_data_frame(buf, buf_rv-1, &c_keys, &app_data);
+                        send(sock, buf, buf_rv, 0);
+                        memset(buf, 0, buf_rv);
+                        update_keys(&c_keys);
+                    }
+                    if (FD_ISSET(sock, &readfds)){
+                        printf("message from socket\n");
+                        buf_rv = recv(sock, buf, sizeof(buf), 0);
+                        int meslen = decrypt_frame(&buf[0], buf_rv, &s_keys);
+                        write(fd[1], &buf[11], meslen);
+                        memset(buf, 0, buf_rv);
+                        update_keys(&s_keys);
+                    }
+        
+                }
+            }
+                
             
         default:
             close(sock);

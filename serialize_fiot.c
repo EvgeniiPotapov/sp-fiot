@@ -7,8 +7,8 @@
 
 /* Serializing unsingned short to LengthShortInt */
 void serLengthShortInt(Octet *length, unsigned short number){
-    length[1] = number >> 8;
-    length[0] = number & 0xff;
+    length[0] = number >> 8;
+    length[1] = number & 0xff;
 }
 /* Serializing EllipticCurvePoint structure */
 void serEllipticCurvePoint(OctetString *serpt , EllipticCurvePoint *curve){
@@ -45,20 +45,20 @@ void serIntegrityCode(OctetString *keyid, IntegrityCode *icode){
 }
 /* Serializing Frame structure */
 void serFrame(OctetString *serframe, Frame *frame){
-    unsigned short framelen = frame->length[1];
-    framelen = (framelen << 8) | frame->length[0];
+    unsigned short framelen = frame->length[0];
+    framelen = (framelen << 8) | frame->length[1];
     *serframe = realloc(*serframe, sizeof(Octet) * framelen);
     memmove(*serframe, &(frame->tag), sizeof(Octet));
     memmove(*serframe + 1, &(frame->length), sizeof(Octet) * 2);
     memmove(*serframe + 3, &(frame->number), sizeof(Octet) * 5);
     memmove(*serframe + 8, &(frame->type), sizeof(Octet));
-    unsigned short meslen = frame->meslen[1];
-    meslen = (meslen << 8) | frame->meslen[0];
+    unsigned short meslen = frame->meslen[0];
+    meslen = (meslen << 8) | frame->meslen[1];
     memmove(*serframe + 9, &(frame->meslen), sizeof(Octet) * 2);
     memmove(*serframe + 11, frame->message, sizeof(Octet) * meslen);
     unsigned short padlen = framelen - (11 + meslen + 2 + frame->icode.length);
-    memmove(*serframe + 11 + meslen, frame->padding, sizeof(Octet) * padlen);
-    OctetString icode_serialized = malloc(sizeof(Octet));
+    memmove(*serframe + 11 + meslen, frame->padding, padlen);
+    OctetString icode_serialized = malloc(1);
     serIntegrityCode(&icode_serialized, &(frame->icode));
     memmove(*serframe + 11 + meslen + padlen, icode_serialized, sizeof(Octet) * (2 + frame->icode.length));
     free(icode_serialized);
