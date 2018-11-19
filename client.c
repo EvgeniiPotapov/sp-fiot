@@ -8,6 +8,8 @@
 #include <stdlib.h>
 #include <string.h>
 
+#include "krypt_include/ak_bckey.h"
+
 #include "fiot_include/fiot_types.h"
 #include "fiot_include/gench.h"
 #include "fiot_include/serialize_fiot.h"
@@ -18,7 +20,10 @@
 
 
 void main(int argc, char *argv[]){
+    ak_bckey_init_kuznechik_tables();
     Octet buf[512];
+    Octet buf_stdin[512];
+    Octet buf_sock[550];
     unsigned short buf_rv = 0;
     int i, sock;
     struct sockaddr_in addr;
@@ -76,10 +81,10 @@ void main(int argc, char *argv[]){
     OctetString CATS = malloc(64);
     OctetString T = malloc(64);
     make_session_keys(xQ, R2, H5, SATS, CATS, T);
-    for(int i=0;i<64;i++) printf("%.2X", SATS[i]);
-    printf("\n");
-    for(int i=0;i<64;i++) printf("%.2X", CATS[i]);
-    printf("\n");
+    // for(int i=0;i<64;i++) printf("%.2X", SATS[i]);
+    // printf("\n");
+    // for(int i=0;i<64;i++) printf("%.2X", CATS[i]);
+    // printf("\n");
     
     session_keys c_keys;
     session_keys s_keys;
@@ -92,6 +97,7 @@ void main(int argc, char *argv[]){
     app_data.icode.present = isPresent;
     app_data.icode.length = 16;
     app_data.icode.code = "default0default1";
+    fprintf(stderr, "Derive Ok\n");
     
 
     while(1){
@@ -101,18 +107,44 @@ void main(int argc, char *argv[]){
         select(sock+1, &readfds, NULL, NULL, NULL);
         
             if (FD_ISSET(0, &readfds)){
-                buf_rv = read(0, buf, sizeof(buf));
-                OctetString data_frame = gen_data_frame(buf, buf_rv-1, &c_keys, &app_data);
-                send(sock, buf, buf_rv, 0);
-                memset(buf, 0, buf_rv);
+                buf_rv = read(0, buf_stdin, sizeof(buf_stdin));
+                if (buf_rv > 0){
+                // sleep(1);
+                fprintf(stderr, "message from client: %d\n", buf_rv);
+                for(int i=0; i<buf_rv; i++) fprintf(stderr, "%.2x", buf_stdin[i]);
+                fprintf(stderr, "\n");
+                OctetString data_frame = gen_data_frame(buf_stdin, buf_rv, &c_keys, &app_data);
+                send(sock, data_frame, 550, 0);
+                // fprintf(stderr, "message from client\n");
+                // for(int i=0; i<buf_rv; i++) fprintf(stderr, "%.2x", buf_stdin[i]);
+                // fprintf(stderr, "\n");
+                // send(sock, buf_stdin, buf_rv, 0);
+                // memset(buf, 0, buf_rv);
                 update_keys(&c_keys);
+                }
             }
             if (FD_ISSET(sock, &readfds)){
-                buf_rv = recv(sock, buf, sizeof(buf), 0);
-                int meslen = decrypt_frame(&buf[0], buf_rv, &s_keys);
-                write(1, &buf[11], meslen);
-                memset(buf, 0, buf_rv);
+                buf_rv = recv(sock, buf_sock, sizeof(buf_sock), 0);
+                if (buf_rv > 0){
+                // sleep(1);
+                int meslen = decrypt_frame(&buf_sock[0], buf_rv, &s_keys);
+                fprintf(stderr, "message from socket: %d\n", meslen);
+                // fprintf(stderr, "mes: %d\n", meslen);
+                // for(int i=0; i<buf_rv; i++) fprintf(stderr, "%.2x", buf_sock[i]);
+                // fprintf(stderr, "\n");
+                OctetString data = malloc(meslen);
+                memcpy(data, &buf_sock[11], meslen);
+                for(int i=0; i<meslen; i++) fprintf(stderr, "%.2x", data[i]);
+                fprintf(stderr, "\n");
+                write(1, data, meslen);
+                free(data);
+                // fprintf(stderr, "message from socket");
+                // for(int i=0; i<buf_rv; i++) fprintf(stderr, "%.2x", buf_sock[i]);
+                // fprintf(stderr, "\n");
+                // write(1, buf_sock, buf_rv);
+                // memset(buf, 0, buf_rv);
                 update_keys(&s_keys);
+                }
             }
         
     }

@@ -164,7 +164,6 @@ OctetString gen_SHTS(RandomOctetString k_client, OctetString server_hello, Octet
 
 
 OctetString check_verify_frame(OctetString buf, OctetString eSHTK, OctetString iSHTK, OctetString c_hello, OctetString s_hello){
-    ak_bckey_init_kuznechik_tables();
     struct bckey Key;
     unsigned char mac[16];
     ak_bckey_create_kuznechik(&Key);
@@ -219,7 +218,6 @@ OctetString genVerifyFrame(OctetString verify, OctetString eSHTK, OctetString iS
     verifyFrame.icode.code = "0DefaultDefault0";
     OctetString serframe = malloc(1);
     serFrame(&serframe, &verifyFrame);
-    ak_bckey_init_kuznechik_tables();
     struct bckey Key;
     ak_bckey_create_kuznechik(&Key);
     ak_bckey_context_set_ptr(&Key, iSHTK, 32, ak_false);

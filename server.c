@@ -196,7 +196,6 @@ OctetString genVerifyFrame(OctetString verify, unsigned char * eSHTK, unsigned c
     verifyFrame.icode.code = "0DefaultDefault0";
     OctetString serframe = malloc(1);
     serFrame(&serframe, &verifyFrame);
-    ak_bckey_init_kuznechik_tables();
     struct bckey Key;
     ak_bckey_create_kuznechik(&Key);
     ak_bckey_context_set_ptr(&Key, iSHTK, 32, ak_false);
@@ -216,7 +215,6 @@ OctetString gen_CHTS(OctetString verifyframe, OctetString c_hello, OctetString s
 }
 
 OctetString check_verify_frame(OctetString buf, OctetString eSHTK, OctetString iSHTK, OctetString H4){
-    ak_bckey_init_kuznechik_tables();
     struct bckey Key;
     unsigned char mac[16];
     ak_bckey_create_kuznechik(&Key);
@@ -323,10 +321,13 @@ void make_vko(int sock, OctetString SATS, OctetString CATS, OctetString T){
 
 
 void main(){
+    ak_bckey_init_kuznechik_tables();
     int listener, i,buf_rv, sock;
     int enable = 1;
     struct sockaddr_in addr;
-    char buf[550];
+    Octet buf[512];
+    Octet buf_stdin[512];
+    Octet buf_sock[550];
     int bytes_read;
     fd_set readfds;
 
@@ -368,8 +369,10 @@ void main(){
             
         case 0:
             ;
-            int fd[2];
-            pipe(fd);
+            int fd_master_slave[2];
+            int fd_slave_master[2];
+            pipe(fd_master_slave);
+            pipe(fd_slave_master);
             OctetString SATS = malloc(64);
             OctetString CATS = malloc(64);
             OctetString T = malloc(64);
@@ -385,6 +388,7 @@ void main(){
             app_data.icode.code = "default0default1";
             init_keys(&c_keys, CATS, T);
             init_keys(&s_keys, SATS, T);
+            fprintf(stderr, "Derive Ok\n");
             close(listener);
             switch(fork())
             {
@@ -393,33 +397,50 @@ void main(){
                 break;
             case 0:
                 close(0);
-                dup(fd[0]);
+                dup(fd_master_slave[0]);
                 close(1);
-                dup(fd[1]);
+                dup(fd_slave_master[1]);
                 execl("./sftp-server", "sftp-server");
+                // execl("gnome-terminal", "-x", "sh");
                 exit(0);
             default:
                 while(1){
                     FD_ZERO(&readfds);
-                    FD_SET(fd[0], &readfds);
+                    FD_SET(fd_slave_master[0], &readfds);
                     FD_SET(sock, &readfds);
-                    select(10, &readfds, NULL, NULL, NULL);
+                    select(fd_slave_master[1]+1, &readfds, NULL, NULL, NULL);
         
-                    if (FD_ISSET(fd[0], &readfds)){
-                        printf("message from server\n");
-                        buf_rv = read(fd[0], buf, sizeof(buf));
-                        OctetString data_frame = gen_data_frame(buf, buf_rv-1, &c_keys, &app_data);
-                        send(sock, buf, buf_rv, 0);
-                        memset(buf, 0, buf_rv);
-                        update_keys(&c_keys);
+                    if (FD_ISSET(fd_slave_master[0], &readfds)){
+                        fprintf(stderr, "message from server: ");
+                        buf_rv = read(fd_slave_master[0], buf_stdin, sizeof(buf_stdin));
+                        fprintf(stderr, "%d\n", buf_rv);
+                        if (buf_rv > 0){
+                        // sleep(1);
+                        for(int i=0; i<buf_rv; i++) fprintf(stderr, "%.2x", buf_stdin[i]);
+                        fprintf(stderr, "\n");
+                        OctetString data_frame = gen_data_frame(buf_stdin, buf_rv, &s_keys, &app_data);
+                        send(sock, data_frame, 550, 0);
+                        // send(sock, buf_stdin, buf_rv, 0);
+                        // memset(buf, 0, buf_rv);
+                        update_keys(&s_keys);
+                        }
                     }
                     if (FD_ISSET(sock, &readfds)){
-                        printf("message from socket\n");
-                        buf_rv = recv(sock, buf, sizeof(buf), 0);
-                        int meslen = decrypt_frame(&buf[0], buf_rv, &s_keys);
-                        write(fd[1], &buf[11], meslen);
-                        memset(buf, 0, buf_rv);
-                        update_keys(&s_keys);
+                        fprintf(stderr, "message from socket: ");
+                        buf_rv = recv(sock, buf_sock, sizeof(buf_sock), 0);
+                        fprintf(stderr, "%d\n",buf_rv);
+                        if (buf_rv > 0){
+                        // sleep(1);
+                        int meslen = decrypt_frame(&buf_sock[0], buf_rv, &c_keys);
+                        fprintf(stderr, "message from socket length is %d\n", meslen);
+                        if (meslen > buf_rv) exit(-4);
+                        // for(int i=11; i<11+meslen; i++) fprintf(stderr, "%.2x", buf_sock[i]);
+                        // fprintf(stderr, "\n");
+                        write(fd_master_slave[1], &buf_sock[11], meslen);
+                        // write(fd_master_slave[1], buf_sock, buf_rv);
+                        // memset(buf, 0, buf_rv);
+                        update_keys(&c_keys);
+                        }
                     }
         
                 }
