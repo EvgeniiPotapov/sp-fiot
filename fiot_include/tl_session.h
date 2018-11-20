@@ -1,5 +1,5 @@
-#define maxFrameCount 128 //max L frame number value
-#define maxFrameKeysCount 16 // max m frame number value
+#define maxFrameCount 600 //max L frame number value
+#define maxFrameKeysCount 500 // max m frame number value
 #define maxApplicationSecretCount 16 // max n frame number value
 
 typedef struct _session_keys{

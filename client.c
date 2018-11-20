@@ -97,7 +97,7 @@ void main(int argc, char *argv[]){
     app_data.icode.present = isPresent;
     app_data.icode.length = 16;
     app_data.icode.code = "default0default1";
-    fprintf(stderr, "Derive Ok\n");
+    // fprintf(stderr, "Derive Ok\n");
     
 
     while(1){
@@ -110,14 +110,14 @@ void main(int argc, char *argv[]){
                 buf_rv = read(0, buf_stdin, sizeof(buf_stdin));
                 if (buf_rv > 0){
                 // sleep(1);
-                fprintf(stderr, "message from client: %d\n", buf_rv);
-                for(int i=0; i<buf_rv; i++) fprintf(stderr, "%.2x", buf_stdin[i]);
-                fprintf(stderr, "\n");
-                OctetString data_frame = gen_data_frame(buf_stdin, buf_rv, &c_keys, &app_data);
-                send(sock, data_frame, 550, 0);
-                // fprintf(stderr, "message from client\n");
+                // fprintf(stderr, "message from client: %d\n", buf_rv);
                 // for(int i=0; i<buf_rv; i++) fprintf(stderr, "%.2x", buf_stdin[i]);
                 // fprintf(stderr, "\n");
+                OctetString data_frame = gen_data_frame(buf_stdin, buf_rv, &c_keys, &app_data);
+                fprintf(stderr, "message from client\n");
+                for(int i=0; i<8; i++) fprintf(stderr, "%.2x", data_frame[i]);
+                fprintf(stderr, "\n");
+                send(sock, data_frame, 550, 0);
                 // send(sock, buf_stdin, buf_rv, 0);
                 // memset(buf, 0, buf_rv);
                 update_keys(&c_keys);
@@ -128,17 +128,17 @@ void main(int argc, char *argv[]){
                 if (buf_rv > 0){
                 // sleep(1);
                 int meslen = decrypt_frame(&buf_sock[0], buf_rv, &s_keys);
-                fprintf(stderr, "message from socket: %d\n", meslen);
+                // fprintf(stderr, "message from socket: %d\n", meslen);
                 // fprintf(stderr, "mes: %d\n", meslen);
                 // for(int i=0; i<buf_rv; i++) fprintf(stderr, "%.2x", buf_sock[i]);
                 // fprintf(stderr, "\n");
                 OctetString data = malloc(meslen);
                 memcpy(data, &buf_sock[11], meslen);
-                for(int i=0; i<meslen; i++) fprintf(stderr, "%.2x", data[i]);
-                fprintf(stderr, "\n");
+                // for(int i=0; i<meslen; i++) fprintf(stderr, "%.2x", data[i]);
+                // fprintf(stderr, "\n");
                 write(1, data, meslen);
                 free(data);
-                // fprintf(stderr, "message from socket");
+                // fprintf(stderr, "message from socket\n");
                 // for(int i=0; i<buf_rv; i++) fprintf(stderr, "%.2x", buf_sock[i]);
                 // fprintf(stderr, "\n");
                 // write(1, buf_sock, buf_rv);

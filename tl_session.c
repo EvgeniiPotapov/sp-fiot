@@ -10,10 +10,10 @@
 #include "fiot_include/tl_session.h"
 
 void update_iFK(Octet* iFK, Octet* K, Octet* CTR, unsigned short m){
-    fprintf(stderr, "Updating ifk\n");
-    fprintf(stderr, "ifk before update:\n");
-    for(int i=0; i<32; i++) fprintf(stderr, "%.2x", iFK[i]);
-    fprintf(stderr, "\n");
+    // fprintf(stderr, "Updating ifk\n");
+    // fprintf(stderr, "ifk before update:\n");
+    // for(int i=0; i<32; i++) fprintf(stderr, "%.2x", iFK[i]);
+    // fprintf(stderr, "\n");
     struct bckey Key;
     ak_bckey_create_kuznechik(&Key);
     ak_bckey_context_set_ptr(&Key, K, 32, ak_false);
@@ -23,12 +23,12 @@ void update_iFK(Octet* iFK, Octet* K, Octet* CTR, unsigned short m){
     memcpy(CTR+ 15, p_number, 1);
     memcpy(CTR+ 14, p_number+1, 1);
     memcpy(CTR+ 13, p_number+2, 1);
-    ak_bckey_context_encrypt_ecb(&Key, &CTR, &iFK, 16);
+    ak_bckey_context_encrypt_ecb(&Key, CTR, iFK, 16);
     number = m + 1;
     memcpy(CTR+ 15, p_number, 1);
     memcpy(CTR+ 14, p_number+1, 1);
     memcpy(CTR+ 13, p_number+2, 1);
-    ak_bckey_context_encrypt_ecb(&Key, &CTR, &iFK + 16, 16);
+    ak_bckey_context_encrypt_ecb(&Key, CTR, iFK + 16, 16);
     memset(CTR+13, 0x00, 3);
     ak_bckey_destroy(&Key);
 }
@@ -44,6 +44,7 @@ void init_keys(session_keys *keys, OctetString ATS, OctetString T){
     keys->l = 0;
     keys->n = 1;
     keys->m = 0;
+    memset(keys->iFK, 0xff, 32);
     update_iFK(keys->iFK, keys->K, keys->CTR, keys->m);
 }
 
@@ -124,6 +125,7 @@ void update_e_i_FK_full(session_keys *keys){
 
 
 int update_keys(session_keys *keys){
+    fprintf(stderr, "Updating keys\n");
     keys->l++;
     if (keys->l != maxFrameCount-1)
         return 0;
@@ -144,14 +146,14 @@ int update_keys(session_keys *keys){
 
 int decrypt_frame(Octet * frame, int len, session_keys *keys){
     ak_bckey_init_kuznechik_tables();
-    fprintf(stderr, "Decrypting frame\n");
-    for(int i=0; i<len; i++) fprintf(stderr, "%.2x", frame[i]);
-    fprintf(stderr, "\n");
+    // fprintf(stderr, "Decrypting frame\n");
+    // for(int i=0; i<len; i++) fprintf(stderr, "%.2x", frame[i]);
+    // fprintf(stderr, "\n");
 
     if (frame[0] != encryptedFrame) exit(1);
     unsigned short framelen = frame[1];
     framelen = (framelen << 8) | frame[2];
-    fprintf(stderr, "frame length is %d\n", framelen);
+    // fprintf(stderr, "frame length is %d\n", framelen);
     if (framelen != len) exit(2);
     unsigned short num_n = frame[3];
     unsigned short num_m = frame[4];
