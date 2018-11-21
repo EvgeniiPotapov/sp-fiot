@@ -411,17 +411,18 @@ void main(){
                     select(fd_slave_master[1]+1, &readfds, NULL, NULL, NULL);
         
                     if (FD_ISSET(fd_slave_master[0], &readfds)){
-                        fprintf(stderr, "message from server: ");
+                        // fprintf(stderr, "message from server: ");
                         buf_rv = read(fd_slave_master[0], buf_stdin, sizeof(buf_stdin));
                         // fprintf(stderr, "%d\n", buf_rv);
                         if (buf_rv > 0){
                         // sleep(1);
                         OctetString data_frame = gen_data_frame(buf_stdin, buf_rv, &s_keys, &app_data);
-                        for(int i=0; i<8; i++) fprintf(stderr, "%.2x", data_frame[i]);
-                        fprintf(stderr, "\n");
+                        // for(int i=0; i<8; i++) fprintf(stderr, "%.2x", data_frame[i]);
+                        // fprintf(stderr, "\n");
                         send(sock, data_frame, 550, 0);
                         // send(sock, buf_stdin, buf_rv, 0);
                         // memset(buf, 0, buf_rv);
+                        // fprintf(stderr, "Updating server keys\n");
                         update_keys(&s_keys);
                         }
                     }

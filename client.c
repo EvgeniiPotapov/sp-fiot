@@ -114,9 +114,9 @@ void main(int argc, char *argv[]){
                 // for(int i=0; i<buf_rv; i++) fprintf(stderr, "%.2x", buf_stdin[i]);
                 // fprintf(stderr, "\n");
                 OctetString data_frame = gen_data_frame(buf_stdin, buf_rv, &c_keys, &app_data);
-                fprintf(stderr, "message from client\n");
-                for(int i=0; i<8; i++) fprintf(stderr, "%.2x", data_frame[i]);
-                fprintf(stderr, "\n");
+                // fprintf(stderr, "message from client\n");
+                // for(int i=0; i<8; i++) fprintf(stderr, "%.2x", data_frame[i]);
+                // fprintf(stderr, "\n");
                 send(sock, data_frame, 550, 0);
                 // send(sock, buf_stdin, buf_rv, 0);
                 // memset(buf, 0, buf_rv);

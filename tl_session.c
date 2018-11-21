@@ -14,23 +14,29 @@ void update_iFK(Octet* iFK, Octet* K, Octet* CTR, unsigned short m){
     // fprintf(stderr, "ifk before update:\n");
     // for(int i=0; i<32; i++) fprintf(stderr, "%.2x", iFK[i]);
     // fprintf(stderr, "\n");
-    struct bckey Key;
-    ak_bckey_create_kuznechik(&Key);
-    ak_bckey_context_set_ptr(&Key, K, 32, ak_false);
-    
+    struct bckey Key_0;
+    ak_bckey_create_kuznechik(&Key_0);
+    struct bckey Key_1;
+    ak_bckey_create_kuznechik(&Key_1);
+    Octet K_buf[32];
+    memcpy(K_buf, K, 32);
+    ak_bckey_context_set_ptr(&Key_0, K_buf, 32, ak_false);
     unsigned long number = m * 2;
     OctetString p_number = (OctetString) &number;
     memcpy(CTR+ 15, p_number, 1);
     memcpy(CTR+ 14, p_number+1, 1);
     memcpy(CTR+ 13, p_number+2, 1);
-    ak_bckey_context_encrypt_ecb(&Key, CTR, iFK, 16);
+    ak_bckey_context_encrypt_ecb(&Key_0, CTR, iFK, 16);
     number = m + 1;
     memcpy(CTR+ 15, p_number, 1);
     memcpy(CTR+ 14, p_number+1, 1);
     memcpy(CTR+ 13, p_number+2, 1);
-    ak_bckey_context_encrypt_ecb(&Key, CTR, iFK + 16, 16);
+    memcpy(K_buf, K, 32);
+    ak_bckey_context_set_ptr(&Key_1, K_buf, 32, ak_false);
+    ak_bckey_context_encrypt_ecb(&Key_1, CTR, iFK + 16, 16);
     memset(CTR+13, 0x00, 3);
-    ak_bckey_destroy(&Key);
+    ak_bckey_destroy(&Key_0);
+    ak_bckey_destroy(&Key_1);
 }
 
 
@@ -93,17 +99,44 @@ OctetString gen_data_frame(Octet * message, int meslen, session_keys* keys, Fram
 }
 
 void update_e_i_FK_lite(session_keys *keys){
+    // fprintf(stderr, "Updating e_i_FK lite\n");
+    // fprintf(stderr, "ifk before:\n");
+    // for(int i=0; i<32; i++) fprintf(stderr, "%.2x", keys->iFK[i]);
+    // fprintf(stderr, "\n");
     update_iFK(keys->iFK, keys->K, keys->CTR, keys->m);
-    struct bckey Key;
-    ak_bckey_create_kuznechik(&Key);
-    ak_bckey_context_set_ptr(&Key, keys->eFK, 32, ak_false);
-    OctetString new_eFK = malloc(32);
-    unsigned char D[2] = {0x80, 0x81};
-    ak_bckey_context_encrypt_ecb(&Key, D, new_eFK, 1);
-    ak_bckey_context_encrypt_ecb(&Key, D + 1, new_eFK + 16, 1);
-    memcpy(keys->eFK, new_eFK, 32);
-    free(new_eFK);
-
+    // fprintf(stderr, "ifk after:\n");
+    // for(int i=0; i<32; i++) fprintf(stderr, "%.2x", keys->iFK[i]);
+    // fprintf(stderr, "\n");
+    // fprintf(stderr, "efk before:\n");
+    // for(int i=0; i<32; i++) fprintf(stderr, "%.2x", keys->eFK[i]);
+    // fprintf(stderr, "\n");
+    struct bckey Key_d0;
+    struct bckey Key_d1;
+    Octet key_buf[32];
+    ak_bckey_create_kuznechik(&Key_d0);
+    ak_bckey_create_kuznechik(&Key_d1);
+    memcpy(key_buf, keys->eFK, 32);
+    ak_bckey_context_set_ptr(&Key_d0, key_buf, 32, ak_false);
+    fprintf(stderr, "\n");
+    unsigned char D0[16] = {0x80, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
+                            0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00};
+    unsigned char D1[16] = {0x81, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
+                            0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00};
+    ak_bckey_context_encrypt_ecb(&Key_d0, D0, D0, 16);
+    // fprintf(stderr, "efk buffer: first part cipher\n");
+    // for(int i=0; i<16; i++) fprintf(stderr, "%.2x", D0[i]);
+    // fprintf(stderr, "\n");
+    memcpy(key_buf, keys->eFK, 32);
+    ak_bckey_context_set_ptr(&Key_d1, key_buf, 32, ak_false);
+    ak_bckey_context_encrypt_ecb(&Key_d1, D1, D1, 16);
+    // fprintf(stderr, "efk buffer: second part cipher\n");
+    // for(int i=0; i<16; i++) fprintf(stderr, "%.2x", D1[i]);
+    // fprintf(stderr, "\n");
+    memcpy(keys->eFK, D0, 16);
+    memcpy(keys->eFK + 16, D1, 16);
+    // fprintf(stderr, "efk after:\n");
+    // for(int i=0; i<32; i++) fprintf(stderr, "%.2x", keys->eFK[i]);
+    // fprintf(stderr, "\n");
 }
 
 void update_ATS(session_keys *keys){
@@ -125,18 +158,18 @@ void update_e_i_FK_full(session_keys *keys){
 
 
 int update_keys(session_keys *keys){
-    fprintf(stderr, "Updating keys\n");
     keys->l++;
-    if (keys->l != maxFrameCount-1)
+    if (keys->l != maxFrameCount)
         return 0;
     keys->m++;
-    if (keys->m != maxFrameKeysCount){
+    if (keys->m != maxFrameKeysCount + 1){
         keys->l = 0;
         update_e_i_FK_lite(keys);
         return 0;}
     keys->n++;
-    if (keys->n != maxApplicationSecretCount){
+    if (keys->n != maxApplicationSecretCount + 1){
         keys->m = 0;
+        keys->l = 0;
         update_ATS(keys);
         update_e_i_FK_full(keys);
         return 0;}
@@ -182,7 +215,9 @@ int decrypt_frame(Octet * frame, int len, session_keys *keys){
     // fprintf(stderr, "\n");
     ak_bckey_context_set_ptr(&Key_mac, current_key, 32, ak_false);
     ak_bckey_context_mac_gost3413(&Key_mac, frame, framelen - 18, mac);
-    if(memcmp(&frame[framelen-16], mac, 16) != 0) exit(3);
+    if(memcmp(&frame[framelen-16], mac, 16) != 0){
+        fprintf(stderr, "wrong mac\n");
+        exit(3);}
     // for(int i=0; i<len; i++) fprintf(stderr, "%.2x", frame[i]);
     // fprintf(stderr, "\n");
     unsigned short meslen = frame[9];
