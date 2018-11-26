@@ -3,13 +3,13 @@ all: server client
 server: server.o serialize_fiot.o tl_session.o
 	gcc server.o serialize_fiot.o tl_session.o -O0 -L krypt_lib -lakrypt-static -o server
 
-server.o: server.c
+server.o: server.c fiot_include/tl_session.h
 	gcc -c server.c -O0 -L krypt_lib -lakrypt-static -funsigned-char
 
 client: client.o gench.o serialize_fiot.o tl_session.o
 	gcc client.o gench.o serialize_fiot.o tl_session.o -O0 -L krypt_lib -lakrypt-static -o client
 
-client.o: client.c
+client.o: client.c fiot_include/tl_session.h
 	gcc -O0 -L krypt_lib -lakrypt-static -c client.c
 
 gench.o: gench.c

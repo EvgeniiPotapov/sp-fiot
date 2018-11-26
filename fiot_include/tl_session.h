@@ -1,6 +1,9 @@
 #define maxFrameCount 512 //max L frame number value
 #define maxFrameKeysCount 512 // max m frame number value
 #define maxApplicationSecretCount 128 // max n frame number value
+#define RAW_PACKET 64000
+#define FIOT_PACKET RAW_PACKET + 38
+#define PADDING 9
 
 typedef struct _session_keys{
     unsigned char ATS[64]; // CATS or SATS

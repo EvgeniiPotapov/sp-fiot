@@ -319,6 +319,15 @@ void make_vko(int sock, OctetString SATS, OctetString CATS, OctetString T){
 }
 
 
+void receive_all(int sock, Octet *buf, int len){
+    int bytes_recieved = len;
+    int buf_rv;
+    while (bytes_recieved != FIOT_PACKET){
+        buf_rv = read(sock, &buf[bytes_recieved], FIOT_PACKET - bytes_recieved);
+        bytes_recieved = bytes_recieved + buf_rv;
+    }
+}
+
 
 void main(){
     ak_bckey_init_kuznechik_tables();
@@ -326,8 +335,8 @@ void main(){
     int enable = 1;
     struct sockaddr_in addr;
     Octet buf[512];
-    Octet buf_stdin[512];
-    Octet buf_sock[550];
+    Octet buf_stdin[RAW_PACKET];
+    Octet buf_sock[FIOT_PACKET];
     int bytes_read;
     fd_set readfds;
 
@@ -381,14 +390,14 @@ void main(){
             session_keys s_keys;
             Frame app_data;
             app_data.tag = encryptedFrame;
-            serLengthShortInt(app_data.length, 550);
+            serLengthShortInt(app_data.length, FIOT_PACKET);
             app_data.type = applicationData;
             app_data.icode.present = isPresent;
             app_data.icode.length = 16;
             app_data.icode.code = "default0default1";
             init_keys(&c_keys, CATS, T);
             init_keys(&s_keys, SATS, T);
-            // fprintf(stderr, "Derive Ok\n");
+            fprintf(stderr, "Derive Ok\n");
             close(listener);
             switch(fork())
             {
@@ -412,14 +421,14 @@ void main(){
         
                     if (FD_ISSET(fd_slave_master[0], &readfds)){
                         // fprintf(stderr, "message from server: ");
-                        buf_rv = read(fd_slave_master[0], buf_stdin, sizeof(buf_stdin));
+                        buf_rv = read(fd_slave_master[0], buf_stdin, RAW_PACKET);
                         // fprintf(stderr, "%d\n", buf_rv);
                         if (buf_rv > 0){
                         // sleep(1);
                         OctetString data_frame = gen_data_frame(buf_stdin, buf_rv, &s_keys, &app_data);
                         // for(int i=0; i<8; i++) fprintf(stderr, "%.2x", data_frame[i]);
                         // fprintf(stderr, "\n");
-                        send(sock, data_frame, 550, 0);
+                        send(sock, data_frame, FIOT_PACKET, 0);
                         // send(sock, buf_stdin, buf_rv, 0);
                         // memset(buf, 0, buf_rv);
                         // fprintf(stderr, "Updating server keys\n");
@@ -429,10 +438,11 @@ void main(){
                     if (FD_ISSET(sock, &readfds)){
                         // fprintf(stderr, "message from socket: ");
                         buf_rv = recv(sock, buf_sock, sizeof(buf_sock), 0);
+                        if (buf_rv < FIOT_PACKET) receive_all(sock, buf_sock, buf_rv);
                         // fprintf(stderr, "%d\n",buf_rv);
                         if (buf_rv > 0){
                         // sleep(1);
-                        int meslen = decrypt_frame(&buf_sock[0], buf_rv, &c_keys);
+                        int meslen = decrypt_frame(&buf_sock[0], FIOT_PACKET, &c_keys);
                         // fprintf(stderr, "message from socket length is %d\n", meslen);
                         if (meslen > buf_rv) exit(-4);
                         // for(int i=11; i<11+meslen; i++) fprintf(stderr, "%.2x", buf_sock[i]);

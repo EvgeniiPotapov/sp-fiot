@@ -60,7 +60,7 @@ OctetString gen_data_frame(Octet * message, int meslen, session_keys* keys, Fram
     Octet current_key[32];
     frame->message = message;
     serLengthShortInt(frame->meslen, meslen);
-    int padlen = 521 - meslen;
+    int padlen = RAW_PACKET + PADDING - meslen;
     OctetString padding = malloc(padlen);
     struct random random;
     ak_random_create_lcg(&random);
@@ -85,13 +85,13 @@ OctetString gen_data_frame(Octet * message, int meslen, session_keys* keys, Fram
     // fprintf(stderr, "\n");
     memcpy(current_key, keys->iFK, 32);
     ak_bckey_context_set_ptr(&Key_mac, current_key, 32, ak_false);
-    ak_bckey_context_mac_gost3413( &Key_mac, serialized, 532, serialized + 534);
+    ak_bckey_context_mac_gost3413( &Key_mac, serialized, RAW_PACKET + PADDING + 11, serialized + RAW_PACKET + PADDING + 13);
     // fprintf(stderr, "ifk after cipher:\n");
     // for(int i=0; i<32; i++) fprintf(stderr, "%.2x", keys->iFK[i]);
     // fprintf(stderr, "\n");
     memcpy(current_key, keys->eFK, 32);
     ak_bckey_context_set_ptr(&Key_cipher, current_key, 32, ak_false);
-    ak_bckey_context_xcrypt(&Key_cipher, &serialized[8], &serialized[8], 524, serialized, 8);
+    ak_bckey_context_xcrypt(&Key_cipher, &serialized[8], &serialized[8], RAW_PACKET + PADDING + 3, serialized, 8);
     // fprintf(stderr, "New frame\n");
     // for(int i=0; i<550; i++) fprintf(stderr, "%.2x", serialized[i]);
     // fprintf(stderr, "\n");
